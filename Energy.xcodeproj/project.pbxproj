@@ -13,6 +13,7 @@
 		9451379C1AF2EE55002ED072 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9451379B1AF2EE55002ED072 /* Images.xcassets */; };
 		9451379F1AF2EE55002ED072 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9451379D1AF2EE55002ED072 /* LaunchScreen.xib */; };
 		945137AB1AF2EE55002ED072 /* EnergyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945137AA1AF2EE55002ED072 /* EnergyTests.swift */; };
+		94C4A7B51AF31C8400ECBCB7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C4A7B41AF31C8400ECBCB7 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		945137A41AF2EE55002ED072 /* EnergyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EnergyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		945137A91AF2EE55002ED072 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		945137AA1AF2EE55002ED072 /* EnergyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyTests.swift; sourceTree = "<group>"; };
+		94C4A7B41AF31C8400ECBCB7 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				9451379B1AF2EE55002ED072 /* Images.xcassets */,
 				9451379D1AF2EE55002ED072 /* LaunchScreen.xib */,
 				945137921AF2EE55002ED072 /* Supporting Files */,
+				94C4A7B41AF31C8400ECBCB7 /* DetailViewController.swift */,
 			);
 			path = Energy;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 			files = (
 				945137971AF2EE55002ED072 /* ViewController.swift in Sources */,
 				945137951AF2EE55002ED072 /* AppDelegate.swift in Sources */,
+				94C4A7B51AF31C8400ECBCB7 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +413,7 @@
 				945137B01AF2EE55002ED072 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		945137B11AF2EE55002ED072 /* Build configuration list for PBXNativeTarget "EnergyTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +422,7 @@
 				945137B31AF2EE55002ED072 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

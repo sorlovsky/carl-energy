@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9E2CD589-FE9E-413B-8485-D92CED7BE614</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>88FD40A6F6E9EF90FD248C5E9510DD779F2F2E22</key>
+		<string>github.com:simonorlovsky/Energy.git</string>
+	</dict>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>88FD40A6F6E9EF90FD248C5E9510DD779F2F2E22</key>
+		<string>Energy/</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:simonorlovsky/Energy.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>88FD40A6F6E9EF90FD248C5E9510DD779F2F2E22</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>88FD40A6F6E9EF90FD248C5E9510DD779F2F2E22</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Energy</string>
+		</dict>
+	</array>
+</dict>
+</plist>
