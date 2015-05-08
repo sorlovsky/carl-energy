@@ -156,7 +156,7 @@
         <!--Usage-->
         <scene sceneID="mko-xK-yUb">
             <objects>
-                <viewController id="rj5-aq-nxW" customClass="DetailViewController" sceneMemberID="viewController">
+                <viewController id="rj5-aq-nxW" customClass="ConsumptionViewController" customModule="Energy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4Y2-6Z-AgE"/>
                         <viewControllerLayoutGuide type="bottom" id="Cai-eX-4nR"/>
@@ -165,25 +165,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buildings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLa-S4-Aw2">
-                                <rect key="frame" x="265" y="109" width="71" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qaE-Bi-XWk">
+                                <rect key="frame" x="0.0" y="28" width="600" height="572"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="rj5-aq-nxW" id="cuS-nl-a12"/>
+                                    <outlet property="delegate" destination="rj5-aq-nxW" id="GpO-lo-FO5"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="kLa-S4-Aw2" firstAttribute="centerX" secondItem="Owi-kO-brq" secondAttribute="centerX" id="tkl-9w-8Wf"/>
-                            <constraint firstItem="kLa-S4-Aw2" firstAttribute="top" secondItem="4Y2-6Z-AgE" secondAttribute="bottom" constant="89" id="xS5-Ld-bzb"/>
+                            <constraint firstItem="qaE-Bi-XWk" firstAttribute="top" secondItem="4Y2-6Z-AgE" secondAttribute="bottom" constant="8" symbolic="YES" id="73s-pi-Hy5"/>
+                            <constraint firstAttribute="bottom" secondItem="qaE-Bi-XWk" secondAttribute="bottom" id="aRh-uU-I2H"/>
+                            <constraint firstItem="qaE-Bi-XWk" firstAttribute="leading" secondItem="Owi-kO-brq" secondAttribute="leading" id="aT0-RA-2xK"/>
+                            <constraint firstAttribute="trailing" secondItem="qaE-Bi-XWk" secondAttribute="trailing" id="x14-HF-KtB"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Usage" image="home" id="Kea-8m-KPf"/>
                     <navigationItem key="navigationItem" id="NpX-O7-kWb"/>
+                    <connections>
+                        <outlet property="tableView" destination="qaE-Bi-XWk" id="l6C-4R-QZl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="arC-nh-e4X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="253" y="1223"/>
+            <point key="canvasLocation" x="-117" y="1225"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="wcW-Nf-Fw4">
