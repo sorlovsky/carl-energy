@@ -1,14 +1,14 @@
 //
-//  DetailViewController.swift
+//  ProductionViewController.swift
 //  Energy
 //
-//  Created by Simon Orlovsky on 4/30/15.
+//  Created by Simon Orlovsky on 5/8/15.
 //  Copyright (c) 2015 simonorlovsky. All rights reserved.
 //
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class ProductionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
