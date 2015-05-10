@@ -13,7 +13,7 @@ import UIKit
 class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet var tableView: UITableView!
     
-    var items: [String] = ["Burton", "Olin", "Cassat"]
+    var buildings: [String] = ["Burton", "Olin", "Cassat"]
     
     var images: [UIImage] = [UIImage(named: "burton")!,UIImage(named: "olin")!,UIImage(named: "cassat")!]
     
@@ -25,30 +25,22 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.items.count;
+        return self.buildings.count;
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
         
-        cell.textLabel?.text = self.items[indexPath.row]
+        cell.textLabel?.text = self.buildings[indexPath.row]
         cell.imageView!.image = images[indexPath.row]
+        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("You selected cell #\(indexPath.row)!")
-        if indexPath.row == 0{
-            performSegueWithIdentifier("Alerts", sender: tableView)
-        }
-        if indexPath.row == 1{
-            performSegueWithIdentifier("Webview", sender: tableView)
-        }
-        
-        if indexPath.row == 2{
-            performSegueWithIdentifier("Textfields", sender: tableView)
-        }
+        performSegueWithIdentifier("Detail", sender: tableView)
         
         
     }
