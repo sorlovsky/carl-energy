@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14E11f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ayz-QH-wM8">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Energy Production-->
@@ -35,8 +36,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qaE-Bi-XWk">
-                                <rect key="frame" x="0.0" y="28" width="600" height="572"/>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="vuf-xP-Cfp">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="rj5-aq-nxW" id="RSF-Lx-vci"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qaE-Bi-XWk">
+                                <rect key="frame" x="0.0" y="108" width="600" height="460"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="rj5-aq-nxW" id="cuS-nl-a12"/>
@@ -46,19 +54,40 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="qaE-Bi-XWk" firstAttribute="top" secondItem="4Y2-6Z-AgE" secondAttribute="bottom" constant="8" symbolic="YES" id="73s-pi-Hy5"/>
-                            <constraint firstAttribute="bottom" secondItem="qaE-Bi-XWk" secondAttribute="bottom" id="aRh-uU-I2H"/>
-                            <constraint firstItem="qaE-Bi-XWk" firstAttribute="leading" secondItem="Owi-kO-brq" secondAttribute="leading" id="aT0-RA-2xK"/>
-                            <constraint firstAttribute="trailing" secondItem="qaE-Bi-XWk" secondAttribute="trailing" id="x14-HF-KtB"/>
+                            <constraint firstItem="qaE-Bi-XWk" firstAttribute="top" secondItem="vuf-xP-Cfp" secondAttribute="bottom" id="Cms-cI-LnJ"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="qaE-Bi-XWk" secondAttribute="bottom" constant="32" id="LgU-8h-dmG"/>
+                            <constraint firstItem="vuf-xP-Cfp" firstAttribute="top" secondItem="4Y2-6Z-AgE" secondAttribute="bottom" id="SrW-4d-saQ"/>
+                            <constraint firstItem="qaE-Bi-XWk" firstAttribute="leading" secondItem="vuf-xP-Cfp" secondAttribute="leading" id="aOd-MX-fOJ"/>
+                            <constraint firstItem="qaE-Bi-XWk" firstAttribute="trailing" secondItem="vuf-xP-Cfp" secondAttribute="trailing" id="dCa-so-fAQ"/>
+                            <constraint firstAttribute="trailing" secondItem="vuf-xP-Cfp" secondAttribute="trailing" id="e12-J9-2Fj"/>
+                            <constraint firstItem="vuf-xP-Cfp" firstAttribute="leading" secondItem="Owi-kO-brq" secondAttribute="leading" id="hsk-tR-BDA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Building Consumption" id="fUj-k0-VVS"/>
                     <connections>
-                        <outlet property="tableView" destination="qaE-Bi-XWk" id="l6C-4R-QZl"/>
+                        <outlet property="searchBarObj" destination="vuf-xP-Cfp" id="gPg-hf-Gnu"/>
+                        <outlet property="searchDisplayController" destination="TCQ-x3-40x" id="jLw-Cb-dXS"/>
+                        <outlet property="tableView" destination="qaE-Bi-XWk" id="SLj-OM-hOP"/>
                         <segue destination="jwp-xO-wg5" kind="show" identifier="Detail" id="Gep-ho-hNe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="arC-nh-e4X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="BAP-G6-FUu">
+                    <connections>
+                        <outlet property="delegate" destination="rj5-aq-nxW" id="MgB-Ub-vl3"/>
+                        <outlet property="searchContentsController" destination="rj5-aq-nxW" id="EV1-nj-kee"/>
+                        <outlet property="searchResultsDataSource" destination="rj5-aq-nxW" id="cZD-dI-cpC"/>
+                        <outlet property="searchResultsDelegate" destination="rj5-aq-nxW" id="nn5-c1-Cfi"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="TCQ-x3-40x">
+                    <connections>
+                        <outlet property="delegate" destination="rj5-aq-nxW" id="SWS-hb-0mt"/>
+                        <outlet property="searchContentsController" destination="rj5-aq-nxW" id="Yii-2o-qmy"/>
+                        <outlet property="searchResultsDataSource" destination="rj5-aq-nxW" id="njR-xV-zft"/>
+                        <outlet property="searchResultsDelegate" destination="rj5-aq-nxW" id="oB8-cr-Hzx"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1065" y="1285"/>
         </scene>

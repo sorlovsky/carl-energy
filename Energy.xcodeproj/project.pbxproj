@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		941948F71AFD0B5300C972F6 /* ProductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941948F61AFD0B5300C972F6 /* ProductionViewController.swift */; };
 		941948F91AFD0E1C00C972F6 /* ConsumptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941948F81AFD0E1C00C972F6 /* ConsumptionViewController.swift */; };
+		943407AD1AFEEC7700F71B71 /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943407AC1AFEEC7700F71B71 /* Building.swift */; };
 		945137951AF2EE55002ED072 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945137941AF2EE55002ED072 /* AppDelegate.swift */; };
 		9451379A1AF2EE55002ED072 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 945137981AF2EE55002ED072 /* Main.storyboard */; };
 		9451379C1AF2EE55002ED072 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9451379B1AF2EE55002ED072 /* Images.xcassets */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		941948F61AFD0B5300C972F6 /* ProductionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductionViewController.swift; sourceTree = "<group>"; };
 		941948F81AFD0E1C00C972F6 /* ConsumptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumptionViewController.swift; sourceTree = "<group>"; };
+		943407AC1AFEEC7700F71B71 /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
 		9451378F1AF2EE55002ED072 /* Energy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Energy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		945137931AF2EE55002ED072 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		945137941AF2EE55002ED072 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				9451379B1AF2EE55002ED072 /* Images.xcassets */,
 				9451379D1AF2EE55002ED072 /* LaunchScreen.xib */,
 				945137921AF2EE55002ED072 /* Supporting Files */,
+				943407AC1AFEEC7700F71B71 /* Building.swift */,
 			);
 			path = Energy;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				941948F71AFD0B5300C972F6 /* ProductionViewController.swift in Sources */,
 				941948F91AFD0E1C00C972F6 /* ConsumptionViewController.swift in Sources */,
 				945137951AF2EE55002ED072 /* AppDelegate.swift in Sources */,
+				943407AD1AFEEC7700F71B71 /* Building.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
