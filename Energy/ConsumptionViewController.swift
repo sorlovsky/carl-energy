@@ -15,16 +15,20 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
     @IBOutlet var tableView: UITableView!
     @IBOutlet var searchBarObj: UISearchBar!
     
-    var is_searching:Bool!
     
-    var dataArray:NSMutableArray!
+    var selectedBuilding:String? = nil
+    var selectedBuildingIndex:Int? = nil
+    
+    var isSearching:Bool!
+    
+    var buildingArray:NSMutableArray!
     var searchingDataArray:NSMutableArray!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        is_searching = false
-        dataArray = ["Burton", "Willis", "Nourse", "Cassat", "Meyers", "Library" , "Boliou"]
+        isSearching = false
+        buildingArray = ["Burton", "Willis", "Nourse", "Cassat", "Meyers", "Library" , "Boliou"]
         searchingDataArray = []
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
@@ -33,35 +37,58 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
         
     }
     
-    func parseJSONSwift(requestUrl: NSString) -> NSDictionary{
-        var error: NSError?
-        var dataGet:NSData! = NSData(contentsOfURL: NSURL(string: requestUrl as String)!)
-        var dataDictionary: NSDictionary = NSJSONSerialization.JSONObjectWithData(dataGet, options: NSJSONReadingOptions.MutableContainers, error: &error) as! NSDictionary
-        return dataDictionary
-    }
-    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        if is_searching == true{
+        if isSearching == true{
             return searchingDataArray.count
         }else{
-            return dataArray.count  //Currently Giving default Value
+            return buildingArray.count  //Currently Giving default Value
         }
     }
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         var cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
-        if is_searching == true{
+        if isSearching == true{
             cell.textLabel!.text = searchingDataArray[indexPath.row] as! NSString as String
         }else{
-            cell.textLabel!.text = dataArray[indexPath.row] as! String
+            cell.textLabel!.text = buildingArray[indexPath.row] as! String
         }
+        
+        if indexPath.row == selectedBuildingIndex {
+            cell.accessoryType = .Checkmark
+        } else {
+            cell.accessoryType = .None
+        }
+        
         return cell;
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println(" cell Selected #\(indexPath.row)! %@ ",dataArray[indexPath.row] as! NSString)
+        if isSearching == false{
+            println(" cell Selected #\(indexPath.row)! %@ ",buildingArray[indexPath.row] as! NSString)
+        }
+        else{
+            println(" cell Selected #\(indexPath.row)! %@ ",searchingDataArray[indexPath.row] as! NSString)
+        }
+        
+        //update the checkmark for the current row
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        cell?.accessoryType = .Checkmark
+
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        //Other row is selected - need to deselect it
+        if let index = selectedBuildingIndex {
+            let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: index, inSection: 0))
+            cell?.accessoryType = .None
+        }
+        
+        selectedBuildingIndex = indexPath.row
+        selectedBuilding = buildingArray[indexPath.row] as! String
+        
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -71,15 +98,15 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String){
         if searchBar.text.isEmpty{
-            is_searching = false
+            isSearching = false
             tableView.reloadData()
         } else {
 //            println(" search text %@ ",searchBar.text as NSString)
-            is_searching = true
+            isSearching = true
             searchingDataArray.removeAllObjects()
-            for var index = 0; index < dataArray.count; index++
+            for var index = 0; index < buildingArray.count; index++
             {
-                var currentString = dataArray.objectAtIndex(index)as! String
+                var currentString = buildingArray.objectAtIndex(index)as! String
                 if currentString.lowercaseString.rangeOfString(searchText.lowercaseString)  != nil {
                     searchingDataArray.addObject(currentString)
                     
