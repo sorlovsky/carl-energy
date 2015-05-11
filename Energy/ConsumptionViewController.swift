@@ -23,6 +23,7 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
     
     var buildingArray:NSMutableArray!
     var searchingDataArray:NSMutableArray!
+    var selectedBuildings:NSMutableArray!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,14 +75,21 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
         
         //update the checkmark for the current row
         let cell = tableView.cellForRowAtIndexPath(indexPath)
-        cell?.accessoryType = .Checkmark
+        if cell?.accessoryType == .Checkmark{
+            cell?.accessoryType = .None
+        }
+        else{
+            cell?.accessoryType = .Checkmark
+//            selectedBuildings.addObject(buildingArray[indexPath.row])
+        }
+        
 
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         //Other row is selected - need to deselect it
         if let index = selectedBuildingIndex {
             let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: index, inSection: 0))
-            cell?.accessoryType = .None
+//            cell?.accessoryType = .None
         }
         
         selectedBuildingIndex = indexPath.row
@@ -115,6 +123,20 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
             tableView.reloadData()
         }
     }
+    @IBAction func reportButtonPressed(sender: AnyObject) {
+        performSegueWithIdentifier("Detail", sender: tableView)
+
+    }
+    
+    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if segue.identifier == "Detail"
+//        {
+//            if let destinationVC = segue.destinationViewController as? DetailConsumptionViewController{
+//                destinationVC.titleLabel.text = selectedBuildings[0] as! String
+//            }
+//        }
+//    }
     
 }
 

@@ -23,7 +23,7 @@
             </objects>
             <point key="canvasLocation" x="1867" y="467"/>
         </scene>
-        <!--Building Consumption-->
+        <!--Select Building(s)-->
         <scene sceneID="mko-xK-yUb">
             <objects>
                 <viewController id="rj5-aq-nxW" customClass="ConsumptionViewController" customModule="Energy" customModuleProvider="target" sceneMemberID="viewController">
@@ -42,8 +42,17 @@
                                     <outlet property="delegate" destination="rj5-aq-nxW" id="RSF-Lx-vci"/>
                                 </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qaE-Bi-XWk">
-                                <rect key="frame" x="0.0" y="108" width="600" height="460"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qgd-W7-B1h">
+                                <rect key="frame" x="255" y="498" width="91" height="30"/>
+                                <state key="normal" title="Create report">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="reportButtonPressed:" destination="rj5-aq-nxW" eventType="touchUpInside" id="WMP-c4-eSC"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qaE-Bi-XWk">
+                                <rect key="frame" x="0.0" y="108" width="600" height="382"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="rj5-aq-nxW" id="cuS-nl-a12"/>
@@ -53,12 +62,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="vuf-xP-Cfp" firstAttribute="top" secondItem="4Y2-6Z-AgE" secondAttribute="bottom" id="SrW-4d-saQ"/>
-                            <constraint firstAttribute="trailing" secondItem="vuf-xP-Cfp" secondAttribute="trailing" id="e12-J9-2Fj"/>
-                            <constraint firstItem="vuf-xP-Cfp" firstAttribute="leading" secondItem="Owi-kO-brq" secondAttribute="leading" id="hsk-tR-BDA"/>
+                            <constraint firstItem="qaE-Bi-XWk" firstAttribute="leading" secondItem="Owi-kO-brq" secondAttribute="leading" id="544-IQ-QnB"/>
+                            <constraint firstAttribute="trailing" secondItem="vuf-xP-Cfp" secondAttribute="trailing" id="8Fd-to-7zX"/>
+                            <constraint firstItem="Cai-eX-4nR" firstAttribute="top" secondItem="Qgd-W7-B1h" secondAttribute="bottom" constant="23" id="Emq-ov-KTw"/>
+                            <constraint firstItem="vuf-xP-Cfp" firstAttribute="top" secondItem="4Y2-6Z-AgE" secondAttribute="bottom" id="Jhs-Vp-6mG"/>
+                            <constraint firstItem="vuf-xP-Cfp" firstAttribute="leading" secondItem="qaE-Bi-XWk" secondAttribute="leading" id="SUL-gG-yzO"/>
+                            <constraint firstItem="vuf-xP-Cfp" firstAttribute="trailing" secondItem="qaE-Bi-XWk" secondAttribute="trailing" id="VbI-2Q-VhT"/>
+                            <constraint firstItem="qaE-Bi-XWk" firstAttribute="top" secondItem="vuf-xP-Cfp" secondAttribute="bottom" id="azq-1U-Nv1"/>
+                            <constraint firstItem="Qgd-W7-B1h" firstAttribute="top" secondItem="qaE-Bi-XWk" secondAttribute="bottom" constant="8" symbolic="YES" id="k57-wW-1fp"/>
+                            <constraint firstItem="qaE-Bi-XWk" firstAttribute="centerX" secondItem="Qgd-W7-B1h" secondAttribute="centerX" id="uJK-OX-5E1"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Building Consumption" id="fUj-k0-VVS"/>
+                    <navigationItem key="navigationItem" title="Select Building(s)" id="fUj-k0-VVS"/>
                     <connections>
                         <outlet property="searchBarObj" destination="vuf-xP-Cfp" id="gPg-hf-Gnu"/>
                         <outlet property="searchDisplayController" destination="TCQ-x3-40x" id="jLw-Cb-dXS"/>
@@ -86,10 +101,10 @@
             </objects>
             <point key="canvasLocation" x="1065" y="1285"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail Consumption View Controller-->
         <scene sceneID="bua-Ln-gS7">
             <objects>
-                <viewController id="jwp-xO-wg5" sceneMemberID="viewController">
+                <viewController id="jwp-xO-wg5" customClass="DetailConsumptionViewController" customModule="Energy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gDk-XW-mRZ"/>
                         <viewControllerLayoutGuide type="bottom" id="W7u-SQ-wez"/>
@@ -111,6 +126,9 @@
                             <constraint firstItem="1BP-l4-cD5" firstAttribute="centerX" secondItem="5u0-ma-oJY" secondAttribute="centerX" id="ync-He-zYC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="1BP-l4-cD5" id="L17-JU-z0w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xBc-6i-tZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
