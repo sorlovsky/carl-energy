@@ -80,6 +80,7 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
         }
         else{
             cell?.accessoryType = .Checkmark
+            //Make sure to add code here so that when you deselect a tableviewcell it removes it from the selected tables column.
             selectedBuildings.append(buildingArray[indexPath.row] as! String)
             NSLog("Object added")
         }
