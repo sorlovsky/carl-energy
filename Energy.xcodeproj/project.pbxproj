@@ -16,6 +16,7 @@
 		9451379C1AF2EE55002ED072 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9451379B1AF2EE55002ED072 /* Images.xcassets */; };
 		9451379F1AF2EE55002ED072 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9451379D1AF2EE55002ED072 /* LaunchScreen.xib */; };
 		945137AB1AF2EE55002ED072 /* EnergyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945137AA1AF2EE55002ED072 /* EnergyTests.swift */; };
+		B10E45BD1B02ED1400DCCA84 /* DataRetreiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10E45BC1B02ED1400DCCA84 /* DataRetreiver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		945137A41AF2EE55002ED072 /* EnergyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EnergyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		945137A91AF2EE55002ED072 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		945137AA1AF2EE55002ED072 /* EnergyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyTests.swift; sourceTree = "<group>"; };
+		B10E45BC1B02ED1400DCCA84 /* DataRetreiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataRetreiver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				945137981AF2EE55002ED072 /* Main.storyboard */,
 				9451379B1AF2EE55002ED072 /* Images.xcassets */,
 				9451379D1AF2EE55002ED072 /* LaunchScreen.xib */,
+				B10E45BC1B02ED1400DCCA84 /* DataRetreiver.swift */,
 				945137921AF2EE55002ED072 /* Supporting Files */,
 				943407AC1AFEEC7700F71B71 /* Building.swift */,
 			);
@@ -223,6 +226,7 @@
 			files = (
 				941948F71AFD0B5300C972F6 /* ProductionViewController.swift in Sources */,
 				943407B11B002C8200F71B71 /* DetailConsumptionViewController.swift in Sources */,
+				B10E45BD1B02ED1400DCCA84 /* DataRetreiver.swift in Sources */,
 				941948F91AFD0E1C00C972F6 /* ConsumptionViewController.swift in Sources */,
 				945137951AF2EE55002ED072 /* AppDelegate.swift in Sources */,
 				943407AD1AFEEC7700F71B71 /* Building.swift in Sources */,
