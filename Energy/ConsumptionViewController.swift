@@ -77,10 +77,11 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         if cell?.accessoryType == .Checkmark{
             cell?.accessoryType = .None
+            var index = find(selectedBuildings, buildingArray[indexPath.row] as! String)
+            selectedBuildings.removeAtIndex(index!)
         }
         else{
             cell?.accessoryType = .Checkmark
-            //Make sure to add code here so that when you deselect a tableviewcell it removes it from the selected tables column.
             selectedBuildings.append(buildingArray[indexPath.row] as! String)
             NSLog("Object added")
         }
