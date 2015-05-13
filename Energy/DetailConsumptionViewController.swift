@@ -10,13 +10,14 @@ import UIKit
 
 class DetailConsumptionViewController: UIViewController {
     
-    var selectedBuildings:NSMutableArray!
-
+    var selectedBuildings = [String]()
+    
     @IBOutlet var titleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        titleLabel.text = selectedBuildings[0] as! String
+        let stringRepresentation = "-".join(selectedBuildings)
+        titleLabel.text = stringRepresentation as String
 
         // Do any additional setup after loading the view.
     }

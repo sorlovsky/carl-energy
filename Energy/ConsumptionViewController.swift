@@ -23,7 +23,7 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
     
     var buildingArray:NSMutableArray!
     var searchingDataArray:NSMutableArray!
-    var selectedBuildings:NSMutableArray!
+    var selectedBuildings = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,10 +77,13 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         if cell?.accessoryType == .Checkmark{
             cell?.accessoryType = .None
+            var index = find(selectedBuildings, buildingArray[indexPath.row] as! String)
+            selectedBuildings.removeAtIndex(index!)
         }
         else{
             cell?.accessoryType = .Checkmark
-//            selectedBuildings.addObject(buildingArray[indexPath.row])
+            selectedBuildings.append(buildingArray[indexPath.row] as! String)
+            NSLog("Object added")
         }
         
 
@@ -125,18 +128,23 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
     }
     @IBAction func reportButtonPressed(sender: AnyObject) {
         performSegueWithIdentifier("Detail", sender: tableView)
+//        NSLog(selectedBuildings[0] as! String)
 
     }
     
     
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if segue.identifier == "Detail"
-//        {
-//            if let destinationVC = segue.destinationViewController as? DetailConsumptionViewController{
-//                destinationVC.titleLabel.text = selectedBuildings[0] as! String
-//            }
-//        }
-//    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "Detail"
+        {
+            if let destinationVC = segue.destinationViewController as? DetailConsumptionViewController{
+                for var index = 0; index < selectedBuildings.count; index++
+                {
+                    destinationVC.selectedBuildings.append(self.selectedBuildings[index])
+                }
+            }
+            
+        }
+    }
     
 }
 
