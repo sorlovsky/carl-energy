@@ -53,7 +53,7 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
         if isSearching == true{
             cell.textLabel!.text = searchingDataArray[indexPath.row] as! NSString as String
         }else{
-            cell.textLabel!.text = buildingArray[indexPath.row] as! String
+            cell.textLabel!.text = buildingArray[indexPath.row] as? String
         }
         
         if indexPath.row == selectedBuildingIndex {
