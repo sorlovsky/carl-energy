@@ -33,8 +33,9 @@ class DataRetreiver: NSObject {
         
     }
     
+    
     // Fetches the data based on the URL created upon initialization
-    func fetch() -> NSString{
+    func fetch(callback: (NSArray)->Void){
         let session = NSURLSession.sharedSession()
         
         // starts a task
@@ -48,8 +49,7 @@ class DataRetreiver: NSObject {
             var jsonError: NSError?
             // Parses the JSON and casts it as an NSDictionary
             let jsonResult: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &jsonError) as? NSDictionary
-            
-            if(jsonError? != nil) {
+            if(jsonError != nil) {
                 // If there is an error parsing JSON, print it to the console
                 println("JSON Error \(jsonError!.localizedDescription)")
                 println(self.url)
@@ -58,7 +58,7 @@ class DataRetreiver: NSObject {
                 if let results: NSArray = jsonResult!["results"] as? NSArray{
                     dispatch_async(dispatch_get_main_queue(), {
                         self.data = results
-                        print(results)
+                        callback(results)
                     })
                 }
             }
@@ -71,7 +71,7 @@ class DataRetreiver: NSObject {
         
         print(data.count)
         
-        return "this is the data"
+        
     }
     
     

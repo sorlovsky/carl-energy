@@ -33,9 +33,23 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
         searchingDataArray = []
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
+        // Sample date data
+        let dateComponents = NSDateComponents()
+        dateComponents.year = 2015
+        dateComponents.month = 05
+        dateComponents.day = 09
+        let startDate = NSCalendar.currentCalendar().dateFromComponents(dateComponents)!
         
+        // name, startdate, enddate, resolution
+        let data : DataRetreiver = DataRetreiver(name: "carleton_wind_production", startDate: startDate, endDate: startDate, resolution: "hour")
         
+        data.fetch(buildGraphExample)
         
+    }
+    
+    // TEST FUNCTION
+    func buildGraphExample(results:NSArray) {
+        println("this is a test")
     }
     
     

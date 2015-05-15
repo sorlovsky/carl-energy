@@ -11,7 +11,7 @@
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>88FD40A6F6E9EF90FD248C5E9510DD779F2F2E22</key>
-		<string>github.com:simonorlovsky/Energy.git</string>
+		<string>https://github.com/simonorlovsky/Energy.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Energy.xcodeproj</string>
@@ -21,7 +21,7 @@
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>github.com:simonorlovsky/Energy.git</string>
+	<string>https://github.com/simonorlovsky/Energy.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
