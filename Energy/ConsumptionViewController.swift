@@ -11,6 +11,7 @@ import UIKit
 
 
 class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+    @IBOutlet var menuButton: UIBarButtonItem!
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var searchBarObj: UISearchBar!
@@ -28,11 +29,17 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        if self.revealViewController() != nil {
+            menuButton.target = self.revealViewController()
+            menuButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+
+        
         isSearching = false
         buildingArray = ["Burton", "Willis", "Nourse", "Cassat", "Meyers", "Library" , "Boliou"]
         searchingDataArray = []
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        
         
         
         

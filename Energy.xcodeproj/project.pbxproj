@@ -11,11 +11,13 @@
 		941948F91AFD0E1C00C972F6 /* ConsumptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941948F81AFD0E1C00C972F6 /* ConsumptionViewController.swift */; };
 		943407AD1AFEEC7700F71B71 /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943407AC1AFEEC7700F71B71 /* Building.swift */; };
 		943407B11B002C8200F71B71 /* DetailConsumptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943407B01B002C8200F71B71 /* DetailConsumptionViewController.swift */; };
+		94502E5C1B042BD800C1593C /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94502E5B1B042BD800C1593C /* SWRevealViewController.m */; };
 		945137951AF2EE55002ED072 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945137941AF2EE55002ED072 /* AppDelegate.swift */; };
 		9451379A1AF2EE55002ED072 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 945137981AF2EE55002ED072 /* Main.storyboard */; };
 		9451379C1AF2EE55002ED072 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9451379B1AF2EE55002ED072 /* Images.xcassets */; };
 		9451379F1AF2EE55002ED072 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9451379D1AF2EE55002ED072 /* LaunchScreen.xib */; };
 		945137AB1AF2EE55002ED072 /* EnergyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945137AA1AF2EE55002ED072 /* EnergyTests.swift */; };
+		94928BC01B0641490018A0CE /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94928BBF1B0641490018A0CE /* MenuViewController.swift */; };
 		B10E45BD1B02ED1400DCCA84 /* DataRetreiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10E45BC1B02ED1400DCCA84 /* DataRetreiver.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +36,9 @@
 		941948F81AFD0E1C00C972F6 /* ConsumptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumptionViewController.swift; sourceTree = "<group>"; };
 		943407AC1AFEEC7700F71B71 /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
 		943407B01B002C8200F71B71 /* DetailConsumptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailConsumptionViewController.swift; sourceTree = "<group>"; };
+		94502E591B042BD800C1593C /* Energy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Energy-Bridging-Header.h"; sourceTree = "<group>"; };
+		94502E5A1B042BD800C1593C /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "../../../../Downloads/SWRevealViewController-master 2/SWRevealViewController/SWRevealViewController.h"; sourceTree = "<group>"; };
+		94502E5B1B042BD800C1593C /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "../../../../Downloads/SWRevealViewController-master 2/SWRevealViewController/SWRevealViewController.m"; sourceTree = "<group>"; };
 		9451378F1AF2EE55002ED072 /* Energy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Energy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		945137931AF2EE55002ED072 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		945137941AF2EE55002ED072 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +48,7 @@
 		945137A41AF2EE55002ED072 /* EnergyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EnergyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		945137A91AF2EE55002ED072 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		945137AA1AF2EE55002ED072 /* EnergyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyTests.swift; sourceTree = "<group>"; };
+		94928BBF1B0641490018A0CE /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		B10E45BC1B02ED1400DCCA84 /* DataRetreiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataRetreiver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +91,9 @@
 		945137911AF2EE55002ED072 /* Energy */ = {
 			isa = PBXGroup;
 			children = (
+				94502E5A1B042BD800C1593C /* SWRevealViewController.h */,
+				94502E5B1B042BD800C1593C /* SWRevealViewController.m */,
+				94502E591B042BD800C1593C /* Energy-Bridging-Header.h */,
 				941948F61AFD0B5300C972F6 /* ProductionViewController.swift */,
 				941948F81AFD0E1C00C972F6 /* ConsumptionViewController.swift */,
 				943407B01B002C8200F71B71 /* DetailConsumptionViewController.swift */,
@@ -95,6 +104,7 @@
 				B10E45BC1B02ED1400DCCA84 /* DataRetreiver.swift */,
 				945137921AF2EE55002ED072 /* Supporting Files */,
 				943407AC1AFEEC7700F71B71 /* Building.swift */,
+				94928BBF1B0641490018A0CE /* MenuViewController.swift */,
 			);
 			path = Energy;
 			sourceTree = "<group>";
@@ -224,12 +234,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94502E5C1B042BD800C1593C /* SWRevealViewController.m in Sources */,
 				941948F71AFD0B5300C972F6 /* ProductionViewController.swift in Sources */,
 				943407B11B002C8200F71B71 /* DetailConsumptionViewController.swift in Sources */,
 				B10E45BD1B02ED1400DCCA84 /* DataRetreiver.swift in Sources */,
 				941948F91AFD0E1C00C972F6 /* ConsumptionViewController.swift in Sources */,
 				945137951AF2EE55002ED072 /* AppDelegate.swift in Sources */,
 				943407AD1AFEEC7700F71B71 /* Building.swift in Sources */,
+				94928BC01B0641490018A0CE /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,9 +368,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Energy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Energy/Energy-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -366,9 +381,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Energy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Energy/Energy-Bridging-Header.h";
 			};
 			name = Release;
 		};

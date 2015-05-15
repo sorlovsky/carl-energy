@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14E11f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ayz-QH-wM8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14E11f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZQD-Fh-I8T">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Energy Production-->
@@ -16,66 +17,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Energy Production" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZWd-ZE-kTp">
-                                <rect key="frame" x="209" y="102" width="183" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmt-w0-9YJ">
-                                <rect key="frame" x="295" y="137" width="10" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="turbine1" translatesAutoresizingMaskIntoConstraints="NO" id="7jl-hL-wCN">
-                                <rect key="frame" x="180" y="176" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="a5T-tR-EOX"/>
-                                    <constraint firstAttribute="width" constant="240" id="dXJ-wX-QS7"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="turbine2" translatesAutoresizingMaskIntoConstraints="NO" id="y3X-GA-Meb">
-                                <rect key="frame" x="180" y="339" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="CyS-Ks-Qqd"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turbine #1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBz-ga-SqA">
-                                <rect key="frame" x="260" y="301" width="81" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turbine #2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0k-91-u4P">
-                                <rect key="frame" x="260" y="468" width="81" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="y4a-Ha-QuV">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="jF1-Ws-ghT">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jF1-Ws-ghT" id="XyM-0V-qsT">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="qvU-iq-EAr"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="YBp-i7-3A2"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="wBz-ga-SqA" firstAttribute="leading" secondItem="Y0k-91-u4P" secondAttribute="leading" id="3f8-Kv-Y6o"/>
-                            <constraint firstItem="7jl-hL-wCN" firstAttribute="leading" secondItem="y3X-GA-Meb" secondAttribute="leading" id="961-Ri-G0l"/>
-                            <constraint firstItem="7jl-hL-wCN" firstAttribute="centerX" secondItem="hmt-w0-9YJ" secondAttribute="centerX" id="EBG-g3-m9I"/>
-                            <constraint firstItem="y3X-GA-Meb" firstAttribute="trailing" secondItem="7jl-hL-wCN" secondAttribute="trailing" id="MEc-8e-7Q0"/>
-                            <constraint firstItem="hmt-w0-9YJ" firstAttribute="top" secondItem="ZWd-ZE-kTp" secondAttribute="bottom" constant="14" id="NXc-IZ-yEV"/>
-                            <constraint firstItem="7jl-hL-wCN" firstAttribute="centerX" secondItem="wBz-ga-SqA" secondAttribute="centerX" id="P1R-Hl-kTq"/>
-                            <constraint firstItem="y3X-GA-Meb" firstAttribute="top" secondItem="wBz-ga-SqA" secondAttribute="bottom" constant="17" id="WIA-ZS-b5L"/>
-                            <constraint firstItem="ZWd-ZE-kTp" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="38" id="bJF-IT-twq"/>
-                            <constraint firstItem="hmt-w0-9YJ" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="cfC-JE-MQY"/>
-                            <constraint firstItem="hmt-w0-9YJ" firstAttribute="centerX" secondItem="ZWd-ZE-kTp" secondAttribute="centerX" id="gqM-bZ-Y2n"/>
-                            <constraint firstItem="Y0k-91-u4P" firstAttribute="top" secondItem="y3X-GA-Meb" secondAttribute="bottom" constant="1" id="ish-Ut-jQi"/>
-                            <constraint firstItem="7jl-hL-wCN" firstAttribute="top" secondItem="hmt-w0-9YJ" secondAttribute="bottom" constant="18" id="rsi-Qa-uFh"/>
-                            <constraint firstItem="y3X-GA-Meb" firstAttribute="top" secondItem="7jl-hL-wCN" secondAttribute="bottom" constant="35" id="s8x-NY-xv2"/>
-                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Energy Production" id="SZB-DC-oZG"/>
+                    <navigationItem key="navigationItem" title="Energy Production" id="SZB-DC-oZG">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="muf-EW-Gbi"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuButton" destination="muf-EW-Gbi" id="aZC-uQ-UnG"/>
+                        <outlet property="tableView" destination="y4a-Ha-QuV" id="9oS-oh-j96"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1867" y="467"/>
+            <point key="canvasLocation" x="1156" y="566"/>
         </scene>
         <!--Select Building(s)-->
         <scene sceneID="mko-xK-yUb">
@@ -96,7 +68,7 @@
                                     <outlet property="delegate" destination="rj5-aq-nxW" id="RSF-Lx-vci"/>
                                 </connections>
                             </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qgd-W7-B1h">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qgd-W7-B1h">
                                 <rect key="frame" x="255" y="498" width="91" height="30"/>
                                 <state key="normal" title="Create report">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -105,7 +77,7 @@
                                     <action selector="reportButtonPressed:" destination="rj5-aq-nxW" eventType="touchUpInside" id="WMP-c4-eSC"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qaE-Bi-XWk">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qaE-Bi-XWk">
                                 <rect key="frame" x="0.0" y="108" width="600" height="382"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -127,9 +99,12 @@
                             <constraint firstItem="qaE-Bi-XWk" firstAttribute="centerX" secondItem="Qgd-W7-B1h" secondAttribute="centerX" id="uJK-OX-5E1"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Select Building(s)" id="fUj-k0-VVS"/>
+                    <navigationItem key="navigationItem" title="Select Building(s)" id="fUj-k0-VVS">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="Cnc-io-AUL"/>
+                    </navigationItem>
                     <value key="contentSizeForViewInPopover" type="size" width="150" height="600"/>
                     <connections>
+                        <outlet property="menuButton" destination="Cnc-io-AUL" id="FsA-I1-ksO"/>
                         <outlet property="searchBarObj" destination="vuf-xP-Cfp" id="gPg-hf-Gnu"/>
                         <outlet property="searchDisplayController" destination="TCQ-x3-40x" id="jLw-Cb-dXS"/>
                         <outlet property="tableView" destination="qaE-Bi-XWk" id="SLj-OM-hOP"/>
@@ -189,25 +164,6 @@
             </objects>
             <point key="canvasLocation" x="1881" y="1285"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="wcW-Nf-Fw4">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ayz-QH-wM8" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="nDh-8T-4JY">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="AXN-wX-duE" kind="relationship" relationship="viewControllers" id="cVM-VF-BV5"/>
-                        <segue destination="EcD-Q4-DFJ" kind="relationship" relationship="viewControllers" id="Mpy-7c-Si1"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="n0r-AT-kkc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="253" y="467"/>
-        </scene>
         <!--Usage-->
         <scene sceneID="Cv1-2H-2qF">
             <objects>
@@ -244,13 +200,94 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mkj-yp-aPg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1055" y="467"/>
+            <point key="canvasLocation" x="287" y="557"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="pRC-Ub-lZC">
+            <objects>
+                <viewController id="cAv-bZ-dvZ" customClass="MenuViewController" customModule="Energy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Yy4-1E-2xE"/>
+                        <viewControllerLayoutGuide type="bottom" id="DNp-Jt-mm1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="z4L-XC-vEH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gV9-5e-TKo">
+                                <rect key="frame" x="54" y="91" width="75" height="30"/>
+                                <state key="normal" title="Production">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="AXN-wX-duE" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="pRu-Vr-KRB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHh-fw-v0j">
+                                <rect key="frame" x="54" y="129" width="92" height="30"/>
+                                <state key="normal" title="Consumption">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="EcD-Q4-DFJ" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="yP7-0F-pAI"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CarlEnergy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8F-xC-7Bz">
+                                <rect key="frame" x="54" y="61" width="84" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="crs-Xa-FO5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kHh-fw-v0j" firstAttribute="top" secondItem="gV9-5e-TKo" secondAttribute="bottom" constant="8" symbolic="YES" id="1TS-rK-r2r"/>
+                            <constraint firstItem="kHh-fw-v0j" firstAttribute="leading" secondItem="gV9-5e-TKo" secondAttribute="leading" id="231-gU-iOo"/>
+                            <constraint firstItem="gV9-5e-TKo" firstAttribute="top" secondItem="i8F-xC-7Bz" secondAttribute="bottom" constant="8" symbolic="YES" id="HmK-Hs-1LD"/>
+                            <constraint firstItem="i8F-xC-7Bz" firstAttribute="top" secondItem="Yy4-1E-2xE" secondAttribute="bottom" constant="41" id="ckc-hx-I6T"/>
+                            <constraint firstItem="i8F-xC-7Bz" firstAttribute="leading" secondItem="z4L-XC-vEH" secondAttribute="leadingMargin" constant="38" id="mey-2N-cCB"/>
+                            <constraint firstItem="i8F-xC-7Bz" firstAttribute="leading" secondItem="gV9-5e-TKo" secondAttribute="leading" id="uO9-ci-gUK"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wbk-Fj-jtd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-638" y="460"/>
+        </scene>
+        <!--Reveal View Controller-->
+        <scene sceneID="PIk-bS-wyR">
+            <objects>
+                <viewController id="ZQD-Fh-I8T" customClass="SWRevealViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UUy-ui-VWE"/>
+                        <viewControllerLayoutGuide type="bottom" id="zOK-Tv-kYx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VV4-a8-ZCP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="AXN-wX-duE" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="M6A-J6-50g"/>
+                        <segue destination="EcD-Q4-DFJ" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="HOt-ql-Rg7"/>
+                        <segue destination="cAv-bZ-dvZ" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="vof-8X-28c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VIr-3z-7qV" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-971" y="1279"/>
         </scene>
     </scenes>
     <resources>
         <image name="home" width="30" height="30"/>
-        <image name="turbine1" width="500" height="335"/>
-        <image name="turbine2" width="400" height="300"/>
+        <image name="menu" width="22" height="22"/>
         <image name="windmill" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="yP7-0F-pAI"/>
+        <segue reference="pRu-Vr-KRB"/>
+    </inferredMetricsTieBreakers>
 </document>
