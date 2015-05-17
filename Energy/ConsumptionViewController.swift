@@ -37,19 +37,23 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
         let dateComponents = NSDateComponents()
         dateComponents.year = 2015
         dateComponents.month = 05
-        dateComponents.day = 09
+        dateComponents.day = 16
         let startDate = NSCalendar.currentCalendar().dateFromComponents(dateComponents)!
+        dateComponents.day = 17
+        let endDate = NSCalendar.currentCalendar().dateFromComponents(dateComponents)!
         
         // name, startdate, enddate, resolution
-        let data : DataRetreiver = DataRetreiver(name: "carleton_wind_production", startDate: startDate, endDate: startDate, resolution: "hour")
+        let data : DataRetreiver = DataRetreiver()
         
-        data.fetch(buildGraphExample)
+        data.fetch("carleton_burton_en_use", startDate: startDate, endDate: endDate, resolution: "hour", callback: buildGraphExample)
         
     }
     
     // TEST FUNCTION
     func buildGraphExample(results:NSArray) {
-        println("this is a test")
+        println(results)
+
+
     }
     
     
@@ -63,9 +67,9 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        var cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
+        var cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
         if isSearching == true{
-            cell.textLabel!.text = searchingDataArray[indexPath.row] as! NSString as String
+            cell.textLabel!.text = searchingDataArray[indexPath.row] as NSString as String
         }else{
             cell.textLabel!.text = buildingArray[indexPath.row] as? String
         }
@@ -81,22 +85,22 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if isSearching == false{
-            println(" cell Selected #\(indexPath.row)! %@ ",buildingArray[indexPath.row] as! NSString)
+            println(" cell Selected #\(indexPath.row)! \(buildingArray[indexPath.row] as NSString)")
         }
         else{
-            println(" cell Selected #\(indexPath.row)! %@ ",searchingDataArray[indexPath.row] as! NSString)
+            println(" cell Selected #\(indexPath.row)! \(searchingDataArray[indexPath.row] as NSString)")
         }
         
         //update the checkmark for the current row
         let cell = tableView.cellForRowAtIndexPath(indexPath)
-        if cell?.accessoryType == .Checkmark{
+        if cell!.accessoryType == .Checkmark{
             cell?.accessoryType = .None
-            var index = find(selectedBuildings, buildingArray[indexPath.row] as! String)
+            var index = find(selectedBuildings, buildingArray[indexPath.row] as String)
             selectedBuildings.removeAtIndex(index!)
         }
         else{
-            cell?.accessoryType = .Checkmark
-            selectedBuildings.append(buildingArray[indexPath.row] as! String)
+            cell!.accessoryType = .Checkmark
+            selectedBuildings.append(buildingArray[indexPath.row] as String)
             NSLog("Object added")
         }
         
@@ -110,7 +114,7 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
         }
         
         selectedBuildingIndex = indexPath.row
-        selectedBuilding = buildingArray[indexPath.row] as! String
+        selectedBuilding = buildingArray[indexPath.row] as? String
         
         
         
@@ -131,7 +135,7 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
             searchingDataArray.removeAllObjects()
             for var index = 0; index < buildingArray.count; index++
             {
-                var currentString = buildingArray.objectAtIndex(index)as! String
+                var currentString = buildingArray.objectAtIndex(index)as String
                 if currentString.lowercaseString.rangeOfString(searchText.lowercaseString)  != nil {
                     searchingDataArray.addObject(currentString)
                     
