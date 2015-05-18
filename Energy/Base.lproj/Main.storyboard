@@ -17,66 +17,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Energy Production" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZWd-ZE-kTp">
-                                <rect key="frame" x="209" y="102" width="183" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmt-w0-9YJ">
-                                <rect key="frame" x="295" y="137" width="10" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="turbine2" translatesAutoresizingMaskIntoConstraints="NO" id="y3X-GA-Meb">
-                                <rect key="frame" x="180" y="339" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="CyS-Ks-Qqd"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turbine #1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBz-ga-SqA">
-                                <rect key="frame" x="260" y="301" width="81" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turbine #2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0k-91-u4P">
-                                <rect key="frame" x="260" y="468" width="81" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="turbine1" translatesAutoresizingMaskIntoConstraints="NO" id="7jl-hL-wCN">
-                                <rect key="frame" x="180" y="176" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="a5T-tR-EOX"/>
-                                    <constraint firstAttribute="width" constant="240" id="dXJ-wX-QS7"/>
-                                </constraints>
-                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="4aa-bd-4cM">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="IRb-ad-k2j">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IRb-ad-k2j" id="ONi-oo-GyT">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="m8d-eK-OLe"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="jVK-Ub-TIX"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="wBz-ga-SqA" firstAttribute="leading" secondItem="Y0k-91-u4P" secondAttribute="leading" id="3f8-Kv-Y6o"/>
-                            <constraint firstItem="7jl-hL-wCN" firstAttribute="leading" secondItem="y3X-GA-Meb" secondAttribute="leading" id="961-Ri-G0l"/>
-                            <constraint firstItem="7jl-hL-wCN" firstAttribute="centerX" secondItem="hmt-w0-9YJ" secondAttribute="centerX" id="EBG-g3-m9I"/>
-                            <constraint firstItem="y3X-GA-Meb" firstAttribute="trailing" secondItem="7jl-hL-wCN" secondAttribute="trailing" id="MEc-8e-7Q0"/>
-                            <constraint firstItem="hmt-w0-9YJ" firstAttribute="top" secondItem="ZWd-ZE-kTp" secondAttribute="bottom" constant="14" id="NXc-IZ-yEV"/>
-                            <constraint firstItem="7jl-hL-wCN" firstAttribute="centerX" secondItem="wBz-ga-SqA" secondAttribute="centerX" id="P1R-Hl-kTq"/>
-                            <constraint firstItem="y3X-GA-Meb" firstAttribute="top" secondItem="wBz-ga-SqA" secondAttribute="bottom" constant="17" id="WIA-ZS-b5L"/>
-                            <constraint firstItem="ZWd-ZE-kTp" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="38" id="bJF-IT-twq"/>
-                            <constraint firstItem="hmt-w0-9YJ" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="cfC-JE-MQY"/>
-                            <constraint firstItem="hmt-w0-9YJ" firstAttribute="centerX" secondItem="ZWd-ZE-kTp" secondAttribute="centerX" id="gqM-bZ-Y2n"/>
-                            <constraint firstItem="Y0k-91-u4P" firstAttribute="top" secondItem="y3X-GA-Meb" secondAttribute="bottom" constant="1" id="ish-Ut-jQi"/>
-                            <constraint firstItem="7jl-hL-wCN" firstAttribute="top" secondItem="hmt-w0-9YJ" secondAttribute="bottom" constant="18" id="rsi-Qa-uFh"/>
-                            <constraint firstItem="y3X-GA-Meb" firstAttribute="top" secondItem="7jl-hL-wCN" secondAttribute="bottom" constant="35" id="s8x-NY-xv2"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Energy Production" id="SZB-DC-oZG">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="xFg-QG-dYk"/>
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="xFg-QG-dYk" id="5wy-9N-DJ1"/>
+                        <outlet property="tableView" destination="4aa-bd-4cM" id="vfF-SB-vrk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -307,13 +273,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e1p-0X-9YQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1147" y="287"/>
+            <point key="canvasLocation" x="843" y="-275"/>
         </scene>
     </scenes>
     <resources>
         <image name="menu" width="22" height="22"/>
-        <image name="turbine1" width="500" height="335"/>
-        <image name="turbine2" width="400" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="d3h-Tn-Dke"/>
