@@ -34,8 +34,25 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         
+        // Sample date data
+        let dateComponents = NSDateComponents()
+        dateComponents.year = 2015
+        dateComponents.month = 05
+        dateComponents.day = 09
+        let startDate = NSCalendar.currentCalendar().dateFromComponents(dateComponents)!
         
+        // name, startdate, enddate, resolution
+        let data : DataRetreiver = DataRetreiver(name: "carleton_wind_production", startDate: startDate, endDate: startDate, resolution: "hour")
         
+        data.fetch(buildGraphExample)
+        println("Started Connection")
+        
+    }
+    
+    // TEST FUNCTION
+    func buildGraphExample(results:NSArray) {
+        println("Results:")
+        println(results)
     }
     
     
