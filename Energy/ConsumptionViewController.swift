@@ -15,6 +15,7 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
     @IBOutlet var tableView: UITableView!
     @IBOutlet var searchBarObj: UISearchBar!
     
+    @IBOutlet var menuButton: UIBarButtonItem!
     
     var selectedBuilding:String? = nil
     var selectedBuildingIndex:Int? = nil
@@ -32,6 +33,12 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
         buildingArray = ["Burton", "Willis", "Nourse", "Cassat", "Meyers", "Library" , "Boliou"]
         searchingDataArray = []
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
+        if self.revealViewController() != nil {
+            menuButton.target = self.revealViewController()
+            menuButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
         
         // Sample date data
         let dateComponents = NSDateComponents()
@@ -67,9 +74,9 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        var cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
+        var cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
         if isSearching == true{
-            cell.textLabel!.text = searchingDataArray[indexPath.row] as NSString as String
+            cell.textLabel!.text = searchingDataArray[indexPath.row] as! NSString as String
         }else{
             cell.textLabel!.text = buildingArray[indexPath.row] as? String
         }
@@ -85,22 +92,22 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if isSearching == false{
-            println(" cell Selected #\(indexPath.row)! \(buildingArray[indexPath.row] as NSString)")
+            println(" cell Selected #\(indexPath.row)! \(buildingArray[indexPath.row] as! NSString)")
         }
         else{
-            println(" cell Selected #\(indexPath.row)! \(searchingDataArray[indexPath.row] as NSString)")
+            println(" cell Selected #\(indexPath.row)! \(searchingDataArray[indexPath.row] as! NSString)")
         }
         
         //update the checkmark for the current row
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         if cell!.accessoryType == .Checkmark{
             cell?.accessoryType = .None
-            var index = find(selectedBuildings, buildingArray[indexPath.row] as String)
+            var index = find(selectedBuildings, buildingArray[indexPath.row] as! String)
             selectedBuildings.removeAtIndex(index!)
         }
         else{
             cell!.accessoryType = .Checkmark
-            selectedBuildings.append(buildingArray[indexPath.row] as String)
+            selectedBuildings.append(buildingArray[indexPath.row] as! String)
             NSLog("Object added")
         }
         
@@ -135,7 +142,7 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
             searchingDataArray.removeAllObjects()
             for var index = 0; index < buildingArray.count; index++
             {
-                var currentString = buildingArray.objectAtIndex(index)as String
+                var currentString = buildingArray.objectAtIndex(index)as! String
                 if currentString.lowercaseString.rangeOfString(searchText.lowercaseString)  != nil {
                     searchingDataArray.addObject(currentString)
                     

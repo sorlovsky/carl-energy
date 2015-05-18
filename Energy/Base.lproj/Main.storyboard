@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14E11f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ayz-QH-wM8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14E11f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5T3-zP-DGX">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Energy Production-->
@@ -28,13 +29,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="turbine1" translatesAutoresizingMaskIntoConstraints="NO" id="7jl-hL-wCN">
-                                <rect key="frame" x="180" y="176" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="a5T-tR-EOX"/>
-                                    <constraint firstAttribute="width" constant="240" id="dXJ-wX-QS7"/>
-                                </constraints>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="turbine2" translatesAutoresizingMaskIntoConstraints="NO" id="y3X-GA-Meb">
                                 <rect key="frame" x="180" y="339" width="240" height="128"/>
                                 <constraints>
@@ -53,6 +47,13 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="turbine1" translatesAutoresizingMaskIntoConstraints="NO" id="7jl-hL-wCN">
+                                <rect key="frame" x="180" y="176" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="a5T-tR-EOX"/>
+                                    <constraint firstAttribute="width" constant="240" id="dXJ-wX-QS7"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -71,11 +72,89 @@
                             <constraint firstItem="y3X-GA-Meb" firstAttribute="top" secondItem="7jl-hL-wCN" secondAttribute="bottom" constant="35" id="s8x-NY-xv2"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Energy Production" id="SZB-DC-oZG"/>
+                    <navigationItem key="navigationItem" title="Energy Production" id="SZB-DC-oZG">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="xFg-QG-dYk"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuButton" destination="xFg-QG-dYk" id="5wy-9N-DJ1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1867" y="467"/>
+            <point key="canvasLocation" x="2679" y="467"/>
+        </scene>
+        <!--Reveal View Controller-->
+        <scene sceneID="pxA-tO-p1o">
+            <objects>
+                <viewController id="5T3-zP-DGX" customClass="SWRevealViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Wdo-jw-P3q"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nd3-lR-W2V"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ol2-C9-KE0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="rtK-kI-Q2P" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="KEy-jh-sj7"/>
+                        <segue destination="wDK-9S-ufY" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="ejp-Pm-Vbw"/>
+                        <segue destination="e96-7b-uhn" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="Amk-bI-UJa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X1t-yG-Q5o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="630" y="407"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="obc-ad-xAz">
+            <objects>
+                <viewController id="e96-7b-uhn" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nKy-sD-eKT"/>
+                        <viewControllerLayoutGuide type="bottom" id="FgO-YH-XUC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aAu-Lc-mkK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEG-ID-cyv">
+                                <rect key="frame" x="49" y="44" width="92" height="30"/>
+                                <state key="normal" title="Consumption">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Pf-Et-wQz">
+                                <rect key="frame" x="49" y="82" width="75" height="30"/>
+                                <state key="normal" title="Production">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="wDK-9S-ufY" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="h2Y-4Z-h4S"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rtE-aB-vgZ">
+                                <rect key="frame" x="49" y="44" width="92" height="30"/>
+                                <state key="normal" title="Consumption">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="rtK-kI-Q2P" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="d3h-Tn-Dke"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8Pf-Et-wQz" firstAttribute="leading" secondItem="QEG-ID-cyv" secondAttribute="leading" id="M7a-NB-JVa"/>
+                            <constraint firstItem="QEG-ID-cyv" firstAttribute="top" secondItem="nKy-sD-eKT" secondAttribute="bottom" constant="24" id="PGh-ec-Fbz"/>
+                            <constraint firstItem="8Pf-Et-wQz" firstAttribute="top" secondItem="QEG-ID-cyv" secondAttribute="bottom" constant="8" symbolic="YES" id="kGR-8A-SZb"/>
+                            <constraint firstItem="QEG-ID-cyv" firstAttribute="leading" secondItem="aAu-Lc-mkK" secondAttribute="leadingMargin" constant="33" id="kZU-Oy-vxt"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ULc-Bp-Sxa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1634" y="-562"/>
         </scene>
         <!--Select Building(s)-->
         <scene sceneID="mko-xK-yUb">
@@ -89,14 +168,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="vuf-xP-Cfp">
+                            <searchBar contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vuf-xP-Cfp">
                                 <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="rj5-aq-nxW" id="RSF-Lx-vci"/>
                                 </connections>
                             </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qgd-W7-B1h">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qgd-W7-B1h">
                                 <rect key="frame" x="255" y="498" width="91" height="30"/>
                                 <state key="normal" title="Create report">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -105,7 +184,7 @@
                                     <action selector="reportButtonPressed:" destination="rj5-aq-nxW" eventType="touchUpInside" id="WMP-c4-eSC"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qaE-Bi-XWk">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qaE-Bi-XWk">
                                 <rect key="frame" x="0.0" y="108" width="600" height="382"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -127,9 +206,14 @@
                             <constraint firstItem="qaE-Bi-XWk" firstAttribute="centerX" secondItem="Qgd-W7-B1h" secondAttribute="centerX" id="uJK-OX-5E1"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Select Building(s)" id="fUj-k0-VVS"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Select Building(s)" id="fUj-k0-VVS">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="etj-jP-QI3"/>
+                    </navigationItem>
                     <value key="contentSizeForViewInPopover" type="size" width="150" height="600"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="menuButton" destination="etj-jP-QI3" id="dAB-Lg-vGa"/>
                         <outlet property="searchBarObj" destination="vuf-xP-Cfp" id="gPg-hf-Gnu"/>
                         <outlet property="searchDisplayController" destination="TCQ-x3-40x" id="jLw-Cb-dXS"/>
                         <outlet property="tableView" destination="qaE-Bi-XWk" id="SLj-OM-hOP"/>
@@ -154,7 +238,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1065" y="1285"/>
+            <point key="canvasLocation" x="1877" y="1285"/>
         </scene>
         <!--Detail Consumption View Controller-->
         <scene sceneID="bua-Ln-gS7">
@@ -187,70 +271,52 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xBc-6i-tZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1881" y="1285"/>
+            <point key="canvasLocation" x="2693" y="1285"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="wcW-Nf-Fw4">
+        <!--Navigation Controller-->
+        <scene sceneID="SpI-U0-TAc">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ayz-QH-wM8" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wDK-9S-ufY" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="nDh-8T-4JY">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="AXN-wX-duE" kind="relationship" relationship="viewControllers" id="cVM-VF-BV5"/>
-                        <segue destination="EcD-Q4-DFJ" kind="relationship" relationship="viewControllers" id="Mpy-7c-Si1"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="n0r-AT-kkc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="253" y="467"/>
-        </scene>
-        <!--Usage-->
-        <scene sceneID="Cv1-2H-2qF">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EcD-Q4-DFJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Usage" image="home" id="Kea-8m-KPf"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="394-tW-08E">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rka-FH-OCd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="rj5-aq-nxW" kind="relationship" relationship="rootViewController" id="PIA-dO-xjx"/>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="Yfs-mq-bN5"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="le8-NZ-yJd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dSk-iP-v7T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="253" y="1285"/>
+            <point key="canvasLocation" x="1867" y="467"/>
         </scene>
-        <!--Production-->
-        <scene sceneID="0SI-FG-Lmt">
+        <!--Navigation Controller-->
+        <scene sceneID="jS2-FN-q1p">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AXN-wX-duE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Production" image="windmill" id="19t-6O-Cxc"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rtK-kI-Q2P" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="G2h-8D-gPS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mce-oI-7KH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="KTp-8F-Nyk"/>
+                        <segue destination="rj5-aq-nxW" kind="relationship" relationship="rootViewController" id="1AV-SQ-SvL"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mkj-yp-aPg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e1p-0X-9YQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1055" y="467"/>
+            <point key="canvasLocation" x="1147" y="287"/>
         </scene>
     </scenes>
     <resources>
-        <image name="home" width="30" height="30"/>
+        <image name="menu" width="22" height="22"/>
         <image name="turbine1" width="500" height="335"/>
         <image name="turbine2" width="400" height="300"/>
-        <image name="windmill" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="d3h-Tn-Dke"/>
+        <segue reference="h2Y-4Z-h4S"/>
+    </inferredMetricsTieBreakers>
 </document>
