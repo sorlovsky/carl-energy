@@ -17,11 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="4aa-bd-4cM">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="4aa-bd-4cM">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="IRb-ad-k2j">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="IRb-ad-k2j">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IRb-ad-k2j" id="ONi-oo-GyT">
@@ -36,6 +36,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4aa-bd-4cM" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="98a-pl-DcV"/>
+                            <constraint firstItem="4aa-bd-4cM" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="PaW-Pr-dys"/>
+                            <constraint firstAttribute="trailing" secondItem="4aa-bd-4cM" secondAttribute="trailing" id="tE8-aU-qKo"/>
+                            <constraint firstItem="4aa-bd-4cM" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="yHt-TZ-HZy"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Energy Production" id="SZB-DC-oZG">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="xFg-QG-dYk"/>
@@ -218,16 +224,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1BP-l4-cD5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1BP-l4-cD5">
                                 <rect key="frame" x="278" y="289" width="44" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hed-IO-513">
+                                <rect key="frame" x="180" y="333" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.1294099987" green="0.80783998970000004" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="iNs-oT-J3d"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="W7u-SQ-wez" firstAttribute="top" secondItem="hed-IO-513" secondAttribute="bottom" constant="95" id="4af-gM-2i2"/>
+                            <constraint firstItem="hed-IO-513" firstAttribute="top" secondItem="1BP-l4-cD5" secondAttribute="bottom" constant="23" id="jIc-sd-5lF"/>
                             <constraint firstItem="W7u-SQ-wez" firstAttribute="top" secondItem="1BP-l4-cD5" secondAttribute="bottom" constant="241" id="wXc-wJ-T3c"/>
+                            <constraint firstItem="hed-IO-513" firstAttribute="centerX" secondItem="1BP-l4-cD5" secondAttribute="centerX" id="xmi-zG-9g5"/>
                             <constraint firstItem="1BP-l4-cD5" firstAttribute="centerX" secondItem="5u0-ma-oJY" secondAttribute="centerX" id="ync-He-zYC"/>
                         </constraints>
                     </view>
@@ -280,7 +296,7 @@
         <image name="menu" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="d3h-Tn-Dke"/>
-        <segue reference="h2Y-4Z-h4S"/>
+        <segue reference="KEy-jh-sj7"/>
+        <segue reference="ejp-Pm-Vbw"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -11,7 +11,8 @@
 		941948F91AFD0E1C00C972F6 /* ConsumptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941948F81AFD0E1C00C972F6 /* ConsumptionViewController.swift */; };
 		943407AD1AFEEC7700F71B71 /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943407AC1AFEEC7700F71B71 /* Building.swift */; };
 		943407B11B002C8200F71B71 /* DetailConsumptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943407B01B002C8200F71B71 /* DetailConsumptionViewController.swift */; };
-		943430E31B0A3C89000539D0 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 943430E21B0A3C89000539D0 /* SWRevealViewController.m */; };
+		943430E71B0ADBA1000539D0 /* Spring in Resources */ = {isa = PBXBuildFile; fileRef = 943430E61B0ADBA1000539D0 /* Spring */; };
+		943430EC1B0AE662000539D0 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 943430EA1B0AE662000539D0 /* SWRevealViewController.m */; };
 		945137951AF2EE55002ED072 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945137941AF2EE55002ED072 /* AppDelegate.swift */; };
 		9451379A1AF2EE55002ED072 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 945137981AF2EE55002ED072 /* Main.storyboard */; };
 		9451379C1AF2EE55002ED072 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9451379B1AF2EE55002ED072 /* Images.xcassets */; };
@@ -36,8 +37,9 @@
 		943407AC1AFEEC7700F71B71 /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
 		943407B01B002C8200F71B71 /* DetailConsumptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailConsumptionViewController.swift; sourceTree = "<group>"; };
 		943430E01B0A3C88000539D0 /* Energy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Energy-Bridging-Header.h"; sourceTree = "<group>"; };
-		943430E11B0A3C89000539D0 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "../../../../Downloads/SWRevealViewController-master 7/SWRevealViewController/SWRevealViewController.h"; sourceTree = "<group>"; };
-		943430E21B0A3C89000539D0 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "../../../../Downloads/SWRevealViewController-master 7/SWRevealViewController/SWRevealViewController.m"; sourceTree = "<group>"; };
+		943430E61B0ADBA1000539D0 /* Spring */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Spring; path = "../../../../Downloads/Spring-master/Spring"; sourceTree = "<group>"; };
+		943430E91B0AE662000539D0 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		943430EA1B0AE662000539D0 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		9451378F1AF2EE55002ED072 /* Energy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Energy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		945137931AF2EE55002ED072 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		945137941AF2EE55002ED072 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,16 +93,17 @@
 			children = (
 				941948F61AFD0B5300C972F6 /* ProductionViewController.swift */,
 				941948F81AFD0E1C00C972F6 /* ConsumptionViewController.swift */,
+				943430E61B0ADBA1000539D0 /* Spring */,
 				943407B01B002C8200F71B71 /* DetailConsumptionViewController.swift */,
 				945137941AF2EE55002ED072 /* AppDelegate.swift */,
+				943430E91B0AE662000539D0 /* SWRevealViewController.h */,
+				943430EA1B0AE662000539D0 /* SWRevealViewController.m */,
 				945137981AF2EE55002ED072 /* Main.storyboard */,
 				9451379B1AF2EE55002ED072 /* Images.xcassets */,
 				9451379D1AF2EE55002ED072 /* LaunchScreen.xib */,
 				B10E45BC1B02ED1400DCCA84 /* DataRetreiver.swift */,
 				945137921AF2EE55002ED072 /* Supporting Files */,
 				943407AC1AFEEC7700F71B71 /* Building.swift */,
-				943430E11B0A3C89000539D0 /* SWRevealViewController.h */,
-				943430E21B0A3C89000539D0 /* SWRevealViewController.m */,
 				943430E01B0A3C88000539D0 /* Energy-Bridging-Header.h */,
 			);
 			path = Energy;
@@ -212,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9451379A1AF2EE55002ED072 /* Main.storyboard in Resources */,
+				943430E71B0ADBA1000539D0 /* Spring in Resources */,
 				9451379F1AF2EE55002ED072 /* LaunchScreen.xib in Resources */,
 				9451379C1AF2EE55002ED072 /* Images.xcassets in Resources */,
 			);
@@ -231,7 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				943430E31B0A3C89000539D0 /* SWRevealViewController.m in Sources */,
+				943430EC1B0AE662000539D0 /* SWRevealViewController.m in Sources */,
 				941948F71AFD0B5300C972F6 /* ProductionViewController.swift in Sources */,
 				943407B11B002C8200F71B71 /* DetailConsumptionViewController.swift in Sources */,
 				B10E45BD1B02ED1400DCCA84 /* DataRetreiver.swift in Sources */,
