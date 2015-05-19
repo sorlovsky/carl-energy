@@ -31,10 +31,14 @@ class ProductionViewController: UIViewController, UITableViewDataSource, UITable
         
         cell.textLabel?.text = self.items[indexPath.row]
         
+        
         return cell
     }
     
+
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("You selected cell #\(indexPath.row)!")
+        performSegueWithIdentifier("showGraphSegue", sender: tableView)
     }
 }

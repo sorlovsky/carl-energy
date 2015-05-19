@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8000EB491B0AE66300AF89B0 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8000EB481B0AE66300AF89B0 /* SWRevealViewController.m */; };
+		8000EB4D1B0AE84E00AF89B0 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8000EB4C1B0AE84E00AF89B0 /* GraphView.swift */; };
+		8000EB4F1B0AE89400AF89B0 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8000EB4E1B0AE89400AF89B0 /* GraphViewController.swift */; };
 		941948F71AFD0B5300C972F6 /* ProductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941948F61AFD0B5300C972F6 /* ProductionViewController.swift */; };
 		941948F91AFD0E1C00C972F6 /* ConsumptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941948F81AFD0E1C00C972F6 /* ConsumptionViewController.swift */; };
 		943407AD1AFEEC7700F71B71 /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943407AC1AFEEC7700F71B71 /* Building.swift */; };
@@ -33,6 +35,8 @@
 /* Begin PBXFileReference section */
 		8000EB471B0AE65800AF89B0 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		8000EB481B0AE66300AF89B0 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		8000EB4C1B0AE84E00AF89B0 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		8000EB4E1B0AE89400AF89B0 /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		941948F61AFD0B5300C972F6 /* ProductionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductionViewController.swift; sourceTree = "<group>"; };
 		941948F81AFD0E1C00C972F6 /* ConsumptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumptionViewController.swift; sourceTree = "<group>"; };
 		943407AC1AFEEC7700F71B71 /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
@@ -89,6 +93,8 @@
 		945137911AF2EE55002ED072 /* Energy */ = {
 			isa = PBXGroup;
 			children = (
+				8000EB4E1B0AE89400AF89B0 /* GraphViewController.swift */,
+				8000EB4C1B0AE84E00AF89B0 /* GraphView.swift */,
 				941948F61AFD0B5300C972F6 /* ProductionViewController.swift */,
 				941948F81AFD0E1C00C972F6 /* ConsumptionViewController.swift */,
 				943407B01B002C8200F71B71 /* DetailConsumptionViewController.swift */,
@@ -231,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8000EB4F1B0AE89400AF89B0 /* GraphViewController.swift in Sources */,
 				8000EB491B0AE66300AF89B0 /* SWRevealViewController.m in Sources */,
 				941948F71AFD0B5300C972F6 /* ProductionViewController.swift in Sources */,
 				943407B11B002C8200F71B71 /* DetailConsumptionViewController.swift in Sources */,
@@ -238,6 +245,7 @@
 				941948F91AFD0E1C00C972F6 /* ConsumptionViewController.swift in Sources */,
 				945137951AF2EE55002ED072 /* AppDelegate.swift in Sources */,
 				943407AD1AFEEC7700F71B71 /* Building.swift in Sources */,
+				8000EB4D1B0AE84E00AF89B0 /* GraphView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
