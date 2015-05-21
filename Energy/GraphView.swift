@@ -1,21 +1,25 @@
 //
-//  GraphView.swift
+//  GraphViewController.swift
 //  Energy
 //
-//  Created by mobiledev on 5/18/15.
+//  Created by Caleb Braun on 5/18/15.
 //  Copyright (c) 2015 simonorlovsky. All rights reserved.
+//
+//  This is a template for how we will draw our graphs.  The graphs are drawn using Core Graphics.
+//
+//  Most of the graph display is based off of the tutorial found here: http://www.raywenderlich.com/90693/modern-core-graphics-with-swift-part-2
 //
 
 import UIKit
 
 @IBDesignable class GraphView: UIView {
     
-    //1 - the properties for the gradient
+    //The properties for the background gradient
     @IBInspectable var startColor: UIColor = UIColor.redColor()
     @IBInspectable var endColor: UIColor = UIColor.greenColor()
     
     //Weekly sample data
-    var graphPoints:[Int] = [4, 2, 6, 4, 5, 8, 3]
+    var graphPoints:[Float] = [1,0,0,0,0,0,1]
     
     override func drawRect(rect: CGRect) {
         
@@ -28,22 +32,22 @@ import UIKit
             cornerRadii: CGSize(width: 8.0, height: 8.0))
         path.addClip()
         
-        //2 - get the current context
+        //Drawing the gradient: First needs to get the current context
         let context = UIGraphicsGetCurrentContext()
         let colors = [startColor.CGColor, endColor.CGColor]
         
-        //3 - set up the color space
+        //set up the color space
         let colorSpace = CGColorSpaceCreateDeviceRGB()
         
-        //4 - set up the color stops
+        //set up the color stops
         let colorLocations:[CGFloat] = [0.0, 1.0]
         
-        //5 - create the gradient
+        //create the gradient
         let gradient = CGGradientCreateWithColors(colorSpace,
             colors,
             colorLocations)
         
-        //6 - draw the gradient
+        //draw the gradient
         var startPoint = CGPoint.zeroPoint
         var endPoint = CGPoint(x:0, y:self.bounds.height)
         CGContextDrawLinearGradient(context,
@@ -71,7 +75,7 @@ import UIKit
         let bottomBorder:CGFloat = 50
         let graphHeight = height - topBorder - bottomBorder
         let maxValue = maxElement(self.graphPoints)
-        var columnYPoint = { (graphPoint:Int) -> CGFloat in
+        var columnYPoint = { (graphPoint:Float) -> CGFloat in
             var y:CGFloat = CGFloat(graphPoint) /
                 CGFloat(maxValue) * graphHeight
             y = graphHeight + topBorder - y // Flip the graph
@@ -87,14 +91,13 @@ import UIKit
         //set up the points line
         var graphPath = UIBezierPath()
         //go to start of line
-        graphPath.moveToPoint(CGPoint(x:columnXPoint(0),
-            y:columnYPoint(graphPoints[0])))
+        graphPath.moveToPoint(CGPoint(x:columnXPoint(0), y:columnYPoint(graphPoints[0])))
         
         //add points for each item in the graphPoints array
         //at the correct (x, y) for the point
         for i in 1..<graphPoints.count {
-            let nextPoint = CGPoint(x:columnXPoint(i),
-                y:columnYPoint(graphPoints[i]))
+            let nextPoint = CGPoint(x:columnXPoint(i), y:columnYPoint(graphPoints[i]))
+            
             graphPath.addLineToPoint(nextPoint)
         }
         
@@ -102,13 +105,14 @@ import UIKit
         
         //Draw the circles on top of graph stroke
         for i in 0..<graphPoints.count {
-            var point = CGPoint(x:columnXPoint(i), y:columnYPoint(graphPoints[i]))
+            var point = (x:columnXPoint(i), y:columnYPoint(graphPoints[i]))
             point.x -= 5.0/2
             point.y -= 5.0/2
             
-            let circle = UIBezierPath(ovalInRect:
-                CGRect(origin: point,
-                    size: CGSize(width: 5.0, height: 5.0)))
+            var circleSize = CGSize(width: 5.0, height: 5.0)
+            var circleRect = CGRect(origin: point, size: circleSize)
+            
+            let circle = UIBezierPath(ovalInRect: circleRect)
             circle.fill()
         }
         

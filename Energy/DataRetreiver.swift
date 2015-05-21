@@ -15,22 +15,6 @@ import UIKit
 
 class DataRetreiver: NSObject {
     
-    // This method returns an NSURL based on the requested start and end dates, building, and resolution.
-    func URLFormatter(name : String, startDate: NSDate, endDate : NSDate, resolution : String) -> NSURL {
-        
-        // The NSDateFormatter() changes the date into the correct format for the URL
-        var dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy/MM/dd+HH:mm:ss"
-        
-        var startDateString = dateFormatter.stringFromDate(startDate)
-        var endDateString = dateFormatter.stringFromDate(endDate)
-        
-        // Formats the URL correctly
-        let urlString = "https://rest.buildingos.com/reports/timeseries/?start=\(startDateString)&end=\(endDateString)&resolution=\(resolution)&name=\(name)"
-        
-        return NSURL(string: urlString)!
-    }
-    
     
     
     // Fetches the data based on the URL created upon initialization
@@ -74,6 +58,23 @@ class DataRetreiver: NSObject {
 
         // start the task
         task.resume()
+    }
+    
+    
+    // This method returns an NSURL based on the requested start and end dates, building, and resolution.
+    func URLFormatter(name : String, startDate: NSDate, endDate : NSDate, resolution : String) -> NSURL {
+        
+        // The NSDateFormatter() changes the date into the correct format for the URL
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/dd+HH:mm:ss"
+        
+        var startDateString = dateFormatter.stringFromDate(startDate)
+        var endDateString = dateFormatter.stringFromDate(endDate)
+        
+        // Formats the URL correctly
+        let urlString = "https://rest.buildingos.com/reports/timeseries/?start=\(startDateString)&end=\(endDateString)&resolution=\(resolution)&name=\(name)"
+        
+        return NSURL(string: urlString)!
     }
     
     
