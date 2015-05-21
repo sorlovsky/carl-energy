@@ -52,7 +52,7 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
         // name, startdate, enddate, resolution
         let data : DataRetreiver = DataRetreiver()
         
-        data.fetch("carleton_burton_en_use", startDate: startDate, endDate: endDate, resolution: "hour", callback: buildGraphExample)
+        // data.fetch("carleton_burton_en_use", startDate: startDate, endDate: endDate, resolution: "hour", callback: buildGraphExample)
         
     }
     

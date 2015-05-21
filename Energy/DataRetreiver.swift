@@ -57,9 +57,15 @@ class DataRetreiver: NSObject {
             } else {
                 // Only takes the results of the search and casts as an NSArray
                 if let results: NSArray = jsonResult!["results"] as? NSArray{
-                    dispatch_async(dispatch_get_main_queue(), {
-                        callback(results)
-                    })
+                    var valueResults = [Double]()
+                    for i in results{
+                        if let hour: NSDictionary = i[name] as? NSDictionary{
+                            if let value: Double = hour["value"] as? Double{
+                                valueResults.append(value)
+                            }
+                        }
+                    }
+                    callback(valueResults)
                 }
             }
             

@@ -18,12 +18,13 @@ class GraphViewController: UIViewController {
     @IBOutlet weak var totalEnergyProduced: UILabel!
     @IBOutlet weak var maxLabel: UILabel!
 
+    var buildingName = String()
     
     var sampleWindData:[Int] = [3, 4, 8, 9, 3, 2, 1]
+    var actualData:[Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupGraphDisplay()
 
         // Do any additional setup after loading the view.
     }
@@ -34,17 +35,37 @@ class GraphViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        print("hello")
+        println(buildingName)
+        let searchName = "carleton_\(buildingName.lowercaseString)_en_use"
+        // Sample date data
+        let dateComponents = NSDateComponents()
+        dateComponents.year = 2015
+        dateComponents.month = 05
+        dateComponents.day = 11
+        let startDate = NSCalendar.currentCalendar().dateFromComponents(dateComponents)!
+        dateComponents.day = 17
+        let endDate = NSCalendar.currentCalendar().dateFromComponents(dateComponents)!
+        
+        let data : DataRetreiver = DataRetreiver()
+        data.fetch(searchName, startDate: startDate, endDate: endDate, resolution: "day", callback: setupGraphDisplay)
+        
     }
-    
-    func setupGraphDisplay() {
+
+
+    func setupGraphDisplay(results:NSArray) {
+        println(results)
+        self.actualData = results as [Int]
+        
+        //println(self.actualData)
         
         //Use 7 days for graph - can use any number,
         //but labels and sample data are set up for 7 days
         let noOfDays:Int = 7
         
         //1 - replace last day with today's actual data
-        graphView.graphPoints[graphView.graphPoints.count-1] = sampleWindData[sampleWindData.count-1]
+        graphView.graphPoints[graphView.graphPoints.count-1] = actualData[actualData.count-1]
+        
+        println(graphView.graphPoints)
         
         //2 - indicate that the graph needs to be redrawn
         graphView.setNeedsDisplay()
