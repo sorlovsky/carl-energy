@@ -9,7 +9,7 @@
 import UIKit
 
 class ProductionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     @IBOutlet var tableView: UITableView!
     @IBOutlet var menuButton: UIBarButtonItem!
     
@@ -22,7 +22,9 @@ class ProductionViewController: UIViewController, UITableViewDataSource, UITable
             menuButton.target = self.revealViewController()
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            
         }
+    
 
         
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -34,7 +36,7 @@ class ProductionViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
+        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
         
         cell.textLabel?.text = self.items[indexPath.row]
         
