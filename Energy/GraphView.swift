@@ -105,7 +105,7 @@ import UIKit
         
         //Draw the circles on top of graph stroke
         for i in 0..<graphPoints.count {
-            var point = (x:columnXPoint(i), y:columnYPoint(graphPoints[i]))
+            var point = CGPoint(x:columnXPoint(i), y:columnYPoint(graphPoints[i]))
             point.x -= 5.0/2
             point.y -= 5.0/2
             
