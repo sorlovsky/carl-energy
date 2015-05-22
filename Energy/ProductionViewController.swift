@@ -44,10 +44,20 @@ class ProductionViewController: UIViewController, UITableViewDataSource, UITable
         return cell
     }
     
-
+    // MARK: - Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showGraphSegue" {
+            if let destination = segue.destinationViewController as? GraphViewController {
+                if let buildingIndex = tableView.indexPathForSelectedRow()?.row {
+                    destination.buildingName = items[buildingIndex]
+                }
+            }
+        }
+    }
+    
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println("You selected cell #\(indexPath.row)!")
+        // println("You selected cell #\(indexPath.row)!")
         performSegueWithIdentifier("showGraphSegue", sender: tableView)
     }
 }

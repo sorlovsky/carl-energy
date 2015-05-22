@@ -43,30 +43,7 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-        
-        // Sample date data
-        let dateComponents = NSDateComponents()
-        dateComponents.year = 2015
-        dateComponents.month = 05
-        dateComponents.day = 16
-        let startDate = NSCalendar.currentCalendar().dateFromComponents(dateComponents)!
-        dateComponents.day = 17
-        let endDate = NSCalendar.currentCalendar().dateFromComponents(dateComponents)!
-        
-        // name, startdate, enddate, resolution
-        let data : DataRetreiver = DataRetreiver()
-        
-        data.fetch("carleton_burton_en_use", startDate: startDate, endDate: endDate, resolution: "hour", callback: buildGraphExample)
-        
     }
-    
-    // TEST FUNCTION
-    func buildGraphExample(results:NSArray) {
-        println(results)
-
-
-    }
-    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         if isSearching == true{
