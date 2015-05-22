@@ -19,7 +19,7 @@ import UIKit
     @IBInspectable var endColor: UIColor = UIColor.greenColor()
     
     //Weekly sample data
-    var graphPoints:[Float] = [1,0,0,0,0,0,1]
+    var graphPoints:[Float] = [1,1,1,1,1,1,1]
     
     override func drawRect(rect: CGRect) {
         

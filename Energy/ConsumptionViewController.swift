@@ -37,31 +37,12 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
         searchingDataArray = []
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
-        // Sample date data
-        let dateComponents = NSDateComponents()
-        dateComponents.year = 2015
-        dateComponents.month = 05
-        dateComponents.day = 16
-        let startDate = NSCalendar.currentCalendar().dateFromComponents(dateComponents)!
-        dateComponents.day = 17
-        let endDate = NSCalendar.currentCalendar().dateFromComponents(dateComponents)!
-        
-        // name, startdate, enddate, resolution
-        let data : DataRetreiver = DataRetreiver()
-        
-        data.fetch("carleton_burton_en_use", startDate: startDate, endDate: endDate, resolution: "hour", callback: buildGraphExample)
-        
-    }
-    
-    // TEST FUNCTION
-    func buildGraphExample(results:NSDictionary) {
-        println("Results:")
-        for i in results{
-            println("New Hour \(i)")
+        //SWRevealViewController
+        if self.revealViewController() != nil {
+            menuButton.target = self.revealViewController()
+            menuButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-        
-
-
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -95,14 +76,14 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
             println(" cell Selected #\(indexPath.row)! \(buildingArray[indexPath.row] as! NSString)")
         }
         else{
-            println(" cell Selected #\(indexPath.row)! \(searchingDataArray[indexPath.row]as! NSString)")
+            println(" cell Selected #\(indexPath.row)! \(searchingDataArray[indexPath.row] as! NSString)")
         }
         
         //update the checkmark for the current row
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         if cell!.accessoryType == .Checkmark{
             cell?.accessoryType = .None
-            var index = find(selectedBuildings, buildingArray[indexPath.row]as! String)
+            var index = find(selectedBuildings, buildingArray[indexPath.row] as! String)
             selectedBuildings.removeAtIndex(index!)
         }
         else{
