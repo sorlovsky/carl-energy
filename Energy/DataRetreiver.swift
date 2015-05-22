@@ -34,7 +34,9 @@ class DataRetreiver: NSObject {
     
     
     // Fetches the data based on the URL created upon initialization
-    func fetch(callback: (NSArray)->Void){
+    func fetch(name : String, startDate: NSDate, endDate : NSDate, resolution : String, callback: (NSArray)->Void){
+        
+        var url : NSURL = URLFormatter(name, startDate: startDate, endDate: endDate, resolution: resolution)
         
         let session = NSURLSession.sharedSession()
         
@@ -55,19 +57,13 @@ class DataRetreiver: NSObject {
             } else {
                 // Only takes the results of the search and casts as an NSArray
                 if let results: NSArray = jsonResult!["results"] as? NSArray{
-                    self.data = results
-                    println("Reuslts Found!")
                     callback(results)
-                    
                 }
             }
-            
-            
         })
         
         // start the task
-        task.resume()   
-        
+        task.resume()
     }
     
     
