@@ -12,9 +12,12 @@ import UIKit
 
 class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
+    //Search bar
     @IBOutlet var tableView: UITableView!
     @IBOutlet var searchBarObj: UISearchBar!
     
+    //Menu bar button that triggers SWRevealViewController
+    @IBOutlet var menuButton: UIBarButtonItem!
     
     var selectedBuilding:String? = nil
     var selectedBuildingIndex:Int? = nil
@@ -27,7 +30,8 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        //Search
         isSearching = false
         buildingArray = ["Burton", "Willis", "Nourse", "Cassat", "Meyers", "Library" , "Boliou"]
         searchingDataArray = []
@@ -59,7 +63,6 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
 
 
     }
-    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         if isSearching == true{
@@ -159,6 +162,8 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
         if segue.identifier == "Detail"
         {
             if let destinationVC = segue.destinationViewController as? DetailConsumptionViewController{
+                // Transferring all selected buildings to the DetailComsumptionViewController so that it can 
+                // produce a report comparing buildings.
                 for var index = 0; index < selectedBuildings.count; index++
                 {
                     destinationVC.selectedBuildings.append(self.selectedBuildings[index])
