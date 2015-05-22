@@ -19,6 +19,7 @@
 		9451379C1AF2EE55002ED072 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9451379B1AF2EE55002ED072 /* Images.xcassets */; };
 		9451379F1AF2EE55002ED072 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9451379D1AF2EE55002ED072 /* LaunchScreen.xib */; };
 		945137AB1AF2EE55002ED072 /* EnergyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945137AA1AF2EE55002ED072 /* EnergyTests.swift */; };
+		94D584D91B0D815F000690FB /* ConsumptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D584D81B0D815F000690FB /* ConsumptionTableViewCell.swift */; };
 		B10E45BD1B02ED1400DCCA84 /* DataRetreiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10E45BC1B02ED1400DCCA84 /* DataRetreiver.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		945137A41AF2EE55002ED072 /* EnergyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EnergyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		945137A91AF2EE55002ED072 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		945137AA1AF2EE55002ED072 /* EnergyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyTests.swift; sourceTree = "<group>"; };
+		94D584D81B0D815F000690FB /* ConsumptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumptionTableViewCell.swift; sourceTree = "<group>"; };
 		B10E45BC1B02ED1400DCCA84 /* DataRetreiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataRetreiver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +108,7 @@
 				806FE9451B0D6F1F0040DE5F /* SWRevealViewController.m */,
 				945137921AF2EE55002ED072 /* Supporting Files */,
 				943430E01B0A3C88000539D0 /* Energy-Bridging-Header.h */,
+				94D584D81B0D815F000690FB /* ConsumptionTableViewCell.swift */,
 			);
 			path = Energy;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				B10E45BD1B02ED1400DCCA84 /* DataRetreiver.swift in Sources */,
 				806FE9461B0D6F1F0040DE5F /* SWRevealViewController.m in Sources */,
 				941948F91AFD0E1C00C972F6 /* ConsumptionViewController.swift in Sources */,
+				94D584D91B0D815F000690FB /* ConsumptionTableViewCell.swift in Sources */,
 				945137951AF2EE55002ED072 /* AppDelegate.swift in Sources */,
 				8000EB4D1B0AE84E00AF89B0 /* GraphView.swift in Sources */,
 			);

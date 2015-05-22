@@ -10,6 +10,10 @@ import UIKit
 
 class ConsumptionTableViewCell: UITableViewCell {
 
+    @IBOutlet var buildingImage: UIImageView!
+    @IBOutlet var title: UILabel!
+    @IBOutlet var subtitle: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
