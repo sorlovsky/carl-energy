@@ -19,12 +19,18 @@ import UIKit
     @IBInspectable var endColor: UIColor = UIColor.greenColor()
     
     //Weekly sample data
-    var graphPoints:[Float] = [1,1,1,1,1,1,1]
+    var graphPoints:[Double] = []
     
     override func drawRect(rect: CGRect) {
         
-        let width = rect.width
-        let height = rect.height
+        if graphPoints.count == 0 {
+            return
+        }
+        
+        let width = Double(rect.width)
+        let height = Double(rect.height)
+        
+        println("Setting up the graph of width: \(width) and height: \(height)")
         
         //set up background clipping area
         var path = UIBezierPath(roundedRect: rect,
@@ -56,28 +62,23 @@ import UIKit
             endPoint,
             0)
         
-        
         //calculate the x point
-        
-        let margin:CGFloat = 20.0
-        var columnXPoint = { (column:Int) -> CGFloat in
+        let margin:Double = 20.0
+        var columnXPoint = { (column:Int) -> Double in
             //Calculate gap between points
-            let spacer = (width - margin*2 - 4) /
-                CGFloat((self.graphPoints.count - 1))
-            var x:CGFloat = CGFloat(column) * spacer
+            let spacer = (width - margin*2 - 4.0) / Double(self.graphPoints.count - 1)
+            var x:Double = Double(column) * spacer
             x += margin + 2
             return x
         }
             
         // calculate the y point
-        
-        let topBorder:CGFloat = 60
-        let bottomBorder:CGFloat = 50
+        let topBorder:Double = 60
+        let bottomBorder:Double = 50
         let graphHeight = height - topBorder - bottomBorder
         let maxValue = maxElement(self.graphPoints)
-        var columnYPoint = { (graphPoint:Float) -> CGFloat in
-            var y:CGFloat = CGFloat(graphPoint) /
-                CGFloat(maxValue) * graphHeight
+        var columnYPoint = { (graphPoint:Double) -> Double in
+            var y:Double = graphPoint / maxValue * graphHeight
             y = graphHeight + topBorder - y // Flip the graph
             return y
         }
@@ -142,4 +143,9 @@ import UIKit
         linePath.stroke()
 
     }
+    
+    func drawGraphPoints(points : [Double]) {
+        self.graphPoints = points
+    }
+    
 }

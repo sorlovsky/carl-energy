@@ -21,13 +21,14 @@ class GraphViewController: UIViewController {
     @IBOutlet weak var graphView: GraphView!
     
     //Label outlets
-    @IBOutlet weak var averageEnergyProduced: UILabel!
-    @IBOutlet weak var totalEnergyProduced: UILabel!
+    @IBOutlet weak var averageEnergyProducedValue: UILabel!
+    @IBOutlet weak var totalEnergyProducedValue: UILabel!
+    @IBOutlet weak var averageEnergyProducedLabel: UILabel!
+    @IBOutlet weak var totalEnergyProducedLabel: UILabel!
+    
     @IBOutlet weak var maxLabel: UILabel!
 
     var buildingName = String()
-    
-    var dataArray:[Float] = []
     
     // This function gets called whenever the view appears from a segue from the ProductionViewController
     override func viewWillAppear(animated: Bool) {
@@ -72,30 +73,34 @@ class GraphViewController: UIViewController {
 
 
     func setupGraphDisplay(results:NSArray) {
-        // println(results)
-        self.dataArray = results as! [Float]
+        let dataArray = results as! [Double]
         
         //Use 7 days for graph - can use any number,
         //but labels and sample data are set up for 7 days
         let noOfDays:Int = 7
         
         //Add building data to the graph
-        for i in 0...graphView.graphPoints.count-1{
-             graphView.graphPoints[i] = dataArray[i]
-        }
+        graphView.drawGraphPoints(dataArray)
         
-        println(graphView.graphPoints)
-        
-        //Indicate that the graph needs to be redrawn
-        graphView.setNeedsDisplay()
-        
-        maxLabel.text = "\(maxElement(graphView.graphPoints))"
+        println("The data has been retrieved.  The values are: \(graphView.graphPoints)")
         
         //Calculate average and total from graphPoints
         let total = graphView.graphPoints.reduce(0, combine: +)
-        let average = total / Float(graphView.graphPoints.count)
-        averageEnergyProduced.text = "\(average)"
-        totalEnergyProduced.text = "\(total)"
+        let average = total / Double(graphView.graphPoints.count)
+        
+        //Indicate that the graph needs to be redrawn and labels updated on the main queue
+        dispatch_async(dispatch_get_main_queue()) {
+            // Round values to 100s places
+            self.maxLabel.text = "\(Int(maxElement(dataArray)))"
+            self.averageEnergyProducedValue.text = "\(round(100 * average) / 100)"
+            self.totalEnergyProducedValue.text = "\(round(100 * total) / 100)"
+            
+            // Set text labels visible
+            self.averageEnergyProducedLabel.hidden = false
+            self.totalEnergyProducedLabel.hidden = false
+            
+            self.graphView.setNeedsDisplay()
+        }
         
         
         //set up labels
@@ -112,18 +117,23 @@ class GraphViewController: UIViewController {
         
         let days = ["S", "S", "M", "T", "W", "T", "F"]
         
+        println("Today starts with the letter: \(days[weekday])")
+        
         //Set up the day name labels with correct day
         for i in reverse(1...days.count) {
             if let labelView = graphView.viewWithTag(i) as? UILabel {
                 if weekday == 7 {
                     weekday = 0
                 }
-                labelView.text = days[weekday--]
+                dispatch_async(dispatch_get_main_queue()) {
+                    labelView.text = days[weekday--]
+                }
                 if weekday < 0 {
                     weekday = days.count - 1
                 }
             }
         }
+        
     }
     
 
