@@ -13,7 +13,7 @@ class ProductionViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet var tableView: UITableView!
     @IBOutlet var menuButton: UIBarButtonItem!
     
-    var items: [String] = ["Burton", "Cassat", "Davis"]
+    var items: [String] = ["Turbine 1", "Turbine 2", "Solar PV"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
