@@ -31,7 +31,6 @@ class GraphViewController: UIViewController {
     
     // This function gets called whenever the view appears from a segue from the ProductionViewController
     override func viewWillAppear(animated: Bool) {
-        println(buildingName)
         
         /*  A note about building names:
             When asking the database for information about a specific building, the formatting is very precise.  For
@@ -66,6 +65,8 @@ class GraphViewController: UIViewController {
         
         let data : DataRetreiver = DataRetreiver()
         // Fetches the data.  When the data is retreived it calls setupGraphDisplay()
+        println("I'm here")
+        println(buildingName)
         data.fetch(searchName, startDate: startDate, endDate: endDate, resolution: "day", callback: setupGraphDisplay)
 
     }
@@ -109,6 +110,7 @@ class GraphViewController: UIViewController {
         let components = calendar.components(componentOptions,
             fromDate: NSDate())
         var weekday = components.weekday
+        println("yes")
         
         let days = ["S", "S", "M", "T", "W", "T", "F"]
         
