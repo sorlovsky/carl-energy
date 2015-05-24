@@ -23,7 +23,7 @@ import UIKit
 //    var graphPoints:[Float] = [1,0,0,0,0,0,1]
 //=======
     //Weekly sample data
-    var graphPoints:[Double] = []
+    var graphPoints:[Double] = [1,0,0,0,0,0,1]
 
     
     override func drawRect(rect: CGRect) {
