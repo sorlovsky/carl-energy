@@ -24,16 +24,24 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
     
     var isSearching:Bool!
     
-    var buildingArray:NSMutableArray!
+    var buildingArray = [String]()
     var searchingDataArray:NSMutableArray!
     var selectedBuildings = [String]()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        
+        //Get the buildings from buildings.plist and add them to the buildingArray
+        var buildingsDictionaries = []
+        if let path = NSBundle.mainBundle().pathForResource("buildings", ofType: "plist") {
+            buildingsDictionaries = NSArray(contentsOfFile: path)!
+        }
+        for dict in buildingsDictionaries {
+            var buildingName = dict["displayName"] as String
+            self.buildingArray.append(buildingName)
+        }
         
         //Search
         isSearching = false
-        buildingArray = ["Burton", "Willis", "Nourse", "Cassat", "Meyers", "Library" , "Boliou"]
         searchingDataArray = []
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
@@ -43,6 +51,8 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+        
+        super.viewDidLoad()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -59,7 +69,7 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
         if isSearching == true{
             cell.textLabel!.text = searchingDataArray[indexPath.row] as NSString as String
         }else{
-            cell.textLabel!.text = buildingArray[indexPath.row] as? String
+            cell.textLabel!.text = buildingArray[indexPath.row]
         }
         
         if indexPath.row == selectedBuildingIndex {
@@ -102,7 +112,7 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
         }
         
         selectedBuildingIndex = indexPath.row
-        selectedBuilding = buildingArray[indexPath.row] as? String
+        selectedBuilding = buildingArray[indexPath.row]
         
         
         
@@ -123,7 +133,7 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
             searchingDataArray.removeAllObjects()
             for var index = 0; index < buildingArray.count; index++
             {
-                var currentString = buildingArray.objectAtIndex(index)as String
+                var currentString = buildingArray[index]
                 if currentString.lowercaseString.rangeOfString(searchText.lowercaseString)  != nil {
                     searchingDataArray.addObject(currentString)
                     

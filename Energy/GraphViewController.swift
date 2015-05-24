@@ -119,19 +119,22 @@ class GraphViewController: UIViewController {
         
         let days = ["S", "S", "M", "T", "W", "T", "F"]
         
+        println("Today starts with the letter: \(days[weekday])")
+        println("weekday part 1: ")
+        println(weekday)
+        
         //Set up the day name labels with correct day
         for i in reverse(1...days.count) {
             if let labelView = graphView.viewWithTag(i) as? UILabel {
                 if weekday == 7 {
                     weekday = 0
                 }
-                dispatch_async(dispatch_get_main_queue()) {
+                dispatch_sync(dispatch_get_main_queue()) {
                     if weekday < 0 {
                         weekday = days.count - 1
                     }
-                }
-                if weekday < 0 {
-                    weekday = days.count - 1
+                    labelView.text = days[weekday]
+                    weekday = weekday-1
                 }
             }
         }
