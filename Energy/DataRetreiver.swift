@@ -52,14 +52,11 @@ class DataRetreiver: NSObject {
                     callback(valueResults)
                 }
             }
-            
-            
         })
-
+        
         // start the task
         task.resume()
     }
-    
     
     // This method returns an NSURL based on the requested start and end dates, building, and resolution.
     func URLFormatter(name : String, startDate: NSDate, endDate : NSDate, resolution : String) -> NSURL {
