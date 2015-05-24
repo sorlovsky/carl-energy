@@ -11,6 +11,7 @@
 		8000EB4F1B0AE89400AF89B0 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8000EB4E1B0AE89400AF89B0 /* GraphViewController.swift */; };
 		806FE9461B0D6F1F0040DE5F /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 806FE9451B0D6F1F0040DE5F /* SWRevealViewController.m */; };
 		806FE9471B0D6FD90040DE5F /* SWRevealViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 806FE9441B0D6F180040DE5F /* SWRevealViewController.h */; };
+		80FD194B1B128F3D00C7FE1A /* buildings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80FD194A1B128F3D00C7FE1A /* buildings.plist */; };
 		941948F71AFD0B5300C972F6 /* ProductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941948F61AFD0B5300C972F6 /* ProductionViewController.swift */; };
 		941948F91AFD0E1C00C972F6 /* ConsumptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941948F81AFD0E1C00C972F6 /* ConsumptionViewController.swift */; };
 		943407B11B002C8200F71B71 /* DetailConsumptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943407B01B002C8200F71B71 /* DetailConsumptionViewController.swift */; };
@@ -38,6 +39,7 @@
 		8000EB4E1B0AE89400AF89B0 /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		806FE9441B0D6F180040DE5F /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		806FE9451B0D6F1F0040DE5F /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		80FD194A1B128F3D00C7FE1A /* buildings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = buildings.plist; sourceTree = "<group>"; };
 		941948F61AFD0B5300C972F6 /* ProductionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductionViewController.swift; sourceTree = "<group>"; };
 		941948F81AFD0E1C00C972F6 /* ConsumptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumptionViewController.swift; sourceTree = "<group>"; };
 		943407B01B002C8200F71B71 /* DetailConsumptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailConsumptionViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 		945137921AF2EE55002ED072 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				80FD194A1B128F3D00C7FE1A /* buildings.plist */,
 				945137931AF2EE55002ED072 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -220,6 +223,7 @@
 			files = (
 				9451379A1AF2EE55002ED072 /* Main.storyboard in Resources */,
 				9451379F1AF2EE55002ED072 /* LaunchScreen.xib in Resources */,
+				80FD194B1B128F3D00C7FE1A /* buildings.plist in Resources */,
 				9451379C1AF2EE55002ED072 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

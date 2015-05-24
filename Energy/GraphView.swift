@@ -34,9 +34,7 @@ import UIKit
         
         let width = Double(rect.width)
         let height = Double(rect.height)
-        
-        println("Setting up the graph of width: \(width) and height: \(height)")
-        
+                
         //set up background clipping area
         var path = UIBezierPath(roundedRect: rect,
             byRoundingCorners: UIRectCorner.AllCorners,
