@@ -70,7 +70,6 @@ class DataRetreiver: NSObject {
         
         // Formats the URL correctly
         let urlString = "https://rest.buildingos.com/reports/timeseries/?start=\(startDateString)&end=\(endDateString)&resolution=\(resolution)&name=\(name)"
-        
         return NSURL(string: urlString)!
     }
     

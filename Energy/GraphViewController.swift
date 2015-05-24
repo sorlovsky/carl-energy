@@ -73,7 +73,7 @@ class GraphViewController: UIViewController {
 
 
     func setupGraphDisplay(results:NSArray) {
-        let dataArray = results as! [Double]
+        let dataArray = results as [Double]
         
         //Use 7 days for graph - can use any number,
         //but labels and sample data are set up for 7 days
@@ -117,8 +117,6 @@ class GraphViewController: UIViewController {
         
         let days = ["S", "S", "M", "T", "W", "T", "F"]
         
-        println("Today starts with the letter: \(days[weekday])")
-        
         //Set up the day name labels with correct day
         for i in reverse(1...days.count) {
             if let labelView = graphView.viewWithTag(i) as? UILabel {
@@ -126,7 +124,9 @@ class GraphViewController: UIViewController {
                     weekday = 0
                 }
                 dispatch_async(dispatch_get_main_queue()) {
-                    labelView.text = days[weekday--]
+                    if weekday < 0 {
+                        weekday = days.count - 1
+                    }
                 }
                 if weekday < 0 {
                     weekday = days.count - 1
