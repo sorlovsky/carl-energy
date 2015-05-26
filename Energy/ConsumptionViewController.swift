@@ -8,9 +8,7 @@
 
 import UIKit
 
-
-
-class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     //Search bar
     @IBOutlet var tableView: UITableView!
@@ -21,20 +19,31 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
     
     var selectedBuilding:String? = nil
     var selectedBuildingIndex:Int? = nil
-    
+
+    //Building Data
+    var buildingArray = [String]()
+    var buildingImageNames = [String]()
+
     var isSearching:Bool!
-    
-    var buildingArray:NSMutableArray!
-    var searchingDataArray:NSMutableArray!
+    var searchingDataArray = [String]()
     var selectedBuildings = [String]()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        
+        //Get the buildings from buildings.plist and add them to the buildingArray
+        var buildingsDictionaries = []
+        if let path = NSBundle.mainBundle().pathForResource("buildings", ofType: "plist") {
+            buildingsDictionaries = NSArray(contentsOfFile: path)!
+        }
+        for dict in buildingsDictionaries {
+            var buildingName = dict["displayName"] as String
+            var buildingImage = dict["image"] as String
+            self.buildingArray.append(buildingName)
+            self.buildingImageNames.append(buildingImage)
+        }
         
         //Search
         isSearching = false
-        buildingArray = ["Burton", "Willis", "Nourse", "Cassat", "Meyers", "Library" , "Boliou"]
-        searchingDataArray = []
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         //SWRevealViewController
@@ -43,6 +52,8 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+        
+        super.viewDidLoad()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -59,7 +70,8 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
         if isSearching == true{
             cell.textLabel!.text = searchingDataArray[indexPath.row] as! NSString as String
         }else{
-            cell.textLabel!.text = buildingArray[indexPath.row] as? String
+            cell.textLabel!.text = buildingArray[indexPath.row]
+            cell.imageView!.image = UIImage(named:buildingImageNames[indexPath.row])
         }
         
         if indexPath.row == selectedBuildingIndex {
@@ -102,7 +114,7 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
         }
         
         selectedBuildingIndex = indexPath.row
-        selectedBuilding = buildingArray[indexPath.row] as? String
+        selectedBuilding = buildingArray[indexPath.row]
         
         
         
@@ -120,12 +132,12 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
         } else {
 //            println(" search text %@ ",searchBar.text as NSString)
             isSearching = true
-            searchingDataArray.removeAllObjects()
+            searchingDataArray.removeAll()
             for var index = 0; index < buildingArray.count; index++
             {
                 var currentString = buildingArray.objectAtIndex(index)as! String
                 if currentString.lowercaseString.rangeOfString(searchText.lowercaseString)  != nil {
-                    searchingDataArray.addObject(currentString)
+                    searchingDataArray.append(currentString)
                     
                 }
             }
