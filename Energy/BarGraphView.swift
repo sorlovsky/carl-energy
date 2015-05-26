@@ -61,13 +61,15 @@ import UIKit
         // draw a bar graph
         
         let rectanglePath = CGPathCreateMutable()
-        let points = [CGPoint(x:25, y:25), CGPoint(x:25, y:50), CGPoint(x:50, y:50), CGPoint(x:50, y:25)]
+        let points = [CGPoint(x:0, y:25), CGPoint(x:0, y:50), CGPoint(x:width-20, y:50), CGPoint(x:width-20, y:25)]
         var cpg = points[0]
         CGPathMoveToPoint(rectanglePath, nil, cpg.x, cpg.y)
         for p in points {
             CGPathAddLineToPoint(rectanglePath, nil, p.x, p.y)
         }
         CGPathCloseSubpath(rectanglePath)
+        
+        CGContextAddPath(context, rectanglePath)
         CGContextSetFillColorWithColor(context, UIColor.blackColor().CGColor)
         CGContextFillPath(context)
         
