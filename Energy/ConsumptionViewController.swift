@@ -68,7 +68,7 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         var cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
         if isSearching == true{
-            cell.textLabel!.text = searchingDataArray[indexPath.row] as! NSString as String
+            cell.textLabel!.text = searchingDataArray[indexPath.row]
         }else{
             cell.textLabel!.text = buildingArray[indexPath.row]
             cell.imageView!.image = UIImage(named:buildingImageNames[indexPath.row])
@@ -85,22 +85,22 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if isSearching == false{
-            println(" cell Selected #\(indexPath.row)! \(buildingArray[indexPath.row]as! NSString)")
+            println(" cell Selected #\(indexPath.row)! \(buildingArray[indexPath.row])")
         }
         else{
-            println(" cell Selected #\(indexPath.row)! \(searchingDataArray[indexPath.row] as! NSString)")
+            println(" cell Selected #\(indexPath.row)! \(searchingDataArray[indexPath.row])")
         }
         
         //update the checkmark for the current row
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         if cell!.accessoryType == .Checkmark{
             cell?.accessoryType = .None
-            var index = find(selectedBuildings, buildingArray[indexPath.row] as! String)
+            var index = find(selectedBuildings, buildingArray[indexPath.row])
             selectedBuildings.removeAtIndex(index!)
         }
         else{
             cell!.accessoryType = .Checkmark
-            selectedBuildings.append(buildingArray[indexPath.row] as! String)
+            selectedBuildings.append(buildingArray[indexPath.row])
             NSLog("Object added")
         }
         
@@ -135,7 +135,7 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
             searchingDataArray.removeAll()
             for var index = 0; index < buildingArray.count; index++
             {
-                var currentString = buildingArray.objectAtIndex(index)as! String
+                var currentString = buildingArray[index]
                 if currentString.lowercaseString.rangeOfString(searchText.lowercaseString)  != nil {
                     searchingDataArray.append(currentString)
                     
