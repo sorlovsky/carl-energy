@@ -68,13 +68,13 @@ import UIKit
         
         var graphPath = UIBezierPath()
         //go to start of line
-        graphPath.moveToPoint(CGPoint(x:50, y:0))
+        graphPath.moveToPoint(CGPoint(x:50, y:20))
         
         //add 5 lines
         for i in 1...5 {
             let nextPoint = CGPoint(x:(50*i), y:300)
             graphPath.addLineToPoint(nextPoint)
-            graphPath.moveToPoint(CGPoint(x:50*(i+1), y:0))
+            graphPath.moveToPoint(CGPoint(x:50*(i+1), y:20))
         }
         
         //add line labels
