@@ -36,7 +36,7 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
             buildingsDictionaries = NSArray(contentsOfFile: path)!
         }
         for dict in buildingsDictionaries {
-            var buildingName = dict["displayName"] as String
+            var buildingName = dict["displayName"] as! String
             self.buildingArray.append(buildingName)
         }
         
@@ -65,9 +65,9 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        var cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
+        var cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
         if isSearching == true{
-            cell.textLabel!.text = searchingDataArray[indexPath.row] as NSString as String
+            cell.textLabel!.text = searchingDataArray[indexPath.row] as! NSString as String
         }else{
             cell.textLabel!.text = buildingArray[indexPath.row]
         }
@@ -86,7 +86,7 @@ class ConsumptionViewController: UIViewController ,UITableViewDelegate, UITableV
             println(" cell Selected #\(indexPath.row)! \(buildingArray[indexPath.row] as NSString)")
         }
         else{
-            println(" cell Selected #\(indexPath.row)! \(searchingDataArray[indexPath.row] as NSString)")
+            println(" cell Selected #\(indexPath.row)! \(searchingDataArray[indexPath.row] as! NSString)")
         }
         
         //update the checkmark for the current row
