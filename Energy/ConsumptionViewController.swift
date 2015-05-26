@@ -36,8 +36,8 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
             buildingsDictionaries = NSArray(contentsOfFile: path)!
         }
         for dict in buildingsDictionaries {
-            var buildingName = dict["displayName"] as String
-            var buildingImage = dict["image"] as String
+            var buildingName = dict["displayName"] as! String
+            var buildingImage = dict["image"] as! String
             self.buildingArray.append(buildingName)
             self.buildingImageNames.append(buildingImage)
         }
@@ -66,7 +66,7 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        var cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
+        var cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
         if isSearching == true{
             cell.textLabel!.text = searchingDataArray[indexPath.row]
         }else{

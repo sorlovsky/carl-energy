@@ -74,7 +74,7 @@ class GraphViewController: UIViewController {
 
 
     func setupGraphDisplay(results:NSArray) {
-        let dataArray = results as [Double]
+        let dataArray = results as! [Double]
         
         //Use 7 days for graph - can use any number,
         //but labels and sample data are set up for 7 days

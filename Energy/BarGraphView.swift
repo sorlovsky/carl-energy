@@ -21,8 +21,8 @@ import UIKit
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     
-    var buildings = [String]()
-    var buildingValue = [Double]()
+    var buildings = ["Burton"]
+    var buildingValue = [155.0]
     var buildingsDataDictionary = [String:Double]()
     
     override func drawRect(rect: CGRect) {
@@ -61,17 +61,48 @@ import UIKit
             endPoint,
             0)
         
+        //Draw the grid lines
         
-        //buildingsDataDictionary[buildings[0]] = buildingValue[0]
+        UIColor.grayColor().setFill()
+        UIColor.grayColor().setStroke()
+        
+        var graphPath = UIBezierPath()
+        //go to start of line
+        graphPath.moveToPoint(CGPoint(x:50, y:0))
+        
+        //add 5 lines
+        for i in 1...5 {
+            let nextPoint = CGPoint(x:(50*i), y:300)
+            graphPath.addLineToPoint(nextPoint)
+            graphPath.moveToPoint(CGPoint(x:50*(i+1), y:0))
+        }
+        
+        //add line labels
+        for i in 1...5{
+            if let labelView = self.viewWithTag(i) as? UILabel {
+                if Array(buildingsDataDictionary.values).count != 0{
+                    let maxValue = Array(buildingsDataDictionary.values)[0]
+                    var maxNum = floor(maxValue/50)*50
+                    var labelNum = (Int(maxNum) / 5) * i
+                    labelView.text = "\(labelNum)"
+                }
+            }
+        }
+        
+        graphPath.stroke()
         
         // draw a bar graph
         for (buildingName, value) in buildingsDataDictionary{
             
-            valueLabel.text = "\(value)"
+            self.valueLabel.text = "\(value)"
+            self.nameLabel.text = "\(buildingName)"
             
             let rectanglePath = CGPathCreateMutable()
             
-            let points = [CGPoint(x:0, y:25), CGPoint(x:0, y:50), CGPoint(x:width-20, y:50), CGPoint(x:width-20, y:25)]
+            let maximumUnit = floor(value/50)*60
+            println("Maximum Unit: \(maximumUnit)")
+            let barLength = 300/maximumUnit * value
+            let points = [CGPoint(x:0, y:25), CGPoint(x:0, y:50), CGPoint(x:barLength, y:50), CGPoint(x:barLength, y:25)]
             var cpg = points[0]
             CGPathMoveToPoint(rectanglePath, nil, cpg.x, cpg.y)
             for p in points {
@@ -84,7 +115,12 @@ import UIKit
             CGContextFillPath(context)
         }
         
-
+        self.setNeedsDisplay()
+        
+    }
+    
+    func loadData(name: String, data : [Double]){
+        self.buildingsDataDictionary[name] = round(100 * (data.reduce(0, combine: +))) / 100
     }
 
     
