@@ -1,26 +1,19 @@
 //
-//  SettingsViewController.swift
+//  MenuViewController.swift
 //  Energy
 //
-//  Created by Simon Orlovsky on 5/25/15.
+//  Created by mobiledev on 5/25/15.
 //  Copyright (c) 2015 simonorlovsky. All rights reserved.
 //
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class MenuViewController: UIViewController {
 
-    @IBOutlet var menuButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //SWRevealViewController
-        if self.revealViewController() != nil {
-            menuButton.target = self.revealViewController()
-            menuButton.action = "revealToggle:"
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        }
 
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
