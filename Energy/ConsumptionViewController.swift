@@ -36,8 +36,8 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
             buildingsDictionaries = NSArray(contentsOfFile: path)!
         }
         for dict in buildingsDictionaries {
-            var buildingName = dict["displayName"] as String
-            var buildingImage = dict["image"] as String
+            var buildingName = dict["displayName"] as! String
+            var buildingImage = dict["image"] as! String
             self.buildingArray.append(buildingName)
             self.buildingImageNames.append(buildingImage)
         }
