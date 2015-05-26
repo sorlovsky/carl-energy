@@ -591,7 +591,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="burton" width="500" height="271"/>
+        <image name="burton" width="155" height="155"/>
         <image name="menu" width="22" height="22"/>
         <image name="turbine1" width="500" height="335"/>
     </resources>
