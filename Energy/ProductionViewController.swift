@@ -36,7 +36,7 @@ class ProductionViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
+        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
         
         cell.textLabel?.text = self.items[indexPath.row]
         
@@ -49,7 +49,15 @@ class ProductionViewController: UIViewController, UITableViewDataSource, UITable
         if segue.identifier == "showGraphSegue" {
             if let destination = segue.destinationViewController as? GraphViewController {
                 if let buildingIndex = tableView.indexPathForSelectedRow()?.row {
-                    destination.buildingName = items[buildingIndex]
+                    if buildingIndex == 0{
+                        destination.buildingName = "turbine1_produced_power"
+                    }else if buildingIndex == 1{
+                        destination.buildingName = "wind_production"
+                    }
+                    else if buildingIndex == 2{
+                        destination.buildingName = "campus_total_pv_prod"
+                    }
+                    //destination.buildingName = items[buildingIndex]
                 }
             }
         }
