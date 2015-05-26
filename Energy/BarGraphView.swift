@@ -18,12 +18,18 @@ import UIKit
     @IBInspectable var startColor: UIColor = UIColor.redColor()
     @IBInspectable var endColor: UIColor = UIColor.greenColor()
     
-
+    @IBOutlet weak var valueLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    var buildings = [String]()
+    var buildingValue = [Double]()
+    var buildingsDataDictionary = [String:Double]()
     
     override func drawRect(rect: CGRect) {
         
         let width = Double(rect.width)
         let height = Double(rect.height)
+        
         
         //set up background clipping area
         var path = UIBezierPath(roundedRect: rect,
@@ -55,34 +61,32 @@ import UIKit
             endPoint,
             0)
         
-
         
+        //buildingsDataDictionary[buildings[0]] = buildingValue[0]
         
         // draw a bar graph
-        
-        let rectanglePath = CGPathCreateMutable()
-        let points = [CGPoint(x:0, y:25), CGPoint(x:0, y:50), CGPoint(x:width-20, y:50), CGPoint(x:width-20, y:25)]
-        var cpg = points[0]
-        CGPathMoveToPoint(rectanglePath, nil, cpg.x, cpg.y)
-        for p in points {
-            CGPathAddLineToPoint(rectanglePath, nil, p.x, p.y)
+        for (buildingName, value) in buildingsDataDictionary{
+            
+            valueLabel.text = "\(value)"
+            
+            let rectanglePath = CGPathCreateMutable()
+            
+            let points = [CGPoint(x:0, y:25), CGPoint(x:0, y:50), CGPoint(x:width-20, y:50), CGPoint(x:width-20, y:25)]
+            var cpg = points[0]
+            CGPathMoveToPoint(rectanglePath, nil, cpg.x, cpg.y)
+            for p in points {
+                CGPathAddLineToPoint(rectanglePath, nil, p.x, p.y)
+            }
+            CGPathCloseSubpath(rectanglePath)
+            
+            CGContextAddPath(context, rectanglePath)
+            CGContextSetFillColorWithColor(context, UIColor.blackColor().CGColor)
+            CGContextFillPath(context)
         }
-        CGPathCloseSubpath(rectanglePath)
         
-        CGContextAddPath(context, rectanglePath)
-        CGContextSetFillColorWithColor(context, UIColor.blackColor().CGColor)
-        CGContextFillPath(context)
-        
-        
-        UIColor.whiteColor().setFill()
-        UIColor.whiteColor().setStroke()
-        
-        
-        //Draw horizontal graph lines on the top of everything
-        var linePath = UIBezierPath()
-        
-        
+
     }
+
     
     
 }

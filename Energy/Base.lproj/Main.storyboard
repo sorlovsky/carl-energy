@@ -494,15 +494,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1BP-l4-cD5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1BP-l4-cD5">
                                 <rect key="frame" x="278" y="289" width="44" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bHu-h1-Mx1" customClass="BarGraphView" customModule="Energy" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bHu-h1-Mx1" customClass="BarGraphView" customModule="Energy" customModuleProvider="target">
                                 <rect key="frame" x="150" y="150" width="300" height="300"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Building Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8a-JD-68W">
+                                        <rect key="frame" x="8" y="27" width="126" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.015869755559587469" green="0.80307116527186051" blue="0.93507982336956519" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tix-qn-4pV">
+                                        <rect key="frame" x="227" y="27" width="52" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="52" id="LUX-1D-5CB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                        <color key="textColor" red="0.76137907608695654" green="0.017948537298221965" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="K8a-JD-68W" firstAttribute="baseline" secondItem="Tix-qn-4pV" secondAttribute="baseline" id="VOe-v2-hLo"/>
+                                    <constraint firstItem="Tix-qn-4pV" firstAttribute="leading" secondItem="K8a-JD-68W" secondAttribute="trailing" constant="93" id="XF8-ZB-nfd"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="startColor">
                                         <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -511,11 +532,20 @@
                                         <color key="value" red="1" green="0.64984990070000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="nameLabel" destination="K8a-JD-68W" id="6uD-Rj-4NL"/>
+                                    <outlet property="valueLabel" destination="Tix-qn-4pV" id="CGw-4z-w8r"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="bHu-h1-Mx1" secondAttribute="centerX" id="X6m-ZU-7st"/>
+                            <constraint firstItem="bHu-h1-Mx1" firstAttribute="centerX" secondItem="5u0-ma-oJY" secondAttribute="centerX" id="9gj-jh-ynQ"/>
+                            <constraint firstItem="bHu-h1-Mx1" firstAttribute="centerX" secondItem="1BP-l4-cD5" secondAttribute="centerX" id="Dcz-MW-sxw"/>
+                            <constraint firstItem="bHu-h1-Mx1" firstAttribute="top" secondItem="gDk-XW-mRZ" secondAttribute="bottom" constant="86" id="FZt-ab-czK"/>
+                            <constraint firstItem="bHu-h1-Mx1" firstAttribute="centerY" secondItem="5u0-ma-oJY" secondAttribute="centerY" id="IAM-PN-CnT"/>
+                            <constraint firstItem="1BP-l4-cD5" firstAttribute="top" secondItem="gDk-XW-mRZ" secondAttribute="bottom" constant="225" id="TfE-B3-fdH"/>
+                            <constraint firstItem="bHu-h1-Mx1" firstAttribute="leading" secondItem="5u0-ma-oJY" secondAttribute="leading" constant="150" id="bYO-Xm-mI6"/>
                         </constraints>
                     </view>
                     <connections>

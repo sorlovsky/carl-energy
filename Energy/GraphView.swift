@@ -18,10 +18,6 @@ import UIKit
     @IBInspectable var startColor: UIColor = UIColor.redColor()
     @IBInspectable var endColor: UIColor = UIColor.greenColor()
     
-//<<<<<<< HEAD
-//    //Weekly sample datagi
-//    var graphPoints:[Float] = [1,0,0,0,0,0,1]
-//=======
     //Weekly sample data
     var graphPoints:[Double] = [1,0,0,0,0,0,1]
 
