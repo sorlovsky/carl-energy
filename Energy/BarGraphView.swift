@@ -59,9 +59,6 @@ import UIKit
         
         
         // draw a bar graph
-        let origin : CGPoint = CGPoint(x:55,y:75)
-        let size : CGSize = CGSize(width:CGFloat(50), height:CGFloat(50))
-        var bar : CGRect = CGRect(origin:origin, size:size)
         
         let rectanglePath = CGPathCreateMutable()
         let points = [CGPoint(x:25, y:25), CGPoint(x:25, y:50), CGPoint(x:50, y:50), CGPoint(x:50, y:25)]
@@ -71,7 +68,8 @@ import UIKit
             CGPathAddLineToPoint(rectanglePath, nil, p.x, p.y)
         }
         CGPathCloseSubpath(rectanglePath)
-        
+        CGContextSetFillColorWithColor(context, UIColor.blackColor().CGColor)
+        CGContextFillPath(context)
         
         
         UIColor.whiteColor().setFill()
