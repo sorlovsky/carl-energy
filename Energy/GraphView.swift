@@ -108,17 +108,17 @@ import UIKit
         graphPath.stroke()
         
         //Draw the circles on top of graph stroke
-//        for i in 0..<graphPoints.count {
-//            var point = CGPoint(x:columnXPoint(i), y:columnYPoint(graphPoints[i]))
-//            point.x -= 5.0/2
-//            point.y -= 5.0/2
-//            
-//            var circleSize = CGSize(width: 5.0, height: 5.0)
-//            var circleRect = CGRect(origin: point, size: circleSize)
-//            
-//            let circle = UIBezierPath(ovalInRect: circleRect)
-//            circle.fill()
-//        }
+        for i in 0..<graphPoints.count {
+            var point = CGPoint(x:columnXPoint(i), y:columnYPoint(graphPoints[i]))
+            point.x -= 5.0/2
+            point.y -= 5.0/2
+            
+            var circleSize = CGSize(width: 5.0, height: 5.0)
+            var circleRect = CGRect(origin: point, size: circleSize)
+            
+            let circle = UIBezierPath(ovalInRect: circleRect)
+            circle.fill()
+        }
         
         //Draw horizontal graph lines on the top of everything
         var linePath = UIBezierPath()
