@@ -149,6 +149,8 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBOutlet var testLabel: UILabel!
     
+    
+    //Function so that when user selects academic buildings on seg control only academic buildings appear
     @IBAction func segmentedControlAction(sender: AnyObject) {
         if(segmentedControl.selectedSegmentIndex == 0)
         {
