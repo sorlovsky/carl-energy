@@ -260,6 +260,9 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="turbine1" translatesAutoresizingMaskIntoConstraints="NO" id="5cb-dN-0lB">
                                 <rect key="frame" x="39" y="239" width="177" height="128"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="consumption" translatesAutoresizingMaskIntoConstraints="NO" id="4RQ-ky-aXf" userLabel="consumption">
+                                <rect key="frame" x="39" y="77" width="177" height="128"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Pf-Et-wQz">
                                 <rect key="frame" x="90" y="288" width="75" height="30"/>
                                 <constraints>
@@ -310,9 +313,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="consumption" translatesAutoresizingMaskIntoConstraints="NO" id="4RQ-ky-aXf" userLabel="consumption">
-                                <rect key="frame" x="39" y="77" width="177" height="128"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
