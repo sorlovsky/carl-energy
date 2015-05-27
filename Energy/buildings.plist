@@ -842,5 +842,32 @@
 			</dict>
 		</array>
 	</dict>
+	<dict>
+		<key>area</key>
+		<real>20337.0</real>
+		<key>displayName</key>
+		<string>Willis Memorial Hall</string>
+		<key>image</key>
+		<string>willis.png</string>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>displayName</key>
+				<string>Electricity Use</string>
+				<key>systemName</key>
+			<string>carleton_willis_electricity_wholebuilding_willishallelectricity</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>displayName</key>
+				<string>Steam Use</string>
+				<key>systemName</key>
+				<string>carleton_willis_heating_wholebuilding_willishallsteam</string>
+				<key>type</key>
+				<integer>4</integer>
+			</dict>
+		</array>
+	</dict>
 </array>
 </plist>
