@@ -10,6 +10,8 @@ import UIKit
 
 class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
+    //Segmented control
+    @IBOutlet var segmentedControl: UISegmentedControl!
     //Search bar
     @IBOutlet var tableView: UITableView!
     @IBOutlet var searchBarObj: UISearchBar!
@@ -144,6 +146,27 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
             tableView.reloadData()
         }
     }
+    
+    @IBOutlet var testLabel: UILabel!
+    
+    
+    //Function so that when user selects academic buildings on seg control only academic buildings appear
+    @IBAction func segmentedControlAction(sender: AnyObject) {
+        if(segmentedControl.selectedSegmentIndex == 0)
+        {
+            testLabel.text = "All";
+        }
+        else if(segmentedControl.selectedSegmentIndex == 1)
+        {
+            testLabel.text = "Academic";
+        }
+        else if(segmentedControl.selectedSegmentIndex == 2)
+        {
+            testLabel.text = "Dorms";
+        }
+    }
+    
+    
     @IBAction func reportButtonPressed(sender: AnyObject) {
         performSegueWithIdentifier("Detail", sender: tableView)
 //        NSLog(selectedBuildings[0] as! String)
