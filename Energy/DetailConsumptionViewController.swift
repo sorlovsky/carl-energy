@@ -43,10 +43,11 @@ class DetailConsumptionViewController: UIViewController {
         dateComponents.day = 17
         let endDate = NSCalendar.currentCalendar().dateFromComponents(dateComponents)!
         
+        // Array of all of the meters to get data from
+        var searchName:[String] = []
+        
+        // Loops through all of the selected buildings and finds the correct meters
         for building in selectedBuildings {
-            
-            let data : DataRetreiver = DataRetreiver()
-            
             var energyIndex:Int
             switch type {
             case "electricity":
@@ -63,8 +64,8 @@ class DetailConsumptionViewController: UIViewController {
                 energyIndex = 0
             }
             
-            var searchName:[String] = []
-            
+            // Now that we know what type of meter we're looking for, find the meters that correspond
+            // to the selected buildings
             for dict in self.buildingsDictionaries {
                 if dict["displayName"] as! String == building{
                     var buildingName = dict["meters"] as! NSArray
@@ -76,9 +77,10 @@ class DetailConsumptionViewController: UIViewController {
                     }
                 }
             }
-            
-            data.fetch(searchName, startDate: startDate, endDate: endDate, resolution: "day", callback: setupGraphDisplay)
         }
+        let data : DataRetreiver = DataRetreiver()
+        data.fetch(searchName, startDate: startDate, endDate: endDate, resolution: "day", callback: setupGraphDisplay)
+        
     }
     
     func setupGraphDisplay(results:[String:[Double]]) {

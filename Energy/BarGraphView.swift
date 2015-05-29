@@ -7,8 +7,6 @@
 //
 //  This is a template for how we will draw our bargraphs.  The graphs are drawn using Core Graphics.
 //
-//  Most of the graph display is based off of the tutorial found here: http://www.raywenderlich.com/90693/modern-core-graphics-with-swift-part-2
-//
 
 import UIKit
 
@@ -34,33 +32,20 @@ import UIKit
         //Get the current context
         let context = UIGraphicsGetCurrentContext()
         
-        //Draw the grid boundaries
-        UIColor.blackColor().setStroke()
-        var boundaryPath = UIBezierPath()
-        boundaryPath.moveToPoint(CGPoint(x:1, y:height))
-        boundaryPath.addLineToPoint(CGPoint(x:1, y:2))
-        boundaryPath.addLineToPoint(CGPoint(x:width-1, y:2))
-        boundaryPath.addLineToPoint(CGPoint(x:width-1, y:20))
-        boundaryPath.addLineToPoint(CGPoint(x:1, y:20))
-        boundaryPath.lineWidth = 2.0
-        boundaryPath.stroke()
-        
         //Draw the grid lines
         UIColor.grayColor().setFill()
         UIColor.grayColor().setStroke()
-        
-        var graphPath = UIBezierPath()
-        //go to start of line
-        graphPath.moveToPoint(CGPoint(x:50, y:20))
-        
+        var gridLinesPath = UIBezierPath()
+        gridLinesPath.moveToPoint(CGPoint(x:50, y:20))
         //add 5 lines
         for i in 1...5 {
             let nextPoint = CGPoint(x:(50*i), y:300)
-            graphPath.addLineToPoint(nextPoint)
-            graphPath.moveToPoint(CGPoint(x:50*(i+1), y:20))
+            gridLinesPath.addLineToPoint(nextPoint)
+            gridLinesPath.moveToPoint(CGPoint(x:50*(i+1), y:20))
         }
+        gridLinesPath.stroke()
         
-        //add line labels
+        //add gridline labels
         for i in 1...5{
             if let labelView = self.viewWithTag(i) as? UILabel {
                 if Array(buildingsDataDictionary.values).count != 0{
@@ -72,13 +57,20 @@ import UIKit
             }
         }
         
-        graphPath.stroke()
+        //Draw the graph boundaries
+        UIColor.blackColor().setStroke()
+        var boundaryPath = UIBezierPath()
+        boundaryPath.moveToPoint(CGPoint(x:1, y:height))
+        boundaryPath.addLineToPoint(CGPoint(x:1, y:2))
+        boundaryPath.addLineToPoint(CGPoint(x:width-1, y:2))
+        boundaryPath.addLineToPoint(CGPoint(x:width-1, y:24))
+        boundaryPath.addLineToPoint(CGPoint(x:1, y:24))
+        boundaryPath.lineWidth = 2.0
+        boundaryPath.stroke()
         
+        //Draw the bars
         var numBars = 0
-        // draw a bar graph
         for (buildingName, value) in buildingsDataDictionary{
-            numBars+=1
-            
             println("Building: \(buildingName) \n Value: \(value)")
             
             self.valueLabel.text = "\(value)"
@@ -86,28 +78,38 @@ import UIKit
             
             let rectanglePath = CGPathCreateMutable()
             
+            // Set up bar variables
             let maximumUnit = floor(value/50)*60
             var barLength:Double = 0
             if maximumUnit > 0{
                 barLength = (300/maximumUnit * value)
             }
-            let top = Double(25*numBars)
-            let bot = Double(50*numBars)
-            let points = [CGPoint(x:0, y:top), CGPoint(x:0, y:bot), CGPoint(x:barLength, y:bot), CGPoint(x:barLength, y:top)]
+            let top = Double(25+(25*numBars))
+            let bot = Double(50+(25*numBars))
+            let points = [CGPoint(x:2, y:top), CGPoint(x:2, y:bot), CGPoint(x:barLength, y:bot), CGPoint(x:barLength, y:top)]
+            
+            // Draw the bar
             var startingPoint = points[0]
             CGPathMoveToPoint(rectanglePath, nil, startingPoint.x, startingPoint.y)
             for p in points {
                 CGPathAddLineToPoint(rectanglePath, nil, p.x, p.y)
             }
             CGPathCloseSubpath(rectanglePath)
-            
             CGContextAddPath(context, rectanglePath)
-            CGContextSetFillColorWithColor(context, UIColor.blackColor().CGColor)
+            CGContextSetFillColorWithColor(context, UIColor.orangeColor().CGColor)
             CGContextFillPath(context)
+            
+            // Draw a line to separate the bars
+            UIColor.whiteColor().setStroke()
+            var boundaryPath = UIBezierPath()
+            boundaryPath.moveToPoint(CGPoint(x:2, y:bot))
+            boundaryPath.addLineToPoint(CGPoint(x:barLength, y:bot))
+            boundaryPath.lineWidth = 2.0
+            boundaryPath.stroke()
+            
+            numBars+=1
         }
-        
         self.setNeedsDisplay()
-        
     }
     
     func loadData(buildingData: [String:[Double]]){
