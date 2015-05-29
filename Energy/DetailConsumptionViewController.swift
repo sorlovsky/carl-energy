@@ -10,13 +10,12 @@ import UIKit
 
 class DetailConsumptionViewController: UIViewController {
     
-    var selectedBuildings = [String]()
-    
     @IBOutlet weak var barGraphView: BarGraphView!
     @IBOutlet weak var energyTypeLabel: UILabel!
     @IBOutlet weak var building1Label: UILabel!
     @IBOutlet weak var energyUnitsLabel: UILabel!
     
+    var selectedBuildings = [String]()
     let energyTypeArray = ["Electricity", "Water", "Heating", "Total Energy"]
     
     override func viewDidLoad() {
@@ -34,30 +33,44 @@ class DetailConsumptionViewController: UIViewController {
         dateComponents.day = 17
         let endDate = NSCalendar.currentCalendar().dateFromComponents(dateComponents)!
         
-        let data : DataRetreiver = DataRetreiver()
-        
-        var energyType:String
-        switch type {
-        case "electricity":
-            energyType = "_en_use"
-        case "water":
-            energyType = "_water_use"
-        case "heating":
-            energyType = "_steam_use"
-        case "total energy":
-            // 1 kWh = 3412.14163 btu
-            // Need to send multiple requests.  Figure out how to do this
-            energyType = "_en_use"
-        default:
-            energyType = "_en_use"
+        var buildingsDictionaries = []
+        if let path = NSBundle.mainBundle().pathForResource("buildings", ofType: "plist") {
+            buildingsDictionaries = NSArray(contentsOfFile: path)!
         }
         
         for building in selectedBuildings {
             
-            var searchName = "carleton_\(selectedBuildings[0].lowercaseString)"
-            // For now we can only do one building
-            searchName = searchName.componentsSeparatedByString(" ")[0]
-            searchName = searchName + energyType
+            let data : DataRetreiver = DataRetreiver()
+            
+            var energyIndex:Int
+            switch type {
+            case "electricity":
+                energyIndex = 0
+            case "water":
+                energyIndex = 1
+            case "heating":
+                energyIndex = 2
+            case "total energy":
+                // 1 kWh = 3412.14163 btu
+                // Need to send multiple requests.  Figure out how to do this
+                energyIndex = 0
+            default:
+                energyIndex = 0
+            }
+            
+            var searchName = ""
+            
+            for dict in buildingsDictionaries {
+                if dict["displayName"] as! String == building{
+                    var buildingName = dict["meters"] as! NSArray
+                    if buildingName.count > energyIndex {
+                        searchName = buildingName[energyIndex]["systemName"] as! String
+                    } else {
+                        setupGraphDisplay([])
+                    }
+                }
+            }
+            
             data.fetch(searchName, startDate: startDate, endDate: endDate, resolution: "day", callback: setupGraphDisplay)
         }
     }
@@ -70,7 +83,7 @@ class DetailConsumptionViewController: UIViewController {
         
         //Calculate average and total from graphPoints
         let total = dataArray.reduce(0, combine: +)
-        println("The data has been retrieved.  The total value is: \(total)")
+        // println("The data has been retrieved.  The total value is: \(total)")
         
         //Indicate that the graph needs to be redrawn and labels updated on the main queue
         dispatch_async(dispatch_get_main_queue()) {

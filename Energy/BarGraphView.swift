@@ -100,11 +100,13 @@ import UIKit
             let rectanglePath = CGPathCreateMutable()
             
             let maximumUnit = floor(value/50)*60
-            println("Maximum Unit: \(maximumUnit)")
-            let barLength = 300/maximumUnit * value
+            var barLength:Double = 0
+            if maximumUnit > 0{
+                barLength = (300/maximumUnit * value)
+            }
             let points = [CGPoint(x:0, y:25), CGPoint(x:0, y:50), CGPoint(x:barLength, y:50), CGPoint(x:barLength, y:25)]
-            var cpg = points[0]
-            CGPathMoveToPoint(rectanglePath, nil, cpg.x, cpg.y)
+            var startingPoint = points[0]
+            CGPathMoveToPoint(rectanglePath, nil, startingPoint.x, startingPoint.y)
             for p in points {
                 CGPathAddLineToPoint(rectanglePath, nil, p.x, p.y)
             }

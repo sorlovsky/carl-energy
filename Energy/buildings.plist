@@ -3,869 +3,2545 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>urlElement</key>
+		<string>100nevadastreet</string>
+		<key>displayName</key>
+		<string>100 Nevada Street</string>
+		<key>image</key>
+		<string>100nevadastreet.png</string>
 		<key>area</key>
-		<real>65620.0</real>
+		<real>2825</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_100nevadastreet_electricity_sub_meter_100nevadastelectricity</string>
+				<key>displayName</key>
+				<string>100 Nevada St. - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_100nevadastreet_gas_sub_meter_100nevadastnaturalgas</string>
+				<key>displayName</key>
+				<string>100 Nevada St. - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>104maplest</string>
+		<key>displayName</key>
+		<string>104 Maple St.</string>
+		<key>image</key>
+		<string>104maplest.png</string>
+		<key>area</key>
+		<real>4598</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_104maplest_electricity_bill_104maplestelectricity_1</string>
+				<key>displayName</key>
+				<string>104 Maple St. - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_104maplest_gas_bill_104maplestnaturalgas_1</string>
+				<key>displayName</key>
+				<string>104 Maple St. - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>106WinonaSt_0</string>
+		<key>displayName</key>
+		<string>106 Winona St.</string>
+		<key>image</key>
+		<string>106winonast_0.png</string>
+		<key>area</key>
+		<real>2970</real>
+		<key>longitude</key>
+		<real>-93.154383</real>
+		<key>latitude</key>
+		<real>44.459234</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_106winonast_0_electricity_bill_106winonastelectricity</string>
+				<key>displayName</key>
+				<string>106 Winona St - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_106winonast_0_gas_bill_106winonastnaturalgas_1</string>
+				<key>displayName</key>
+				<string>106 Winona St - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>208unionstreet</string>
+		<key>displayName</key>
+		<string>208 Union Street</string>
+		<key>image</key>
+		<string>208unionstreet.png</string>
+		<key>area</key>
+		<real>2520</real>
+		<key>longitude</key>
+		<string></string>
+		<key>latitude</key>
+		<string></string>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_208unionstreet_electricity_sub_meter_302755620</string>
+				<key>displayName</key>
+				<string>208 Union St - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_208unionstreet_gas_sub_meter_208unionstnaturalgas</string>
+				<key>displayName</key>
+				<string>208 Union St - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>210WinonaSt_0</string>
+		<key>displayName</key>
+		<string>210 Winona St.</string>
+		<key>image</key>
+		<string>210winonast_0.png</string>
+		<key>area</key>
+		<real>1926</real>
+		<key>longitude</key>
+		<real>-93.15426600000001</real>
+		<key>latitude</key>
+		<real>44.457974</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_210winonast_0_electricity_bill_210winonastelectricity_1</string>
+				<key>displayName</key>
+				<string>210 Winona St. - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_210winonast_0_gas_bill_210winonastnaturalgas_1</string>
+				<key>displayName</key>
+				<string>210 Winona St. - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>212East2ndSt_0</string>
+		<key>displayName</key>
+		<string>212 East 2nd St.</string>
+		<key>image</key>
+		<string>212east2ndst_0.png</string>
+		<key>area</key>
+		<real>3276</real>
+		<key>longitude</key>
+		<real>-93.157385</real>
+		<key>latitude</key>
+		<real>44.458309</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_212east2ndst_0_electricity_bill_212east2ndstelectricity_1</string>
+				<key>displayName</key>
+				<string>212 East 2nd St. - Electricity	</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_212east2ndst_0_gas_bill_212east2ndstnaturalgas_1</string>
+				<key>displayName</key>
+				<string>212 East 2nd St. - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>216CollegeSt_0</string>
+		<key>displayName</key>
+		<string>216 College St.</string>
+		<key>image</key>
+		<string>216collegest_0.png</string>
+		<key>area</key>
+		<real>4017</real>
+		<key>longitude</key>
+		<real>-93.155946</real>
+		<key>latitude</key>
+		<real>44.457767</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_216collegest_0_electricity_bill_216collegestelectricity_1</string>
+				<key>displayName</key>
+				<string>216 College St. - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_216collegest_0_gas_bill_216collegestnaturalgas_1</string>
+				<key>displayName</key>
+				<string>216 College St. - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>AllenHouse_0</string>
+		<key>displayName</key>
+		<string>Allen House</string>
+		<key>image</key>
+		<string>allenhouse_0.png</string>
+		<key>area</key>
+		<real>6279</real>
+		<key>longitude</key>
+		<real>-93.158072</real>
+		<key>latitude</key>
+		<real>44.459905</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_allenhouse_0_electricity_sub_meter_allenhouseelectricity</string>
+				<key>displayName</key>
+				<string>Allen House - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_allenhouse_0_gas_sub_meter_allenhousenaturalgas</string>
+				<key>displayName</key>
+				<string>Allen House - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>arboretum</string>
+		<key>displayName</key>
+		<string>Arboretum Office</string>
+		<key>image</key>
+		<string>arboretum.png</string>
+		<key>area</key>
+		<real>2952</real>
+		<key>longitude</key>
+		<string></string>
+		<key>latitude</key>
+		<string></string>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_arboretum_electricity_wholebuilding_arboretumofficeelectricity</string>
+				<key>displayName</key>
+				<string>Arboretum Office - Electricity</string>
+				<key>startingTimescale</key>
+				<string>day</string>
+				<key>defaultTimescale</key>
+				<string>today</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>bentonhouse</string>
+		<key>displayName</key>
+		<string>Benton House</string>
+		<key>image</key>
+		<string>bentonhouse.png</string>
+		<key>area</key>
+		<real>4555</real>
+		<key>longitude</key>
+		<real>-93.154267</real>
+		<key>latitude</key>
+		<real>44.458712</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_bentonhouse_electricity_sub_meter_303143488</string>
+				<key>displayName</key>
+				<string>Benton House - Natural Gas</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_bentonhouse_electricity_sub_meter_303143488_1</string>
+				<key>displayName</key>
+				<string>Benton House - Electricity</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>BergHouse_0</string>
+		<key>displayName</key>
+		<string>Berg House</string>
+		<key>image</key>
+		<string>berghouse_0.png</string>
+		<key>area</key>
+		<real>3897</real>
+		<key>longitude</key>
+		<real>-93.15733899999999</real>
+		<key>latitude</key>
+		<real>44.458786</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_berghouse_0_electricity_bill_berghouseelectricity_1</string>
+				<key>displayName</key>
+				<string>Berg House - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_berghouse_0_gas_bill_berghousenaturalgas_1</string>
+				<key>displayName</key>
+				<string>Berg House - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>BirdHouse_0</string>
+		<key>displayName</key>
+		<string>Bird House</string>
+		<key>image</key>
+		<string>birdhouse_0.png</string>
+		<key>area</key>
+		<real>4780</real>
+		<key>longitude</key>
+		<real>-93.15501500000001</real>
+		<key>latitude</key>
+		<real>44.459411</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_birdhouse_0_electricity_bill_birdhouseelectricity_1</string>
+				<key>displayName</key>
+				<string>Bird House - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_birdhouse_0_gas_bill_birdhousenaturalgas_1</string>
+				<key>displayName</key>
+				<string>Bird House - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>boliou</string>
+		<key>displayName</key>
+		<string>Boliou Memorial Art Bldg</string>
+		<key>image</key>
+		<string>boliou.png</string>
+		<key>area</key>
+		<real>30547</real>
+		<key>longitude</key>
+		<string></string>
+		<key>latitude</key>
+		<string></string>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_boliou_electricity_wholebuilding_boliouhallelectricity</string>
+				<key>displayName</key>
+				<string>Boliou Hall - Electricity</string>
+				<key>startingTimescale</key>
+				<string>day</string>
+				<key>defaultTimescale</key>
+				<string>today</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_boliou_heating_wholebuilding_boliouhallsteamcondensate</string>
+				<key>displayName</key>
+				<string>Boliou Hall - Steam Condensate</string>
+				<key>startingTimescale</key>
+				<string>day</string>
+				<key>defaultTimescale</key>
+				<string>today</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>burton</string>
 		<key>displayName</key>
 		<string>Burton Hall</string>
 		<key>image</key>
 		<string>burton.png</string>
+		<key>area</key>
+		<real>65620</real>
+		<key>longitude</key>
+		<string></string>
+		<key>latitude</key>
+		<string></string>
 		<key>meters</key>
 		<array>
 			<dict>
-				<key>displayName</key>
-				<string>Electricity Use</string>
 				<key>systemName</key>
 				<string>carleton_burton_en_use</string>
-				<key>type</key>
-				<integer>1</integer>
+				<key>displayName</key>
+				<string>Burton Hall - Electricity</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Steam Use</string>
 				<key>systemName</key>
 				<string>carleton_burton_steam_use</string>
-				<key>type</key>
-				<integer>4</integer>
+				<key>displayName</key>
+				<string>Burton Hall - Steam Condensate</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Water Use</string>
 				<key>systemName</key>
 				<string>carleton_burton_water_use</string>
-				<key>type</key>
-				<integer>3</integer>
+				<key>displayName</key>
+				<string>Burton Hall - Water</string>
 			</dict>
 		</array>
 	</dict>
 	<dict>
+		<key>urlElement</key>
+		<string>cassat</string>
+		<key>displayName</key>
+		<string>Cassat Hall</string>
+		<key>image</key>
+		<string>cassat.png</string>
 		<key>area</key>
-		<real>91536.0</real>
+		<real>52160</real>
+		<key>longitude</key>
+		<string></string>
+		<key>latitude</key>
+		<string></string>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_cassat_en_use</string>
+				<key>displayName</key>
+				<string>Cassat Hall - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_cassat_heating_wholebuilding_cassathallsteamcondensate</string>
+				<key>displayName</key>
+				<string>Cassat Hall - Steam Condensate</string>
+				<key>startingTimescale</key>
+				<string>day</string>
+				<key>defaultTimescale</key>
+				<string>today</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>cassat-james</string>
 		<key>displayName</key>
 		<string>Cassat Hall / James Hall</string>
 		<key>image</key>
-		<string>cassat hall.png</string>
+		<string>cassat-james.png</string>
+		<key>area</key>
+		<real>91536</real>
+		<key>longitude</key>
+		<string></string>
+		<key>latitude</key>
+		<string></string>
 		<key>meters</key>
 		<array>
 			<dict>
-				<key>displayName</key>
-				<string>Electricity Use</string>
 				<key>systemName</key>
 				<string>carleton_cassatjames_en_use</string>
-				<key>type</key>
-				<integer>1</integer>
+				<key>displayName</key>
+				<string>Cassat/James Hall - Electricity Total</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Steam Use</string>
 				<key>systemName</key>
 				<string>carleton_cassatjames_steam_use</string>
-				<key>type</key>
-				<integer>4</integer>
+				<key>displayName</key>
+				<string>Cassat Hall/James Hall - Steam</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Water Use</string>
 				<key>systemName</key>
 				<string>carleton_cassatjames_water_use</string>
-				<key>type</key>
-				<integer>3</integer>
+				<key>displayName</key>
+				<string>Cassat Hall/James Hall - Water</string>
 			</dict>
 		</array>
 	</dict>
 	<dict>
+		<key>urlElement</key>
+		<string>ChaneyHouse_0</string>
+		<key>displayName</key>
+		<string>Chaney House</string>
+		<key>image</key>
+		<string>chaneyhouse_0.png</string>
 		<key>area</key>
-		<real>30829.0</real>
+		<real>4634</real>
+		<key>longitude</key>
+		<real>-93.15078699999999</real>
+		<key>latitude</key>
+		<real>44.458714</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_chaneyhouse_0_electricity_bill_chaneyhouseelectricity_1</string>
+				<key>displayName</key>
+				<string>Chaney House - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_chaneyhouse_0_gas_bill_chaneyhousenaturalgas</string>
+				<key>displayName</key>
+				<string>Chaney House - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>chillerplant</string>
+		<key>displayName</key>
+		<string>Chiller Plant (CPUS)</string>
+		<key>image</key>
+		<string>chillerplant.png</string>
+		<key>area</key>
+		<string></string>
+		<key>longitude</key>
+		<string></string>
+		<key>latitude</key>
+		<string></string>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_chillerplant_gas_sub_meter_chillerplantnaturalgas</string>
+				<key>displayName</key>
+				<string>Chiller Plant - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>CladerHouse_0</string>
+		<key>displayName</key>
+		<string>Clader House</string>
+		<key>image</key>
+		<string>claderhouse_0.png</string>
+		<key>area</key>
+		<real>1989</real>
+		<key>longitude</key>
+		<real>-93.15765500000001</real>
+		<key>latitude</key>
+		<real>44.458799</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_claderhouse_0_electricity_sub_meter_302553183</string>
+				<key>displayName</key>
+				<string>Clader House - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_claderhouse_0_gas_sub_meter_302553183</string>
+				<key>displayName</key>
+				<string>Clader House - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>collegewarehouse</string>
+		<key>displayName</key>
+		<string>College Warehouse</string>
+		<key>image</key>
+		<string>collegewarehouse.png</string>
+		<key>area</key>
+		<real>7200</real>
+		<key>longitude</key>
+		<real>-93.14881800000001</real>
+		<key>latitude</key>
+		<real>44.466124</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_collegewarehouse_electricity_wholebuilding_warehouseelectricity</string>
+				<key>displayName</key>
+				<string>Warehouse - Electricity</string>
+				<key>startingTimescale</key>
+				<string>day</string>
+				<key>defaultTimescale</key>
+				<string>today</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>cowling</string>
 		<key>displayName</key>
 		<string>Cowling Gym</string>
 		<key>image</key>
 		<string>cowling.png</string>
+		<key>area</key>
+		<real>30829</real>
+		<key>longitude</key>
+		<string></string>
+		<key>latitude</key>
+		<string></string>
 		<key>meters</key>
 		<array>
 			<dict>
-				<key>displayName</key>
-				<string>Electricity Use</string>
 				<key>systemName</key>
 				<string>carleton_cowling_en_use</string>
-				<key>type</key>
-				<integer>1</integer>
+				<key>displayName</key>
+				<string>Cowling Gym - Electricity</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Steam Use</string>
 				<key>systemName</key>
 				<string>carleton_cowling_steam_use</string>
-				<key>type</key>
-				<integer>4</integer>
+				<key>displayName</key>
+				<string>Cowling Gym - Steam</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Water Use</string>
 				<key>systemName</key>
 				<string>carleton_cowling_water_use</string>
-				<key>type</key>
-				<integer>3</integer>
+				<key>displayName</key>
+				<string>Cowling Gym - Water</string>
 			</dict>
 		</array>
 	</dict>
 	<dict>
+		<key>urlElement</key>
+		<string>DacieMosesHouse_0</string>
+		<key>displayName</key>
+		<string>Dacie Moses House</string>
+		<key>image</key>
+		<string>daciemoseshouse_0.png</string>
 		<key>area</key>
-		<real>30795.0</real>
+		<real>4000</real>
+		<key>longitude</key>
+		<real>-93.157511</real>
+		<key>latitude</key>
+		<real>44.459065</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_daciemoseshouse_0_electricity_bill_daciemoseshouseelectricity_1</string>
+				<key>displayName</key>
+				<string>Dacie Moses House - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_daciemoseshouse_0_gas_bill_daciemoseshousenaturalgas_1</string>
+				<key>displayName</key>
+				<string>Dacie Moses House - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>davis</string>
 		<key>displayName</key>
 		<string>Davis Hall</string>
 		<key>image</key>
 		<string>davis.png</string>
+		<key>area</key>
+		<real>30795</real>
+		<key>longitude</key>
+		<string></string>
+		<key>latitude</key>
+		<string></string>
 		<key>meters</key>
 		<array>
 			<dict>
-				<key>displayName</key>
-				<string>Electricity Use</string>
 				<key>systemName</key>
 				<string>carleton_davis_en_use</string>
-				<key>type</key>
-				<integer>1</integer>
+				<key>displayName</key>
+				<string>Davis Hall - Electricity</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Steam Use</string>
 				<key>systemName</key>
 				<string>carleton_davis_steam_use</string>
-				<key>type</key>
-				<integer>4</integer>
+				<key>displayName</key>
+				<string>Davis Hall - Steam</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Water Use</string>
 				<key>systemName</key>
 				<string>carleton_davis_water_use</string>
-				<key>type</key>
-				<integer>3</integer>
+				<key>displayName</key>
+				<string>Davis Hall - Water</string>
 			</dict>
 		</array>
 	</dict>
 	<dict>
+		<key>urlElement</key>
+		<string>DouglasHouse_0</string>
+		<key>displayName</key>
+		<string>Douglas House</string>
+		<key>image</key>
+		<string>douglashouse_0.png</string>
 		<key>area</key>
-		<real>48963.0</real>
+		<real>2950</real>
+		<key>longitude</key>
+		<real>-93.155165</real>
+		<key>latitude</key>
+		<real>44.457677</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_douglashouse_0_electricity_sub_meter_302438440</string>
+				<key>displayName</key>
+				<string>Douglas House - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_douglashouse_0_electricity_sub_meter_302438440_1</string>
+				<key>displayName</key>
+				<string>Douglas House - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>evans</string>
 		<key>displayName</key>
 		<string>Evans Hall</string>
 		<key>image</key>
 		<string>evans.png</string>
+		<key>area</key>
+		<real>48963</real>
+		<key>longitude</key>
+		<string></string>
+		<key>latitude</key>
+		<string></string>
 		<key>meters</key>
 		<array>
 			<dict>
-				<key>displayName</key>
-				<string>Electricity Use</string>
 				<key>systemName</key>
 				<string>carleton_evans_en_use</string>
-				<key>type</key>
-				<integer>1</integer>
+				<key>displayName</key>
+				<string>Evans Hall - Electricity</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Steam Use</string>
 				<key>systemName</key>
 				<string>carleton_evans_steam_use</string>
-				<key>type</key>
-				<integer>4</integer>
+				<key>displayName</key>
+				<string>Evans Hall - Steam</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Water Use</string>
 				<key>systemName</key>
 				<string>carleton_evans_water_use</string>
-				<key>type</key>
-				<integer>3</integer>
+				<key>displayName</key>
+				<string>Evans Hall - Water</string>
 			</dict>
 		</array>
 	</dict>
 	<dict>
+		<key>urlElement</key>
+		<string>faculty</string>
+		<key>displayName</key>
+		<string>Faculty Club / Annex</string>
+		<key>image</key>
+		<string>faculty.png</string>
 		<key>area</key>
-		<real>66691.0</real>
+		<real>17504</real>
+		<key>longitude</key>
+		<string></string>
+		<key>latitude</key>
+		<string></string>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_faculty_electricity_wholebuilding_facultyclubelectricity</string>
+				<key>displayName</key>
+				<string>Faculty Club - Electricity</string>
+				<key>startingTimescale</key>
+				<string>day</string>
+				<key>defaultTimescale</key>
+				<string>today</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_faculty_gas_sub_meter_302617602</string>
+				<key>displayName</key>
+				<string>Faculty Club/Annex - Natural Gas 1</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_faculty_gas_sub_meter_facultyclubnaturalgas2</string>
+				<key>displayName</key>
+				<string>Faculty Club/Annex - Natural Gas 2</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_faculty_gas_total</string>
+				<key>displayName</key>
+				<string>Faculty Club/Annex - Natural Gas Total</string>
+				<key>startingTimescale</key>
+				<string>year</string>
+				<key>defaultTimescale</key>
+				<string>lastyear</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_faculty_heating_wholebuilding_facultyclubsteamcondensate</string>
+				<key>displayName</key>
+				<string>Faculty Club - Steam Condensate</string>
+				<key>startingTimescale</key>
+				<string>day</string>
+				<key>defaultTimescale</key>
+				<string>today</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>GeffertHouse_0</string>
+		<key>displayName</key>
+		<string>Geffert House</string>
+		<key>image</key>
+		<string>gefferthouse_0.png</string>
+		<key>area</key>
+		<real>3180</real>
+		<key>longitude</key>
+		<real>-93.159193</real>
+		<key>latitude</key>
+		<real>44.459008</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_gefferthouse_0_electricity_bill_gefferthouseelectricity_1</string>
+				<key>displayName</key>
+				<string>Geffert House - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_gefferthouse_0_gas_bill_gefferthousenaturalgas_1</string>
+				<key>displayName</key>
+				<string>Geffert House - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>generatorbuilding</string>
+		<key>displayName</key>
+		<string>Generator Building</string>
+		<key>image</key>
+		<string>generatorbuilding.png</string>
+		<key>area</key>
+		<real>500</real>
+		<key>longitude</key>
+		<real>-93.14881800000001</real>
+		<key>latitude</key>
+		<real>44.466124</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_generatorbuilding_electricity_wholebuilding_generatorselectricity</string>
+				<key>displayName</key>
+				<string>Generators - Electricity</string>
+				<key>startingTimescale</key>
+				<string>day</string>
+				<key>defaultTimescale</key>
+				<string>today</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>goodhue</string>
 		<key>displayName</key>
 		<string>Goodhue Hall</string>
 		<key>image</key>
 		<string>goodhue.png</string>
+		<key>area</key>
+		<real>66691</real>
+		<key>longitude</key>
+		<string></string>
+		<key>latitude</key>
+		<string></string>
 		<key>meters</key>
 		<array>
 			<dict>
-				<key>displayName</key>
-				<string>Electricity Use</string>
 				<key>systemName</key>
 				<string>carleton_goodhue_en_use</string>
-				<key>type</key>
-				<integer>1</integer>
+				<key>displayName</key>
+				<string>Goodhue - Electricity</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Steam Use</string>
 				<key>systemName</key>
 				<string>carleton_goodhue_steam_use</string>
-				<key>type</key>
-				<integer>4</integer>
+				<key>displayName</key>
+				<string>Goodhue Hall - Steam</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Water Use</string>
 				<key>systemName</key>
 				<string>carleton_goodhue_water_use</string>
-				<key>type</key>
-				<integer>3</integer>
+				<key>displayName</key>
+				<string>Goodhue Hall - Water</string>
 			</dict>
 		</array>
 	</dict>
 	<dict>
-		<key>area</key>
-		<real>111220.0</real>
+		<key>urlElement</key>
+		<string>gould</string>
 		<key>displayName</key>
 		<string>Gould Library</string>
 		<key>image</key>
 		<string>gould.png</string>
+		<key>area</key>
+		<real>111220</real>
+		<key>longitude</key>
+		<string></string>
+		<key>latitude</key>
+		<string></string>
 		<key>meters</key>
 		<array>
 			<dict>
-				<key>displayName</key>
-				<string>Electricity Use</string>
 				<key>systemName</key>
 				<string>carleton_gould_en_use</string>
-				<key>type</key>
-				<integer>1</integer>
+				<key>displayName</key>
+				<string>Gould Library - Electricity</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Steam Use</string>
 				<key>systemName</key>
 				<string>carleton_gould_steam_use</string>
-				<key>type</key>
-				<integer>4</integer>
+				<key>displayName</key>
+				<string>Gould Library - Steam</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Water Use</string>
 				<key>systemName</key>
 				<string>carleton_gould_water_use</string>
-				<key>type</key>
-				<integer>3</integer>
+				<key>displayName</key>
+				<string>Gould Library - Water</string>
 			</dict>
 		</array>
 	</dict>
 	<dict>
+		<key>urlElement</key>
+		<string>groundsbuilding</string>
+		<key>displayName</key>
+		<string>Grounds Building</string>
+		<key>image</key>
+		<string>groundsbuilding.png</string>
 		<key>area</key>
-		<real>72000.0</real>
+		<real>5670</real>
+		<key>longitude</key>
+		<real>-93.148771</real>
+		<key>latitude</key>
+		<real>44.466641</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_groundsbuilding_electricity_wholebuilding_groundsshopelectricity</string>
+				<key>displayName</key>
+				<string>Grounds Shop - Electricity</string>
+				<key>startingTimescale</key>
+				<string>day</string>
+				<key>defaultTimescale</key>
+				<string>today</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>headleycottage</string>
+		<key>displayName</key>
+		<string>Headley Cottage</string>
+		<key>image</key>
+		<string>headleycottage.png</string>
+		<key>area</key>
+		<real>1830</real>
+		<key>longitude</key>
+		<real>-93.148257</real>
+		<key>latitude</key>
+		<real>44.458531</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_headleycottage_electricity_bill_headleycottageelectricity_1</string>
+				<key>displayName</key>
+				<string>Headley Cottage - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_headleycottage_gas_bill_headleyhousenaturalgas_1</string>
+				<key>displayName</key>
+				<string>Headley Cottage - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>headleyhouse</string>
+		<key>displayName</key>
+		<string>Headley House</string>
+		<key>image</key>
+		<string>headleyhouse.png</string>
+		<key>area</key>
+		<real>5257</real>
+		<key>longitude</key>
+		<real>-93.14823699999999</real>
+		<key>latitude</key>
+		<real>44.458531</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_headleyhouse_electricity_bill_headleyhouseelectricity_1</string>
+				<key>displayName</key>
+				<string>Headley House - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_headleyhouse_gas_bill_headleyhousenaturalgas_1</string>
+				<key>displayName</key>
+				<string>Headley House - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>HenricksonHouse_0</string>
+		<key>displayName</key>
+		<string>Henrickson House</string>
+		<key>image</key>
+		<string>henricksonhouse_0.png</string>
+		<key>area</key>
+		<real>3171</real>
+		<key>longitude</key>
+		<real>-93.157995</real>
+		<key>latitude</key>
+		<real>44.458799</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_henricksonhouse_0_electricity_bill_henricksonhouseelectricity_1</string>
+				<key>displayName</key>
+				<string>Henrickson House - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_henricksonhouse_0_gas_bill_henricksonhousenaturalgas_1</string>
+				<key>displayName</key>
+				<string>Henrickson House - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>henryhouse</string>
+		<key>displayName</key>
+		<string>Henry House</string>
+		<key>image</key>
+		<string>henryhouse.png</string>
+		<key>area</key>
+		<real>3000</real>
+		<key>longitude</key>
+		<real>-93.15669800000001</real>
+		<key>latitude</key>
+		<real>44.459253</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_henryhouse_electricity_sub_meter_302971001</string>
+				<key>displayName</key>
+				<string>Henry House - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_henryhouse_gas_sub_meter_302971001</string>
+				<key>displayName</key>
+				<string>Henry House - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>HillHouse_0</string>
+		<key>displayName</key>
+		<string>Hill House</string>
+		<key>image</key>
+		<string>hillhouse_0.png</string>
+		<key>area</key>
+		<real>9738</real>
+		<key>longitude</key>
+		<real>-93.15543599999999</real>
+		<key>latitude</key>
+		<real>44.457934</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_hillhouse_0_electricity_bill_hillhouseelectricity_1</string>
+				<key>displayName</key>
+				<string>Hill House - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_hillhouse_0_gas_bill_hillhousenaturalgas_1</string>
+				<key>displayName</key>
+				<string>Hill House - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>HiltonHouse_0</string>
+		<key>displayName</key>
+		<string>Hilton House</string>
+		<key>image</key>
+		<string>hiltonhouse_0.png</string>
+		<key>area</key>
+		<real>1821</real>
+		<key>longitude</key>
+		<real>-93.159432</real>
+		<key>latitude</key>
+		<real>44.458712</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_hiltonhouse_electricity_bill_hiltonhouseelectricity_1</string>
+				<key>displayName</key>
+				<string>Hilton House - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_hiltonhouse_gas_bill_hiltonhousenaturalgas_1</string>
+				<key>displayName</key>
+				<string>Hilton House - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>HoppinHouse_0</string>
+		<key>displayName</key>
+		<string>Hoppin House</string>
+		<key>image</key>
+		<string>hoppinhouse_0.png</string>
+		<key>area</key>
+		<real>3379</real>
+		<key>longitude</key>
+		<real>-93.15422599999999</real>
+		<key>latitude</key>
+		<real>44.459416</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_hoppinhouse_0_electricity_sub_meter_303388679</string>
+				<key>displayName</key>
+				<string>Hoppin House - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_hoppinhouse_0_gas_sub_meter_303388679</string>
+				<key>displayName</key>
+				<string>Hoppin House - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>hulings</string>
 		<key>displayName</key>
 		<string>Hulings Hall</string>
 		<key>image</key>
 		<string>hulings.png</string>
+		<key>area</key>
+		<real>72000</real>
+		<key>longitude</key>
+		<string></string>
+		<key>latitude</key>
+		<string></string>
 		<key>meters</key>
 		<array>
 			<dict>
-				<key>displayName</key>
-				<string>Electricity Use</string>
 				<key>systemName</key>
 				<string>carleton_hulings_en_use</string>
-				<key>type</key>
-				<integer>1</integer>
+				<key>displayName</key>
+				<string>Hulings Hall - Electricity</string>
 			</dict>
 			<dict>
+				<key>systemName</key>
+				<string>carleton_hulings_heating_submeter_hulingshallsteamcondensate</string>
 				<key>displayName</key>
-				<string>Steam Use</string>
+				<string>Hulings Hall - Steam Condensate</string>
+				<key>startingTimescale</key>
+				<string>day</string>
+				<key>defaultTimescale</key>
+				<string>today</string>
+			</dict>
+			<dict>
 				<key>systemName</key>
 				<string>carleton_hulings_steam_use</string>
-				<key>type</key>
-				<integer>4</integer>
+				<key>displayName</key>
+				<string>Hulings Hall - Steam</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Water Use</string>
 				<key>systemName</key>
 				<string>carleton_hulings_water_use</string>
-				<key>type</key>
-				<integer>3</integer>
+				<key>displayName</key>
+				<string>Hulings Hall - Water</string>
 			</dict>
 		</array>
 	</dict>
 	<dict>
+		<key>urlElement</key>
+		<string>HuntHouse_0</string>
+		<key>displayName</key>
+		<string>Hunt Cottage</string>
+		<key>image</key>
+		<string>hunthouse_0.png</string>
 		<key>area</key>
-		<real>50710.0</real>
+		<real>1821</real>
+		<key>longitude</key>
+		<real>-93.159432</real>
+		<key>latitude</key>
+		<real>44.458712</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_hunthouse_electricity_sub_meter_303031573</string>
+				<key>displayName</key>
+				<string>Hunt Cottage - electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_hunthouse_gas_sub_meter_303031573</string>
+				<key>displayName</key>
+				<string>Hunt Cottage - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>HuntingtonHouse_0</string>
+		<key>displayName</key>
+		<string>Huntington House</string>
+		<key>image</key>
+		<string>huntingtonhouse_0.png</string>
+		<key>area</key>
+		<real>5140</real>
+		<key>longitude</key>
+		<real>-93.155137</real>
+		<key>latitude</key>
+		<real>44.458787</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_huntingtonhouse_0_electricity_bill_huntingtonhouseelectricity_1</string>
+				<key>displayName</key>
+				<string>Huntington House - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_huntingtonhouse_0_gas_bill_huntingtonhousenaturalgas_1</string>
+				<key>displayName</key>
+				<string>Huntington House - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>james</string>
+		<key>displayName</key>
+		<string>James Hall</string>
+		<key>image</key>
+		<string>james.png</string>
+		<key>area</key>
+		<real>39376</real>
+		<key>longitude</key>
+		<string></string>
+		<key>latitude</key>
+		<string></string>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_james_en_use</string>
+				<key>displayName</key>
+				<string>Electricity Use</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>JewettHouse_0</string>
+		<key>displayName</key>
+		<string>Jewett House</string>
+		<key>image</key>
+		<string>jewetthouse_0.png</string>
+		<key>area</key>
+		<real>7275</real>
+		<key>longitude</key>
+		<real>-93.15743999999999</real>
+		<key>latitude</key>
+		<real>44.457675</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_jewetthouse_0_electricity_sub_meter_303086694</string>
+				<key>displayName</key>
+				<string>Jewett House - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_jewetthouse_0_gas_sub_meter_303086694</string>
+				<key>displayName</key>
+				<string>Jewett House - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>johnson</string>
+		<key>displayName</key>
+		<string>Johnson/AGH</string>
+		<key>image</key>
+		<string>johnson.png</string>
+		<key>area</key>
+		<real>20337</real>
+		<key>longitude</key>
+		<string></string>
+		<key>latitude</key>
+		<string></string>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_johnson_electricity_sub_meter_johnsonaghelectricity</string>
+				<key>displayName</key>
+				<string>Johnson/AGH - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_johnson_gas_sub_meter_johnsonaghnaturalgas</string>
+				<key>displayName</key>
+				<string>Johnson/AGH - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>JonesHouse_0</string>
+		<key>displayName</key>
+		<string>Jones House</string>
+		<key>image</key>
+		<string>joneshouse_0.png</string>
+		<key>area</key>
+		<real>5739</real>
+		<key>longitude</key>
+		<real>-93.155928</real>
+		<key>latitude</key>
+		<real>44.458123</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_joneshouse_0_electricity_bill_joneshouseeletricity_1</string>
+				<key>displayName</key>
+				<string>Jones House - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_jones_gas_bill_joneshousenaturalgas</string>
+				<key>displayName</key>
+				<string>Jones House - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>laird-stadium</string>
 		<key>displayName</key>
 		<string>Laird Stadium</string>
 		<key>image</key>
-		<string>laird stadium.png</string>
+		<string>laird-stadium.png</string>
+		<key>area</key>
+		<real>50710</real>
+		<key>longitude</key>
+		<string></string>
+		<key>latitude</key>
+		<string></string>
 		<key>meters</key>
 		<array>
 			<dict>
-				<key>displayName</key>
-				<string>Electricity Use</string>
 				<key>systemName</key>
 				<string>carleton_laird_en_use</string>
-				<key>type</key>
-				<integer>1</integer>
+				<key>displayName</key>
+				<string>Laird Stadium - Electricity</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Steam Use</string>
 				<key>systemName</key>
 				<string>carleton_laird_steam_use</string>
-				<key>type</key>
-				<integer>4</integer>
+				<key>displayName</key>
+				<string>Laird Stadium - Steam</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Water Use</string>
 				<key>systemName</key>
 				<string>carleton_laird_water_use</string>
-				<key>type</key>
-				<integer>3</integer>
+				<key>displayName</key>
+				<string>Laird Stadium - Water</string>
 			</dict>
 		</array>
 	</dict>
 	<dict>
-		<key>area</key>
-		<real>1700000.0</real>
+		<key>urlElement</key>
+		<string>main-campus</string>
 		<key>displayName</key>
 		<string>Main Campus</string>
 		<key>image</key>
-		<string>campus.png</string>
+		<string>main-campus.png</string>
+		<key>area</key>
+		<string></string>
+		<key>longitude</key>
+		<string></string>
+		<key>latitude</key>
+		<string></string>
 		<key>meters</key>
 		<array>
 			<dict>
-				<key>displayName</key>
-				<string>Electricity Use</string>
 				<key>systemName</key>
 				<string>carleton_campus_en_use</string>
-				<key>type</key>
-				<integer>1</integer>
+				<key>displayName</key>
+				<string>Main Campus - Electricity</string>
 			</dict>
 			<dict>
+				<key>systemName</key>
+				<string>carleton_campus_fuel_use</string>
 				<key>displayName</key>
-				<string>Gas Use</string>
+				<string>Main Campus - Fuel Oil Use</string>
+			</dict>
+			<dict>
 				<key>systemName</key>
 				<string>carleton_campus_gas_use</string>
-				<key>type</key>
-				<integer>7</integer>
+				<key>displayName</key>
+				<string>Main Campus - Gas</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Steam Use</string>
 				<key>systemName</key>
 				<string>carleton_campus_steam_use</string>
-				<key>type</key>
-				<integer>4</integer>
+				<key>displayName</key>
+				<string>Main Campus - Steam</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Solar Production</string>
 				<key>systemName</key>
 				<string>carleton_campus_total_pv_prod</string>
-				<key>type</key>
-				<integer>2</integer>
+				<key>displayName</key>
+				<string>Main Campus - Solar Production</string>
 			</dict>
 			<dict>
+				<key>systemName</key>
+				<string>carleton_main_campus_electricity_sub_meter_303991285</string>
 				<key>displayName</key>
-				<string>Turbine 1: Public grid, Production</string>
+				<string>Main Campus - Acct 303991285, Meter 4742374</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_main_campus_electricity_sub_meter_303991285_1</string>
+				<key>displayName</key>
+				<string>Main Campus - Acct 303991285, Meter 13152594</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_main_campus_gas_sub_meter_5168183717</string>
+				<key>displayName</key>
+				<string>Main Campus - 5168183717</string>
+			</dict>
+			<dict>
 				<key>systemName</key>
 				<string>carleton_turbine1_produced_power</string>
-				<key>type</key>
-				<integer>11</integer>
+				<key>displayName</key>
+				<string>Main Campus - Turbine 1: Public grid, Production</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Turbine 2 (Kracum): Carleton Grid, Production</string>
 				<key>systemName</key>
 				<string>carleton_wind_production</string>
-				<key>type</key>
-				<integer>11</integer>
+				<key>displayName</key>
+				<string>Main Campus - Turbine 2 (Kracum): Carleton Grid, Production</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Turbine 2 (Kracum): Carleton Grid, Wind Speed</string>
 				<key>systemName</key>
 				<string>carleton_wind_speed</string>
-				<key>type</key>
-				<integer>36</integer>
+				<key>displayName</key>
+				<string>Main Campus - Turbine 2 (Kracum): Carleton Grid, Wind Speed</string>
 			</dict>
 		</array>
 	</dict>
 	<dict>
-		<key>area</key>
-		<real>56522.0</real>
+		<key>urlElement</key>
+		<string>mudd</string>
 		<key>displayName</key>
 		<string>Mudd Hall</string>
 		<key>image</key>
 		<string>mudd.png</string>
+		<key>area</key>
+		<real>56522</real>
+		<key>longitude</key>
+		<string></string>
+		<key>latitude</key>
+		<string></string>
 		<key>meters</key>
 		<array>
 			<dict>
-				<key>displayName</key>
-				<string>Electricity Use</string>
 				<key>systemName</key>
 				<string>carleton_mudd_en_use</string>
-				<key>type</key>
-				<integer>1</integer>
+				<key>displayName</key>
+				<string>Mudd Hall - Electricity</string>
 			</dict>
 			<dict>
+				<key>systemName</key>
+				<string>carleton_mudd_heating_submeter_muddhallsteamcondensate</string>
 				<key>displayName</key>
-				<string>Steam Use</string>
+				<string>Mudd Hall - Steam Condensate</string>
+				<key>startingTimescale</key>
+				<string>day</string>
+				<key>defaultTimescale</key>
+				<string>today</string>
+			</dict>
+			<dict>
 				<key>systemName</key>
 				<string>carleton_mudd_steam_use</string>
-				<key>type</key>
-				<integer>4</integer>
+				<key>displayName</key>
+				<string>Mudd Hall - Steam</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Water Use</string>
 				<key>systemName</key>
 				<string>carleton_mudd_water_use</string>
-				<key>type</key>
-				<integer>3</integer>
+				<key>displayName</key>
+				<string>Mudd Hall - Water</string>
 			</dict>
 		</array>
 	</dict>
 	<dict>
-		<key>area</key>
-		<real>16515.0</real>
+		<key>urlElement</key>
+		<string>music</string>
 		<key>displayName</key>
 		<string>Music Hall</string>
 		<key>image</key>
 		<string>music.png</string>
+		<key>area</key>
+		<real>16515</real>
 		<key>meters</key>
 		<array>
 			<dict>
-				<key>displayName</key>
-				<string>Electricity Use</string>
 				<key>systemName</key>
 				<string>carleton_music_en_use</string>
-				<key>type</key>
-				<integer>1</integer>
+				<key>displayName</key>
+				<string>Music Hall - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_music_heating_wholebuilding_musichallsteamcondensate</string>
+				<key>displayName</key>
+				<string>Music Hall - Steam Condensate</string>
+				<key>startingTimescale</key>
+				<string>day</string>
+				<key>defaultTimescale</key>
+				<string>today</string>
 			</dict>
 		</array>
 	</dict>
 	<dict>
-		<key>area</key>
-		<real>39787.0</real>
+		<key>urlElement</key>
+		<string>musser</string>
 		<key>displayName</key>
 		<string>Musser Hall</string>
 		<key>image</key>
 		<string>musser.png</string>
+		<key>area</key>
+		<real>39787</real>
 		<key>meters</key>
 		<array>
 			<dict>
-				<key>displayName</key>
-				<string>Electricity Use</string>
 				<key>systemName</key>
 				<string>carleton_musser_en_use</string>
-				<key>type</key>
-				<integer>1</integer>
+				<key>displayName</key>
+				<string>Musser Hall - Electricity</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Steam Use</string>
 				<key>systemName</key>
 				<string>carleton_musser_steam_use</string>
-				<key>type</key>
-				<integer>4</integer>
+				<key>displayName</key>
+				<string>Musser Hall - Steam</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Water Use</string>
 				<key>systemName</key>
 				<string>carleton_musser_water_use</string>
-				<key>type</key>
-				<integer>3</integer>
+				<key>displayName</key>
+				<string>Musser Hall - Water</string>
 			</dict>
 		</array>
 	</dict>
 	<dict>
-		<key>area</key>
-		<real>40392.0</real>
+		<key>urlElement</key>
+		<string>myers</string>
 		<key>displayName</key>
 		<string>Myers Hall</string>
 		<key>image</key>
 		<string>myers.png</string>
+		<key>area</key>
+		<real>40392</real>
 		<key>meters</key>
 		<array>
 			<dict>
-				<key>displayName</key>
-				<string>Electricity Use</string>
 				<key>systemName</key>
 				<string>carleton_myers_en_use</string>
-				<key>type</key>
-				<integer>1</integer>
+				<key>displayName</key>
+				<string>Myers Hall - Electricity</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Steam Use</string>
 				<key>systemName</key>
 				<string>carleton_myers_steam_use</string>
-				<key>type</key>
-				<integer>4</integer>
+				<key>displayName</key>
+				<string>Myers Hall - Steam</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Water Use</string>
 				<key>systemName</key>
 				<string>carleton_myers_water_use</string>
-				<key>type</key>
-				<integer>3</integer>
+				<key>displayName</key>
+				<string>Myers Hall - Water</string>
 			</dict>
 		</array>
 	</dict>
 	<dict>
-		<key>area</key>
-		<real>36033.0</real>
+		<key>urlElement</key>
+		<string>nourse</string>
 		<key>displayName</key>
 		<string>Nourse Hall</string>
 		<key>image</key>
 		<string>nourse.png</string>
+		<key>area</key>
+		<real>36033</real>
 		<key>meters</key>
 		<array>
 			<dict>
-				<key>displayName</key>
-				<string>Electricity Use</string>
 				<key>systemName</key>
 				<string>carleton_nourse_en_use</string>
-				<key>type</key>
-				<integer>1</integer>
+				<key>displayName</key>
+				<string>Nourse Hall - Electricity</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Steam Use</string>
 				<key>systemName</key>
 				<string>carleton_nourse_steam_use</string>
-				<key>type</key>
-				<integer>4</integer>
+				<key>displayName</key>
+				<string>Nourse Hall - Steam</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Water Use</string>
 				<key>systemName</key>
 				<string>carleton_nourse_water_use</string>
-				<key>type</key>
-				<integer>3</integer>
+				<key>displayName</key>
+				<string>Nourse Hall - Water</string>
 			</dict>
 		</array>
 	</dict>
 	<dict>
+		<key>urlElement</key>
+		<string>NuttingHouse_0</string>
+		<key>displayName</key>
+		<string>Nutting House</string>
+		<key>image</key>
+		<string>nuttinghouse_0.png</string>
 		<key>area</key>
-		<real>54899.0</real>
+		<real>8352</real>
+		<key>longitude</key>
+		<real>-93.156578</real>
+		<key>latitude</key>
+		<real>44.457766</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_nuttinghouse_0_electricity_bill_nuttinghouseelectricity_1</string>
+				<key>displayName</key>
+				<string>Nutting House - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_nuttinghouse_0_gas_bill_nuttinghousenaturalgas</string>
+				<key>displayName</key>
+				<string>Nutting House - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>olin</string>
 		<key>displayName</key>
 		<string>Olin Hall</string>
 		<key>image</key>
 		<string>olin.png</string>
+		<key>area</key>
+		<real>54899</real>
 		<key>meters</key>
 		<array>
 			<dict>
-				<key>displayName</key>
-				<string>Electricity Use</string>
 				<key>systemName</key>
 				<string>carleton_olin_en_use</string>
-				<key>type</key>
-				<integer>1</integer>
+				<key>displayName</key>
+				<string>Olin Hall - Electricity</string>
 			</dict>
 			<dict>
+				<key>systemName</key>
+				<string>carleton_olin_heating_submeter_leightonhallsteamcondensate</string>
 				<key>displayName</key>
-				<string>Steam Use</string>
+				<string>Olin Hall  - Steam Condensate</string>
+				<key>startingTimescale</key>
+				<string>day</string>
+				<key>defaultTimescale</key>
+				<string>today</string>
+			</dict>
+			<dict>
 				<key>systemName</key>
 				<string>carleton_olin_steam_use</string>
-				<key>type</key>
-				<integer>4</integer>
+				<key>displayName</key>
+				<string>Olin Hall - Steam</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Water Use</string>
 				<key>systemName</key>
 				<string>carleton_olin_water_use</string>
-				<key>type</key>
-				<integer>3</integer>
+				<key>displayName</key>
+				<string>Olin Hall - Water</string>
 			</dict>
 		</array>
 	</dict>
 	<dict>
+		<key>urlElement</key>
+		<string>PageHouse_0</string>
+		<key>displayName</key>
+		<string>Page House East</string>
+		<key>image</key>
+		<string>pagehouse_0.png</string>
 		<key>area</key>
-		<real>90085.0</real>
+		<real>5451</real>
+		<key>longitude</key>
+		<real>-93.155945</real>
+		<key>latitude</key>
+		<real>44.457586</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_pagehouse_gas_sub_meter_303008483</string>
+				<key>displayName</key>
+				<string>Page House East - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>pagehouse</string>
+		<key>displayName</key>
+		<string>Page House West</string>
+		<key>image</key>
+		<string>pagehouse.png</string>
+		<key>area</key>
+		<real>5451</real>
+		<key>longitude</key>
+		<real>-93.156752</real>
+		<key>latitude</key>
+		<real>44.457372</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_pagehouse_electricity_bill_pagehousewest</string>
+				<key>displayName</key>
+				<string>Page House West - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_pagehouse_gas_sub_meter_303742626</string>
+				<key>displayName</key>
+				<string>Page House West - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>parish</string>
+		<key>displayName</key>
+		<string>Parish House </string>
+		<key>image</key>
+		<string>parish.png</string>
+		<key>area</key>
+		<real>17676</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_parish_electricity_sub_meter_parishhouseelectricity</string>
+				<key>displayName</key>
+				<string>Parish House - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_parish_gas_sub_meter_parishhousenaturalgas</string>
+				<key>displayName</key>
+				<string>Parish House - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>PollockHouse_0</string>
+		<key>displayName</key>
+		<string>Pollock House</string>
+		<key>image</key>
+		<string>pollockhouse_0.png</string>
+		<key>area</key>
+		<real>4730</real>
+		<key>longitude</key>
+		<real>-93.153132</real>
+		<key>latitude</key>
+		<real>44.46008</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_pollockhouse_0_electricity_sub_meter_302505881</string>
+				<key>displayName</key>
+				<string>Pollock House - Electricity </string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_pollockhouse_0_gas_bill_pollockhouse1naturalgas_1</string>
+				<key>displayName</key>
+				<string>Pollock House - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>prairiewarehouse</string>
+		<key>displayName</key>
+		<string>Prairie Warehouse</string>
+		<key>image</key>
+		<string>prairiewarehouse.png</string>
+		<key>area</key>
+		<real>1950</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_prairiewarehouse_electricity_sub_meter_prairiewarehouseelectricityuse</string>
+				<key>displayName</key>
+				<string>Prairie Warehouse - Electricity Use</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>PrenticeHouse_0</string>
+		<key>displayName</key>
+		<string>Prentice House</string>
+		<key>image</key>
+		<string>prenticehouse_0.png</string>
+		<key>area</key>
+		<real>3197</real>
+		<key>longitude</key>
+		<real>-93.158051</real>
+		<key>latitude</key>
+		<real>44.459939</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_prenticehouse_0_electricity_sub_meter_303766004</string>
+				<key>displayName</key>
+				<string>Prentice House - Electricity </string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_prenticehouse_0_naturalgas_sub_meter_303766004</string>
+				<key>displayName</key>
+				<string>Prentice House - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>RaymentHouse_0</string>
+		<key>displayName</key>
+		<string>Rayment House</string>
+		<key>image</key>
+		<string>raymenthouse_0.png</string>
+		<key>area</key>
+		<real>1440</real>
+		<key>longitude</key>
+		<real>-93.152946</real>
+		<key>latitude</key>
+		<real>44.455961</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_raymenthouse_0_electricity_bill_raymenthouseelectricity_1</string>
+				<key>displayName</key>
+				<string>Rayment House - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_raymenthouse_0_gas_bill_raymenthousenaturalgas_1</string>
+				<key>displayName</key>
+				<string>Rayment House - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>rec-center</string>
 		<key>displayName</key>
 		<string>Recreation Center</string>
 		<key>image</key>
-		<string>rec center.png</string>
+		<string>rec-center.png</string>
+		<key>area</key>
+		<real>90085</real>
 		<key>meters</key>
 		<array>
 			<dict>
-				<key>displayName</key>
-				<string>Electricity Use</string>
 				<key>systemName</key>
 				<string>carleton_reccenter_en_use</string>
-				<key>type</key>
-				<integer>1</integer>
+				<key>displayName</key>
+				<string>Recreation Center - Electricity</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Steam Use</string>
 				<key>systemName</key>
 				<string>carleton_reccenter_steam_flow</string>
-				<key>type</key>
-				<integer>4</integer>
+				<key>displayName</key>
+				<string>Recreation Center - Steam</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Water Use</string>
 				<key>systemName</key>
 				<string>carleton_reccenter_water_use</string>
-				<key>type</key>
-				<integer>3</integer>
+				<key>displayName</key>
+				<string>Recreation Center - Water</string>
 			</dict>
 		</array>
 	</dict>
 	<dict>
+		<key>urlElement</key>
+		<string>RiceHouse_0</string>
+		<key>displayName</key>
+		<string>Rice House</string>
+		<key>image</key>
+		<string>ricehouse_0.png</string>
 		<key>area</key>
-		<real>44875.0</real>
+		<real>5616</real>
+		<key>longitude</key>
+		<real>-93.155928</real>
+		<key>latitude</key>
+		<real>44.458123</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_ricehouse_0_electricity_bill_ricehouseelectricity_1</string>
+				<key>displayName</key>
+				<string>Rice House - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_ricehouse_0_gas_bill_ricehousenaturalgas_1</string>
+				<key>displayName</key>
+				<string>Rice House - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>RogersHouse_0</string>
+		<key>displayName</key>
+		<string>Rogers House</string>
+		<key>image</key>
+		<string>rogershouse_0.png</string>
+		<key>area</key>
+		<real>2868</real>
+		<key>longitude</key>
+		<real>-93.148506</real>
+		<key>latitude</key>
+		<real>44.45853</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_rogershouse_0_electricity_bill_rogershouseelectricity_1</string>
+				<key>displayName</key>
+				<string>Rogers House - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_rogershouse_0_gas_bill_rogershousenaturalgas_1</string>
+				<key>displayName</key>
+				<string>Rogers House - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>RybergHouse_0</string>
+		<key>displayName</key>
+		<string>Ryberg House</string>
+		<key>image</key>
+		<string>ryberghouse_0.png</string>
+		<key>area</key>
+		<real>2931</real>
+		<key>longitude</key>
+		<real>-93.156329</real>
+		<key>latitude</key>
+		<real>44.458219</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_ryberghouse_0_electricity_bill_ryberghouseelectricity2</string>
+				<key>displayName</key>
+				<string>Ryberg House - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_ryberghouse_0_gas_bill_ryberghousenaturalgas_1</string>
+				<key>displayName</key>
+				<string>Ryberg House - Natural Gas	</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>sayles-hill</string>
 		<key>displayName</key>
 		<string>Sayles-Hill Campus Center</string>
 		<key>image</key>
-		<string>sayles.png</string>
+		<string>sayles-hill.png</string>
+		<key>area</key>
+		<real>44875</real>
 		<key>meters</key>
 		<array>
 			<dict>
-				<key>displayName</key>
-				<string>Electricity Use</string>
 				<key>systemName</key>
 				<string>carleton_sayles_en_use</string>
-				<key>type</key>
-				<integer>1</integer>
+				<key>displayName</key>
+				<string>Sayles-Hill Campus Center - Electricity</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Steam Use</string>
 				<key>systemName</key>
 				<string>carleton_sayles_steam_use</string>
-				<key>type</key>
-				<integer>4</integer>
+				<key>displayName</key>
+				<string>Sayles-Hill Campus Center - Steam</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Water Use</string>
 				<key>systemName</key>
 				<string>carleton_sayles_water_use</string>
-				<key>type</key>
-				<integer>3</integer>
+				<key>displayName</key>
+				<string>Sayles-Hill Campus Center - Water</string>
 			</dict>
 		</array>
 	</dict>
 	<dict>
+		<key>urlElement</key>
+		<string>SeccombeHouse_0</string>
+		<key>displayName</key>
+		<string>Seccombe House</string>
+		<key>image</key>
+		<string>seccombehouse_0.png</string>
 		<key>area</key>
-		<real>43957.0</real>
+		<real>3468</real>
+		<key>longitude</key>
+		<real>-93.152107</real>
+		<key>latitude</key>
+		<real>44.458973</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_seccombehouse_0_electricity_bill_seccombehouseelectricity_2</string>
+				<key>displayName</key>
+				<string>Seccombe House - Electricity 1</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_seccombehouse_0_electricity_sub_meter_302176585</string>
+				<key>displayName</key>
+				<string>Seccombe House- Electricity 2</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_seccombehouse_0_electricity_sub_meter_303665640</string>
+				<key>displayName</key>
+				<string>Seccombe House- Natural Gas</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_seccombehouse_0_electricity_total</string>
+				<key>displayName</key>
+				<string>Seccombe House - Electricity Total</string>
+				<key>startingTimescale</key>
+				<string>year</string>
+				<key>defaultTimescale</key>
+				<string>lastyear</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>severance</string>
 		<key>displayName</key>
 		<string>Severance Hall</string>
 		<key>image</key>
-		<string>severence.png</string>
+		<string>severance.png</string>
+		<key>area</key>
+		<real>43957</real>
 		<key>meters</key>
 		<array>
 			<dict>
-				<key>displayName</key>
-				<string>Electricity Use</string>
 				<key>systemName</key>
 				<string>carleton_severance_en_use</string>
-				<key>type</key>
-				<integer>1</integer>
+				<key>displayName</key>
+				<string>Severance Hall - Electricity</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Steam Use</string>
 				<key>systemName</key>
 				<string>carleton_severance_steam_use</string>
-				<key>type</key>
-				<integer>4</integer>
+				<key>displayName</key>
+				<string>Severance Hall - Steam</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Water Use</string>
 				<key>systemName</key>
 				<string>carleton_severance_water_use</string>
-				<key>type</key>
-				<integer>3</integer>
+				<key>displayName</key>
+				<string>Severance Hall - Water</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Electricity Use</string>
 				<key>systemName</key>
 				<string>carleton_severence_en_derived</string>
-				<key>type</key>
-				<integer>1</integer>
+				<key>displayName</key>
+				<string>Severance Hall - Electricity Total</string>
 			</dict>
 		</array>
 	</dict>
 	<dict>
-		<key>area</key>
-		<real>28213.0</real>
+		<key>urlElement</key>
+		<string>skinner</string>
 		<key>displayName</key>
 		<string>Skinner Memorial Chapel</string>
 		<key>image</key>
-		<string>skinner chapel.png</string>
+		<string>skinner.png</string>
+		<key>area</key>
+		<real>28213</real>
 		<key>meters</key>
 		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_skinner_electricity_wholebuilding_skinnerchapelelectricity</string>
+				<key>displayName</key>
+				<string>Skinner Chapel - Electricity</string>
+				<key>startingTimescale</key>
+				<string>day</string>
+				<key>defaultTimescale</key>
+				<string>today</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_skinner_heating_wholebuilding_skinnerchapelsteamcondensate</string>
+				<key>displayName</key>
+				<string>Skinner Chapel - Steam Condensate</string>
+				<key>startingTimescale</key>
+				<string>day</string>
+				<key>defaultTimescale</key>
+				<string>today</string>
+			</dict>
 		</array>
 	</dict>
 	<dict>
+		<key>urlElement</key>
+		<string>SperryHouse_0</string>
+		<key>displayName</key>
+		<string>Sperry House</string>
+		<key>image</key>
+		<string>sperryhouse_0.png</string>
 		<key>area</key>
-		<real>37977.0</real>
+		<real>4429</real>
+		<key>longitude</key>
+		<real>-93.15187299999999</real>
+		<key>latitude</key>
+		<real>44.458986</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_sperryhouse_0_electricity_bill_sperryhouseelectricity2_1</string>
+				<key>displayName</key>
+				<string>Sperry House - Electricity 2</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_sperryhouse_0_electricity_sub_meter_302732604</string>
+				<key>displayName</key>
+				<string>Sperry House - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_sperryhouse_0_electricity_total</string>
+				<key>displayName</key>
+				<string>Sperry House - Electricity Total</string>
+				<key>startingTimescale</key>
+				<string>year</string>
+				<key>defaultTimescale</key>
+				<string>lastyear</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_sperryhouse_0_gas_bill_sperryhousenaturalgas_1</string>
+				<key>displayName</key>
+				<string>Sperry House - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>StimsonHouse_0</string>
+		<key>displayName</key>
+		<string>Stimson House</string>
+		<key>image</key>
+		<string>stimsonhouse_0.png</string>
+		<key>area</key>
+		<real>3866</real>
+		<key>longitude</key>
+		<real>-93.15616199999999</real>
+		<key>latitude</key>
+		<real>44.459273</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_stimsonhouse_0_electricity_bill_stimsonhouseelectricity_1</string>
+				<key>displayName</key>
+				<string>Stimson House - Electricity	</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_stimsonhouse_0_gas_bill_stimsonhousenaturalgas_1</string>
+				<key>displayName</key>
+				<string>Stimson House - Natural Gas	</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>StrongHouse_0</string>
+		<key>displayName</key>
+		<string>Strong House</string>
+		<key>image</key>
+		<string>stronghouse_0.png</string>
+		<key>area</key>
+		<real>4566</real>
+		<key>longitude</key>
+		<real>-93.155951</real>
+		<key>latitude</key>
+		<real>44.458801</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_stronghouse_0_electricity_sub_meter_302934670</string>
+				<key>displayName</key>
+				<string>Strong House - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_stronghouse_0_electricity_sub_meter_302934670_1</string>
+				<key>displayName</key>
+				<string>Strong House - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>townhouses</string>
 		<key>displayName</key>
 		<string>Student Townhouses</string>
 		<key>image</key>
 		<string>townhouses.png</string>
+		<key>area</key>
+		<real>37977</real>
 		<key>meters</key>
 		<array>
 			<dict>
-				<key>displayName</key>
-				<string>Electricity Use</string>
 				<key>systemName</key>
 				<string>carleton_townhouses_en_use</string>
-				<key>type</key>
-				<integer>1</integer>
+				<key>displayName</key>
+				<string>Student Townhouses - Electricity</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Steam Use</string>
 				<key>systemName</key>
 				<string>carleton_townhouses_steam_use</string>
-				<key>type</key>
-				<integer>4</integer>
+				<key>displayName</key>
+				<string>Student Townhouses - Use</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Water Use</string>
 				<key>systemName</key>
 				<string>carleton_townhouses_water_use</string>
-				<key>type</key>
-				<integer>3</integer>
+				<key>displayName</key>
+				<string>Student Townhouses - Water</string>
 			</dict>
 		</array>
 	</dict>
 	<dict>
+		<key>urlElement</key>
+		<string>watertower</string>
+		<key>displayName</key>
+		<string>Water Tower</string>
+		<key>image</key>
+		<string>watertower.png</string>
 		<key>area</key>
-		<real>53346.0</real>
+		<real>50</real>
+		<key>longitude</key>
+		<real>-93.14881800000001</real>
+		<key>latitude</key>
+		<real>44.466124</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_watertower_electricity_wholebuilding_watertowerelectricity</string>
+				<key>displayName</key>
+				<string>Water Tower - Electricity</string>
+				<key>startingTimescale</key>
+				<string>day</string>
+				<key>defaultTimescale</key>
+				<string>today</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>watson</string>
 		<key>displayName</key>
 		<string>Watson Hall</string>
 		<key>image</key>
 		<string>watson.png</string>
+		<key>area</key>
+		<real>53346</real>
 		<key>meters</key>
 		<array>
 			<dict>
-				<key>displayName</key>
-				<string>Electricity Use</string>
 				<key>systemName</key>
 				<string>carleton_watson_en_use</string>
-				<key>type</key>
-				<integer>1</integer>
+				<key>displayName</key>
+				<string>Watson Hall - Electricity</string>
 			</dict>
 			<dict>
+				<key>systemName</key>
+				<string>carleton_watson_gas_sub_meter_303818107</string>
 				<key>displayName</key>
-				<string>Steam Use</string>
+				<string>Watson Hall - Natural Gas</string>
+			</dict>
+			<dict>
 				<key>systemName</key>
 				<string>carleton_watson_steam_use</string>
-				<key>type</key>
-				<integer>4</integer>
+				<key>displayName</key>
+				<string>Watson Hall - Steam</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Water Use</string>
 				<key>systemName</key>
 				<string>carleton_watson_water_use</string>
-				<key>type</key>
-				<integer>3</integer>
+				<key>displayName</key>
+				<string>Watson Hall - Water</string>
 			</dict>
 		</array>
 	</dict>
 	<dict>
-		<key>area</key>
-		<real>135000.0</real>
+		<key>urlElement</key>
+		<string>weitz</string>
 		<key>displayName</key>
 		<string>Weitz Center for Creativity</string>
 		<key>image</key>
 		<string>weitz.png</string>
+		<key>area</key>
+		<real>135000</real>
 		<key>meters</key>
 		<array>
 			<dict>
-				<key>displayName</key>
-				<string>Electricity Use</string>
 				<key>systemName</key>
 				<string>carleton_weitz_en_use</string>
-				<key>type</key>
-				<integer>1</integer>
+				<key>displayName</key>
+				<string>Weitz Center for Creativity - Electricity</string>
 			</dict>
 			<dict>
+				<key>systemName</key>
+				<string>carleton_weitz_gas_sub_meter_304222796</string>
 				<key>displayName</key>
-				<string>Gas Use</string>
+				<string>Weitz Center for Creativity - Natural Gas</string>
+			</dict>
+			<dict>
 				<key>systemName</key>
 				<string>carleton_weitz_gas_use</string>
-				<key>type</key>
-				<integer>4</integer>
+				<key>displayName</key>
+				<string>Weitz Center for Creativity - Gas</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Water Use</string>
 				<key>systemName</key>
 				<string>carleton_weitz_water_use</string>
-				<key>type</key>
-				<integer>3</integer>
+				<key>displayName</key>
+				<string>Weitz Center for Creativity - Water</string>
 			</dict>
 		</array>
 	</dict>
 	<dict>
-		<key>area</key>
-		<real>63534.0</real>
+		<key>urlElement</key>
+		<string>west-gym</string>
 		<key>displayName</key>
 		<string>West Gym</string>
 		<key>image</key>
-		<string>west gym.png</string>
+		<string>west-gym.png</string>
+		<key>area</key>
+		<real>63534</real>
 		<key>meters</key>
 		<array>
 			<dict>
-				<key>displayName</key>
-				<string>Electricity Use</string>
 				<key>systemName</key>
 				<string>carleton_westgym_en_use</string>
-				<key>type</key>
-				<integer>1</integer>
+				<key>displayName</key>
+				<string>West Gym - Electricity</string>
+				<key>baselines</key>
+				<array>
+					<dict>
+						<key>displayName</key>
+						<string>Pre-Audit </string>
+						<key>firstReadingDate</key>
+						<string>2014/07/31 11:00:00</string>
+						<key>lastReadingDate</key>
+						<string>2015/04/19 20:00:00</string>
+					</dict>
+				</array>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Steam Use</string>
 				<key>systemName</key>
 				<string>carleton_westgym_steam_use</string>
-				<key>type</key>
-				<integer>4</integer>
+				<key>displayName</key>
+				<string>West Gym - Steam</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Water Use</string>
 				<key>systemName</key>
 				<string>carleton_westgym_water_use</string>
-				<key>type</key>
-				<integer>3</integer>
+				<key>displayName</key>
+				<string>West Gym - Water</string>
 			</dict>
 		</array>
 	</dict>
 	<dict>
-		<key>area</key>
-		<real>20337.0</real>
+		<key>urlElement</key>
+		<string>WhittierHouse_0</string>
 		<key>displayName</key>
-		<string>Willis Memorial Hall</string>
+		<string>Whittier House</string>
 		<key>image</key>
-		<string>willis.png</string>
+		<string>whittierhouse_0.png</string>
+		<key>area</key>
+		<real>6402</real>
+		<key>longitude</key>
+		<real>-93.15280799999999</real>
+		<key>latitude</key>
+		<real>44.458268</real>
 		<key>meters</key>
 		<array>
 			<dict>
-				<key>displayName</key>
-				<string>Electricity Use</string>
 				<key>systemName</key>
-			<string>carleton_willis_electricity_wholebuilding_willishallelectricity</string>
-				<key>type</key>
-				<integer>1</integer>
+				<string>carleton_whittierhouse_0_electricity_bill_whittierhouseelectricity_1</string>
+				<key>displayName</key>
+				<string>Whittier House - Electricity</string>
 			</dict>
 			<dict>
-				<key>displayName</key>
-				<string>Steam Use</string>
 				<key>systemName</key>
-				<string>carleton_willis_heating_wholebuilding_willishallsteam</string>
-				<key>type</key>
-				<integer>4</integer>
+				<string>carleton_whittierhouse_0_gas_sub_meter_303297519</string>
+				<key>displayName</key>
+				<string>Whittier House - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>WilliamsHouse_0</string>
+		<key>displayName</key>
+		<string>Williams House</string>
+		<key>image</key>
+		<string>williamshouse_0.png</string>
+		<key>area</key>
+		<real>2950</real>
+		<key>longitude</key>
+		<real>-93.15673700000001</real>
+		<key>latitude</key>
+		<real>44.459072</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_williamshouse_0_electricity_sub_meter_303627401</string>
+				<key>displayName</key>
+				<string>Williams House - Eletricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_williamshouse_0_electricity_sub_meter_303627401_1</string>
+				<key>displayName</key>
+				<string>Williams House - Natural Gas</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>urlElement</key>
+		<string>WilsonHouse_0</string>
+		<key>displayName</key>
+		<string>Wilson House</string>
+		<key>image</key>
+		<string>wilsonhouse_0.png</string>
+		<key>area</key>
+		<real>2764</real>
+		<key>longitude</key>
+		<real>-93.15862799999999</real>
+		<key>latitude</key>
+		<real>44.460032</real>
+		<key>meters</key>
+		<array>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_wilsonhouse_0_electricity_bill_wilsonhouseelectricity_1</string>
+				<key>displayName</key>
+				<string>Wilson House - Electricity</string>
+			</dict>
+			<dict>
+				<key>systemName</key>
+				<string>carleton_wilsonhouse_0_gas_bill_wilsonhousenaturalgas_1</string>
+				<key>displayName</key>
+				<string>Wilson House - Natural Gas</string>
 			</dict>
 		</array>
 	</dict>
