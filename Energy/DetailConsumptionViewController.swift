@@ -13,13 +13,23 @@ class DetailConsumptionViewController: UIViewController {
     @IBOutlet weak var barGraphView: BarGraphView!
     @IBOutlet weak var energyTypeLabel: UILabel!
     @IBOutlet weak var building1Label: UILabel!
+    @IBOutlet weak var building2Label: UILabel!
     @IBOutlet weak var energyUnitsLabel: UILabel!
+    
+    // An array of raw building data
+    var buildingsDictionaries = []
     
     var selectedBuildings = [String]()
     let energyTypeArray = ["Electricity", "Water", "Heating", "Total Energy"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Fill in the building data from the plist
+        if let path = NSBundle.mainBundle().pathForResource("buildings", ofType: "plist") {
+            self.buildingsDictionaries = NSArray(contentsOfFile: path)!
+        }
+        
         getGraphData("electricity")
     }
     
@@ -32,11 +42,6 @@ class DetailConsumptionViewController: UIViewController {
         let startDate = NSCalendar.currentCalendar().dateFromComponents(dateComponents)!
         dateComponents.day = 17
         let endDate = NSCalendar.currentCalendar().dateFromComponents(dateComponents)!
-        
-        var buildingsDictionaries = []
-        if let path = NSBundle.mainBundle().pathForResource("buildings", ofType: "plist") {
-            buildingsDictionaries = NSArray(contentsOfFile: path)!
-        }
         
         for building in selectedBuildings {
             
@@ -58,15 +63,16 @@ class DetailConsumptionViewController: UIViewController {
                 energyIndex = 0
             }
             
-            var searchName = ""
+            var searchName:[String] = []
             
-            for dict in buildingsDictionaries {
+            for dict in self.buildingsDictionaries {
                 if dict["displayName"] as! String == building{
                     var buildingName = dict["meters"] as! NSArray
                     if buildingName.count > energyIndex {
-                        searchName = buildingName[energyIndex]["systemName"] as! String
+                        searchName.append(buildingName[energyIndex]["systemName"] as! String)
                     } else {
-                        setupGraphDisplay([])
+                        setupGraphDisplay([:])
+                        return
                     }
                 }
             }
@@ -75,19 +81,27 @@ class DetailConsumptionViewController: UIViewController {
         }
     }
     
-    func setupGraphDisplay(results:NSArray) {
-        let dataArray = results as! [Double]
+    func setupGraphDisplay(results:[String:[Double]]) {
+    
+        //Change the name key from the meter name to the display name
+        var dataArrayWithDisplayNames = [String:[Double]]()
+        var count = 0
+        for (key, value) in results{
+            dataArrayWithDisplayNames[self.selectedBuildings[count]] = value
+            count++
+        }
         
         //Add building data to the graph
-        self.barGraphView.loadData(selectedBuildings[0], data: dataArray)
+        self.barGraphView.loadData(dataArrayWithDisplayNames)
         
         //Calculate average and total from graphPoints
-        let total = dataArray.reduce(0, combine: +)
-        // println("The data has been retrieved.  The total value is: \(total)")
+//        let total = dataArray[selectedBuildings[0].reduce(0, combine: +)
+//        println("The data has been retrieved.  The total value is: \(total)")
         
         //Indicate that the graph needs to be redrawn and labels updated on the main queue
         dispatch_async(dispatch_get_main_queue()) {
             self.building1Label.text = self.selectedBuildings[0]
+            self.building2Label.text = self.selectedBuildings[self.selectedBuildings.count-1]
             self.barGraphView.setNeedsDisplay()
         }
     }

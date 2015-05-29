@@ -755,6 +755,7 @@
                     <connections>
                         <outlet property="barGraphView" destination="bHu-h1-Mx1" id="u5V-Op-gK2"/>
                         <outlet property="building1Label" destination="ldC-KD-M8M" id="pb8-Lm-JPm"/>
+                        <outlet property="building2Label" destination="gry-ag-kvt" id="pQG-WW-WeL"/>
                         <outlet property="energyTypeLabel" destination="Oaa-aI-tdw" id="UxT-3S-GPk"/>
                         <outlet property="energyUnitsLabel" destination="EGu-f4-6WC" id="ia4-zq-b1w"/>
                     </connections>

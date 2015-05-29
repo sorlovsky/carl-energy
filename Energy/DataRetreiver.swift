@@ -18,13 +18,12 @@ class DataRetreiver: NSObject {
     
     
     // Fetches the data based on the URL created upon initialization
-    func fetch(name : String, startDate: NSDate, endDate : NSDate, resolution : String, callback: (NSArray)->Void){
+    func fetch(nameArray : [String], startDate: NSDate, endDate : NSDate, resolution : String, callback: ([String:[Double]])->Void){
         
-        var count = 3
-        var dataResults = [[Double]]()
+        var dataResults = [String:[Double]]()
         
-        for i in 0...3 {
-            var url : NSURL = URLFormatter(name, startDate: startDate, endDate: endDate, resolution: resolution)
+        for buildingNameIndex in 0..<nameArray.count {
+            var url : NSURL = URLFormatter(nameArray[buildingNameIndex], startDate: startDate, endDate: endDate, resolution: resolution)
             
             let session = NSURLSession.sharedSession()
             
@@ -46,28 +45,22 @@ class DataRetreiver: NSObject {
                     // Only takes the results of the search and casts as an NSArray
                     if let results: NSArray = jsonResult!["results"] as? NSArray{
                         var valueResults = [Double]()
-                        for i in results{
-                            if let hour: NSDictionary = i[name] as? NSDictionary{
-                                if let value: Double = hour["value"] as? Double{
+                        for time in results{
+                            if let hour = time[nameArray[buildingNameIndex]] as? [String:Double]{
+                                if let value = hour["value"]{
                                     valueResults.append(value)
                                 }
                             }
                         }
-                        if count > 0{
-                            count--
-                            dataResults.append(valueResults)
-                        }else{
-                            dataResults.append(valueResults)
-                            println(dataResults)
-//                            callback(valueResults)
+                        dataResults[nameArray[buildingNameIndex]] = valueResults
+                        if buildingNameIndex == nameArray.count-1{
+                            callback(dataResults)
                         }
                     }
                 }
             })
             task.resume()
         }
-        
-        // start the task
     }
     
     // This method returns an NSURL based on the requested start and end dates, building, and resolution.

@@ -37,11 +37,11 @@ import UIKit
         //Draw the grid boundaries
         UIColor.blackColor().setStroke()
         var boundaryPath = UIBezierPath()
-        boundaryPath.moveToPoint(CGPoint(x:2, y:height))
-        boundaryPath.addLineToPoint(CGPoint(x:2, y:2))
-        boundaryPath.addLineToPoint(CGPoint(x:width-2, y:2))
-        boundaryPath.addLineToPoint(CGPoint(x:width-2, y:20))
-        boundaryPath.addLineToPoint(CGPoint(x:2, y:20))
+        boundaryPath.moveToPoint(CGPoint(x:1, y:height))
+        boundaryPath.addLineToPoint(CGPoint(x:1, y:2))
+        boundaryPath.addLineToPoint(CGPoint(x:width-1, y:2))
+        boundaryPath.addLineToPoint(CGPoint(x:width-1, y:20))
+        boundaryPath.addLineToPoint(CGPoint(x:1, y:20))
         boundaryPath.lineWidth = 2.0
         boundaryPath.stroke()
         
@@ -74,11 +74,12 @@ import UIKit
         
         graphPath.stroke()
         
-        println(buildingsDataDictionary)
         var numBars = 0
         // draw a bar graph
         for (buildingName, value) in buildingsDataDictionary{
             numBars+=1
+            
+            println("Building: \(buildingName) \n Value: \(value)")
             
             self.valueLabel.text = "\(value)"
             self.nameLabel.text = "\(buildingName)"
@@ -109,8 +110,11 @@ import UIKit
         
     }
     
-    func loadData(name: String, data : [Double]){
-        self.buildingsDataDictionary[name] = round(100 * (data.reduce(0, combine: +))) / 100
+    func loadData(buildingData: [String:[Double]]){
+        // Calculates the total
+        for (name, data) in buildingData{
+            self.buildingsDataDictionary[name] = round(100 * (data.reduce(0, combine: +))) / 100
+        }
     }
 
     

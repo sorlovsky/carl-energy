@@ -66,20 +66,20 @@ class GraphViewController: UIViewController {
         
         let data : DataRetreiver = DataRetreiver()
         // Fetches the data.  When the data is retreived it calls setupGraphDisplay()
-        data.fetch(searchName, startDate: startDate, endDate: endDate, resolution: "day", callback: setupGraphDisplay)
+//        data.fetch(searchName, startDate: startDate, endDate: endDate, resolution: "day", callback: setupGraphDisplay)
 
     }
 
 
-    func setupGraphDisplay(results:NSArray) {
-        let dataArray = results as! [Double]
+    func setupGraphDisplay(results:[String:[Double]]) {
+        let dataArray = results
         
         //Use 7 days for graph - can use any number,
         //but labels and sample data are set up for 7 days
         let noOfDays:Int = 7
         
         //Add building data to the graph
-        graphView.drawGraphPoints(dataArray)
+        // graphView.drawGraphPoints(dataArray)
         
         println("The data has been retrieved.  The values are: \(graphView.graphPoints)")
         
@@ -90,7 +90,7 @@ class GraphViewController: UIViewController {
         //Indicate that the graph needs to be redrawn and labels updated on the main queue
         dispatch_async(dispatch_get_main_queue()) {
             // Round values to 100s places
-            self.maxLabel.text = "\(Int(maxElement(dataArray)))"
+            // self.maxLabel.text = "\(Int(maxElement(dataArray)))"
             self.averageEnergyProducedValue.text = "\(round(100 * average) / 100)"
             self.totalEnergyProducedValue.text = "\(round(100 * total) / 100)"
             
