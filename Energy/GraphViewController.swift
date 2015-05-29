@@ -54,7 +54,7 @@ class GraphViewController: UIViewController {
         */
 
         // For now let's just focus on electricity
-        let searchName = "carleton_\(buildingName.lowercaseString)_en_use"
+        let searchName = "carleton_\(buildingName.lowercaseString)"
         // Sample date data
         let dateComponents = NSDateComponents()
         dateComponents.year = 2015
@@ -66,8 +66,6 @@ class GraphViewController: UIViewController {
         
         let data : DataRetreiver = DataRetreiver()
         // Fetches the data.  When the data is retreived it calls setupGraphDisplay()
-        println("I'm here")
-        println(buildingName)
         data.fetch(searchName, startDate: startDate, endDate: endDate, resolution: "day", callback: setupGraphDisplay)
 
     }
@@ -115,13 +113,9 @@ class GraphViewController: UIViewController {
         let components = calendar.components(componentOptions,
             fromDate: NSDate())
         var weekday = components.weekday
-        println("yes")
         
         let days = ["S", "S", "M", "T", "W", "T", "F"]
-        
-        println("Today starts with the letter: \(days[weekday])")
-        println("weekday part 1: ")
-        println(weekday)
+    
         
         //Set up the day name labels with correct day
         for i in reverse(1...days.count) {
