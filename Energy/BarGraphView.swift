@@ -14,9 +14,6 @@ import UIKit
 
 @IBDesignable class BarGraphView: UIView {
     
-    //The properties for the background gradient
-    @IBInspectable var startColor: UIColor = UIColor.redColor()
-    @IBInspectable var endColor: UIColor = UIColor.greenColor()
     
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
@@ -28,39 +25,27 @@ import UIKit
         let width = Double(rect.width)
         let height = Double(rect.height)
         
-        
         //set up background clipping area
-        var path = UIBezierPath(roundedRect: rect,
-            byRoundingCorners: UIRectCorner.AllCorners,
-            cornerRadii: CGSize(width: 8.0, height: 8.0))
-        path.addClip()
+//        var path = UIBezierPath(roundedRect: rect,
+//            byRoundingCorners: UIRectCorner.AllCorners,
+//            cornerRadii: CGSize(width: 8.0, height: 8.0))
+//        path.addClip()
         
-        //Drawing the gradient: First needs to get the current context
+        //Get the current context
         let context = UIGraphicsGetCurrentContext()
-        let colors = [startColor.CGColor, endColor.CGColor]
         
-        //set up the color space
-        let colorSpace = CGColorSpaceCreateDeviceRGB()
-        
-        //set up the color stops
-        let colorLocations:[CGFloat] = [0.0, 1.0]
-        
-        //create the gradient
-        let gradient = CGGradientCreateWithColors(colorSpace,
-            colors,
-            colorLocations)
-        
-        //draw the gradient
-        var startPoint = CGPoint.zeroPoint
-        var endPoint = CGPoint(x:0, y:self.bounds.height)
-        CGContextDrawLinearGradient(context,
-            gradient,
-            startPoint,
-            endPoint,
-            0)
+        //Draw the grid boundaries
+        UIColor.blackColor().setStroke()
+        var boundaryPath = UIBezierPath()
+        boundaryPath.moveToPoint(CGPoint(x:2, y:height))
+        boundaryPath.addLineToPoint(CGPoint(x:2, y:2))
+        boundaryPath.addLineToPoint(CGPoint(x:width-2, y:2))
+        boundaryPath.addLineToPoint(CGPoint(x:width-2, y:20))
+        boundaryPath.addLineToPoint(CGPoint(x:2, y:20))
+        boundaryPath.lineWidth = 2.0
+        boundaryPath.stroke()
         
         //Draw the grid lines
-        
         UIColor.grayColor().setFill()
         UIColor.grayColor().setStroke()
         

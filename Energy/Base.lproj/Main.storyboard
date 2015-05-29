@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E11f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5T3-zP-DGX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5T3-zP-DGX">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -537,95 +537,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bHu-h1-Mx1" customClass="BarGraphView" customModule="Energy" customModuleProvider="target">
-                                <rect key="frame" x="150" y="236" width="300" height="300"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Building Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8a-JD-68W">
-                                        <rect key="frame" x="8" y="27" width="126" height="24"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="126" id="naW-QT-rwC"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="17"/>
-                                        <color key="textColor" red="0.015869755559587469" green="0.80307116527186051" blue="0.93507982336956519" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tix-qn-4pV" userLabel="value">
-                                        <rect key="frame" x="207" y="27" width="68" height="21"/>
-                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="17"/>
-                                        <color key="textColor" red="0.76137907608695654" green="0.017948537298221965" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uoq-XD-L2f">
-                                        <rect key="frame" x="50" y="1" width="0.0" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="DhR-w8-rkX"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="15"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXP-SA-jaK">
-                                        <rect key="frame" x="100" y="1" width="0.0" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="dcF-x0-vkr"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="15"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLB-F2-rZW">
-                                        <rect key="frame" x="150" y="1" width="0.0" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="Tzg-kU-ztm"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="15"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhk-hw-NCn">
-                                        <rect key="frame" x="200" y="1" width="0.0" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="LOL-L4-EIH"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="15"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWa-KM-eWG">
-                                        <rect key="frame" x="250" y="1" width="0.0" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="mPW-3L-dSn"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="15"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="centerX" secondItem="kWa-KM-eWG" secondAttribute="centerX" constant="-100" id="1xJ-ns-8Nq"/>
-                                    <constraint firstAttribute="centerX" secondItem="pXP-SA-jaK" secondAttribute="centerX" constant="50" id="4Qd-Gk-Eul"/>
-                                    <constraint firstItem="qhk-hw-NCn" firstAttribute="top" secondItem="bHu-h1-Mx1" secondAttribute="top" constant="1" id="4xA-FC-dfk"/>
-                                    <constraint firstItem="K8a-JD-68W" firstAttribute="leading" secondItem="bHu-h1-Mx1" secondAttribute="leadingMargin" id="5fF-cw-RvP"/>
-                                    <constraint firstItem="kWa-KM-eWG" firstAttribute="top" secondItem="bHu-h1-Mx1" secondAttribute="top" constant="1" id="8cj-vE-yGh"/>
-                                    <constraint firstItem="jLB-F2-rZW" firstAttribute="top" secondItem="bHu-h1-Mx1" secondAttribute="top" constant="1" id="H6X-xM-NTj"/>
-                                    <constraint firstAttribute="centerX" secondItem="qhk-hw-NCn" secondAttribute="centerX" constant="-50" id="HVf-R8-Zd2"/>
-                                    <constraint firstAttribute="centerX" secondItem="Uoq-XD-L2f" secondAttribute="centerX" constant="100" id="IpD-ai-abB"/>
-                                    <constraint firstAttribute="height" constant="300" id="K8z-mF-uNa"/>
-                                    <constraint firstAttribute="centerX" secondItem="jLB-F2-rZW" secondAttribute="centerX" id="T4N-dw-zhx"/>
-                                    <constraint firstItem="K8a-JD-68W" firstAttribute="top" secondItem="bHu-h1-Mx1" secondAttribute="top" constant="27" id="Utz-JA-vRq"/>
-                                    <constraint firstAttribute="width" constant="300" id="awV-6G-dmU"/>
-                                    <constraint firstItem="pXP-SA-jaK" firstAttribute="top" secondItem="bHu-h1-Mx1" secondAttribute="top" constant="1" id="l4g-No-lbO"/>
-                                    <constraint firstItem="Uoq-XD-L2f" firstAttribute="top" secondItem="bHu-h1-Mx1" secondAttribute="top" constant="1" id="ydd-j1-CBo"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
-                                        <color key="value" red="1" green="0.96201971741773984" blue="0.64709611425532787" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
-                                        <color key="value" red="1" green="0.55926436358755438" blue="0.14768382670591185" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="nameLabel" destination="K8a-JD-68W" id="6uD-Rj-4NL"/>
-                                    <outlet property="valueLabel" destination="Tix-qn-4pV" id="CGw-4z-w8r"/>
-                                </connections>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="compared to" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMM-5x-htD">
                                 <rect key="frame" x="261" y="115" width="79" height="21"/>
                                 <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="14"/>
@@ -707,6 +618,95 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bHu-h1-Mx1" customClass="BarGraphView" customModule="Energy" customModuleProvider="target">
+                                <rect key="frame" x="150" y="236" width="300" height="300"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Building Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8a-JD-68W">
+                                        <rect key="frame" x="8" y="27" width="126" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="126" id="naW-QT-rwC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="17"/>
+                                        <color key="textColor" red="0.015869755559587469" green="0.80307116527186051" blue="0.93507982336956519" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tix-qn-4pV" userLabel="value">
+                                        <rect key="frame" x="207" y="27" width="68" height="21"/>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="17"/>
+                                        <color key="textColor" red="0.76137907608695654" green="0.017948537298221965" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uoq-XD-L2f">
+                                        <rect key="frame" x="50" y="1" width="0.0" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="DhR-w8-rkX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="15"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXP-SA-jaK">
+                                        <rect key="frame" x="100" y="1" width="0.0" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="dcF-x0-vkr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="15"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLB-F2-rZW">
+                                        <rect key="frame" x="150" y="1" width="0.0" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="Tzg-kU-ztm"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="15"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhk-hw-NCn">
+                                        <rect key="frame" x="200" y="1" width="0.0" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="LOL-L4-EIH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="15"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWa-KM-eWG">
+                                        <rect key="frame" x="250" y="1" width="0.0" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="mPW-3L-dSn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="15"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.955354324530303" green="0.955354324530303" blue="0.955354324530303" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="kWa-KM-eWG" secondAttribute="centerX" constant="-100" id="1xJ-ns-8Nq"/>
+                                    <constraint firstAttribute="centerX" secondItem="pXP-SA-jaK" secondAttribute="centerX" constant="50" id="4Qd-Gk-Eul"/>
+                                    <constraint firstItem="qhk-hw-NCn" firstAttribute="top" secondItem="bHu-h1-Mx1" secondAttribute="top" constant="1" id="4xA-FC-dfk"/>
+                                    <constraint firstItem="K8a-JD-68W" firstAttribute="leading" secondItem="bHu-h1-Mx1" secondAttribute="leadingMargin" id="5fF-cw-RvP"/>
+                                    <constraint firstItem="kWa-KM-eWG" firstAttribute="top" secondItem="bHu-h1-Mx1" secondAttribute="top" constant="1" id="8cj-vE-yGh"/>
+                                    <constraint firstItem="jLB-F2-rZW" firstAttribute="top" secondItem="bHu-h1-Mx1" secondAttribute="top" constant="1" id="H6X-xM-NTj"/>
+                                    <constraint firstAttribute="centerX" secondItem="qhk-hw-NCn" secondAttribute="centerX" constant="-50" id="HVf-R8-Zd2"/>
+                                    <constraint firstAttribute="centerX" secondItem="Uoq-XD-L2f" secondAttribute="centerX" constant="100" id="IpD-ai-abB"/>
+                                    <constraint firstAttribute="height" constant="300" id="K8z-mF-uNa"/>
+                                    <constraint firstAttribute="centerX" secondItem="jLB-F2-rZW" secondAttribute="centerX" id="T4N-dw-zhx"/>
+                                    <constraint firstItem="K8a-JD-68W" firstAttribute="top" secondItem="bHu-h1-Mx1" secondAttribute="top" constant="27" id="Utz-JA-vRq"/>
+                                    <constraint firstAttribute="width" constant="300" id="awV-6G-dmU"/>
+                                    <constraint firstItem="pXP-SA-jaK" firstAttribute="top" secondItem="bHu-h1-Mx1" secondAttribute="top" constant="1" id="l4g-No-lbO"/>
+                                    <constraint firstItem="Uoq-XD-L2f" firstAttribute="top" secondItem="bHu-h1-Mx1" secondAttribute="top" constant="1" id="ydd-j1-CBo"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" red="1" green="0.96201971741773984" blue="0.64709611425532787" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" red="1" green="0.55926436358755438" blue="0.14768382670591185" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="nameLabel" destination="K8a-JD-68W" id="6uD-Rj-4NL"/>
+                                    <outlet property="valueLabel" destination="Tix-qn-4pV" id="CGw-4z-w8r"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
