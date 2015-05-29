@@ -86,12 +86,12 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if isSearching == false{
-            println(" cell Selected #\(indexPath.row)! \(buildingArray[indexPath.row])")
-        }
-        else{
-            println(" cell Selected #\(indexPath.row)! \(searchingDataArray[indexPath.row])")
-        }
+//        if isSearching == false{
+//            println(" cell Selected #\(indexPath.row)! \(buildingArray[indexPath.row])")
+//        }
+//        else{
+//            println(" cell Selected #\(indexPath.row)! \(searchingDataArray[indexPath.row])")
+//        }
         
         //update the checkmark for the current row
         let cell = tableView.cellForRowAtIndexPath(indexPath)
@@ -103,7 +103,7 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
         else{
             cell!.accessoryType = .Checkmark
             selectedBuildings.append(buildingArray[indexPath.row])
-            NSLog("Object added")
+//            NSLog("Object added")
         }
         
 

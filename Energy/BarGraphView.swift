@@ -21,8 +21,6 @@ import UIKit
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     
-    var buildings = ["Burton"]
-    var buildingValue = [155.0]
     var buildingsDataDictionary = [String:Double]()
     
     override func drawRect(rect: CGRect) {
@@ -91,8 +89,11 @@ import UIKit
         
         graphPath.stroke()
         
+        println(buildingsDataDictionary)
+        var numBars = 0
         // draw a bar graph
         for (buildingName, value) in buildingsDataDictionary{
+            numBars+=1
             
             self.valueLabel.text = "\(value)"
             self.nameLabel.text = "\(buildingName)"
@@ -104,7 +105,9 @@ import UIKit
             if maximumUnit > 0{
                 barLength = (300/maximumUnit * value)
             }
-            let points = [CGPoint(x:0, y:25), CGPoint(x:0, y:50), CGPoint(x:barLength, y:50), CGPoint(x:barLength, y:25)]
+            let top = Double(25*numBars)
+            let bot = Double(50*numBars)
+            let points = [CGPoint(x:0, y:top), CGPoint(x:0, y:bot), CGPoint(x:barLength, y:bot), CGPoint(x:barLength, y:top)]
             var startingPoint = points[0]
             CGPathMoveToPoint(rectanglePath, nil, startingPoint.x, startingPoint.y)
             for p in points {
