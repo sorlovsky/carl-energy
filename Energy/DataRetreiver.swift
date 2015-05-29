@@ -21,6 +21,7 @@ class DataRetreiver: NSObject {
     func fetch(nameArray : [String], startDate: NSDate, endDate : NSDate, resolution : String, callback: ([String:[Double]])->Void){
         
         var dataResults = [String:[Double]]()
+        var counter = nameArray.count-1
         
         for buildingNameIndex in 0..<nameArray.count {
             var url : NSURL = URLFormatter(nameArray[buildingNameIndex], startDate: startDate, endDate: endDate, resolution: resolution)
@@ -53,7 +54,10 @@ class DataRetreiver: NSObject {
                             }
                         }
                         dataResults[nameArray[buildingNameIndex]] = valueResults
-                        if buildingNameIndex == nameArray.count-1{
+//                        if buildingNameIndex == nameArray.count-1{
+                        if counter > 0 {
+                            counter--
+                        }else{
                             callback(dataResults)
                         }
                     }
