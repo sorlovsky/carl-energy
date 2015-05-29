@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>9E2CD589-FE9E-413B-8485-D92CED7BE614</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Energy</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>88FD40A6F6E9EF90FD248C5E9510DD779F2F2E22</key>
 		<string>https://github.com/simonorlovsky/Energy.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Energy.xcodeproj</string>
+	<string>Energy.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>88FD40A6F6E9EF90FD248C5E9510DD779F2F2E22</key>
