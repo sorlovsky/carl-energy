@@ -114,6 +114,7 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
             cell!.accessoryType = .Checkmark
             selectedBuildings.append(buildingArray[indexPath.row])
 //            NSLog("Object added")
+            
         }
         
 
@@ -127,6 +128,10 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
         
         selectedBuildingIndex = indexPath.row
         selectedBuilding = buildingArray[indexPath.row]
+        
+        if (comparisonMode == false){
+            performSegueWithIdentifier("Detail", sender: tableView)
+        }
         
         
         
