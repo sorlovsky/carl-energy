@@ -115,6 +115,10 @@ import UIKit
     func loadData(buildingData: [String:[Double]]){
         // Calculates the total
         for (name, data) in buildingData{
+            print("name: ")
+            println(name)
+            print("data")
+            println(data)
             self.buildingsDataDictionary[name] = round(100 * (data.reduce(0, combine: +))) / 100
         }
     }

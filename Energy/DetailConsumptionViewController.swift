@@ -86,9 +86,14 @@ class DetailConsumptionViewController: UIViewController {
     func setupGraphDisplay(results:[String:[Double]]) {
     
         //Change the name key from the meter name to the display name
+        
+        //MUST FIX THIS BECAUSE IT IS NOT CURRENTLY KEEPING THE ORDER OF THE ARRAY
+        //ONE IDEA IS TO USE ID'S ATTACHED TO THE results ARRAY SO THAT IT CAN BE
+        //MATCHED BACK PROPERLY
         var dataArrayWithDisplayNames = [String:[Double]]()
         var count = 0
         for (key, value) in results{
+            //self.selectedBuildings[count] retrieves the key corresponding to building
             dataArrayWithDisplayNames[self.selectedBuildings[count]] = value
             count++
         }
