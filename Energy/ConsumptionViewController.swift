@@ -147,6 +147,14 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        self.view.endEditing(true)
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        self.view.endEditing(true)
+    }
+    
     @IBOutlet var testLabel: UILabel!
     
     
@@ -154,15 +162,15 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
     @IBAction func segmentedControlAction(sender: AnyObject) {
         if(segmentedControl.selectedSegmentIndex == 0)
         {
-            testLabel.text = "All";
+            testLabel.text = "A";
         }
         else if(segmentedControl.selectedSegmentIndex == 1)
         {
-            testLabel.text = "Academic";
+            testLabel.text = "Ac";
         }
         else if(segmentedControl.selectedSegmentIndex == 2)
         {
-            testLabel.text = "Dorms";
+            testLabel.text = "D";
         }
     }
     
