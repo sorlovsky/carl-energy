@@ -371,7 +371,7 @@
             </objects>
             <point key="canvasLocation" x="264" y="-116"/>
         </scene>
-        <!--Select Building(s)-->
+        <!--Select Building-->
         <scene sceneID="mko-xK-yUb">
             <objects>
                 <viewController id="rj5-aq-nxW" customClass="ConsumptionViewController" customModule="Energy" customModuleProvider="target" sceneMemberID="viewController">
@@ -489,7 +489,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Select Building(s)" id="fUj-k0-VVS">
+                    <navigationItem key="navigationItem" title="Select Building" id="fUj-k0-VVS">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="etj-jP-QI3">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
@@ -502,6 +502,7 @@
                     <value key="contentSizeForViewInPopover" type="size" width="150" height="600"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="barTitleItem" destination="fUj-k0-VVS" id="lS7-jk-n1D"/>
                         <outlet property="createReportButton" destination="Qgd-W7-B1h" id="zrb-7p-yrl"/>
                         <outlet property="menuButton" destination="etj-jP-QI3" id="dAB-Lg-vGa"/>
                         <outlet property="modeBarButton" destination="Rk8-Gt-CDB" id="BRp-Ek-EEc"/>

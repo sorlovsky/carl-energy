@@ -16,6 +16,9 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet var tableView: UITableView!
     @IBOutlet var searchBarObj: UISearchBar!
     
+    // Title bar item
+    @IBOutlet var barTitleItem: UINavigationItem!
+    
     //Menu bar button that triggers SWRevealViewController
     @IBOutlet var menuButton: UIBarButtonItem!
     
@@ -172,12 +175,14 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
             comparisonMode = true
             createReportButton.hidden = false;
             modeBarButton.title = "Single"
+            barTitleItem.title = "Choose Buildings"
             
         }
         else{
             comparisonMode = false
             createReportButton.hidden = true;
             modeBarButton.title = "Compare"
+            barTitleItem.title = "Choose Building"
             
         }
         selectedBuildings.removeAll()
