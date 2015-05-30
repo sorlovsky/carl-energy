@@ -88,8 +88,8 @@ class DetailConsumptionViewController: UIViewController {
         //Change the name key from the meter name to the display name
         
         //MUST FIX THIS BECAUSE IT IS NOT CURRENTLY KEEPING THE ORDER OF THE ARRAY
-        //ONE IDEA IS TO USE ID'S ATTACHED TO THE results ARRAY SO THAT IT CAN BE
-        //MATCHED BACK PROPERLY
+        //An idea: do a for loop on the items in selectedBuildings; convert the name of current item (refer to this as "current") to the corresponding http request name (e.g. carleton_burton_...), and
+        //set dataArrayWithDisplayNames["current"] = results[http request name], since might not be in order
         var dataArrayWithDisplayNames = [String:[Double]]()
         var count = 0
         for (key, value) in results{
