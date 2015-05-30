@@ -30,6 +30,12 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
     var searchingDataArray = [String]()
     var selectedBuildings = [String]()
     
+    @IBOutlet var modeBarButton: UIBarButtonItem!
+    var comparisonMode = false
+    
+    @IBOutlet var createReportButton: UIButton!
+    
+    
     override func viewDidLoad() {
         
         //Get the buildings from buildings.plist and add them to the buildingArray
@@ -43,6 +49,10 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
             self.buildingArray.append(buildingName)
             self.buildingImageNames.append(buildingImage)
         }
+        
+        //Setting initial mode
+        createReportButton.hidden = true
+        modeBarButton.title = "Compare"
         
         //Search
         isSearching = false
@@ -147,6 +157,20 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
+    @IBAction func modeButtonClicked(sender: AnyObject) {
+        if (comparisonMode==false){
+            comparisonMode = true
+            createReportButton.hidden = false;
+            modeBarButton.title = "Single"
+        }
+        else{
+            comparisonMode = false
+            createReportButton.hidden = true;
+            modeBarButton.title = "Compare"
+
+        }
+    }
+  
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         self.view.endEditing(true)
     }
