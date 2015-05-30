@@ -105,16 +105,21 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
         
         //update the checkmark for the current row
         let cell = tableView.cellForRowAtIndexPath(indexPath)
-        if cell!.accessoryType == .Checkmark{
-            cell?.accessoryType = .None
-            var index = find(selectedBuildings, buildingArray[indexPath.row])
-            selectedBuildings.removeAtIndex(index!)
+        if (comparisonMode == true){
+            if cell!.accessoryType == .Checkmark{
+                cell?.accessoryType = .None
+                var index = find(selectedBuildings, buildingArray[indexPath.row])
+                selectedBuildings.removeAtIndex(index!)
+            }
+            else{
+                cell!.accessoryType = .Checkmark
+                selectedBuildings.append(buildingArray[indexPath.row])
+                //            NSLog("Object added")
+            
+            }
         }
         else{
-            cell!.accessoryType = .Checkmark
             selectedBuildings.append(buildingArray[indexPath.row])
-//            NSLog("Object added")
-            
         }
         
 
@@ -167,13 +172,17 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
             comparisonMode = true
             createReportButton.hidden = false;
             modeBarButton.title = "Single"
+            
         }
         else{
             comparisonMode = false
             createReportButton.hidden = true;
             modeBarButton.title = "Compare"
-
+            
         }
+        selectedBuildings.removeAll()
+        self.tableView.reloadData()
+
     }
   
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
