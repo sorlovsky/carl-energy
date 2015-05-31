@@ -16,6 +16,9 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet var tableView: UITableView!
     @IBOutlet var searchBarObj: UISearchBar!
     
+    // Title bar item
+    @IBOutlet var barTitleItem: UINavigationItem!
+    
     //Menu bar button that triggers SWRevealViewController
     @IBOutlet var menuButton: UIBarButtonItem!
     
@@ -30,6 +33,12 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
     var searchingDataArray = [String]()
     var selectedBuildings = [String]()
     
+    @IBOutlet var modeBarButton: UIBarButtonItem!
+    var comparisonMode = false
+    
+    @IBOutlet var createReportButton: UIButton!
+    
+    
     override func viewDidLoad() {
         
         //Get the buildings from buildings.plist and add them to the buildingArray
@@ -43,6 +52,10 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
             self.buildingArray.append(buildingName)
             self.buildingImageNames.append(buildingImage)
         }
+        
+        //Setting initial mode
+        createReportButton.hidden = true
+        modeBarButton.title = "Compare"
         
         //Search
         isSearching = false
@@ -95,15 +108,21 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
         
         //update the checkmark for the current row
         let cell = tableView.cellForRowAtIndexPath(indexPath)
-        if cell!.accessoryType == .Checkmark{
-            cell?.accessoryType = .None
-            var index = find(selectedBuildings, buildingArray[indexPath.row])
-            selectedBuildings.removeAtIndex(index!)
+        if (comparisonMode == true){
+            if cell!.accessoryType == .Checkmark{
+                cell?.accessoryType = .None
+                var index = find(selectedBuildings, buildingArray[indexPath.row])
+                selectedBuildings.removeAtIndex(index!)
+            }
+            else{
+                cell!.accessoryType = .Checkmark
+                selectedBuildings.append(buildingArray[indexPath.row])
+                //            NSLog("Object added")
+            
+            }
         }
         else{
-            cell!.accessoryType = .Checkmark
             selectedBuildings.append(buildingArray[indexPath.row])
-//            NSLog("Object added")
         }
         
 
@@ -117,6 +136,10 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
         
         selectedBuildingIndex = indexPath.row
         selectedBuilding = buildingArray[indexPath.row]
+        
+        if (comparisonMode == false){
+            performSegueWithIdentifier("Detail", sender: tableView)
+        }
         
         
         
@@ -147,6 +170,34 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
+    @IBAction func modeButtonClicked(sender: AnyObject) {
+        if (comparisonMode==false){
+            comparisonMode = true
+            createReportButton.hidden = false;
+            modeBarButton.title = "Single"
+            barTitleItem.title = "Choose Buildings"
+            
+        }
+        else{
+            comparisonMode = false
+            createReportButton.hidden = true;
+            modeBarButton.title = "Compare"
+            barTitleItem.title = "Choose Building"
+            
+        }
+        selectedBuildings.removeAll()
+        self.tableView.reloadData()
+
+    }
+  
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        self.view.endEditing(true)
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        self.view.endEditing(true)
+    }
+    
     @IBOutlet var testLabel: UILabel!
     
     
@@ -154,15 +205,15 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
     @IBAction func segmentedControlAction(sender: AnyObject) {
         if(segmentedControl.selectedSegmentIndex == 0)
         {
-            testLabel.text = "All";
+            testLabel.text = "A";
         }
         else if(segmentedControl.selectedSegmentIndex == 1)
         {
-            testLabel.text = "Academic";
+            testLabel.text = "Ac";
         }
         else if(segmentedControl.selectedSegmentIndex == 2)
         {
-            testLabel.text = "Dorms";
+            testLabel.text = "D";
         }
     }
     

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5T3-zP-DGX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E11f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5T3-zP-DGX">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -371,7 +371,7 @@
             </objects>
             <point key="canvasLocation" x="264" y="-116"/>
         </scene>
-        <!--Select Building(s)-->
+        <!--Select Building-->
         <scene sceneID="mko-xK-yUb">
             <objects>
                 <viewController id="rj5-aq-nxW" customClass="ConsumptionViewController" customModule="Energy" customModuleProvider="target" sceneMemberID="viewController">
@@ -383,13 +383,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="vuf-xP-Cfp">
-                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="rj5-aq-nxW" id="RSF-Lx-vci"/>
-                                </connections>
-                            </searchBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qgd-W7-B1h">
                                 <rect key="frame" x="255" y="504" width="91" height="30"/>
                                 <state key="normal" title="Create report">
@@ -409,6 +402,7 @@
                                     <segment title="Academic"/>
                                     <segment title="Dorms"/>
                                 </segments>
+                                <color key="tintColor" red="0.29412001370000002" green="0.54118001459999998" blue="0.86274999379999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="segmentedControlAction:" destination="rj5-aq-nxW" eventType="valueChanged" id="z9m-8j-bX5"/>
                                 </connections>
@@ -465,12 +459,19 @@
                                     <outlet property="delegate" destination="rj5-aq-nxW" id="GpO-lo-FO5"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCh-P3-jz0">
-                                <rect key="frame" x="16" y="128" width="32" height="21"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="T" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCh-P3-jz0">
+                                <rect key="frame" x="16" y="128" width="10" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vuf-xP-Cfp">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="rj5-aq-nxW" id="RSF-Lx-vci"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -488,15 +489,23 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Select Building(s)" id="fUj-k0-VVS">
+                    <navigationItem key="navigationItem" title="Select Building" id="fUj-k0-VVS">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="etj-jP-QI3">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Mode" id="Rk8-Gt-CDB">
+                            <connections>
+                                <action selector="modeButtonClicked:" destination="rj5-aq-nxW" id="vO7-js-S8T"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <value key="contentSizeForViewInPopover" type="size" width="150" height="600"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="barTitleItem" destination="fUj-k0-VVS" id="lS7-jk-n1D"/>
+                        <outlet property="createReportButton" destination="Qgd-W7-B1h" id="zrb-7p-yrl"/>
                         <outlet property="menuButton" destination="etj-jP-QI3" id="dAB-Lg-vGa"/>
+                        <outlet property="modeBarButton" destination="Rk8-Gt-CDB" id="BRp-Ek-EEc"/>
                         <outlet property="searchBarObj" destination="vuf-xP-Cfp" id="gPg-hf-Gnu"/>
                         <outlet property="searchDisplayController" destination="TCQ-x3-40x" id="jLw-Cb-dXS"/>
                         <outlet property="segmentedControl" destination="D9D-cn-8bQ" id="coV-xo-vB9"/>
@@ -772,7 +781,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rka-FH-OCd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.1294099987" green="0.80783998970000004" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.29412001370000002" green="0.54118001459999998" blue="0.86274999379999995" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
@@ -794,7 +803,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mce-oI-7KH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.1294099987" green="0.80783998970000004" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.29412001370000002" green="0.54118001459999998" blue="0.86274999379999995" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="textShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

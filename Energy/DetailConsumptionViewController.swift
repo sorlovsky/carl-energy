@@ -86,9 +86,14 @@ class DetailConsumptionViewController: UIViewController {
     func setupGraphDisplay(results:[String:[Double]]) {
     
         //Change the name key from the meter name to the display name
+        
+        //MUST FIX THIS BECAUSE IT IS NOT CURRENTLY KEEPING THE ORDER OF THE ARRAY
+        //An idea: do a for loop on the items in selectedBuildings; convert the name of current item (refer to this as "current") to the corresponding http request name (e.g. carleton_burton_...), and
+        //set dataArrayWithDisplayNames["current"] = results[http request name], since might not be in order
         var dataArrayWithDisplayNames = [String:[Double]]()
         var count = 0
         for (key, value) in results{
+            //self.selectedBuildings[count] retrieves the key corresponding to building
             dataArrayWithDisplayNames[self.selectedBuildings[count]] = value
             count++
         }

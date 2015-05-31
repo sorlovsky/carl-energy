@@ -19,12 +19,13 @@ import UIKit
     @IBInspectable var endColor: UIColor = UIColor.greenColor()
     
     //Weekly sample data
-    var graphPoints:[Double] = [1,0,0,0,0,0,1]
+    var turbineData=[String: [Double]]()
+//    var graphPoints:[Double] = [1,0,0,0,0,0,1]
 
     
     override func drawRect(rect: CGRect) {
         
-        if graphPoints.count == 0 {
+        if turbineData.count == 0 {
             return
         }
         
@@ -63,19 +64,26 @@ import UIKit
         
         //calculate the x point
         let margin:Double = 20.0
+        
+        var productionPoints = [Double]()
+        
+        if turbineData["carleton_wind_production"] != nil{
+            println("here")
+            productionPoints = turbineData["carleton_wind_production"]!
+        }
         var columnXPoint = { (column:Int) -> Double in
             //Calculate gap between points
-            let spacer = (width - margin*2 - 4.0) / Double(self.graphPoints.count - 1)
+            let spacer = (width - margin*2 - 4.0) / Double(productionPoints.count - 1)
             var x:Double = Double(column) * spacer
             x += margin + 2
             return x
         }
-            
+        
         // calculate the y point
         let topBorder:Double = 60
         let bottomBorder:Double = 50
         let graphHeight = height - topBorder - bottomBorder
-        let maxValue = maxElement(self.graphPoints)
+        let maxValue = maxElement(productionPoints)
         var columnYPoint = { (graphPoint:Double) -> Double in
             var y:Double = graphPoint / maxValue * graphHeight
             y = graphHeight + topBorder - y // Flip the graph
@@ -91,60 +99,65 @@ import UIKit
         //set up the points line
         var graphPath = UIBezierPath()
         //go to start of line
-        graphPath.moveToPoint(CGPoint(x:columnXPoint(0), y:columnYPoint(graphPoints[0])))
-        
-        //add points for each item in the graphPoints array
-        //at the correct (x, y) for the point
-        for i in 1..<graphPoints.count {
-            let nextPoint = CGPoint(x:columnXPoint(i), y:columnYPoint(graphPoints[i]))
+        for (meterName, value) in turbineData{
             
-            graphPath.addLineToPoint(nextPoint)
-        }
-        
-        graphPath.stroke()
-        
-        //Draw the circles on top of graph stroke
-        for i in 0..<graphPoints.count {
-            var point = CGPoint(x:columnXPoint(i), y:columnYPoint(graphPoints[i]))
-            point.x -= 5.0/2
-            point.y -= 5.0/2
+            var graphPoints = value
+            graphPath.moveToPoint(CGPoint(x:columnXPoint(0), y:columnYPoint(graphPoints[0])))
             
-            var circleSize = CGSize(width: 5.0, height: 5.0)
-            var circleRect = CGRect(origin: point, size: circleSize)
+            //add points for each item in the graphPoints array
+            //at the correct (x, y) for the point
+            for i in 1..<graphPoints.count {
+                let nextPoint = CGPoint(x:columnXPoint(i), y:columnYPoint(graphPoints[i]))
+                
+                graphPath.addLineToPoint(nextPoint)
+            }
             
-            let circle = UIBezierPath(ovalInRect: circleRect)
-            circle.fill()
-        }
-        
-        //Draw horizontal graph lines on the top of everything
-        var linePath = UIBezierPath()
-        
-        //top line
-        linePath.moveToPoint(CGPoint(x:margin, y: topBorder))
-        linePath.addLineToPoint(CGPoint(x: width - margin,
-            y:topBorder))
-        
-        //center line
-        linePath.moveToPoint(CGPoint(x:margin,
-            y: graphHeight/2 + topBorder))
-        linePath.addLineToPoint(CGPoint(x:width - margin,
-            y:graphHeight/2 + topBorder))
-        
-        //bottom line
-        linePath.moveToPoint(CGPoint(x:margin,
-            y:height - bottomBorder))
-        linePath.addLineToPoint(CGPoint(x:width - margin,
-            y:height - bottomBorder))
-        let color = UIColor(white: 1.0, alpha: 0.3)
-        color.setStroke()
-        
-        linePath.lineWidth = 1.0
-        linePath.stroke()
+            graphPath.stroke()
+            
+            //Draw the circles on top of graph stroke
+            for i in 0..<graphPoints.count {
+                var point = CGPoint(x:columnXPoint(i), y:columnYPoint(graphPoints[i]))
+                point.x -= 5.0/2
+                point.y -= 5.0/2
+                
+                var circleSize = CGSize(width: 5.0, height: 5.0)
+                var circleRect = CGRect(origin: point, size: circleSize)
+                
+                let circle = UIBezierPath(ovalInRect: circleRect)
+                circle.fill()
+            }
+            
+            //Draw horizontal graph lines on the top of everything
+            var linePath = UIBezierPath()
+            
+            //top line
+            linePath.moveToPoint(CGPoint(x:margin, y: topBorder))
+            linePath.addLineToPoint(CGPoint(x: width - margin,
+                y:topBorder))
+            
+            //center line
+            linePath.moveToPoint(CGPoint(x:margin,
+                y: graphHeight/2 + topBorder))
+            linePath.addLineToPoint(CGPoint(x:width - margin,
+                y:graphHeight/2 + topBorder))
+            
+            //bottom line
+            linePath.moveToPoint(CGPoint(x:margin,
+                y:height - bottomBorder))
+            linePath.addLineToPoint(CGPoint(x:width - margin,
+                y:height - bottomBorder))
+            let color = UIColor(white: 1.0, alpha: 0.3)
+            color.setStroke()
+            
+            linePath.lineWidth = 1.0
+            linePath.stroke()
 
+        }
+        
     }
     
-    func drawGraphPoints(points : [Double]) {
-        self.graphPoints = points
+    func drawGraphPoints(points: [String: [Double]]){
+        self.turbineData = points
     }
     
 }
