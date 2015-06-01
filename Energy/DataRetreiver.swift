@@ -58,8 +58,8 @@ class DataRetreiver: NSObject {
                         if counter > 0 {
                             counter--
                         }else{
-                            print("dataResults: ")
-                            println(dataResults)
+//                            print("dataResults: ")
+//                            println(dataResults)
                             callback(dataResults)
                         }
                     }

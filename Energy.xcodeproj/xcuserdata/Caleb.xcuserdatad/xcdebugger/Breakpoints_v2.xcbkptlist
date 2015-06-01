@@ -6,7 +6,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Energy/ProductionViewController.swift"
@@ -22,7 +22,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Energy/GraphViewController.swift"
@@ -35,14 +35,14 @@
             landmarkType = "3">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Energy.GraphViewController.containerView.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UIView&gt;"
                   moduleName = "Energy"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Caleb/Documents/Carleton/Sophomore%20Year/Mobile%20Application%20Development/Energy/Energy/GraphViewController.swift"
-                  timestampString = "454621732.180374"
+                  timestampString = "454797413.489775"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -50,14 +50,14 @@
                   offsetFromSymbolStart = "12">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Energy.GraphViewController.containerView.materializeForSet : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UIView&gt;"
                   moduleName = "Energy"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Caleb/Documents/Carleton/Sophomore%20Year/Mobile%20Application%20Development/Energy/Energy/GraphViewController.swift"
-                  timestampString = "454621732.180841"
+                  timestampString = "454797413.490216"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -65,14 +65,14 @@
                   offsetFromSymbolStart = "16">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Energy.GraphViewController.init (Energy.GraphViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; Energy.GraphViewController"
                   moduleName = "Energy"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Caleb/Documents/Carleton/Sophomore%20Year/Mobile%20Application%20Development/Energy/Energy/GraphViewController.swift"
-                  timestampString = "454621732.181075"
+                  timestampString = "454797413.49043"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "20"
@@ -80,14 +80,14 @@
                   offsetFromSymbolStart = "53">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Energy.GraphViewController.init (Energy.GraphViewController.Type)(coder : ObjectiveC.NSCoder) -&gt; Energy.GraphViewController"
                   moduleName = "Energy"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Caleb/Documents/Carleton/Sophomore%20Year/Mobile%20Application%20Development/Energy/Energy/GraphViewController.swift"
-                  timestampString = "454621732.181294"
+                  timestampString = "454797413.490646"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "20"
@@ -100,7 +100,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Energy/GraphViewController.swift"
@@ -113,14 +113,14 @@
             landmarkType = "3">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Energy.GraphViewController.buildingName.getter : Swift.String"
+                  symbolName = "Energy.GraphViewController.desiredData.getter : Swift.Array&lt;Swift.String&gt;"
                   moduleName = "Energy"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Caleb/Documents/Carleton/Sophomore%20Year/Mobile%20Application%20Development/Energy/Energy/GraphViewController.swift"
-                  timestampString = "454621732.183745"
+                  timestampString = "454797413.492694"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -128,29 +128,29 @@
                   offsetFromSymbolStart = "12">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Energy.GraphViewController.buildingName.setter : Swift.String"
+                  symbolName = "Energy.GraphViewController.desiredData.setter : Swift.Array&lt;Swift.String&gt;"
                   moduleName = "Energy"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Caleb/Documents/Carleton/Sophomore%20Year/Mobile%20Application%20Development/Energy/Energy/GraphViewController.swift"
-                  timestampString = "454621732.184"
+                  timestampString = "454797413.492933"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "24">
+                  offsetFromSymbolStart = "16">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Energy.GraphViewController.init (Energy.GraphViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; Energy.GraphViewController"
                   moduleName = "Energy"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Caleb/Documents/Carleton/Sophomore%20Year/Mobile%20Application%20Development/Energy/Energy/GraphViewController.swift"
-                  timestampString = "454621732.184446"
+                  timestampString = "454797413.493372"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "31"
@@ -158,19 +158,19 @@
                   offsetFromSymbolStart = "461">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Energy.GraphViewController.init (Energy.GraphViewController.Type)(coder : ObjectiveC.NSCoder) -&gt; Energy.GraphViewController"
                   moduleName = "Energy"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Caleb/Documents/Carleton/Sophomore%20Year/Mobile%20Application%20Development/Energy/Energy/GraphViewController.swift"
-                  timestampString = "454621732.184679"
+                  timestampString = "454797413.493581"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "31"
                   endingLineNumber = "31"
-                  offsetFromSymbolStart = "400">
+                  offsetFromSymbolStart = "413">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -178,7 +178,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Energy/GraphViewController.swift"

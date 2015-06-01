@@ -13,15 +13,13 @@ import UIKit
 @IBDesignable class BarGraphView: UIView {
     
     
-    @IBOutlet weak var valueLabel: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
-    
     var buildingsDataDictionary = [String:Double]()
     
     override func drawRect(rect: CGRect) {
         
         let width = Double(rect.width)
         let height = Double(rect.height)
+
         
         //set up background clipping area
 //        var path = UIBezierPath(roundedRect: rect,
@@ -73,9 +71,6 @@ import UIKit
         for (buildingName, value) in buildingsDataDictionary{
             println("Building: \(buildingName) \n Value: \(value)")
             
-            self.valueLabel.text = "\(value)"
-            self.nameLabel.text = "\(buildingName)"
-            
             let rectanglePath = CGPathCreateMutable()
             
             // Set up bar variables
@@ -94,10 +89,26 @@ import UIKit
             for p in points {
                 CGPathAddLineToPoint(rectanglePath, nil, p.x, p.y)
             }
+            let barColor = UIColor(red: 0.8353, green: 0.4325, blue: 0.3608, alpha: 1)  //rgb = (213,108,92)
             CGPathCloseSubpath(rectanglePath)
             CGContextAddPath(context, rectanglePath)
-            CGContextSetFillColorWithColor(context, UIColor.orangeColor().CGColor)
+            CGContextSetFillColorWithColor(context, barColor.CGColor)
             CGContextFillPath(context)
+            
+            // Make the bar labels
+            var nameLabel = UILabel(frame: CGRect(x: 5, y: top, width: 200.0, height: 25.0))
+            nameLabel.textAlignment = NSTextAlignment.Left
+            nameLabel.text = "\(buildingName)"
+            nameLabel.font = UIFont(name: "Avenir Next Condensed", size: 20)
+            self.addSubview(nameLabel)
+            
+            var valueLabel = UILabel(frame: CGRect(x: barLength-205, y: top, width: 200.0, height: 25.0))
+            valueLabel.textAlignment = NSTextAlignment.Right
+            valueLabel.text =  "\(value)"
+            valueLabel.textColor = UIColor(red: 0.235, green: 0.455, blue: 0.518, alpha: 1)
+            valueLabel.font = UIFont(name: "Avenir Next Condensed-Bold", size: 20)
+            self.addSubview(valueLabel)
+            
             
             // Draw a line to separate the bars
             UIColor.whiteColor().setStroke()
@@ -115,10 +126,10 @@ import UIKit
     func loadData(buildingData: [String:[Double]]){
         // Calculates the total
         for (name, data) in buildingData{
-            print("name: ")
-            println(name)
-            print("data")
-            println(data)
+//            print("name: ")
+//            println(name)
+//            print("data")
+//            println(data)
             self.buildingsDataDictionary[name] = round(100 * (data.reduce(0, combine: +))) / 100
         }
     }
