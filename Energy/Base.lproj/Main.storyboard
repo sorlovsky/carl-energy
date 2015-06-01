@@ -593,7 +593,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="this month" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAt-Pg-1GS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="this year" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAt-Pg-1GS" userLabel="timePeriod">
                                 <rect key="frame" x="213" y="154" width="92" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="92" id="uX8-Pd-Ka4"/>
@@ -745,6 +745,7 @@
                         <outlet property="building2Label" destination="gry-ag-kvt" id="pQG-WW-WeL"/>
                         <outlet property="energyTypeLabel" destination="Oaa-aI-tdw" id="UxT-3S-GPk"/>
                         <outlet property="energyUnitsLabel" destination="EGu-f4-6WC" id="ia4-zq-b1w"/>
+                        <outlet property="timePeriodLabel" destination="PAt-Pg-1GS" id="oda-Et-A74"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xBc-6i-tZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>

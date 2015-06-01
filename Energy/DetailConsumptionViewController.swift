@@ -10,38 +10,38 @@ import UIKit
 
 class DetailConsumptionViewController: UIViewController {
     
+    // Label outlets
     @IBOutlet weak var barGraphView: BarGraphView!
     @IBOutlet weak var energyTypeLabel: UILabel!
     @IBOutlet weak var building1Label: UILabel!
     @IBOutlet weak var building2Label: UILabel!
     @IBOutlet weak var energyUnitsLabel: UILabel!
+    @IBOutlet weak var timePeriodLabel: UILabel!
     
     // An array of raw building data
     var buildingsDictionaries = []
     
     var selectedBuildings = [String]()
     let energyTypeArray = ["Electricity", "Water", "Heating", "Total Energy"]
+    let timePeriodArray = ["today", "this month", "this year"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Fill in the building data from the plist
+        // Fill in the building data array from the information in the plist
         if let path = NSBundle.mainBundle().pathForResource("buildings", ofType: "plist") {
             self.buildingsDictionaries = NSArray(contentsOfFile: path)!
         }
-        
-        getGraphData("electricity")
+        // The default is total energy
+        getGraphData("total energy")
     }
     
+    // Loops through the list of selected buildings and creates the data request for each building
     func getGraphData(type:String){
-        // Sample date data
-        let dateComponents = NSDateComponents()
-        dateComponents.year = 2015
-        dateComponents.month = 05
-        dateComponents.day = 11
-        let startDate = NSCalendar.currentCalendar().dateFromComponents(dateComponents)!
-        dateComponents.day = 17
-        let endDate = NSCalendar.currentCalendar().dateFromComponents(dateComponents)!
+        
+        let startDate = getStartDate()
+        let endDate = NSDate()
+        let resolution = "month"
         
         // Array of all of the meters to get data from
         var searchName:[String] = []
@@ -79,7 +79,7 @@ class DetailConsumptionViewController: UIViewController {
             }
         }
         let data : DataRetreiver = DataRetreiver()
-        data.fetch(searchName, startDate: startDate, endDate: endDate, resolution: "day", callback: setupGraphDisplay)
+        data.fetch(searchName, startDate: startDate, endDate: endDate, resolution: resolution, callback: setupGraphDisplay)
         
     }
     
@@ -125,7 +125,7 @@ class DetailConsumptionViewController: UIViewController {
     
     @IBAction func energyTypeForwardButtonPressed(sender: AnyObject) {
         if var currentEnergyTypeIndex = find(self.energyTypeArray, self.energyTypeLabel.text!) {
-            if currentEnergyTypeIndex == 3 {
+            if currentEnergyTypeIndex == energyTypeArray.count-1 {
                 currentEnergyTypeIndex = -1
             }
             self.energyTypeLabel.text = self.energyTypeArray[currentEnergyTypeIndex+1]
@@ -133,7 +133,29 @@ class DetailConsumptionViewController: UIViewController {
         }
     }
     
-    func updateGraphEnergyData(){
+    func getStartDate() -> NSDate {
+        let date = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components(.CalendarUnitYear | .CalendarUnitHour | .CalendarUnitMinute, fromDate: date)
+        let dateComponents = NSDateComponents()
+
+        switch self.timePeriodLabel.text! {
+        case "today":
+            println("today!")
+        case "this month":
+            dateComponents.day = 01
+        case "this year":
+            dateComponents.year = components.year
+            dateComponents.month = 01
+            dateComponents.day = 01
+        default:
+            dateComponents.day = 01
+        }
+        let startDate = NSCalendar.currentCalendar().dateFromComponents(dateComponents)!
+        return startDate
+    }
+    
+    func updateGraphEnergyData() {
         getGraphData(self.energyTypeLabel.text!.lowercaseString)
         switch self.energyTypeLabel.text!.lowercaseString {
         case "electricity":

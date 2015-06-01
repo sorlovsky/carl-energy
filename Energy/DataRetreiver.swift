@@ -41,7 +41,7 @@ class DataRetreiver: NSObject {
                 if(jsonError != nil) {
                     // If there is an error parsing JSON, print it to the console
                     println("JSON Error \(jsonError!.localizedDescription)")
-//                    println(url)
+                    println(url)
                 } else {
                     // Only takes the results of the search and casts as an NSArray
                     if let results: NSArray = jsonResult!["results"] as? NSArray{

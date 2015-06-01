@@ -12,30 +12,23 @@ import UIKit
 
 @IBDesignable class BarGraphView: UIView {
     
-    
     var buildingsDataDictionary = [String:Double]()
     
     override func drawRect(rect: CGRect) {
         
+        // Graph variables
         let width = Double(rect.width)
         let height = Double(rect.height)
-
-        
-        //set up background clipping area
-//        var path = UIBezierPath(roundedRect: rect,
-//            byRoundingCorners: UIRectCorner.AllCorners,
-//            cornerRadii: CGSize(width: 8.0, height: 8.0))
-//        path.addClip()
         
         //Get the current context
         let context = UIGraphicsGetCurrentContext()
         
-        //Draw the grid lines
+        // Draw the grid lines
         UIColor.grayColor().setFill()
         UIColor.grayColor().setStroke()
         var gridLinesPath = UIBezierPath()
         gridLinesPath.moveToPoint(CGPoint(x:50, y:20))
-        //add 5 lines
+        //Add 5 lines
         for i in 1...5 {
             let nextPoint = CGPoint(x:(50*i), y:300)
             gridLinesPath.addLineToPoint(nextPoint)
@@ -43,7 +36,7 @@ import UIKit
         }
         gridLinesPath.stroke()
         
-        //add gridline labels
+        // Add the gridline labels
         for i in 1...5{
             if let labelView = self.viewWithTag(i) as? UILabel {
                 if Array(buildingsDataDictionary.values).count != 0{
@@ -55,7 +48,7 @@ import UIKit
             }
         }
         
-        //Draw the graph boundaries
+        // Draw the graph boundaries
         UIColor.blackColor().setStroke()
         var boundaryPath = UIBezierPath()
         boundaryPath.moveToPoint(CGPoint(x:1, y:height))
@@ -66,21 +59,23 @@ import UIKit
         boundaryPath.lineWidth = 2.0
         boundaryPath.stroke()
         
-        //Draw the bars
+        // Draw the bars
         var numBars = 0
         for (buildingName, value) in buildingsDataDictionary{
-            println("Building: \(buildingName) \n Value: \(value)")
+//            println("Building: \(buildingName) \n Value: \(value)")
             
             let rectanglePath = CGPathCreateMutable()
             
             // Set up bar variables
-            let maximumUnit = floor(value/50)*60
+            let barWidth = 25
             var barLength:Double = 0
-            if maximumUnit > 0{
-                barLength = (300/maximumUnit * value)
+            let top = Double(barWidth+(barWidth*numBars))
+            let bot = Double((barWidth*2)+(barWidth*numBars))
+            
+            let maximumUnit = floor(value/50)*60
+            if maximumUnit > 0 {
+                barLength = (width/maximumUnit * value)
             }
-            let top = Double(25+(25*numBars))
-            let bot = Double(50+(25*numBars))
             let points = [CGPoint(x:2, y:top), CGPoint(x:2, y:bot), CGPoint(x:barLength, y:bot), CGPoint(x:barLength, y:top)]
             
             // Draw the bar
@@ -95,22 +90,42 @@ import UIKit
             CGContextSetFillColorWithColor(context, barColor.CGColor)
             CGContextFillPath(context)
             
-            // Make the bar labels
-            var nameLabel = UILabel(frame: CGRect(x: 5, y: top, width: 200.0, height: 25.0))
-            nameLabel.textAlignment = NSTextAlignment.Left
-            nameLabel.text = "\(buildingName)"
-            nameLabel.font = UIFont(name: "Avenir Next Condensed", size: 20)
-            self.addSubview(nameLabel)
+            // Make the bar labels – tags start at 6 because the scale values are 1 through 5
+            let nameTag = 6 + (2*numBars)
+            let valueTag = 7 + (2*numBars)
+            var needNewLabels = true
             
-            var valueLabel = UILabel(frame: CGRect(x: barLength-205, y: top, width: 200.0, height: 25.0))
-            valueLabel.textAlignment = NSTextAlignment.Right
-            valueLabel.text =  "\(value)"
-            valueLabel.textColor = UIColor(red: 0.235, green: 0.455, blue: 0.518, alpha: 1)
-            valueLabel.font = UIFont(name: "Avenir Next Condensed-Bold", size: 20)
-            self.addSubview(valueLabel)
+            for view in self.subviews as! [UIView] {
+                if let buildingLabel = view as? UILabel {
+                    if buildingLabel.tag == 6 + (2*numBars) {
+                        buildingLabel.text = "\(buildingName)"
+                    }
+                    if buildingLabel.tag == 7 + (2*numBars) {
+                        buildingLabel.text =  "\(value)"
+                        needNewLabels = false
+                    }
+                }
+            }
             
+            if needNewLabels == true {
+                var nameLabel = UILabel(frame: CGRect(x: 5, y: top, width: 200.0, height: 25.0))
+                nameLabel.tag = nameTag
+                nameLabel.textAlignment = NSTextAlignment.Left
+                nameLabel.text = "\(buildingName)"
+                nameLabel.font = UIFont(name: "Avenir Next Condensed", size: 20)
+                
+                var valueLabel = UILabel(frame: CGRect(x: barLength-205, y: top, width: 200.0, height: 25.0))
+                valueLabel.tag = valueTag
+                valueLabel.textAlignment = NSTextAlignment.Right
+                valueLabel.text =  "\(value)"
+                valueLabel.textColor = UIColor(red: 0.235, green: 0.455, blue: 0.518, alpha: 1)
+                valueLabel.font = UIFont(name: "Avenir Next Condensed-Bold", size: 20)
+                
+                self.addSubview(nameLabel)
+                self.addSubview(valueLabel)
+            }
             
-            // Draw a line to separate the bars
+            // Draw a white line to separate the bars
             UIColor.whiteColor().setStroke()
             var boundaryPath = UIBezierPath()
             boundaryPath.moveToPoint(CGPoint(x:2, y:bot))
