@@ -89,6 +89,7 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
             cell.imageView!.image = UIImage(named:buildingImageNames[indexPath.row])
         }
         
+        
         if indexPath.row == selectedBuildingIndex {
             cell.accessoryType = .Checkmark
         } else {
@@ -176,6 +177,7 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
             
         }
         selectedBuildings.removeAll()
+        selectedBuildingIndex = nil;
         self.tableView.reloadData()
 
     }
