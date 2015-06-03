@@ -102,6 +102,7 @@ import UIKit
                     }
                     if buildingLabel.tag == 7 + (2*numBars) {
                         buildingLabel.text =  "\(value)"
+                        buildingLabel.frame.origin.x = CGFloat(barLength-205)
                         needNewLabels = false
                     }
                 }

@@ -89,6 +89,7 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
             cell.imageView!.image = UIImage(named:buildingImageNames[indexPath.row])
         }
         
+        
         if indexPath.row == selectedBuildingIndex {
             cell.accessoryType = .Checkmark
         } else {
@@ -106,7 +107,7 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
 //            println(" cell Selected #\(indexPath.row)! \(searchingDataArray[indexPath.row])")
 //        }
         
-        //update the checkmark for the current row
+        //Update the checkmark for the current row
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         if (comparisonMode == true) {
             if cell!.accessoryType == .Checkmark{
@@ -121,7 +122,6 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
             selectedBuildings.append(buildingArray[indexPath.row])
         }
         
-
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         //Other row is selected - need to deselect it
@@ -177,6 +177,7 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
             
         }
         selectedBuildings.removeAll()
+        selectedBuildingIndex = nil;
         self.tableView.reloadData()
 
     }
