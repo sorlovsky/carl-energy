@@ -8,6 +8,8 @@
 //  This is a template for how we will draw our graphs.  The graphs are drawn using Core Graphics.
 //
 //  Most of the graph display is based off of the tutorial found here: http://www.raywenderlich.com/90693/modern-core-graphics-with-swift-part-2
+
+// Received help on getting max Double from an array from http://stackoverflow.com/questions/24036514/correct-way-to-find-max-in-an-array-in-swift
 //
 
 import UIKit
@@ -63,6 +65,27 @@ import UIKit
         var graphPath = UIBezierPath()
         for (meterName, value) in turbineData {
             var graphPoints = value
+            var yPoint: Double?
+            // adjust the ratio of values for graph
+            if meterName == "carleton_wind_speed"{
+                let maxItem: Double = turbineData["carleton_wind_speed"]!.reduce(-Double.infinity, combine: {max($0, $1)})
+                print("maxItem: ")
+                println(maxItem)
+                print("graphHeight: ")
+                println(graphHeight)
+                for i in 0..<graphPoints.count{
+                    graphPoints[i] = (graphPoints[i] * graphHeight)/(maxItem)
+                    print("graphPoints for Wind Speed: ")
+                    println(graphPoints[i])
+                }
+            }
+           
+            if meterName == "carleton_wind_speed"{
+                for i in 0..<graphPoints.count{
+                    print("graphPoints for Wind Speed: ")
+                    println(graphPoints[i])
+                }
+            }
             graphPath.moveToPoint(CGPoint(x:columnXPoint(0), y:columnYPoint(graphPoints[0])))
             
             //Add points for each item in the graphPoints array at the correct (x, y) for the point
