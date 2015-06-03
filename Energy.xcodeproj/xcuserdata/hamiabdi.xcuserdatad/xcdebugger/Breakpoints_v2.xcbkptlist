@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Energy/GraphView.swift"
-            timestampString = "454641595.403405"
+            timestampString = "454986641.880063"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "GraphView"
             landmarkType = "3">
          </BreakpointContent>
