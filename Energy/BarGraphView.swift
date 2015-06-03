@@ -12,15 +12,17 @@ import UIKit
 
 @IBDesignable class BarGraphView: UIView {
     
-    var buildingsDataDictionary = [String:Double]()
+    var buildingNames = [String]()
+    var buildingData = [Double]()
     
     override func drawRect(rect: CGRect) {
         
         // Graph variables
-        let width = Double(rect.width)
-        let height = Double(rect.height)
+        let graphWidth = Double(rect.width)
+        let graphHeight = Double(rect.height)
+        var maxUnit:Double = 0
         
-        //Get the current context
+        // Get the current context
         let context = UIGraphicsGetCurrentContext()
         
         // Draw the grid lines
@@ -39,10 +41,9 @@ import UIKit
         // Add the gridline labels
         for i in 1...5{
             if let labelView = self.viewWithTag(i) as? UILabel {
-                if Array(buildingsDataDictionary.values).count != 0{
-                    let maxValue = Array(buildingsDataDictionary.values)[0]
-                    var maxNum = floor(maxValue/50)*50
-                    var labelNum = (Int(maxNum) / 5) * i
+                if self.buildingNames.count != 0 {
+                    maxUnit = floor(self.buildingData[0]/50)*50
+                    var labelNum = Int(maxUnit / 5) * i
                     labelView.text = "\(labelNum)"
                 }
             }
@@ -51,17 +52,17 @@ import UIKit
         // Draw the graph boundaries
         UIColor.blackColor().setStroke()
         var boundaryPath = UIBezierPath()
-        boundaryPath.moveToPoint(CGPoint(x:1, y:height))
+        boundaryPath.moveToPoint(CGPoint(x:1, y:graphHeight))
         boundaryPath.addLineToPoint(CGPoint(x:1, y:2))
-        boundaryPath.addLineToPoint(CGPoint(x:width-1, y:2))
-        boundaryPath.addLineToPoint(CGPoint(x:width-1, y:24))
+        boundaryPath.addLineToPoint(CGPoint(x:graphWidth-1, y:2))
+        boundaryPath.addLineToPoint(CGPoint(x:graphWidth-1, y:24))
         boundaryPath.addLineToPoint(CGPoint(x:1, y:24))
         boundaryPath.lineWidth = 2.0
         boundaryPath.stroke()
         
         // Draw the bars
         var numBars = 0
-        for (buildingName, value) in buildingsDataDictionary{
+        for buildingIndex in 0..<self.buildingNames.count {
 //            println("Building: \(buildingName) \n Value: \(value)")
             
             let rectanglePath = CGPathCreateMutable()
@@ -72,9 +73,9 @@ import UIKit
             let top = Double(barWidth+(barWidth*numBars))
             let bot = Double((barWidth*2)+(barWidth*numBars))
             
-            let maximumUnit = floor(value/50)*60
-            if maximumUnit > 0 {
-                barLength = (width/maximumUnit * value)
+            //let maximumUnit = floor(self.buildingData[buildingIndex]/50)*60
+            if maxUnit > 0 {
+                barLength = (graphWidth/maxUnit * self.buildingData[buildingIndex]) * (5/6)
             }
             let points = [CGPoint(x:2, y:top), CGPoint(x:2, y:bot), CGPoint(x:barLength, y:bot), CGPoint(x:barLength, y:top)]
             
@@ -98,10 +99,10 @@ import UIKit
             for view in self.subviews as! [UIView] {
                 if let buildingLabel = view as? UILabel {
                     if buildingLabel.tag == 6 + (2*numBars) {
-                        buildingLabel.text = "\(buildingName)"
+                        buildingLabel.text = "\(self.buildingNames[buildingIndex])"
                     }
                     if buildingLabel.tag == 7 + (2*numBars) {
-                        buildingLabel.text =  "\(value)"
+                        buildingLabel.text =  "\(self.buildingData[buildingIndex])"
                         buildingLabel.frame.origin.x = CGFloat(barLength-205)
                         needNewLabels = false
                     }
@@ -112,13 +113,13 @@ import UIKit
                 var nameLabel = UILabel(frame: CGRect(x: 5, y: top, width: 200.0, height: 25.0))
                 nameLabel.tag = nameTag
                 nameLabel.textAlignment = NSTextAlignment.Left
-                nameLabel.text = "\(buildingName)"
+                nameLabel.text = "\(self.buildingNames[buildingIndex])"
                 nameLabel.font = UIFont(name: "Avenir Next Condensed", size: 20)
                 
                 var valueLabel = UILabel(frame: CGRect(x: barLength-205, y: top, width: 200.0, height: 25.0))
                 valueLabel.tag = valueTag
                 valueLabel.textAlignment = NSTextAlignment.Right
-                valueLabel.text =  "\(value)"
+                valueLabel.text =  "\(self.buildingData[buildingIndex])"
                 valueLabel.textColor = UIColor(red: 0.235, green: 0.455, blue: 0.518, alpha: 1)
                 valueLabel.font = UIFont(name: "Avenir Next Condensed-Bold", size: 20)
                 
@@ -139,18 +140,31 @@ import UIKit
         self.setNeedsDisplay()
     }
     
-    func loadData(buildingData: [String:[Double]]){
-        // Calculates the total
-        for (name, data) in buildingData{
-//            print("name: ")
-//            println(name)
-//            print("data")
-//            println(data)
-            self.buildingsDataDictionary[name] = round(100 * (data.reduce(0, combine: +))) / 100
+    func loadData(buildingData: [String:[Double]]) {
+        // Sort the dictionary
+        var newDictionary = [String:Double]()
+        for (building, energyValue) in buildingData {
+            newDictionary[building] = round(100 * (energyValue.reduce(0, combine: +))) / 100
         }
-    }
-
     
+        var energyValues = Array(newDictionary.values)
+        energyValues.sort {$0 > $1}
+        
+        self.buildingNames.removeAll(keepCapacity: true)
+        self.buildingData.removeAll(keepCapacity: true)
+        
+        for number in energyValues {
+            for (building, value) in newDictionary {
+                if value == number {
+                    self.buildingNames.append(building)
+                    self.buildingData.append(value)
+                    newDictionary[building] = nil
+                    break
+                }
+            }
+        }
+        
+    }
     
 }
 
