@@ -106,7 +106,7 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
 //            println(" cell Selected #\(indexPath.row)! \(searchingDataArray[indexPath.row])")
 //        }
         
-        //update the checkmark for the current row
+        //Update the checkmark for the current row
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         if (comparisonMode == true) {
             if cell!.accessoryType == .Checkmark{
@@ -121,7 +121,6 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
             selectedBuildings.append(buildingArray[indexPath.row])
         }
         
-
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         //Other row is selected - need to deselect it
