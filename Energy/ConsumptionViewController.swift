@@ -108,20 +108,16 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
         
         //update the checkmark for the current row
         let cell = tableView.cellForRowAtIndexPath(indexPath)
-        if (comparisonMode == true){
+        if (comparisonMode == true) {
             if cell!.accessoryType == .Checkmark{
                 cell?.accessoryType = .None
                 var index = find(selectedBuildings, buildingArray[indexPath.row])
                 selectedBuildings.removeAtIndex(index!)
-            }
-            else{
+            } else {
                 cell!.accessoryType = .Checkmark
                 selectedBuildings.append(buildingArray[indexPath.row])
-                //            NSLog("Object added")
-            
             }
-        }
-        else{
+        } else {
             selectedBuildings.append(buildingArray[indexPath.row])
         }
         
@@ -143,11 +139,6 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
         
         
         
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String){

@@ -20,8 +20,6 @@ import UIKit
     
     //Weekly sample data
     var turbineData=[String: [Double]]()
-//    var graphPoints:[Double] = [1,0,0,0,0,0,1]
-
     
     override func drawRect(rect: CGRect) {
         
@@ -29,48 +27,20 @@ import UIKit
             return
         }
         
+        //Set the graph variables
         let width = Double(rect.width)
         let height = Double(rect.height)
-                
-        //set up background clipping area
-        var path = UIBezierPath(roundedRect: rect,
-            byRoundingCorners: UIRectCorner.AllCorners,
-            cornerRadii: CGSize(width: 8.0, height: 8.0))
-        path.addClip()
-        
-        //Drawing the gradient: First needs to get the current context
-        let context = UIGraphicsGetCurrentContext()
-        let colors = [startColor.CGColor, endColor.CGColor]
-        
-        //set up the color space
-        let colorSpace = CGColorSpaceCreateDeviceRGB()
-        
-        //set up the color stops
-        let colorLocations:[CGFloat] = [0.0, 1.0]
-        
-        //create the gradient
-        let gradient = CGGradientCreateWithColors(colorSpace,
-            colors,
-            colorLocations)
-        
-        //draw the gradient
-        var startPoint = CGPoint.zeroPoint
-        var endPoint = CGPoint(x:0, y:self.bounds.height)
-        CGContextDrawLinearGradient(context,
-            gradient,
-            startPoint,
-            endPoint,
-            0)
-        
-        //calculate the x point
         let margin:Double = 20.0
-        
+        let topBorder:Double = 60
+        let bottomBorder:Double = 50
         var productionPoints = [Double]()
         
         if turbineData["carleton_wind_production"] != nil{
             println("here")
             productionPoints = turbineData["carleton_wind_production"]!
         }
+        
+        //Calculate the x point
         var columnXPoint = { (column:Int) -> Double in
             //Calculate gap between points
             let spacer = (width - margin*2 - 4.0) / Double(productionPoints.count - 1)
@@ -79,9 +49,7 @@ import UIKit
             return x
         }
         
-        // calculate the y point
-        let topBorder:Double = 60
-        let bottomBorder:Double = 50
+        //Calculate the y point
         let graphHeight = height - topBorder - bottomBorder
         let maxValue = maxElement(productionPoints)
         var columnYPoint = { (graphPoint:Double) -> Double in
@@ -91,38 +59,30 @@ import UIKit
         }
         
         
-        // draw the line graph
-        
-        UIColor.whiteColor().setFill()
-        UIColor.whiteColor().setStroke()
-        
-        //set up the points line
+        //Create the line graph
         var graphPath = UIBezierPath()
-        //go to start of line
-        for (meterName, value) in turbineData{
-            
+        for (meterName, value) in turbineData {
             var graphPoints = value
             graphPath.moveToPoint(CGPoint(x:columnXPoint(0), y:columnYPoint(graphPoints[0])))
             
-            //add points for each item in the graphPoints array
-            //at the correct (x, y) for the point
+            //Add points for each item in the graphPoints array at the correct (x, y) for the point
             for i in 1..<graphPoints.count {
                 let nextPoint = CGPoint(x:columnXPoint(i), y:columnYPoint(graphPoints[i]))
-                
                 graphPath.addLineToPoint(nextPoint)
             }
             
+            //Draw the line
+            UIColor.whiteColor().setFill()
+            UIColor.whiteColor().setStroke()
             graphPath.stroke()
             
             //Draw the circles on top of graph stroke
+            let circleSize = CGSize(width: 5.0, height: 5.0)
             for i in 0..<graphPoints.count {
                 var point = CGPoint(x:columnXPoint(i), y:columnYPoint(graphPoints[i]))
-                point.x -= 5.0/2
-                point.y -= 5.0/2
-                
-                var circleSize = CGSize(width: 5.0, height: 5.0)
+                point.x -= circleSize.width/2
+                point.y -= circleSize.height/2
                 var circleRect = CGRect(origin: point, size: circleSize)
-                
                 let circle = UIBezierPath(ovalInRect: circleRect)
                 circle.fill()
             }
@@ -130,18 +90,18 @@ import UIKit
             //Draw horizontal graph lines on the top of everything
             var linePath = UIBezierPath()
             
-            //top line
+            //Top line
             linePath.moveToPoint(CGPoint(x:margin, y: topBorder))
             linePath.addLineToPoint(CGPoint(x: width - margin,
                 y:topBorder))
             
-            //center line
+            //Center line
             linePath.moveToPoint(CGPoint(x:margin,
                 y: graphHeight/2 + topBorder))
             linePath.addLineToPoint(CGPoint(x:width - margin,
                 y:graphHeight/2 + topBorder))
             
-            //bottom line
+            //Bottom line
             linePath.moveToPoint(CGPoint(x:margin,
                 y:height - bottomBorder))
             linePath.addLineToPoint(CGPoint(x:width - margin,
@@ -151,9 +111,7 @@ import UIKit
             
             linePath.lineWidth = 1.0
             linePath.stroke()
-
         }
-        
     }
     
     func drawGraphPoints(points: [String: [Double]]){

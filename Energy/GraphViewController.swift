@@ -120,9 +120,9 @@ class GraphViewController: UIViewController {
         }
         
         
-        //set up labels
-        //day of week labels are set up in storyboard with tags
-        //today is last day of the array need to go backwards
+        //Set up labels
+        //Day of week labels are set up in storyboard with tags
+        //Today is last day of the array need to go backwards
         
         //Get today's day number
         let dateFormatter = NSDateFormatter()
@@ -132,10 +132,8 @@ class GraphViewController: UIViewController {
             fromDate: NSDate())
         var weekday = components.weekday
         
-        let days = ["S", "S", "M", "T", "W", "T", "F"]
-    
-        
         //Set up the day name labels with correct day
+        let days = ["S", "S", "M", "T", "W", "T", "F"]
         for i in reverse(1...days.count) {
             if let labelView = graphView.viewWithTag(i) as? UILabel {
                 if weekday == 7 {
@@ -150,9 +148,11 @@ class GraphViewController: UIViewController {
                 }
             }
         }
-    
     }
     
+    @IBAction func showWindSpeedSwitch(sender: AnyObject) {
+        
+    }
 
     /*
     // MARK: - Navigation

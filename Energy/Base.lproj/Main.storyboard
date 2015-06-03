@@ -75,7 +75,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qLk-3Y-lze" userLabel="Container View">
-                                <rect key="frame" x="150" y="60" width="300" height="300"/>
+                                <rect key="frame" x="150" y="240" width="300" height="300"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R2R-jz-AhY" customClass="GraphView" customModule="Energy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="25" width="300" height="250"/>
@@ -159,15 +159,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="startColor">
-                                                <color key="value" red="0.27099967060000002" green="0.69297038789999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="endColor">
-                                                <color key="value" red="0.0" green="0.64011548910000005" blue="5.2498760569999997e-05" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
+                                        <color key="backgroundColor" red="0.1294099987" green="0.80783998970000004" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -176,10 +168,26 @@
                                     <constraint firstAttribute="width" constant="300" id="lo1-lE-InP"/>
                                 </constraints>
                             </view>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IBh-hs-lWI">
+                                <rect key="frame" x="276" y="186" width="51" height="31"/>
+                                <connections>
+                                    <action selector="showWindSpeedSwitch:" destination="UeW-S8-dcw" eventType="valueChanged" id="vQY-fA-3g4"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="show wind speed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nl4-OE-BfI">
+                                <rect key="frame" x="333" y="191" width="135" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="qLk-3Y-lze" secondAttribute="centerY" constant="90" id="Vgd-EG-Wxr"/>
+                            <constraint firstItem="qLk-3Y-lze" firstAttribute="top" secondItem="IBh-hs-lWI" secondAttribute="bottom" constant="23" id="1dq-96-ibu"/>
+                            <constraint firstItem="nl4-OE-BfI" firstAttribute="leading" secondItem="IBh-hs-lWI" secondAttribute="trailing" constant="8" symbolic="YES" id="Ksm-xB-aR0"/>
+                            <constraint firstAttribute="centerY" secondItem="qLk-3Y-lze" secondAttribute="centerY" constant="-90" id="Vgd-EG-Wxr"/>
+                            <constraint firstItem="nl4-OE-BfI" firstAttribute="centerY" secondItem="IBh-hs-lWI" secondAttribute="centerY" id="ZiM-MY-MVu"/>
+                            <constraint firstItem="IBh-hs-lWI" firstAttribute="centerX" secondItem="qLk-3Y-lze" secondAttribute="centerX" id="ltZ-DD-XcP"/>
                             <constraint firstAttribute="centerX" secondItem="qLk-3Y-lze" secondAttribute="centerX" id="rCv-ao-yCK"/>
                         </constraints>
                     </view>
