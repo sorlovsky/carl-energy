@@ -28,6 +28,7 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
     //Building Data
     var buildingArray = [String]()
     var buildingImageNames = [String]()
+    
 
     var isSearching:Bool!
     var searchingDataArray = [String]()
@@ -40,6 +41,9 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     override func viewDidLoad() {
+        //Trying to figure out how to make the selected buildings clear upon back button
+        selectedBuildings.removeAll()
+        println("hello")
         
         //Get the buildings from buildings.plist and add them to the buildingArray
         var buildingsDictionaries = []
@@ -116,15 +120,23 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
                 selectedBuildings.removeAtIndex(index!)
             } else {
                 cell!.accessoryType = .Checkmark
-                if(isSearching==false){
-                    selectedBuildings.append(buildingArray[indexPath.row])
-                }
-                else{
+                if (isSearching == true){
                     selectedBuildings.append(searchingDataArray[indexPath.row])
                 }
+                else{
+                    selectedBuildings.append(buildingArray[indexPath.row])
+
+                }
+                
+                
             }
         } else {
-            selectedBuildings.append(buildingArray[indexPath.row])
+            if (isSearching == true){
+                selectedBuildings.append(searchingDataArray[indexPath.row])
+            }
+            else{
+                selectedBuildings.append(buildingArray[indexPath.row])
+            }
         }
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
@@ -157,7 +169,7 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
             for var index = 0; index < buildingArray.count; index++
             {
                 var currentString = buildingArray[index]
-                println("Current String:"+currentString)
+                
 //                if currentString.lowercaseString == searchText.lowercaseString{
 //                    searchingDataArray.append(currentString);
 //                }
@@ -229,6 +241,7 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "Detail"
         {
+            println("Selected Buildings:"+selectedBuildings[0])
             if let destinationVC = segue.destinationViewController as? DetailConsumptionViewController{
                 // Transferring all selected buildings to the DetailComsumptionViewController so that it can 
                 // produce a report comparing buildings.
