@@ -33,25 +33,6 @@ class GraphViewController: UIViewController {
     // This function gets called whenever the view appears from a segue from the ProductionViewController
     override func viewWillAppear(animated: Bool) {
         
-        /*  A note about building names:
-            When asking the database for information about a specific building, the formatting is very precise.  For
-            example, asking for Burton's steam data looks like this:
-            https://rest.buildingos.com/reports/timeseries/?start=2015/05/09+19:22:32&end=2015/05/10+19:22:32&resolution=hour&name=carleton_burton_steam_use
-            The options that we can ask for are "steam", "water", and "en" short for energy.  Therefore for every building
-            the format is "carleton_\(buildingName.lowercaseString)_\(dataType)_use".  There are a couple noteworthy
-            exceptions:
-                a) Cassat and James have their own electricity meters but not steam and water.  Therefore asking for "carleton_cassat_steam_use" is invalid.
-                b) Cassat and James have combined systems.  The format is: "carleton_cassatjames_en_use".
-                c) The Main Campus has 7 meters.  Steam and energy are the same as any building.
-                    i)      Gas use is accessed with the format:    "carleton_campus_gas_use"
-                    ii)     Solar production is accessed with:      "carleton_campus_total_pv_production"
-                    iii)    Turbine 1 is accessed with:             "carleton_turbine1_produced_power"
-                    iv)     Turbine 2 is accessed with:             "carleton_wind_production"
-                    v)      Wind speed data is accessed with:       "carleton_wind_speed
-        
-            The way that the previous version of this app dealt with this was by having a buildings.plist file that was
-            referred to whenever a building's meter name was asked for.  We should look into this.
-        */
 
         // For now let's just focus on electricity
         for dataIndex in 0..<desiredData.count{
@@ -68,7 +49,7 @@ class GraphViewController: UIViewController {
         let endDate = NSCalendar.currentCalendar().dateFromComponents(dateComponents)!
         
         let data : DataRetreiver = DataRetreiver()
-        data.fetch(desiredData, startDate: startDate, endDate: endDate, resolution: "day", callback: setupGraphDisplay)
+        // data.fetch(desiredData, startDate: startDate, endDate: endDate, resolution: "day", callback: setupGraphDisplay)
         // Fetches the data.  When the data is retreived it calls setupGraphDisplay()
 //        data.fetch(searchName, startDate: startDate, endDate: endDate, resolution: "day", callback: setupGraphDisplay)
 
@@ -154,14 +135,5 @@ class GraphViewController: UIViewController {
         
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

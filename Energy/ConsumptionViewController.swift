@@ -41,17 +41,9 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         
-        //Get the buildings from buildings.plist and add them to the buildingArray
-        var buildingsDictionaries = []
-        if let path = NSBundle.mainBundle().pathForResource("buildings", ofType: "plist") {
-            buildingsDictionaries = NSArray(contentsOfFile: path)!
-        }
-        for dict in buildingsDictionaries {
-            var buildingName = dict["displayName"] as! String
-            var buildingImage = dict["image"] as! String
-            self.buildingArray.append(buildingName)
-            self.buildingImageNames.append(buildingImage)
-        }
+        let buildingsDictionary = BuildingsDictionary()
+        self.buildingArray = buildingsDictionary.getBuildingNames()
+        self.buildingImageNames = buildingsDictionary.getBuildingImages()
         
         //Setting initial mode
         createReportButton.hidden = true

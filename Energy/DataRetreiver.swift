@@ -18,13 +18,18 @@ class DataRetreiver: NSObject {
     
     
     // Fetches the data based on the URL created upon initialization
-    func fetch(nameArray : [String], startDate: NSDate, endDate : NSDate, resolution : String, callback: ([String:[Double]])->Void){
+    func fetch(nameArray : [String], meterType: String, startDate: NSDate, endDate : NSDate, resolution : String, callback: ([String:[Double]])->Void){
         
         var dataResults = [String:[Double]]()
+        let buildings = BuildingsDictionary()
+        let meterArray = buildings.getMetersFromNames(nameArray, meterType: meterType)
         var counter = nameArray.count-1
+        println(meterArray)
         
         for buildingNameIndex in 0..<nameArray.count {
-            var url : NSURL = URLFormatter(nameArray[buildingNameIndex], startDate: startDate, endDate: endDate, resolution: resolution)
+            var url : NSURL = URLFormatter(meterArray[buildingNameIndex], startDate: startDate, endDate: endDate, resolution: resolution)
+            
+            //println(url)
             
             let session = NSURLSession.sharedSession()
             
@@ -39,27 +44,34 @@ class DataRetreiver: NSObject {
                 let jsonResult: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &jsonError) as? NSDictionary
                 
                 if(jsonError != nil) {
-                    // If there is an error parsing JSON, print it to the console
-                    println("JSON Error \(jsonError!.localizedDescription)")
-                    println(url)
+                    if meterArray[buildingNameIndex] != "" {
+                        // If there is an error parsing JSON, print it to the console
+                        println("JSON Error \(jsonError!.localizedDescription)")
+                        println(url)
+                    } else {
+                        dataResults[nameArray[buildingNameIndex]] = [0]
+                        if counter > 0 {
+                            counter--
+                        } else {
+                            callback(dataResults)
+                        }
+                    }
+                    
                 } else {
                     // Only takes the results of the search and casts as an NSArray
                     if let results: NSArray = jsonResult!["results"] as? NSArray{
                         var valueResults = [Double]()
                         for time in results{
-                            if let hour = time[nameArray[buildingNameIndex]] as? [String:Double]{
+                            if let hour = time[meterArray[buildingNameIndex]] as? [String:Double]{
                                 if let value = hour["value"]{
                                     valueResults.append(value)
                                 }
                             }
                         }
                         dataResults[nameArray[buildingNameIndex]] = valueResults
-//                        if buildingNameIndex == nameArray.count-1{
                         if counter > 0 {
                             counter--
-                        }else{
-//                            print("dataResults: ")
-//                            println(dataResults)
+                        } else {
                             callback(dataResults)
                         }
                     }

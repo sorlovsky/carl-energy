@@ -4,201 +4,6 @@
 <array>
 	<dict>
 		<key>urlElement</key>
-		<string>100nevadastreet</string>
-		<key>displayName</key>
-		<string>100 Nevada Street</string>
-		<key>image</key>
-		<string>100nevadastreet.png</string>
-		<key>area</key>
-		<real>2825</real>
-		<key>meters</key>
-		<array>
-			<dict>
-				<key>systemName</key>
-				<string>carleton_100nevadastreet_electricity_sub_meter_100nevadastelectricity</string>
-				<key>displayName</key>
-				<string>100 Nevada St. - Electricity</string>
-			</dict>
-			<dict>
-				<key>systemName</key>
-				<string>carleton_100nevadastreet_gas_sub_meter_100nevadastnaturalgas</string>
-				<key>displayName</key>
-				<string>100 Nevada St. - Natural Gas</string>
-			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>urlElement</key>
-		<string>104maplest</string>
-		<key>displayName</key>
-		<string>104 Maple St.</string>
-		<key>image</key>
-		<string>104maplest.png</string>
-		<key>area</key>
-		<real>4598</real>
-		<key>meters</key>
-		<array>
-			<dict>
-				<key>systemName</key>
-				<string>carleton_104maplest_electricity_bill_104maplestelectricity_1</string>
-				<key>displayName</key>
-				<string>104 Maple St. - Electricity</string>
-			</dict>
-			<dict>
-				<key>systemName</key>
-				<string>carleton_104maplest_gas_bill_104maplestnaturalgas_1</string>
-				<key>displayName</key>
-				<string>104 Maple St. - Natural Gas</string>
-			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>urlElement</key>
-		<string>106WinonaSt_0</string>
-		<key>displayName</key>
-		<string>106 Winona St.</string>
-		<key>image</key>
-		<string>106winonast_0.png</string>
-		<key>area</key>
-		<real>2970</real>
-		<key>longitude</key>
-		<real>-93.154383</real>
-		<key>latitude</key>
-		<real>44.459234</real>
-		<key>meters</key>
-		<array>
-			<dict>
-				<key>systemName</key>
-				<string>carleton_106winonast_0_electricity_bill_106winonastelectricity</string>
-				<key>displayName</key>
-				<string>106 Winona St - Electricity</string>
-			</dict>
-			<dict>
-				<key>systemName</key>
-				<string>carleton_106winonast_0_gas_bill_106winonastnaturalgas_1</string>
-				<key>displayName</key>
-				<string>106 Winona St - Natural Gas</string>
-			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>urlElement</key>
-		<string>208unionstreet</string>
-		<key>displayName</key>
-		<string>208 Union Street</string>
-		<key>image</key>
-		<string>208unionstreet.png</string>
-		<key>area</key>
-		<real>2520</real>
-		<key>longitude</key>
-		<string></string>
-		<key>latitude</key>
-		<string></string>
-		<key>meters</key>
-		<array>
-			<dict>
-				<key>systemName</key>
-				<string>carleton_208unionstreet_electricity_sub_meter_302755620</string>
-				<key>displayName</key>
-				<string>208 Union St - Electricity</string>
-			</dict>
-			<dict>
-				<key>systemName</key>
-				<string>carleton_208unionstreet_gas_sub_meter_208unionstnaturalgas</string>
-				<key>displayName</key>
-				<string>208 Union St - Natural Gas</string>
-			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>urlElement</key>
-		<string>210WinonaSt_0</string>
-		<key>displayName</key>
-		<string>210 Winona St.</string>
-		<key>image</key>
-		<string>210winonast_0.png</string>
-		<key>area</key>
-		<real>1926</real>
-		<key>longitude</key>
-		<real>-93.15426600000001</real>
-		<key>latitude</key>
-		<real>44.457974</real>
-		<key>meters</key>
-		<array>
-			<dict>
-				<key>systemName</key>
-				<string>carleton_210winonast_0_electricity_bill_210winonastelectricity_1</string>
-				<key>displayName</key>
-				<string>210 Winona St. - Electricity</string>
-			</dict>
-			<dict>
-				<key>systemName</key>
-				<string>carleton_210winonast_0_gas_bill_210winonastnaturalgas_1</string>
-				<key>displayName</key>
-				<string>210 Winona St. - Natural Gas</string>
-			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>urlElement</key>
-		<string>212East2ndSt_0</string>
-		<key>displayName</key>
-		<string>212 East 2nd St.</string>
-		<key>image</key>
-		<string>212east2ndst_0.png</string>
-		<key>area</key>
-		<real>3276</real>
-		<key>longitude</key>
-		<real>-93.157385</real>
-		<key>latitude</key>
-		<real>44.458309</real>
-		<key>meters</key>
-		<array>
-			<dict>
-				<key>systemName</key>
-				<string>carleton_212east2ndst_0_electricity_bill_212east2ndstelectricity_1</string>
-				<key>displayName</key>
-				<string>212 East 2nd St. - Electricity	</string>
-			</dict>
-			<dict>
-				<key>systemName</key>
-				<string>carleton_212east2ndst_0_gas_bill_212east2ndstnaturalgas_1</string>
-				<key>displayName</key>
-				<string>212 East 2nd St. - Natural Gas</string>
-			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>urlElement</key>
-		<string>216CollegeSt_0</string>
-		<key>displayName</key>
-		<string>216 College St.</string>
-		<key>image</key>
-		<string>216collegest_0.png</string>
-		<key>area</key>
-		<real>4017</real>
-		<key>longitude</key>
-		<real>-93.155946</real>
-		<key>latitude</key>
-		<real>44.457767</real>
-		<key>meters</key>
-		<array>
-			<dict>
-				<key>systemName</key>
-				<string>carleton_216collegest_0_electricity_bill_216collegestelectricity_1</string>
-				<key>displayName</key>
-				<string>216 College St. - Electricity</string>
-			</dict>
-			<dict>
-				<key>systemName</key>
-				<string>carleton_216collegest_0_gas_bill_216collegestnaturalgas_1</string>
-				<key>displayName</key>
-				<string>216 College St. - Natural Gas</string>
-			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>urlElement</key>
 		<string>AllenHouse_0</string>
 		<key>displayName</key>
 		<string>Allen House</string>
@@ -344,7 +149,7 @@
 		<key>urlElement</key>
 		<string>boliou</string>
 		<key>displayName</key>
-		<string>Boliou Memorial Art Bldg</string>
+		<string>Boliou</string>
 		<key>image</key>
 		<string>boliou.png</string>
 		<key>area</key>
@@ -359,7 +164,7 @@
 				<key>systemName</key>
 				<string>carleton_boliou_electricity_wholebuilding_boliouhallelectricity</string>
 				<key>displayName</key>
-				<string>Boliou Hall - Electricity</string>
+				<string>Boliou - Electricity</string>
 				<key>startingTimescale</key>
 				<string>day</string>
 				<key>defaultTimescale</key>
@@ -369,7 +174,7 @@
 				<key>systemName</key>
 				<string>carleton_boliou_heating_wholebuilding_boliouhallsteamcondensate</string>
 				<key>displayName</key>
-				<string>Boliou Hall - Steam Condensate</string>
+				<string>Boliou - Steam Condensate</string>
 				<key>startingTimescale</key>
 				<string>day</string>
 				<key>defaultTimescale</key>
@@ -449,7 +254,7 @@
 		<key>urlElement</key>
 		<string>cassat-james</string>
 		<key>displayName</key>
-		<string>Cassat Hall / James Hall</string>
+		<string>Cassat / James</string>
 		<key>image</key>
 		<string>cassat-james.png</string>
 		<key>area</key>
@@ -2039,7 +1844,7 @@
 		<key>urlElement</key>
 		<string>sayles-hill</string>
 		<key>displayName</key>
-		<string>Sayles-Hill Campus Center</string>
+		<string>Sayles-Hill</string>
 		<key>image</key>
 		<string>sayles-hill.png</string>
 		<key>area</key>
@@ -2383,7 +2188,7 @@
 		<key>urlElement</key>
 		<string>weitz</string>
 		<key>displayName</key>
-		<string>Weitz Center for Creativity</string>
+		<string>Weitz Center</string>
 		<key>image</key>
 		<string>weitz.png</string>
 		<key>area</key>
