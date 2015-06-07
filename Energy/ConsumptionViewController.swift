@@ -116,7 +116,12 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
                 selectedBuildings.removeAtIndex(index!)
             } else {
                 cell!.accessoryType = .Checkmark
-                selectedBuildings.append(buildingArray[indexPath.row])
+                if(isSearching==false){
+                    selectedBuildings.append(buildingArray[indexPath.row])
+                }
+                else{
+                    selectedBuildings.append(searchingDataArray[indexPath.row])
+                }
             }
         } else {
             selectedBuildings.append(buildingArray[indexPath.row])
