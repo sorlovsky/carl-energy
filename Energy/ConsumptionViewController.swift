@@ -273,13 +273,27 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     @IBAction func reportButtonPressed(sender: AnyObject) {
-        performSegueWithIdentifier("Detail", sender: tableView)
+        if comparisonMode == true{
+            if selectedBuildings.count == 0{
+                var alert = UIAlertController(title: "No buildings selected", message: "Please select a building", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+            else{
+                performSegueWithIdentifier("Detail", sender: tableView)
+            }
+        }
+        else{
+            performSegueWithIdentifier("Detail", sender: tableView)
+        }
+        
+
     }
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "Detail" {
-            println("Selected Buildings:"+selectedBuildings[0])
+            println("Selected Buildings: \(selectedBuildings[0])")
             if let destinationVC = segue.destinationViewController as? DetailConsumptionViewController{
                 // Transferring all selected buildings to the DetailComsumptionViewController so that it can 
                 // produce a report comparing buildings.
@@ -292,7 +306,7 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
         if segue.identifier == "Single" {
             if let destinationVC = segue.destinationViewController as? ColumnGraphViewController {
                 if let tappedCellIndex = sender?.indexPathForSelectedRow()?.row {
-                    destinationVC.selectedBuilding = buildingArray[tappedCellIndex]
+                    destinationVC.selectedBuilding = buildings[tappedCellIndex].name
                 }
             }
         }

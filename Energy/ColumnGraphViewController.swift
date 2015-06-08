@@ -22,7 +22,7 @@ class ColumnGraphViewController: UIViewController {
 
     func getGraphData(timePeriod: String, energyType: String) {
         let dataFetcher = DataRetreiver()
-        dataFetcher.description
+        // dataFetcher.fetchSingle
     }
     
 

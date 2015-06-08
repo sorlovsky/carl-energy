@@ -11,7 +11,7 @@ import UIKit
 @IBDesignable class ColumnGraphView: UIView {
     
     //var dataPoints = [Double]()
-    var dataPoints = [3.0, 4.7, 6.9, 5.5, 1.1]
+    var dataPoints = [3.0, 4.7, 6.9, 5.5, 1.1, 8.5, 0.3, 12.0, 7.3, 2.3]
     var resolution:String = ""
     
     override func drawRect(rect: CGRect) {
@@ -19,53 +19,82 @@ import UIKit
         // Graph variables
         let graphWidth = Double(rect.width)
         let graphHeight = Double(rect.height)
+        let graphBottom = Double(graphHeight - 24)
+        let graphLeft = 36.0
+        let numberOfGridLines = 6.0
         var maxUnit:Double = 0
+        
+        if dataPoints.count > 0 {
+            maxUnit = maxElement(dataPoints)
+        }
         
         // Get the current context
         let context = UIGraphicsGetCurrentContext()
         
-        // Draw the graph boundaries
+        // Draw the graph axes
         UIColor.blackColor().setStroke()
         var boundaryPath = UIBezierPath()
-        boundaryPath.moveToPoint(CGPoint(x:1, y:2))
-        boundaryPath.addLineToPoint(CGPoint(x:1, y:graphHeight-1))
-        boundaryPath.addLineToPoint(CGPoint(x:graphWidth-1, y:graphHeight-1))
-        boundaryPath.lineWidth = 2.0
+        boundaryPath.moveToPoint(CGPoint(x:graphLeft, y:graphHeight-1))
+        boundaryPath.addLineToPoint(CGPoint(x:graphLeft, y:0))
+        boundaryPath.moveToPoint(CGPoint(x:graphLeft, y:graphBottom))
+        boundaryPath.addLineToPoint(CGPoint(x:graphWidth, y:graphBottom))
+        boundaryPath.lineWidth = 0.5
         boundaryPath.stroke()
         
         // Draw the grid lines
         UIColor.grayColor().setFill()
         UIColor.grayColor().setStroke()
         var gridLinesPath = UIBezierPath()
-        gridLinesPath.moveToPoint(CGPoint(x:1, y:50))
-        //Add 5 lines
-        for i in 1...5 {
-            let nextPoint = CGPoint(x:graphWidth, y:Double(50*i))
+
+        for i in 1..<Int(numberOfGridLines) {
+            let yPoint:Double = graphBottom*(Double(i)/numberOfGridLines)
+            gridLinesPath.moveToPoint(CGPoint(x:graphLeft, y:yPoint))
+            let nextPoint = CGPoint(x:graphWidth, y:yPoint)
             gridLinesPath.addLineToPoint(nextPoint)
-            gridLinesPath.moveToPoint(CGPoint(x:1, y:Double(50*(i+1))))
+            
+            // graphBottom = (maxUnit * ratio) + topSpacer
+            // graphBottom - topSpacer = maxUnit * ratio
+            // graphBottom - topSpacer = maxUnit * (6/5 top label value / graphBottom)
+            let topSpacer = maxUnit/(2*numberOfGridLines)
+            var labelNum = round(maxUnit * (numberOfGridLines - Double(i)) / (numberOfGridLines))
+            
+            if let labelView = self.viewWithTag(i) as? UILabel {
+                labelView.text = "\(labelNum)"
+            } else {
+                var center = CGPoint(x: graphLeft/2, y: yPoint)
+                var valueLabel = UILabel(frame: CGRect(x: 0, y: 0, width: CGFloat(graphLeft), height: 25.0))
+                valueLabel.center = center
+                valueLabel.tag = i
+                valueLabel.textAlignment = NSTextAlignment.Center
+                valueLabel.text =  "\(labelNum)"
+                valueLabel.textColor = UIColor.blackColor()
+                valueLabel.font = UIFont(name: "Avenir Next Condensed", size: 20)
+                valueLabel.adjustsFontSizeToFitWidth = true
+                
+                self.addSubview(valueLabel)
+            }
         }
         gridLinesPath.stroke()
         
-        maxUnit = maxElement(dataPoints)
         
         // Set up the bars
-        var numBars = 0
+        var numBars:Int = 0
+        let barSpacing:Double = 50/Double(dataPoints.count)
+        let barWidth:Double = (graphWidth - graphLeft - (Double(dataPoints.count)) * (barSpacing+1)) / (Double(dataPoints.count))
         var barHeight:Double = 0
-        let barWidth = 25
-        let barSpacing = 10
         let rectanglePath = CGPathCreateMutable()
         
         // Draw the bars
         for energyValue in self.dataPoints {
             
             // Set up bar variables
-            let left = Double((barSpacing*(numBars+1))+(barWidth*numBars))
+            let left = (barSpacing*(Double(numBars)+1))+(barWidth*Double(numBars)) + graphLeft
             let right = left+Double(barWidth)
             
             if maxUnit > 0 {
-                barHeight = graphHeight - ((graphHeight/maxUnit * energyValue) * (5/6))
+                barHeight = graphBottom - (graphBottom/maxUnit * energyValue)
             }
-            let points = [CGPoint(x:left, y:graphHeight), CGPoint(x:right, y:graphHeight), CGPoint(x:right, y:barHeight), CGPoint(x:left, y:barHeight)]
+            let points = [CGPoint(x:left, y:graphBottom), CGPoint(x:right, y:graphBottom), CGPoint(x:right, y:barHeight), CGPoint(x:left, y:barHeight)]
             
             // Draw the bar
             var startingPoint = points[0]
@@ -92,26 +121,18 @@ import UIKit
             }
             
             if needNewLabel == true {
-                
-                var center = CGPoint(x: left, y: (barHeight - 25))
-                
-                var valueLabel = UILabel(frame: CGRect(x: center.x, y: center.y, width: CGFloat(barWidth), height: 25.0))
+                var center = CGPoint(x: (right-(barWidth/2)), y: (barHeight - 15))
+                var valueLabel = UILabel(frame: CGRect(x: 0, y: 0, width: CGFloat(barWidth), height: 25.0))
+                valueLabel.center = center
                 valueLabel.tag = valueTag
-                valueLabel.textAlignment = NSTextAlignment.Right
+                valueLabel.textAlignment = NSTextAlignment.Center
                 valueLabel.text =  "\(energyValue)"
                 valueLabel.textColor = UIColor(red: 0.235, green: 0.455, blue: 0.518, alpha: 1)
                 valueLabel.font = UIFont(name: "Avenir Next Condensed-Bold", size: 20)
+                valueLabel.adjustsFontSizeToFitWidth = true
             
                 self.addSubview(valueLabel)
             }
-            
-            // Draw a vertical white line to separate the bars
-            UIColor.whiteColor().setStroke()
-            var boundaryPath = UIBezierPath()
-            boundaryPath.moveToPoint(CGPoint(x:left, y:graphHeight-2))
-            boundaryPath.addLineToPoint(CGPoint(x:left, y:barHeight))
-            boundaryPath.lineWidth = 2.0
-            boundaryPath.stroke()
             
             numBars+=1
             

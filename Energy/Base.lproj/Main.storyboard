@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E11f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5T3-zP-DGX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5T3-zP-DGX">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -652,73 +652,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="compared to" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMM-5x-htD">
-                                <rect key="frame" x="261" y="115" width="79" height="21"/>
-                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="over" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxc-71-8i6">
-                                <rect key="frame" x="150" y="154" width="35" height="21"/>
+                                <rect key="frame" x="296" y="205" width="35" height="16"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="RBM-DF-Ycv"/>
+                                    <constraint firstAttribute="width" constant="35" id="I0v-oi-4QI"/>
+                                    <constraint firstAttribute="height" constant="16" id="Qe8-2A-llH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="showing" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUF-Jh-NJp">
-                                <rect key="frame" x="150" y="183" width="52" height="21"/>
+                                <rect key="frame" x="150" y="203" width="52" height="16"/>
                                 <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Building 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldC-KD-M8M">
-                                <rect key="frame" x="354" y="86" width="88" height="21"/>
-                                <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="18"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Electricity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oaa-aI-tdw" userLabel="energyType">
-                                <rect key="frame" x="172" y="86" width="87" height="21"/>
+                                <rect key="frame" x="257" y="142" width="87" height="37"/>
                                 <color key="backgroundColor" red="0.81052714646464641" green="0.81052714646464641" blue="0.81052714646464641" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="use of " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBS-ms-fIT">
-                                <rect key="frame" x="303" y="87" width="43" height="19"/>
-                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="this year" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAt-Pg-1GS" userLabel="timePeriod">
-                                <rect key="frame" x="213" y="154" width="92" height="21"/>
+                                <rect key="frame" x="338" y="201" width="92" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="92" id="uX8-Pd-Ka4"/>
+                                    <constraint firstAttribute="width" constant="92" id="TlF-Hi-fUH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="16"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="total kWh" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGu-f4-6WC" userLabel="energyUnits">
-                                <rect key="frame" x="213" y="183" width="92" height="21"/>
+                                <rect key="frame" x="213" y="201" width="76" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="76" id="TyW-ND-dqP"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="16"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FYk-be-NnD">
-                                <rect key="frame" x="135" y="84" width="30" height="30"/>
-                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="14"/>
-                                <state key="normal" title="◀">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="energyTypeBackButtonPressed:" destination="jwp-xO-wg5" eventType="touchUpInside" id="JeH-Kx-xvP"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAb-2Q-Zim">
-                                <rect key="frame" x="265" y="84" width="30" height="30"/>
+                                <rect key="frame" x="360" y="142" width="21" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="21" id="dAc-Ny-A57"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="14"/>
                                 <state key="normal" title="▶">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -727,12 +706,6 @@
                                     <action selector="energyTypeForwardButtonPressed:" destination="jwp-xO-wg5" eventType="touchUpInside" id="PNU-Ql-EWt"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Building 2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gry-ag-kvt">
-                                <rect key="frame" x="354" y="115" width="88" height="21"/>
-                                <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="18"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bHu-h1-Mx1" customClass="BarGraphView" customModule="Energy" customModuleProvider="target">
                                 <rect key="frame" x="150" y="236" width="300" height="300"/>
                                 <subviews>
@@ -792,45 +765,64 @@
                                     <constraint firstItem="pXP-SA-jaK" firstAttribute="top" secondItem="bHu-h1-Mx1" secondAttribute="top" constant="1" id="l4g-No-lbO"/>
                                     <constraint firstItem="Uoq-XD-L2f" firstAttribute="top" secondItem="bHu-h1-Mx1" secondAttribute="top" constant="1" id="ydd-j1-CBo"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="keyPath">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compare Buildings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5e-Fc-mWP">
+                                <rect key="frame" x="150" y="80" width="300" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8NJ-y0-Ub8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FYk-be-NnD">
+                                <rect key="frame" x="220" y="142" width="21" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="21" id="v9s-ip-3Z7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="14"/>
+                                <state key="normal" title="◀">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="energyTypeBackButtonPressed:" destination="jwp-xO-wg5" eventType="touchUpInside" id="JeH-Kx-xvP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gry-ag-kvt" firstAttribute="top" secondItem="ldC-KD-M8M" secondAttribute="bottom" constant="8" id="4BZ-MJ-8g2"/>
-                            <constraint firstItem="FYk-be-NnD" firstAttribute="top" secondItem="gDk-XW-mRZ" secondAttribute="bottom" constant="20" id="4Jf-fS-QF3"/>
-                            <constraint firstItem="IUF-Jh-NJp" firstAttribute="leading" secondItem="bHu-h1-Mx1" secondAttribute="leading" id="5sc-m0-Hub"/>
+                            <constraint firstItem="h5e-Fc-mWP" firstAttribute="leading" secondItem="IUF-Jh-NJp" secondAttribute="leading" id="2vM-3Q-0eP"/>
+                            <constraint firstItem="bAb-2Q-Zim" firstAttribute="leading" secondItem="Oaa-aI-tdw" secondAttribute="trailing" constant="16" id="3ix-cA-KDD"/>
                             <constraint firstItem="W7u-SQ-wez" firstAttribute="top" secondItem="bHu-h1-Mx1" secondAttribute="bottom" constant="20" id="7o9-e0-DyI"/>
-                            <constraint firstItem="ldC-KD-M8M" firstAttribute="top" secondItem="gDk-XW-mRZ" secondAttribute="bottom" constant="22" id="8WA-KI-qXv"/>
-                            <constraint firstItem="IUF-Jh-NJp" firstAttribute="leading" secondItem="oxc-71-8i6" secondAttribute="leading" id="AfX-jz-m4t"/>
-                            <constraint firstItem="PAt-Pg-1GS" firstAttribute="top" secondItem="DMM-5x-htD" secondAttribute="bottom" constant="18" id="DK4-HT-KX5"/>
-                            <constraint firstItem="EGu-f4-6WC" firstAttribute="trailing" secondItem="PAt-Pg-1GS" secondAttribute="trailing" id="Eck-MM-K6d"/>
-                            <constraint firstItem="rBS-ms-fIT" firstAttribute="leading" secondItem="bAb-2Q-Zim" secondAttribute="trailing" constant="8" id="FpU-d0-Hbr"/>
+                            <constraint firstItem="h5e-Fc-mWP" firstAttribute="top" secondItem="gDk-XW-mRZ" secondAttribute="bottom" constant="16" id="EqQ-yY-c33"/>
+                            <constraint firstItem="IUF-Jh-NJp" firstAttribute="leading" secondItem="bHu-h1-Mx1" secondAttribute="leading" id="G43-SM-xLd"/>
+                            <constraint firstItem="oxc-71-8i6" firstAttribute="baseline" secondItem="PAt-Pg-1GS" secondAttribute="baseline" id="HU7-d2-8CJ"/>
                             <constraint firstItem="bHu-h1-Mx1" firstAttribute="centerY" secondItem="5u0-ma-oJY" secondAttribute="centerY" constant="86" id="IAM-PN-CnT"/>
-                            <constraint firstItem="bHu-h1-Mx1" firstAttribute="top" secondItem="IUF-Jh-NJp" secondAttribute="bottom" constant="32" id="JND-SX-4qQ"/>
-                            <constraint firstAttribute="centerX" secondItem="FYk-be-NnD" secondAttribute="centerX" constant="150" id="KZ9-Yw-JaD"/>
-                            <constraint firstItem="DMM-5x-htD" firstAttribute="top" secondItem="gry-ag-kvt" secondAttribute="top" id="MZq-xE-qrG"/>
-                            <constraint firstItem="bAb-2Q-Zim" firstAttribute="top" secondItem="gDk-XW-mRZ" secondAttribute="bottom" constant="20" id="N6R-Qb-y8j"/>
-                            <constraint firstItem="IUF-Jh-NJp" firstAttribute="top" secondItem="oxc-71-8i6" secondAttribute="bottom" constant="8" symbolic="YES" id="TJA-pL-4WL"/>
-                            <constraint firstItem="PAt-Pg-1GS" firstAttribute="leading" secondItem="oxc-71-8i6" secondAttribute="trailing" constant="28" id="UOP-Ym-9dK"/>
-                            <constraint firstItem="rBS-ms-fIT" firstAttribute="top" secondItem="gDk-XW-mRZ" secondAttribute="bottom" constant="23" id="ZC0-IR-Nyk"/>
-                            <constraint firstItem="ldC-KD-M8M" firstAttribute="leading" secondItem="rBS-ms-fIT" secondAttribute="trailing" constant="8" id="aHP-Xj-gtA"/>
-                            <constraint firstItem="DMM-5x-htD" firstAttribute="baseline" secondItem="gry-ag-kvt" secondAttribute="firstBaseline" id="aNG-XQ-qcA"/>
-                            <constraint firstItem="IUF-Jh-NJp" firstAttribute="bottom" secondItem="EGu-f4-6WC" secondAttribute="bottom" id="b0Z-LG-7q2"/>
-                            <constraint firstItem="DMM-5x-htD" firstAttribute="top" secondItem="5u0-ma-oJY" secondAttribute="top" constant="115" id="bVF-8e-2i7"/>
-                            <constraint firstItem="DMM-5x-htD" firstAttribute="top" secondItem="Oaa-aI-tdw" secondAttribute="bottom" constant="8" symbolic="YES" id="cJw-oa-LnK"/>
+                            <constraint firstItem="bHu-h1-Mx1" firstAttribute="top" secondItem="IUF-Jh-NJp" secondAttribute="bottom" constant="17" id="Kk1-Qx-THm"/>
+                            <constraint firstItem="EGu-f4-6WC" firstAttribute="baseline" secondItem="oxc-71-8i6" secondAttribute="baseline" id="MWD-mU-zps"/>
+                            <constraint firstItem="bAb-2Q-Zim" firstAttribute="top" secondItem="h5e-Fc-mWP" secondAttribute="bottom" constant="32" id="N1a-yh-Z4j"/>
+                            <constraint firstItem="IUF-Jh-NJp" firstAttribute="centerY" secondItem="EGu-f4-6WC" secondAttribute="centerY" id="PZ5-AL-gb1"/>
+                            <constraint firstItem="Oaa-aI-tdw" firstAttribute="leading" secondItem="FYk-be-NnD" secondAttribute="trailing" constant="16" id="QBK-XP-mH9"/>
+                            <constraint firstAttribute="centerX" secondItem="Oaa-aI-tdw" secondAttribute="centerX" id="TCw-Lb-rTK"/>
+                            <constraint firstItem="PAt-Pg-1GS" firstAttribute="firstBaseline" secondItem="EGu-f4-6WC" secondAttribute="firstBaseline" id="UDY-UE-paW"/>
+                            <constraint firstItem="FYk-be-NnD" firstAttribute="firstBaseline" secondItem="bAb-2Q-Zim" secondAttribute="baseline" id="bYd-bS-J3h"/>
                             <constraint firstAttribute="centerX" secondItem="bHu-h1-Mx1" secondAttribute="centerX" id="dHB-uL-xUR"/>
-                            <constraint firstItem="EGu-f4-6WC" firstAttribute="top" secondItem="PAt-Pg-1GS" secondAttribute="bottom" constant="8" symbolic="YES" id="iC4-sW-gbb"/>
-                            <constraint firstAttribute="centerX" secondItem="DMM-5x-htD" secondAttribute="centerX" id="inz-tQ-wpr"/>
-                            <constraint firstItem="EGu-f4-6WC" firstAttribute="leading" secondItem="PAt-Pg-1GS" secondAttribute="leading" id="kYL-uW-IrC"/>
-                            <constraint firstItem="gry-ag-kvt" firstAttribute="leading" secondItem="DMM-5x-htD" secondAttribute="trailing" constant="14" id="oQ1-qA-xNe"/>
-                            <constraint firstItem="DMM-5x-htD" firstAttribute="top" secondItem="rBS-ms-fIT" secondAttribute="bottom" constant="9" id="pP6-QI-eG6"/>
-                            <constraint firstAttribute="centerX" secondItem="bAb-2Q-Zim" secondAttribute="centerX" constant="20" id="qjj-VW-taw"/>
-                            <constraint firstItem="DMM-5x-htD" firstAttribute="bottom" secondItem="gry-ag-kvt" secondAttribute="bottom" id="tw7-VF-i4G"/>
-                            <constraint firstItem="Oaa-aI-tdw" firstAttribute="top" secondItem="gDk-XW-mRZ" secondAttribute="bottom" constant="22" id="uIj-80-RVb"/>
-                            <constraint firstItem="EGu-f4-6WC" firstAttribute="leading" secondItem="IUF-Jh-NJp" secondAttribute="trailing" constant="11" id="uJi-di-ye9"/>
-                            <constraint firstItem="EGu-f4-6WC" firstAttribute="top" secondItem="IUF-Jh-NJp" secondAttribute="top" id="wLD-9t-RcG"/>
-                            <constraint firstAttribute="centerX" secondItem="Oaa-aI-tdw" secondAttribute="centerX" constant="85" id="yGk-hS-ZYo"/>
-                            <constraint firstItem="PAt-Pg-1GS" firstAttribute="top" secondItem="oxc-71-8i6" secondAttribute="top" id="zJ1-67-j3x"/>
+                            <constraint firstItem="oxc-71-8i6" firstAttribute="top" secondItem="Oaa-aI-tdw" secondAttribute="bottom" constant="26" id="dQA-1i-jkQ"/>
+                            <constraint firstItem="FYk-be-NnD" firstAttribute="baseline" secondItem="bAb-2Q-Zim" secondAttribute="firstBaseline" id="gt8-J4-3HD"/>
+                            <constraint firstItem="h5e-Fc-mWP" firstAttribute="trailing" secondItem="bHu-h1-Mx1" secondAttribute="trailing" id="hMb-9C-Vux"/>
+                            <constraint firstItem="bHu-h1-Mx1" firstAttribute="top" secondItem="EGu-f4-6WC" secondAttribute="bottom" constant="14" id="iRA-eG-Ol6"/>
+                            <constraint firstItem="oxc-71-8i6" firstAttribute="leading" secondItem="EGu-f4-6WC" secondAttribute="trailing" constant="7" id="ieG-0a-bvX"/>
+                            <constraint firstItem="bAb-2Q-Zim" firstAttribute="top" secondItem="Oaa-aI-tdw" secondAttribute="top" id="io2-dw-SzD"/>
+                            <constraint firstItem="EGu-f4-6WC" firstAttribute="baseline" secondItem="IUF-Jh-NJp" secondAttribute="firstBaseline" id="li2-bd-Ud0"/>
+                            <constraint firstItem="FYk-be-NnD" firstAttribute="bottom" secondItem="Oaa-aI-tdw" secondAttribute="bottom" id="oH3-gj-L0m"/>
+                            <constraint firstItem="PAt-Pg-1GS" firstAttribute="leading" secondItem="oxc-71-8i6" secondAttribute="trailing" constant="7" id="rBa-pc-602"/>
+                            <constraint firstItem="FYk-be-NnD" firstAttribute="top" secondItem="Oaa-aI-tdw" secondAttribute="top" id="rHG-nV-xyF"/>
+                            <constraint firstItem="EGu-f4-6WC" firstAttribute="leading" secondItem="IUF-Jh-NJp" secondAttribute="trailing" constant="11" id="u4j-fl-SNa"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -840,11 +832,9 @@
                     </view>
                     <connections>
                         <outlet property="barGraphView" destination="bHu-h1-Mx1" id="u5V-Op-gK2"/>
-                        <outlet property="building1Label" destination="ldC-KD-M8M" id="pb8-Lm-JPm"/>
-                        <outlet property="building2Label" destination="gry-ag-kvt" id="pQG-WW-WeL"/>
                         <outlet property="energyTypeLabel" destination="Oaa-aI-tdw" id="UxT-3S-GPk"/>
-                        <outlet property="energyUnitsLabel" destination="EGu-f4-6WC" id="ia4-zq-b1w"/>
-                        <outlet property="timePeriodLabel" destination="PAt-Pg-1GS" id="oda-Et-A74"/>
+                        <outlet property="energyUnitsLabel" destination="EGu-f4-6WC" id="wpj-G1-bFr"/>
+                        <outlet property="timePeriodLabel" destination="PAt-Pg-1GS" id="IPY-me-tax"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xBc-6i-tZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -872,6 +862,11 @@
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wgn-nk-aJd" customClass="ColumnGraphView" customModule="Energy" customModuleProvider="target">
                                 <rect key="frame" x="150" y="224" width="300" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
