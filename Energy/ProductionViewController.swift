@@ -6,6 +6,9 @@
 //  Copyright (c) 2015 simonorlovsky. All rights reserved.
 //
 
+
+//NOTE: The code regarding the production side of the app was restructured tremendously (proof: look at earlier versions of the code on GitHub, where the windspeed and windturbine 2's data was showing). It was done so in order to ensure that with a little bit more time various permutations of visualizing Turbines (1 and 2), Time Periods, and Wind Speed/Solar PV(which is not getting tracked right now by the Energy Facility). Moreover, DataRetreiver class was also restructured to account for more flexible calls to the Lucid database. 
+
 import UIKit
 
 class ProductionViewController: UIViewController {

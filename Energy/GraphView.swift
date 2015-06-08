@@ -28,10 +28,10 @@ import UIKit
     @IBOutlet weak var totalEnergyText: UILabel!
     
     var maximumNumberOfItems: Int = 0
-    var TURBINE1PRODUCTION: [Double] = []
-    var TURBINE2PRODUCTION: [Double] = []
-    var TURBINE2SPEED: [Double] = []
-    var SOLARPV: [Double] = []
+    var Turbine1Production: [Double] = []
+    var Turbine2Production: [Double] = []
+    var Turbine2Speed: [Double] = []
+    var SolarPV: [Double] = []
     
     let NUM_TODAY: Int = 24
     let NUM_4WKS: Int = 28
@@ -41,7 +41,7 @@ import UIKit
 //    var labels = [UILabel]()
     
     override func drawRect(rect: CGRect) {
-        let producers: [[Double]] = [TURBINE1PRODUCTION, TURBINE2PRODUCTION, SOLARPV]
+        let producers: [[Double]] = [Turbine1Production, Turbine2Production, SolarPV]
         
         //Set the graph variables
         let width = Double(rect.width)
@@ -64,7 +64,7 @@ import UIKit
         //Calculate the y point
         let graphHeight = height - topBorder - bottomBorder
 //        let maxValue = maxElement(productionPoints)
-        var columnYPoint = { (graphPoint:Double, maxValue: Double) -> Double in
+        var columnYPoint = { (graphPoint:Double) -> Double in
 //            var y:Double = graphPoint / maxValue * graphHeight
             var y: Double = graphPoint
 //            var y:Double = graphPoint
@@ -73,19 +73,19 @@ import UIKit
         }
         // find the max production
         var maxProduction: Double = 0
-        if TURBINE1PRODUCTION.count > 0{
-            if TURBINE2PRODUCTION.count>0{
-                maxProduction = max(maxElement(TURBINE1PRODUCTION),maxElement(TURBINE2PRODUCTION))
+        if Turbine1Production.count > 0{
+            if Turbine2Production.count>0{
+                maxProduction = max(maxElement(Turbine1Production),maxElement(Turbine2Production))
             }else{
-                maxProduction = maxElement(TURBINE1PRODUCTION)
+                maxProduction = maxElement(Turbine1Production)
             }
         } else{
-            if TURBINE2PRODUCTION.count>0{
-                maxProduction = maxElement(TURBINE2PRODUCTION)
+            if Turbine2Production.count>0{
+                maxProduction = maxElement(Turbine2Production)
             }
         }
-        if SOLARPV.count > 0{
-            maxProduction = max(maxProduction, maxElement(SOLARPV))
+        if SolarPV.count > 0{
+            maxProduction = max(maxProduction, maxElement(SolarPV))
         }
         
         //Create the line graph
@@ -100,10 +100,10 @@ import UIKit
                 for i in 0..<graphPoints.count{
                     graphPoints[i] = (graphPoints[i]*graphHeight)/(maxProduction)
                 }
-                graphPath.moveToPoint(CGPoint(x:columnXPoint(0), y:columnYPoint(graphPoints[0], maxProduction)))
+                graphPath.moveToPoint(CGPoint(x:columnXPoint(0), y:columnYPoint(graphPoints[0])))
                 
                 for i in 1..<graphPoints.count{
-                    let nextPoint = CGPoint(x:columnXPoint(i), y:columnYPoint(graphPoints[i], maxProduction))
+                    let nextPoint = CGPoint(x:columnXPoint(i), y:columnYPoint(graphPoints[i]))
                     graphPath.addLineToPoint(nextPoint)
                 }
                 
@@ -114,7 +114,7 @@ import UIKit
                 //Draw the circles on top of graph stroke
                 let circleSize = CGSize(width: 5.0, height: 5.0)
                 for i in 0..<graphPoints.count {
-                    var point = CGPoint(x:columnXPoint(i), y:columnYPoint(graphPoints[i], maxProduction))
+                    var point = CGPoint(x:columnXPoint(i), y:columnYPoint(graphPoints[i]))
                     point.x -= circleSize.width/2
                     point.y -= circleSize.height/2
                     var circleRect = CGRect(origin: point, size: circleSize)
@@ -148,95 +148,82 @@ import UIKit
                 linePath.stroke()
             }
         }
-//        for (meterName, value) in turbineData {
-//            var graphPoints = value
-//            var yPoint: Double?
-//            // adjust the ratio of values for graph
-//            if meterName == "carleton_wind_production"{
-//                print("graphPoints for Wind Production: ")
-//                println(graphPoints)
-//            }
-//            var maxItem: Double? = 0
-//            for i in 0..<graphPoints.count{
-//                if graphPoints[i]>maxItem{
-//                    maxItem = graphPoints[i]
-//                }
-//            }
-//            //                let maxItem: Double = turbineData["carleton_wind_speed"]!.reduce(-Double.infinity, combine: {max($0, $1)})
-//            print("maxItem: ")
-//            println(maxItem)
-//            print("graphHeight: ")
-//            println(graphHeight)
-//            for i in 0..<graphPoints.count{
-//                graphPoints[i] = (graphPoints[i] * graphHeight)/(maxItem!)
-//            }
-//            graphPath.moveToPoint(CGPoint(x:columnXPoint(0), y:columnYPoint(graphPoints[0], maxItem!)))
-//            
-//            //Add points for each item in the graphPoints array at the correct (x, y) for the point
-//            for i in 1..<graphPoints.count {
-//                let nextPoint = CGPoint(x:columnXPoint(i), y:columnYPoint(graphPoints[i], maxItem!))
-//                graphPath.addLineToPoint(nextPoint)
-//            }
-//            
-//            //Draw the line
-//            UIColor.whiteColor().setFill()
-//            UIColor.whiteColor().setStroke()
-//            graphPath.stroke()
-//            
-//            //Draw the circles on top of graph stroke
-//            let circleSize = CGSize(width: 5.0, height: 5.0)
-//            for i in 0..<graphPoints.count {
-//                var point = CGPoint(x:columnXPoint(i), y:columnYPoint(graphPoints[i], maxItem!))
-//                point.x -= circleSize.width/2
-//                point.y -= circleSize.height/2
-//                var circleRect = CGRect(origin: point, size: circleSize)
-//                let circle = UIBezierPath(ovalInRect: circleRect)
-//                circle.fill()
-//            }
-//            
-//            //Draw horizontal graph lines on the top of everything
-//            var linePath = UIBezierPath()
-//            
-//            //Top line
-//            linePath.moveToPoint(CGPoint(x:margin, y: topBorder))
-//            linePath.addLineToPoint(CGPoint(x: width - margin,
-//                y:topBorder))
-//            
-//            //Center line
-//            linePath.moveToPoint(CGPoint(x:margin,
-//                y: graphHeight/2 + topBorder))
-//            linePath.addLineToPoint(CGPoint(x:width - margin,
-//                y:graphHeight/2 + topBorder))
-//            
-//            //Bottom line
-//            linePath.moveToPoint(CGPoint(x:margin,
-//                y:height - bottomBorder))
-//            linePath.addLineToPoint(CGPoint(x:width - margin,
-//                y:height - bottomBorder))
-//            let color = UIColor(white: 1.0, alpha: 0.3)
-//            color.setStroke()
-//            
-//            linePath.lineWidth = 1.0
-//            linePath.stroke()
-//        }
+        
+        if Turbine2Speed.count > 0{
+            var speedScaledPoints = [Double]()
+            let maxSpeed = maxElement(Turbine2Speed)
+            for i in Turbine2Speed{
+                let valToAdd: Double = (i*graphHeight)/(maxSpeed)
+                speedScaledPoints.append(valToAdd)
+            }
+            graphPath.moveToPoint(CGPoint(x:columnXPoint(0), y:columnYPoint(speedScaledPoints[0])))
+            
+            for i in 1..<speedScaledPoints.count{
+                let nextPoint = CGPoint(x:columnXPoint(i), y:columnYPoint(speedScaledPoints[i]))
+                graphPath.addLineToPoint(nextPoint)
+            }
+            
+            UIColor.redColor().setFill()
+            UIColor.redColor().setStroke()
+            graphPath.stroke()
+            
+            //Draw the circles on top of graph stroke
+            let circleSize = CGSize(width: 5.0, height: 5.0)
+            for i in 0..<speedScaledPoints.count {
+                var point = CGPoint(x:columnXPoint(i), y:columnYPoint(speedScaledPoints[i]))
+                point.x -= circleSize.width/2
+                point.y -= circleSize.height/2
+                var circleRect = CGRect(origin: point, size: circleSize)
+                let circle = UIBezierPath(ovalInRect: circleRect)
+                circle.fill()
+            }
+            
+            //Draw horizontal graph lines on the top of everything
+            var linePath = UIBezierPath()
+            
+            //Top line
+            linePath.moveToPoint(CGPoint(x:margin, y: topBorder))
+            linePath.addLineToPoint(CGPoint(x: width - margin,
+                y:topBorder))
+            
+            //Center line
+            linePath.moveToPoint(CGPoint(x:margin,
+                y: graphHeight/2 + topBorder))
+            linePath.addLineToPoint(CGPoint(x:width - margin,
+                y:graphHeight/2 + topBorder))
+            
+            //Bottom line
+            linePath.moveToPoint(CGPoint(x:margin,
+                y:height - bottomBorder))
+            linePath.addLineToPoint(CGPoint(x:width - margin,
+                y:height - bottomBorder))
+            let color = UIColor(white:1.0, alpha: 0.3)
+            color.setStroke()
+            
+            linePath.lineWidth = 1.0
+            linePath.stroke()
+            
+        }
     }
+
     
     func drawGraphPoints(){
-        if TURBINE1PRODUCTION.count > 0{
+        // The idea behind this structure, coupled with the discrete arrays (e.g. Turbine1Speed) is that it allows for very easy customization of the various views regarding Turbine 1, 2, and Solar PV. There was not enough time to account for all of the possibilities, but the structure should be hopefully enough to show where this idea was heading, and what can be achieved. The code for the toggle wind speed is not completely correct, which is why it is commented out; however, given a few more hours, it could be working.
+        if Turbine1Production.count > 0{
             println("hello")
         }else{
-            if TURBINE2PRODUCTION.count > 0{
+            if Turbine2Production.count > 0{
                 println("going through Turbine 2")
-                if TURBINE2SPEED.count > 0{
-                    let maxSpeedVal = maxElement(self.TURBINE2SPEED)
-                    let total = TURBINE2PRODUCTION.reduce(0, combine: +)
-                    let average = total / Double(TURBINE2PRODUCTION.count)
+                if Turbine2Speed.count > 0{
+                    let maxSpeedVal = maxElement(self.Turbine2Speed)
+                    let total = Turbine2Production.reduce(0, combine: +)
+                    let average = total / Double(Turbine2Production.count)
                     
                     //Indicate that the graph needs to be redrawn and labels updated on the main queue
                     dispatch_async(dispatch_get_main_queue()){
                         //Round values to 100s places
-                        self.maxLabel.text = "\(Int(maxElement(self.TURBINE2PRODUCTION)))"
-                        self.maxSpeedLabel.text = "\(Int(maxElement(self.TURBINE2SPEED)))"
+                        self.maxLabel.text = "\(Int(maxElement(self.Turbine2Production)))"
+                        self.maxSpeedLabel.text = "\(Int(maxElement(self.Turbine2Speed)))"
                         
                         self.averageEnergyText.text = "Average Energy Produced(kWH)\(round(100 * average) / 100)"
                         self.totalEnergyText.text = "Total Energy Produced(kWH): \(round(100 * total) / 100)"
@@ -269,48 +256,48 @@ import UIKit
                         }
                     }
                 }else{
-                    if SOLARPV.count > 0{
-                        println("SOLARPV Stuff is also good")
-                    } else{
-                        println("made it here")
-                        let total = TURBINE2PRODUCTION.reduce(0, combine: +)
-                        let average = total / Double(TURBINE2PRODUCTION.count)
-                        
-                        //Indicate that the graph needs to be redrawn and labels updated on the main queue
-                        dispatch_async(dispatch_get_main_queue()){
-                            //Round values to 100s places
-                            self.maxLabel.text = "\(Int(maxElement(self.TURBINE2PRODUCTION)))"
-                            
-                            self.averageEnergyText.text = "Average Energy Produced(kWH)\(round(100 * average) / 100)"
-                            self.totalEnergyText.text = "Total Energy Produced(kWH): \(round(100 * total) / 100)"
-                            self.setNeedsDisplay()
-                        }
-                        switch(self.maximumNumberOfItems){
-                        case self.NUM_LASTWK:
-                            let dateFormatter = NSDateFormatter()
-                            let calendar = NSCalendar.currentCalendar()
-                            let componentOptions:NSCalendarUnit = .CalendarUnitWeekday
-                            let components = calendar.components(componentOptions, fromDate: NSDate())
-                            var weekday = components.weekday
-                            
-                            let days = ["S", "S", "M", "T", "W", "T", "F"]
-                            for i in reverse(1...days.count){
-                                if let labelView = self.viewWithTag(i) as? UILabel{
-                                    if weekday == 7{
-                                        weekday = 0
-                                    }
-                                    dispatch_sync(dispatch_get_main_queue()){
-                                        if weekday < 0{
-                                            weekday = days.count - 1
-                                        }
-                                        labelView.text = days[weekday]
-                                        weekday = weekday-1
-                                    }
-                                }
-                            }
-                        default:
-                            println("hi")
-                        }
+                    if SolarPV.count > 0{
+                        println("SolarPV Stuff is also good")
+//                    } else {
+//                        println("made it here")
+//                        let total = Turbine2Production.reduce(0, combine: +)
+//                        let average = total / Double(Turbine2Production.count)
+//                        
+//                        //Indicate that the graph needs to be redrawn and labels updated on the main queue
+//                        dispatch_async(dispatch_get_main_queue()){
+//                            //Round values to 100s places
+//                            self.maxLabel.text = "\(Int(maxElement(self.Turbine2Production)))"
+//                            
+//                            self.averageEnergyText.text = "Average Energy Produced(kWH)\(round(100 * average) / 100)"
+//                            self.totalEnergyText.text = "Total Energy Produced(kWH): \(round(100 * total) / 100)"
+//                            self.setNeedsDisplay()
+//                        }
+//                        switch(self.maximumNumberOfItems){
+//                        case self.NUM_LASTWK:
+//                            let dateFormatter = NSDateFormatter()
+//                            let calendar = NSCalendar.currentCalendar()
+//                            let componentOptions:NSCalendarUnit = .CalendarUnitWeekday
+//                            let components = calendar.components(componentOptions, fromDate: NSDate())
+//                            var weekday = components.weekday
+//                            
+//                            let days = ["S", "S", "M", "T", "W", "T", "F"]
+//                            for i in reverse(1...days.count){
+//                                if let labelView = self.viewWithTag(i) as? UILabel{
+//                                    if weekday == 7{
+//                                        weekday = 0
+//                                    }
+//                                    dispatch_sync(dispatch_get_main_queue()){
+//                                        if weekday < 0{
+//                                            weekday = days.count - 1
+//                                        }
+//                                        labelView.text = days[weekday]
+//                                        weekday = weekday-1
+//                                    }
+//                                }
+//                            }
+//                        default:
+//                            println("hi")
+//                        }
                     }
                 }
             }
