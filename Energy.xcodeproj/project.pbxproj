@@ -19,7 +19,6 @@
 		80FD194F1B1298EC00C7FE1A /* BarGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FD194E1B1298EC00C7FE1A /* BarGraphView.swift */; };
 		941948F71AFD0B5300C972F6 /* ProductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941948F61AFD0B5300C972F6 /* ProductionViewController.swift */; };
 		941948F91AFD0E1C00C972F6 /* ConsumptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941948F81AFD0E1C00C972F6 /* ConsumptionViewController.swift */; };
-		942A6FAA1B13EF6700FE5175 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A6FA91B13EF6700FE5175 /* SettingsViewController.swift */; };
 		943407B11B002C8200F71B71 /* DetailConsumptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943407B01B002C8200F71B71 /* DetailConsumptionViewController.swift */; };
 		945137951AF2EE55002ED072 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945137941AF2EE55002ED072 /* AppDelegate.swift */; };
 		9451379A1AF2EE55002ED072 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 945137981AF2EE55002ED072 /* Main.storyboard */; };
@@ -54,7 +53,6 @@
 		80FD194E1B1298EC00C7FE1A /* BarGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarGraphView.swift; sourceTree = "<group>"; };
 		941948F61AFD0B5300C972F6 /* ProductionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductionViewController.swift; sourceTree = "<group>"; };
 		941948F81AFD0E1C00C972F6 /* ConsumptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumptionViewController.swift; sourceTree = "<group>"; };
-		942A6FA91B13EF6700FE5175 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		943407B01B002C8200F71B71 /* DetailConsumptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailConsumptionViewController.swift; sourceTree = "<group>"; };
 		943430E01B0A3C88000539D0 /* Energy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Energy-Bridging-Header.h"; sourceTree = "<group>"; };
 		9451378F1AF2EE55002ED072 /* Energy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Energy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,11 +90,13 @@
 		803279411B140730008DC2A5 /* Consumption */ = {
 			isa = PBXGroup;
 			children = (
+				94D584D81B0D815F000690FB /* ConsumptionTableViewCell.swift */,
 				80FD194E1B1298EC00C7FE1A /* BarGraphView.swift */,
 				943407B01B002C8200F71B71 /* DetailConsumptionViewController.swift */,
 				3CF6E58F1B1CC494006FF25B /* ColumnGraphView.swift */,
 				3CB41EFA1B255DB7007FAE4D /* ColumnGraphViewController.swift */,
 				941948F81AFD0E1C00C972F6 /* ConsumptionViewController.swift */,
+				3C0346821B22EE9600181D56 /* BuildingsDictionary.swift */,
 				948140A41B255DC10051CA1F /* Building.swift */,
 			);
 			name = Consumption;
@@ -140,14 +140,8 @@
 				9451379B1AF2EE55002ED072 /* Images.xcassets */,
 				9451379D1AF2EE55002ED072 /* LaunchScreen.xib */,
 				B10E45BC1B02ED1400DCCA84 /* DataRetreiver.swift */,
-				806FE9441B0D6F180040DE5F /* SWRevealViewController.h */,
-				806FE9451B0D6F1F0040DE5F /* SWRevealViewController.m */,
+				94D304241B2632270032BCF0 /* Menu */,
 				945137921AF2EE55002ED072 /* Supporting Files */,
-				943430E01B0A3C88000539D0 /* Energy-Bridging-Header.h */,
-				3C0346821B22EE9600181D56 /* BuildingsDictionary.swift */,
-				94D584D81B0D815F000690FB /* ConsumptionTableViewCell.swift */,
-				80F282F01B13F60500679869 /* MenuViewController.swift */,
-				942A6FA91B13EF6700FE5175 /* SettingsViewController.swift */,
 			);
 			path = Energy;
 			sourceTree = "<group>";
@@ -176,6 +170,17 @@
 				945137A91AF2EE55002ED072 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		94D304241B2632270032BCF0 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				806FE9441B0D6F180040DE5F /* SWRevealViewController.h */,
+				806FE9451B0D6F1F0040DE5F /* SWRevealViewController.m */,
+				943430E01B0A3C88000539D0 /* Energy-Bridging-Header.h */,
+				80F282F01B13F60500679869 /* MenuViewController.swift */,
+			);
+			name = Menu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,7 +298,6 @@
 				941948F91AFD0E1C00C972F6 /* ConsumptionViewController.swift in Sources */,
 				3CF6E5901B1CC494006FF25B /* ColumnGraphView.swift in Sources */,
 				94D584D91B0D815F000690FB /* ConsumptionTableViewCell.swift in Sources */,
-				942A6FAA1B13EF6700FE5175 /* SettingsViewController.swift in Sources */,
 				945137951AF2EE55002ED072 /* AppDelegate.swift in Sources */,
 				8000EB4D1B0AE84E00AF89B0 /* GraphView.swift in Sources */,
 			);

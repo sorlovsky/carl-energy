@@ -10,8 +10,9 @@ import UIKit
 
 @IBDesignable class ColumnGraphView: UIView {
     
-    //var dataPoints = [Double]()
-    var dataPoints = [3.0, 4.7, 6.9, 5.5, 1.1, 8.5, 0.3, 12.0, 7.3, 2.3]
+    @IBOutlet weak var noDataLabel: UILabel!
+    
+    var dataPoints = [Double]()
     var resolution:String = ""
     
     override func drawRect(rect: CGRect) {
@@ -23,9 +24,11 @@ import UIKit
         let graphLeft = 36.0
         let numberOfGridLines = 6.0
         var maxUnit:Double = 0
+        var graphTopUnitValue:Double = 0
         
         if dataPoints.count > 0 {
             maxUnit = maxElement(dataPoints)
+            graphTopUnitValue = ((2*numberOfGridLines)/(2*numberOfGridLines-1)) * maxUnit
         }
         
         // Get the current context
@@ -46,33 +49,34 @@ import UIKit
         UIColor.grayColor().setStroke()
         var gridLinesPath = UIBezierPath()
 
-        for i in 1..<Int(numberOfGridLines) {
-            let yPoint:Double = graphBottom*(Double(i)/numberOfGridLines)
-            gridLinesPath.moveToPoint(CGPoint(x:graphLeft, y:yPoint))
-            let nextPoint = CGPoint(x:graphWidth, y:yPoint)
-            gridLinesPath.addLineToPoint(nextPoint)
-            
-            // graphBottom = (maxUnit * ratio) + topSpacer
-            // graphBottom - topSpacer = maxUnit * ratio
-            // graphBottom - topSpacer = maxUnit * (6/5 top label value / graphBottom)
-            let topSpacer = maxUnit/(2*numberOfGridLines)
-            var labelNum = round(maxUnit * (numberOfGridLines - Double(i)) / (numberOfGridLines))
-            
-            if let labelView = self.viewWithTag(i) as? UILabel {
-                labelView.text = "\(labelNum)"
-            } else {
-                var center = CGPoint(x: graphLeft/2, y: yPoint)
-                var valueLabel = UILabel(frame: CGRect(x: 0, y: 0, width: CGFloat(graphLeft), height: 25.0))
-                valueLabel.center = center
-                valueLabel.tag = i
-                valueLabel.textAlignment = NSTextAlignment.Center
-                valueLabel.text =  "\(labelNum)"
-                valueLabel.textColor = UIColor.blackColor()
-                valueLabel.font = UIFont(name: "Avenir Next Condensed", size: 20)
-                valueLabel.adjustsFontSizeToFitWidth = true
+        if maxUnit > 0 { // Check if there is actually data
+            self.noDataLabel.hidden = true
+            for i in 1..<Int(numberOfGridLines) {
+                let yPoint:Double = graphBottom*(Double(i)/numberOfGridLines)
+                gridLinesPath.moveToPoint(CGPoint(x:graphLeft, y:yPoint))
+                let nextPoint = CGPoint(x:graphWidth, y:yPoint)
+                gridLinesPath.addLineToPoint(nextPoint)
                 
-                self.addSubview(valueLabel)
+                var labelNum = (graphTopUnitValue * (numberOfGridLines - Double(i)) / (numberOfGridLines))
+                
+                if let labelView = self.viewWithTag(i) as? UILabel {
+                    labelView.text = "\(labelNum)"
+                } else {
+                    var center = CGPoint(x: graphLeft/2, y: yPoint)
+                    var valueLabel = UILabel(frame: CGRect(x: 0, y: 0, width: CGFloat(graphLeft-2), height: 25.0))
+                    valueLabel.center = center
+                    valueLabel.tag = i
+                    valueLabel.textAlignment = NSTextAlignment.Center
+                    valueLabel.text = String(format: "%.2f",labelNum)
+                    valueLabel.textColor = UIColor.blackColor()
+                    valueLabel.font = UIFont(name: "Avenir Next Condensed", size: 20)
+                    valueLabel.adjustsFontSizeToFitWidth = true
+                    
+                    self.addSubview(valueLabel)
+                }
             }
+        } else {
+            self.noDataLabel.hidden = false
         }
         gridLinesPath.stroke()
         
@@ -92,7 +96,7 @@ import UIKit
             let right = left+Double(barWidth)
             
             if maxUnit > 0 {
-                barHeight = graphBottom - (graphBottom/maxUnit * energyValue)
+                barHeight = graphBottom - (graphBottom/graphTopUnitValue * energyValue)
             }
             let points = [CGPoint(x:left, y:graphBottom), CGPoint(x:right, y:graphBottom), CGPoint(x:right, y:barHeight), CGPoint(x:left, y:barHeight)]
             
@@ -108,30 +112,44 @@ import UIKit
             CGContextSetFillColorWithColor(context, barColor.CGColor)
             CGContextFillPath(context)
             
-            // Make the bar labels – tags start at 6 because the scale values are 1 through 5
-            let valueTag = 6 + numBars
-            var needNewLabel = true
+            let valueTag = Int(numberOfGridLines) + (2*numBars)
+            let nameTag = Int(numberOfGridLines + 1) + (2*numBars)
+            var needNewLabels = true
             
             for view in self.subviews as! [UIView] {
                 if let buildingLabel = view as? UILabel {
-                    if buildingLabel.tag == 6 + numBars {
+                    if buildingLabel.tag == Int(numberOfGridLines) + (2*numBars) {
                         buildingLabel.text = "\(energyValue)"
+                        buildingLabel.frame.origin.y = CGFloat(barHeight - 15)
+                    }
+                    if buildingLabel.tag == Int(numberOfGridLines + 1) + (2*numBars) {
+                        buildingLabel.text =  ""
+                        needNewLabels = false
                     }
                 }
             }
             
-            if needNewLabel == true {
-                var center = CGPoint(x: (right-(barWidth/2)), y: (barHeight - 15))
+            if needNewLabels == true {
+                var valueCenter = CGPoint(x: (right-(barWidth/2)), y: (barHeight - 10))
                 var valueLabel = UILabel(frame: CGRect(x: 0, y: 0, width: CGFloat(barWidth), height: 25.0))
-                valueLabel.center = center
+                valueLabel.center = valueCenter
                 valueLabel.tag = valueTag
                 valueLabel.textAlignment = NSTextAlignment.Center
-                valueLabel.text =  "\(energyValue)"
+                valueLabel.text =  String(format: "%.2f", energyValue)
                 valueLabel.textColor = UIColor(red: 0.235, green: 0.455, blue: 0.518, alpha: 1)
                 valueLabel.font = UIFont(name: "Avenir Next Condensed-Bold", size: 20)
                 valueLabel.adjustsFontSizeToFitWidth = true
-            
+                
+                var nameCenter = CGPoint(x: (right-(barWidth/2)), y: (graphBottom + 12))
+                var nameLabel = UILabel(frame: CGRect(x: 0, y: 0, width: CGFloat(barWidth), height: 25.0))
+                nameLabel.center = nameCenter
+                nameLabel.tag = nameTag
+                nameLabel.text = ""
+                nameLabel.font = UIFont(name: "Avenir Next Condensed", size: 20)
+                nameLabel.adjustsFontSizeToFitWidth = true
+                
                 self.addSubview(valueLabel)
+                self.addSubview(nameLabel)
             }
             
             numBars+=1

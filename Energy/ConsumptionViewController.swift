@@ -30,6 +30,7 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
 //    var buildingImageNames = [String]()
     var buildings = [Building]()
     var searchBuildings = [Building]()
+    var singleBuildingSelection:String = ""
     
 
     var isSearching:Bool!
@@ -170,6 +171,10 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
             }
         }
         
+        if (comparisonMode == false){
+            self.singleBuildingSelection = self.buildings[tableView.indexPathForSelectedRow()!.row].name
+            performSegueWithIdentifier("Single", sender: self)
+        }
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
@@ -182,9 +187,7 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
 //        selectedBuildingIndex = indexPath.row
 //        selectedBuilding = buildings[indexPath.row]
         
-        if (comparisonMode == false){
-            performSegueWithIdentifier("Single", sender: tableView)
-        }
+        
         
         
         
@@ -195,27 +198,17 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
             isSearching = false
             tableView.reloadData()
         } else {
-//            println(" search text %@ ",searchBar.text as NSString)
             isSearching = true
-//            searchingDataArray.removeAll()
-//            searchingDataArrayImages.removeAll()
             searchBuildings.removeAll()
             for var index = 0; index < buildings.count; index++
             {
                 var currentString = buildings[index].name
-                
-//                if currentString.lowercaseString == searchText.lowercaseString{
-//                    searchingDataArray.append(currentString);
-//                }
                 if currentString.lowercaseString.hasPrefix(searchText.lowercaseString) == true {
                     for var i = 0; i < buildings.count; i++ {
                         if (buildings[i].name == currentString){
                             searchBuildings.append(buildings[i])
                         }
                     }
-//                    searchBuildings.append(currentString)
-//                    searchingDataArrayImages.append(buildingImageNames[index])
-                    
                 }
             }
             tableView.reloadData()
@@ -226,6 +219,8 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
         if (comparisonMode==false){
             comparisonMode = true
             createReportButton.hidden = false;
+            searchBarObj.hidden = true;
+            segmentedControl.hidden = true;
             modeBarButton.title = "Single"
             barTitleItem.title = "Choose Buildings"
             
@@ -233,12 +228,13 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
         else{
             comparisonMode = false
             createReportButton.hidden = true;
+            searchBarObj.hidden = false;
+            segmentedControl.hidden = false;
             modeBarButton.title = "Compare"
             barTitleItem.title = "Choose Building"
             
         }
         selectedBuildings.removeAll()
-//        selectedBuildingIndex = nil;
         self.tableView.reloadData()
 
     }
@@ -260,14 +256,17 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
         if(segmentedControl.selectedSegmentIndex == 0)
         {
             testLabel.text = "A";
+            tableView.reloadData()
         }
         else if(segmentedControl.selectedSegmentIndex == 1)
         {
             testLabel.text = "Ac";
+            tableView.reloadData()
         }
         else if(segmentedControl.selectedSegmentIndex == 2)
         {
             testLabel.text = "D";
+            tableView.reloadData();
         }
     }
     
@@ -284,7 +283,7 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
             }
         }
         else{
-            performSegueWithIdentifier("Detail", sender: tableView)
+            performSegueWithIdentifier("Detail", sender: self)
         }
         
 
@@ -305,9 +304,7 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
         }
         if segue.identifier == "Single" {
             if let destinationVC = segue.destinationViewController as? ColumnGraphViewController {
-                if let tappedCellIndex = sender?.indexPathForSelectedRow()?.row {
-                    destinationVC.selectedBuilding = buildings[tappedCellIndex].name
-                }
+                destinationVC.selectedBuilding = self.singleBuildingSelection
             }
         }
     }
