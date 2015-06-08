@@ -22,17 +22,20 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
     //Menu bar button that triggers SWRevealViewController
     @IBOutlet var menuButton: UIBarButtonItem!
     
-    var selectedBuilding:String? = nil
-    var selectedBuildingIndex:Int? = nil
+    var selectedBuilding = Building(name: "default", imageName: "default", isSelected: false)
+//    var selectedBuildingIndex:Int? = nil
 
     //Building Data
-    var buildingArray = [String]()
-    var buildingImageNames = [String]()
+//    var buildingArray = [String]()
+//    var buildingImageNames = [String]()
+    var buildings = [Building]()
+    var searchBuildings = [Building]()
     
 
     var isSearching:Bool!
-    var searchingDataArray = [String]()
-    var selectedBuildings = [String]()
+//    var searchingDataArray = [String]()
+//    var searchingDataArrayImages = [String]()
+    var selectedBuildings = [Building]()
     
     @IBOutlet var modeBarButton: UIBarButtonItem!
     var comparisonMode = false
@@ -41,13 +44,16 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     override func viewDidLoad() {
-        //Trying to figure out how to make the selected buildings clear upon back button
-        selectedBuildings.removeAll()
-        println("hello")
-        
-        let buildingsDictionary = BuildingsDictionary()
-        self.buildingArray = buildingsDictionary.getBuildingNames()
-        self.buildingImageNames = buildingsDictionary.getBuildingImages()
+        //Get the buildings from buildings.plist and add them to the buildingArray
+        var buildingsDictionaries = []
+        if let path = NSBundle.mainBundle().pathForResource("buildings", ofType: "plist") {
+            buildingsDictionaries = NSArray(contentsOfFile: path)!
+        }
+        for dict in buildingsDictionaries {
+            var buildingName = dict["displayName"] as! String
+            var buildingImage = dict["image"] as! String
+            buildings.append(Building(name: buildingName, imageName: buildingImage, isSelected: false))
+        }
         
         //Setting initial mode
         createReportButton.hidden = true
@@ -69,78 +75,112 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         if isSearching == true{
-            return searchingDataArray.count
+            return searchBuildings.count
         }else{
-            return buildingArray.count  //Currently Giving default Value
+            return buildings.count  //Currently Giving default Value
         }
     }
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         var cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
+        
+        
         if isSearching == true{
-            cell.textLabel!.text = searchingDataArray[indexPath.row]
+            if searchBuildings[indexPath.row].isSelected == true{
+                cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+            }else{
+                cell.accessoryType == .None
+            }
+            
+            cell.textLabel!.text = searchBuildings[indexPath.row].name
+            cell.imageView!.image = UIImage(named:searchBuildings[indexPath.row].imageName)
+            
         }else{
-            cell.textLabel!.text = buildingArray[indexPath.row]
-            cell.imageView!.image = UIImage(named:buildingImageNames[indexPath.row])
-        }
-        
-        
-        if indexPath.row == selectedBuildingIndex {
-            cell.accessoryType = .Checkmark
-        } else {
-            cell.accessoryType = .None
+            if buildings[indexPath.row].isSelected == true{
+                cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+            }else{
+                cell.accessoryType = .None
+            }
+
+            cell.textLabel!.text = buildings[indexPath.row].name
+            cell.imageView!.image = UIImage(named:buildings[indexPath.row].imageName)
+
+            
+            
         }
         
         return cell;
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        if isSearching == false{
-//            println(" cell Selected #\(indexPath.row)! \(buildingArray[indexPath.row])")
-//        }
-//        else{
-//            println(" cell Selected #\(indexPath.row)! \(searchingDataArray[indexPath.row])")
-//        }
-        
         //Update the checkmark for the current row
         let cell = tableView.cellForRowAtIndexPath(indexPath)
+        
+        
         if (comparisonMode == true) {
-            if cell!.accessoryType == .Checkmark{
-                cell?.accessoryType = .None
-                var index = find(selectedBuildings, buildingArray[indexPath.row])
-                selectedBuildings.removeAtIndex(index!)
-            } else {
-                cell!.accessoryType = .Checkmark
-                if (isSearching == true){
-                    selectedBuildings.append(searchingDataArray[indexPath.row])
+            if(isSearching == false){
+                for var i=0; i<buildings.count; i++ {
+                    if buildings[i].name == (cell!.textLabel?.text)!{
+                        if buildings[i].isSelected == false{
+                            buildings[i].isSelected = true
+                            selectedBuildings.append(buildings[i])
+                            tableView.reloadData()
+                        }
+                        else{
+                            buildings[i].isSelected = false
+                            for var j=0; j<selectedBuildings.count; j++ {
+                                if selectedBuildings[j].name == buildings[i].name{
+                                    selectedBuildings.removeAtIndex(j)
+                                }
+                            }
+                            tableView.reloadData()
+                        }
+                    }
                 }
-                else{
-                    selectedBuildings.append(buildingArray[indexPath.row])
 
+            }
+            if(isSearching == true){
+                for var i=0; i<searchBuildings.count; i++ {
+                    if searchBuildings[i].name == (cell!.textLabel?.text)!{
+                        if searchBuildings[i].isSelected == false{
+                            searchBuildings[i].isSelected = true
+                            selectedBuildings.append(searchBuildings[i])
+                            tableView.reloadData()
+                        }
+                        else{
+                            searchBuildings[i].isSelected = false
+                            for var j=0; j<selectedBuildings.count; j++ {
+                                if selectedBuildings[j].name == searchBuildings[i].name{
+                                    selectedBuildings.removeAtIndex(j)
+                                }
+                            }
+                            tableView.reloadData()
+                        }
+                    }
                 }
-                
-                
+
             }
         } else {
             if (isSearching == true){
-                selectedBuildings.append(searchingDataArray[indexPath.row])
+                selectedBuildings.append(searchBuildings[indexPath.row])
             }
             else{
-                selectedBuildings.append(buildingArray[indexPath.row])
+                selectedBuildings.append(buildings[indexPath.row])
             }
         }
+        
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         //Other row is selected - need to deselect it
-        if let index = selectedBuildingIndex {
-            let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: index, inSection: 0))
-//            cell?.accessoryType = .None
-        }
-        
-        selectedBuildingIndex = indexPath.row
-        selectedBuilding = buildingArray[indexPath.row]
+//        if let index = selectedBuildingIndex {
+//            let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: index, inSection: 0))
+////            cell?.accessoryType = .None
+//        }
+//        
+//        selectedBuildingIndex = indexPath.row
+//        selectedBuilding = buildings[indexPath.row]
         
         if (comparisonMode == false){
             performSegueWithIdentifier("Single", sender: tableView)
@@ -157,16 +197,24 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
         } else {
 //            println(" search text %@ ",searchBar.text as NSString)
             isSearching = true
-            searchingDataArray.removeAll()
-            for var index = 0; index < buildingArray.count; index++
+//            searchingDataArray.removeAll()
+//            searchingDataArrayImages.removeAll()
+            searchBuildings.removeAll()
+            for var index = 0; index < buildings.count; index++
             {
-                var currentString = buildingArray[index]
+                var currentString = buildings[index].name
                 
 //                if currentString.lowercaseString == searchText.lowercaseString{
 //                    searchingDataArray.append(currentString);
 //                }
                 if currentString.lowercaseString.hasPrefix(searchText.lowercaseString) == true {
-                    searchingDataArray.append(currentString)
+                    for var i = 0; i < buildings.count; i++ {
+                        if (buildings[i].name == currentString){
+                            searchBuildings.append(buildings[i])
+                        }
+                    }
+//                    searchBuildings.append(currentString)
+//                    searchingDataArrayImages.append(buildingImageNames[index])
                     
                 }
             }
@@ -190,7 +238,7 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
             
         }
         selectedBuildings.removeAll()
-        selectedBuildingIndex = nil;
+//        selectedBuildingIndex = nil;
         self.tableView.reloadData()
 
     }
@@ -237,7 +285,7 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
                 // produce a report comparing buildings.
                 for var index = 0; index < selectedBuildings.count; index++
                 {
-                    destinationVC.selectedBuildings.append(self.selectedBuildings[index])
+                    destinationVC.selectedBuildings.append(self.selectedBuildings[index].name)
                 }
             }
         }
