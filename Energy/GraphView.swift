@@ -20,8 +20,10 @@ import UIKit
     @IBInspectable var startColor: UIColor = UIColor.redColor()
     @IBInspectable var endColor: UIColor = UIColor.greenColor()
     
+    @IBOutlet weak var maxLabel: UILabel!
     //Weekly sample data
     var turbineData=[String: [Double]]()
+    var resolutionNumber: Int?
     
     override func drawRect(rect: CGRect) {
         
@@ -45,7 +47,8 @@ import UIKit
         //Calculate the x point
         var columnXPoint = { (column:Int) -> Double in
             //Calculate gap between points
-            let spacer = (width - margin*2 - 4.0) / Double(productionPoints.count - 1)
+//            let spacer = (width - margin*2 - 4.0) / Double(productionPoints.count - 1)
+            let spacer = (width-margin*2 - 4.0)/Double(self.resolutionNumber!-1)
             var x:Double = Double(column) * spacer
             x += margin + 2
             return x
@@ -53,9 +56,11 @@ import UIKit
         
         //Calculate the y point
         let graphHeight = height - topBorder - bottomBorder
-        let maxValue = maxElement(productionPoints)
-        var columnYPoint = { (graphPoint:Double) -> Double in
-            var y:Double = graphPoint / maxValue * graphHeight
+//        let maxValue = maxElement(productionPoints)
+        var columnYPoint = { (graphPoint:Double, maxValue: Double) -> Double in
+//            var y:Double = graphPoint / maxValue * graphHeight
+            var y: Double = graphPoint
+//            var y:Double = graphPoint
             y = graphHeight + topBorder - y // Flip the graph
             return y
         }
@@ -67,30 +72,29 @@ import UIKit
             var graphPoints = value
             var yPoint: Double?
             // adjust the ratio of values for graph
-            if meterName == "carleton_wind_speed"{
-                let maxItem: Double = turbineData["carleton_wind_speed"]!.reduce(-Double.infinity, combine: {max($0, $1)})
-                print("maxItem: ")
-                println(maxItem)
-                print("graphHeight: ")
-                println(graphHeight)
-                for i in 0..<graphPoints.count{
-                    graphPoints[i] = (graphPoints[i] * graphHeight)/(maxItem)
-                    print("graphPoints for Wind Speed: ")
-                    println(graphPoints[i])
+            if meterName == "carleton_wind_production"{
+                print("graphPoints for Wind Production: ")
+                println(graphPoints)
+            }
+            var maxItem: Double? = 0
+            for i in 0..<graphPoints.count{
+                if graphPoints[i]>maxItem{
+                    maxItem = graphPoints[i]
                 }
             }
-           
-            if meterName == "carleton_wind_speed"{
-                for i in 0..<graphPoints.count{
-                    print("graphPoints for Wind Speed: ")
-                    println(graphPoints[i])
-                }
+            //                let maxItem: Double = turbineData["carleton_wind_speed"]!.reduce(-Double.infinity, combine: {max($0, $1)})
+            print("maxItem: ")
+            println(maxItem)
+            print("graphHeight: ")
+            println(graphHeight)
+            for i in 0..<graphPoints.count{
+                graphPoints[i] = (graphPoints[i] * graphHeight)/(maxItem!)
             }
-            graphPath.moveToPoint(CGPoint(x:columnXPoint(0), y:columnYPoint(graphPoints[0])))
+            graphPath.moveToPoint(CGPoint(x:columnXPoint(0), y:columnYPoint(graphPoints[0], maxItem!)))
             
             //Add points for each item in the graphPoints array at the correct (x, y) for the point
             for i in 1..<graphPoints.count {
-                let nextPoint = CGPoint(x:columnXPoint(i), y:columnYPoint(graphPoints[i]))
+                let nextPoint = CGPoint(x:columnXPoint(i), y:columnYPoint(graphPoints[i], maxItem!))
                 graphPath.addLineToPoint(nextPoint)
             }
             
@@ -102,7 +106,7 @@ import UIKit
             //Draw the circles on top of graph stroke
             let circleSize = CGSize(width: 5.0, height: 5.0)
             for i in 0..<graphPoints.count {
-                var point = CGPoint(x:columnXPoint(i), y:columnYPoint(graphPoints[i]))
+                var point = CGPoint(x:columnXPoint(i), y:columnYPoint(graphPoints[i], maxItem!))
                 point.x -= circleSize.width/2
                 point.y -= circleSize.height/2
                 var circleRect = CGRect(origin: point, size: circleSize)

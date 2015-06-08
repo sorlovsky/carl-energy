@@ -25,6 +25,8 @@ class DataRetreiver: NSObject {
         
         for buildingNameIndex in 0..<nameArray.count {
             var url : NSURL = URLFormatter(nameArray[buildingNameIndex], startDate: startDate, endDate: endDate, resolution: resolution)
+            print("url: ")
+            println(url)
             
             let session = NSURLSession.sharedSession()
             
