@@ -32,6 +32,7 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
 
     var isSearching:Bool!
     var searchingDataArray = [String]()
+    var searchingDataArrayImages = [String]()
     var selectedBuildings = [String]()
     
     @IBOutlet var modeBarButton: UIBarButtonItem!
@@ -41,10 +42,6 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     override func viewDidLoad() {
-        //Trying to figure out how to make the selected buildings clear upon back button
-        selectedBuildings.removeAll()
-        println("hello")
-        
         //Get the buildings from buildings.plist and add them to the buildingArray
         var buildingsDictionaries = []
         if let path = NSBundle.mainBundle().pathForResource("buildings", ofType: "plist") {
@@ -88,6 +85,9 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
         var cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
         if isSearching == true{
             cell.textLabel!.text = searchingDataArray[indexPath.row]
+            cell.imageView!.image = UIImage(named:searchingDataArrayImages[indexPath.row])
+            println("String "+searchingDataArray[indexPath.row]+" Image "+searchingDataArrayImages[indexPath.row])
+
         }else{
             cell.textLabel!.text = buildingArray[indexPath.row]
             cell.imageView!.image = UIImage(named:buildingImageNames[indexPath.row])
@@ -166,6 +166,7 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
 //            println(" search text %@ ",searchBar.text as NSString)
             isSearching = true
             searchingDataArray.removeAll()
+            searchingDataArrayImages.removeAll()
             for var index = 0; index < buildingArray.count; index++
             {
                 var currentString = buildingArray[index]
@@ -175,6 +176,7 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
 //                }
                 if currentString.lowercaseString.hasPrefix(searchText.lowercaseString) == true {
                     searchingDataArray.append(currentString)
+                    searchingDataArrayImages.append(buildingImageNames[index])
                     
                 }
             }
