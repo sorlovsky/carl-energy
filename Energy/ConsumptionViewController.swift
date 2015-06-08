@@ -23,19 +23,14 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet var menuButton: UIBarButtonItem!
     
     var selectedBuilding = Building(name: "default", imageName: "default", isSelected: false)
-//    var selectedBuildingIndex:Int? = nil
 
     //Building Data
-//    var buildingArray = [String]()
-//    var buildingImageNames = [String]()
     var buildings = [Building]()
     var searchBuildings = [Building]()
     var singleBuildingSelection:String = ""
     
 
     var isSearching:Bool!
-//    var searchingDataArray = [String]()
-//    var searchingDataArrayImages = [String]()
     var selectedBuildings = [Building]()
     
     @IBOutlet var modeBarButton: UIBarButtonItem!
@@ -178,16 +173,7 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        //Other row is selected - need to deselect it
-//        if let index = selectedBuildingIndex {
-//            let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: index, inSection: 0))
-////            cell?.accessoryType = .None
-//        }
-//        
-//        selectedBuildingIndex = indexPath.row
-//        selectedBuilding = buildings[indexPath.row]
-        
-        
+
         
         
         
