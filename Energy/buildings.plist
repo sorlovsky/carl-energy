@@ -1695,35 +1695,6 @@
 	</dict>
 	<dict>
 		<key>urlElement</key>
-		<string>RaymentHouse_0</string>
-		<key>displayName</key>
-		<string>Rayment House</string>
-		<key>image</key>
-		<string>raymenthouse_0.png</string>
-		<key>area</key>
-		<real>1440</real>
-		<key>longitude</key>
-		<real>-93.152946</real>
-		<key>latitude</key>
-		<real>44.455961</real>
-		<key>meters</key>
-		<array>
-			<dict>
-				<key>systemName</key>
-				<string>carleton_raymenthouse_0_electricity_bill_raymenthouseelectricity_1</string>
-				<key>displayName</key>
-				<string>Rayment House - Electricity</string>
-			</dict>
-			<dict>
-				<key>systemName</key>
-				<string>carleton_raymenthouse_0_gas_bill_raymenthousenaturalgas_1</string>
-				<key>displayName</key>
-				<string>Rayment House - Natural Gas</string>
-			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>urlElement</key>
 		<string>rec-center</string>
 		<key>displayName</key>
 		<string>Recreation Center</string>
