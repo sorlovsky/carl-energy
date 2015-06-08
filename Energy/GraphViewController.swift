@@ -27,6 +27,8 @@ class GraphViewController: UIViewController {
     @IBOutlet weak var totalEnergyProducedLabel: UILabel!
     
     @IBOutlet weak var maxLabel: UILabel!
+    @IBOutlet weak var maxSpeedLabel: UILabel!
+    var resolution: String?
     
     var desiredData = [String]()
     
@@ -35,7 +37,7 @@ class GraphViewController: UIViewController {
         
 
         // For now let's just focus on electricity
-        for dataIndex in 0..<desiredData.count{
+        for dataIndex in 0..<desiredData.count-1{
             desiredData[dataIndex] = "carleton_\(desiredData[dataIndex].lowercaseString)"
         }
         println(desiredData)
@@ -49,9 +51,14 @@ class GraphViewController: UIViewController {
         let endDate = NSCalendar.currentCalendar().dateFromComponents(dateComponents)!
         
         let data : DataRetreiver = DataRetreiver()
-        // data.fetch(desiredData, startDate: startDate, endDate: endDate, resolution: "day", callback: setupGraphDisplay)
+        let resolution: String = desiredData[desiredData.count-1]
+        print("resolution: ")
+        println(resolution)
+        
+        desiredData.removeAtIndex(desiredData.count-1)
         // Fetches the data.  When the data is retreived it calls setupGraphDisplay()
-//        data.fetch(searchName, startDate: startDate, endDate: endDate, resolution: "day", callback: setupGraphDisplay)
+        data.fetchWind(desiredData, startDate: startDate, endDate: endDate, resolution: resolution, callback: setupGraphDisplay)
+
 
     }
 
@@ -61,28 +68,16 @@ class GraphViewController: UIViewController {
         
         //Use 7 days for graph - can use any number,
         //but labels and sample data are set up for 7 days
+        //if we're doing days, then we would set a variable equal to 7, and use that one.
         let noOfDays:Int = 7
+        graphView.resolutionNumber = noOfDays
         
         graphView.drawGraphPoints(dataArray)
-        
-        //Add building data to the graph
-        // graphView.drawGraphPoints(dataArray)
-        
-//        println("The data has been retrieved.  The values are: \(graphView.graphPoints)")
-        
-        //Calculate average and total from graphPoints
-//        var statisticsArray = [[Double]]()
-//        for i in 0..<dataArray.count{
-//            var statistics = [Double]()
-//            let total = [String](graphView.graphPoints.keys)[i].reduce(0, combine: +)
-//            let average = total / Double(graphView.graphPoints[i].count)
-//            statistics.append(total)
-//            statistics.apppend(average)
-//            statisticsArray.append(statistics)
         
     //can add more cases regarding production data values later
         var productionPoints = [Double]()
         productionPoints = graphView.turbineData["carleton_wind_production"]!
+        let maxSpeedVal = graphView.turbineData["carleton_wind_speed"]!
         let total = productionPoints.reduce(0, combine: +)
         let average = total / Double(productionPoints.count)
         
@@ -90,6 +85,7 @@ class GraphViewController: UIViewController {
         dispatch_async(dispatch_get_main_queue()) {
             // Round values to 100s places
             self.maxLabel.text = "\(Int(maxElement(productionPoints)))"
+            self.maxSpeedLabel.text = "\(Int(maxElement(maxSpeedVal)))"
             self.averageEnergyProducedValue.text = "\(round(100 * average) / 100)"
             self.totalEnergyProducedValue.text = "\(round(100 * total) / 100)"
             
