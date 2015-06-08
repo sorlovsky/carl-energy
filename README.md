@@ -14,6 +14,8 @@ Open Energy.xcodeproj
 
 ##Future Developers
 Incomplete features:
+(Note that the production is not always 0 percent. If it isn't windy it will be 0)
+
 ###Front End
 - Search for building comparison mode
 - Segmented Control implementation
