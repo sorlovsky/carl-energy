@@ -22,7 +22,6 @@ class ProductionViewController: UIViewController, UITableViewDataSource, UITable
             menuButton.target = self.revealViewController()
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-            
         }
     
 
@@ -49,7 +48,7 @@ class ProductionViewController: UIViewController, UITableViewDataSource, UITable
         if segue.identifier == "showGraphSegue" {
             if let destination = segue.destinationViewController as? GraphViewController {
                 if let buildingIndex = tableView.indexPathForSelectedRow()?.row {
-                    destination.desiredData = ["wind_production", "wind_speed"]
+                    destination.desiredData = ["wind_production", "wind_speed", "day"]
                 }
             }
         }

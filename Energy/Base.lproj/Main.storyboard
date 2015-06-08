@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E11f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5T3-zP-DGX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5T3-zP-DGX">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -194,6 +194,12 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYk-9a-mL9" userLabel="MaxSpeedLabel">
+                                                <rect key="frame" x="275" y="51" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
+                                                <color key="textColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.1294099987" green="0.80783998970000004" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -277,7 +283,8 @@
                         <outlet property="averageEnergyProducedValue" destination="Weo-Xy-V5q" id="S4W-JW-Ajk"/>
                         <outlet property="containerView" destination="qLk-3Y-lze" id="xnk-17-dfh"/>
                         <outlet property="graphView" destination="R2R-jz-AhY" id="w1d-8j-gyy"/>
-                        <outlet property="maxLabel" destination="E9w-vK-nXF" id="bdG-Qq-iy4"/>
+                        <outlet property="maxLabel" destination="E9w-vK-nXF" id="zbU-F2-I5o"/>
+                        <outlet property="maxSpeedLabel" destination="UYk-9a-mL9" id="N9t-yx-Ipk"/>
                         <outlet property="totalEnergyProducedLabel" destination="IcO-Fa-jI2" id="7pg-M4-lN6"/>
                         <outlet property="totalEnergyProducedValue" destination="g2X-4c-bUg" id="sBx-hK-DCt"/>
                     </connections>
@@ -922,8 +929,8 @@
         <image name="weitz" width="155" height="155"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="EHV-V1-hlg"/>
         <segue reference="LTr-9e-p8D"/>
         <segue reference="kT8-GW-m4K"/>
-        <segue reference="WRg-Rn-zYZ"/>
     </inferredMetricsTieBreakers>
 </document>

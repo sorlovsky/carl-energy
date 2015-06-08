@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C0346831B22EE9700181D56 /* BuildingsDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0346821B22EE9600181D56 /* BuildingsDictionary.swift */; };
 		3CF6E5901B1CC494006FF25B /* ColumnGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF6E58F1B1CC494006FF25B /* ColumnGraphView.swift */; };
 		8000EB4D1B0AE84E00AF89B0 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8000EB4C1B0AE84E00AF89B0 /* GraphView.swift */; };
 		8000EB4F1B0AE89400AF89B0 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8000EB4E1B0AE89400AF89B0 /* GraphViewController.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C0346821B22EE9600181D56 /* BuildingsDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildingsDictionary.swift; sourceTree = "<group>"; };
 		3CF6E58F1B1CC494006FF25B /* ColumnGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColumnGraphView.swift; sourceTree = "<group>"; };
 		8000EB4C1B0AE84E00AF89B0 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		8000EB4E1B0AE89400AF89B0 /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
@@ -100,9 +102,9 @@
 		803279421B140737008DC2A5 /* Production */ = {
 			isa = PBXGroup;
 			children = (
-				941948F61AFD0B5300C972F6 /* ProductionViewController.swift */,
 				8000EB4C1B0AE84E00AF89B0 /* GraphView.swift */,
 				8000EB4E1B0AE89400AF89B0 /* GraphViewController.swift */,
+				941948F61AFD0B5300C972F6 /* ProductionViewController.swift */,
 			);
 			name = Production;
 			sourceTree = "<group>";
@@ -139,6 +141,7 @@
 				806FE9451B0D6F1F0040DE5F /* SWRevealViewController.m */,
 				945137921AF2EE55002ED072 /* Supporting Files */,
 				943430E01B0A3C88000539D0 /* Energy-Bridging-Header.h */,
+				3C0346821B22EE9600181D56 /* BuildingsDictionary.swift */,
 				94D584D81B0D815F000690FB /* ConsumptionTableViewCell.swift */,
 				80F282F01B13F60500679869 /* MenuViewController.swift */,
 				942A6FA91B13EF6700FE5175 /* SettingsViewController.swift */,
@@ -282,6 +285,7 @@
 				80FD194F1B1298EC00C7FE1A /* BarGraphView.swift in Sources */,
 				948140A51B255DC10051CA1F /* Building.swift in Sources */,
 				806FE9461B0D6F1F0040DE5F /* SWRevealViewController.m in Sources */,
+				3C0346831B22EE9700181D56 /* BuildingsDictionary.swift in Sources */,
 				941948F91AFD0E1C00C972F6 /* ConsumptionViewController.swift in Sources */,
 				3CF6E5901B1CC494006FF25B /* ColumnGraphView.swift in Sources */,
 				94D584D91B0D815F000690FB /* ConsumptionTableViewCell.swift in Sources */,
