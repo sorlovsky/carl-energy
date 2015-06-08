@@ -1,12 +1,13 @@
+//  
+//  DetailConsumptionViewController.swift
+//  Carleton Energy App
+//  6/8/2015
 //
-//  BarGraphView.swift
-//  Energy
+//  By Hami Abdi, Caleb Braun, and Simon Orlovsky
 //
-//  Created by Caleb Braun on 5/18/15.
-//  Copyright (c) 2015 simonorlovsky. All rights reserved.
+//  A view for representing multiple building's energy data on a bar graph
 //
-//  This is a template for how we will draw our bargraphs.  The graphs are drawn using Core Graphics.
-//
+
 
 import UIKit
 
