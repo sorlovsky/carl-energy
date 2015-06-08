@@ -23,19 +23,14 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet var menuButton: UIBarButtonItem!
     
     var selectedBuilding = Building(name: "default", imageName: "default", isSelected: false)
-//    var selectedBuildingIndex:Int? = nil
 
     //Building Data
-//    var buildingArray = [String]()
-//    var buildingImageNames = [String]()
     var buildings = [Building]()
     var searchBuildings = [Building]()
     var singleBuildingSelection:String = ""
     
 
     var isSearching:Bool!
-//    var searchingDataArray = [String]()
-//    var searchingDataArrayImages = [String]()
     var selectedBuildings = [Building]()
     
     @IBOutlet var modeBarButton: UIBarButtonItem!
@@ -178,16 +173,7 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        //Other row is selected - need to deselect it
-//        if let index = selectedBuildingIndex {
-//            let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: index, inSection: 0))
-////            cell?.accessoryType = .None
-//        }
-//        
-//        selectedBuildingIndex = indexPath.row
-//        selectedBuilding = buildings[indexPath.row]
-        
-        
+
         
         
         
@@ -198,27 +184,17 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
             isSearching = false
             tableView.reloadData()
         } else {
-//            println(" search text %@ ",searchBar.text as NSString)
             isSearching = true
-//            searchingDataArray.removeAll()
-//            searchingDataArrayImages.removeAll()
             searchBuildings.removeAll()
             for var index = 0; index < buildings.count; index++
             {
                 var currentString = buildings[index].name
-                
-//                if currentString.lowercaseString == searchText.lowercaseString{
-//                    searchingDataArray.append(currentString);
-//                }
                 if currentString.lowercaseString.hasPrefix(searchText.lowercaseString) == true {
                     for var i = 0; i < buildings.count; i++ {
                         if (buildings[i].name == currentString){
                             searchBuildings.append(buildings[i])
                         }
                     }
-//                    searchBuildings.append(currentString)
-//                    searchingDataArrayImages.append(buildingImageNames[index])
-                    
                 }
             }
             tableView.reloadData()
@@ -229,6 +205,8 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
         if (comparisonMode==false){
             comparisonMode = true
             createReportButton.hidden = false;
+            searchBarObj.hidden = true;
+            segmentedControl.hidden = true;
             modeBarButton.title = "Single"
             barTitleItem.title = "Choose Buildings"
             
@@ -236,12 +214,13 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
         else{
             comparisonMode = false
             createReportButton.hidden = true;
+            searchBarObj.hidden = false;
+            segmentedControl.hidden = false;
             modeBarButton.title = "Compare"
             barTitleItem.title = "Choose Building"
             
         }
         selectedBuildings.removeAll()
-//        selectedBuildingIndex = nil;
         self.tableView.reloadData()
 
     }
@@ -263,14 +242,17 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
         if(segmentedControl.selectedSegmentIndex == 0)
         {
             testLabel.text = "A";
+            tableView.reloadData()
         }
         else if(segmentedControl.selectedSegmentIndex == 1)
         {
             testLabel.text = "Ac";
+            tableView.reloadData()
         }
         else if(segmentedControl.selectedSegmentIndex == 2)
         {
             testLabel.text = "D";
+            tableView.reloadData();
         }
     }
     

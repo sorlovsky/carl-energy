@@ -12,6 +12,9 @@
 //
 //  Most of the graph display is based off of the tutorial found here: http://www.raywenderlich.com/90693/modern-core-graphics-with-swift-part-2
 
+
+
+
 import UIKit
 
 class GraphViewController: UIViewController {
@@ -19,7 +22,9 @@ class GraphViewController: UIViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var graphView: GraphView!
     
-    var TURBINE1: String = "carleton_turbine1_produced_power"
+    var switch_status: Int = 1
+    
+    let TURBINE1: String = "carleton_turbine1_produced_power"
     let TURBINE2: String = "carleton_wind_production"
     let TURBINE2SPEED: String = "carleton_wind_speed"
     let SOLARPV: String = "carleton_campus_total_pv_prod"
@@ -45,20 +50,9 @@ class GraphViewController: UIViewController {
         // For now let's just focus on electricity
         let data: DataRetreiver = DataRetreiver()
         period = LASTWK
-//        data.fetchOverTimePeriod("carleton_wind_production", timePeriod: LAST4WKS, callback: setupGraphDisplay)
-        data.fetchOverTimePeriod("carleton_wind_production", timePeriod: LASTWK, callback: setupGraphDisplay)
         
-        
-//        // Sample date data
-//        let dateComponents = NSDateComponents()
-//        dateComponents.year = 2015
-//        dateComponents.month = 05
-//        dateComponents.day = 11
-//        let startDate = NSCalendar.currentCalendar().dateFromComponents(dateComponents)!
-//        dateComponents.day = 17
-//        let endDate = NSCalendar.currentCalendar().dateFromComponents(dateComponents)!
-
-
+        data.fetchOverTimePeriod(TURBINE2, timePeriod: LASTWK, callback: setupGraphDisplay)
+        data.fetchOverTimePeriod(TURBINE2SPEED, timePeriod: LASTWK, callback: setupGraphDisplay)
     }
 
 
@@ -80,74 +74,34 @@ class GraphViewController: UIViewController {
         }
         switch(nameOfProducer){
             case TURBINE1:
-                graphView.TURBINE1PRODUCTION = dataArray[nameOfProducer]!
+                graphView.Turbine1Production = dataArray[nameOfProducer]!
             case TURBINE2:
-                graphView.TURBINE2PRODUCTION = dataArray[nameOfProducer]!
+                graphView.Turbine2Production = dataArray[nameOfProducer]!
             case TURBINE2SPEED:
-                graphView.TURBINE2SPEED = dataArray[nameOfProducer]!
+                graphView.Turbine2Speed = dataArray[nameOfProducer]!
             case SOLARPV:
-                graphView.SOLARPV = dataArray[nameOfProducer]!
+                graphView.SolarPV = dataArray[nameOfProducer]!
             default:
                 println("error in format of results")
         }
         
         graphView.drawGraphPoints()
         
-        
-    //can add more cases regarding production data values later
-//        var productionPoints = [Double]()
-//        productionPoints = graphView.turbineData["carleton_wind_production"]!
-//        let maxSpeedVal = graphView.turbineData["carleton_wind_speed"]!
-//        let total = productionPoints.reduce(0, combine: +)
-//        let average = total / Double(productionPoints.count)
-//        
-//        //Indicate that the graph needs to be redrawn and labels updated on the main queue
-//        dispatch_async(dispatch_get_main_queue()) {
-//            // Round values to 100s places
-//            self.maxLabel.text = "\(Int(maxElement(productionPoints)))"
-//            self.maxSpeedLabel.text = "\(Int(maxElement(maxSpeedVal)))"
-//            self.averageEnergyProducedValue.text = "\(round(100 * average) / 100)"
-//            self.totalEnergyProducedValue.text = "\(round(100 * total) / 100)"
-//            
-//            // Set text labels visible
-//            self.averageEnergyProducedLabel.hidden = false
-//            self.totalEnergyProducedLabel.hidden = false
-//            
-//            self.graphView.setNeedsDisplay()
-//        }
-//        
-//        
-//        //Set up labels
-//        //Day of week labels are set up in storyboard with tags
-//        //Today is last day of the array need to go backwards
-//
-//        //Get today's day number
-//        let componentOptions:NSCalendarUnit = .CalendarUnitWeekday
-//        let components = calendar.components(componentOptions,
-//            fromDate: NSDate())
-//        var weekday = components.weekday
-//        
-//        //Set up the day name labels with correct day
-//        let days = ["S", "S", "M", "T", "W", "T", "F"]
-//        for i in reverse(1...days.count) {
-//            if let labelView = graphView.viewWithTag(i) as? UILabel {
-//                if weekday == 7 {
-//                    weekday = 0
-//                }
-//                dispatch_sync(dispatch_get_main_queue()) {
-//                    if weekday < 0 {
-//                        weekday = days.count - 1
-//                    }
-//                    labelView.text = days[weekday]
-//                    weekday = weekday-1
-//                }
-//            }
-//        }
     }
     
     @IBAction func showWindSpeedSwitch(sender: AnyObject) {
-        
+        //Please refer to the code in graphView.drawGraphPoint to see why the code below is commented out. tl;dr we ran out of time, but given a few more hours, it could be implemented. 
+//        switch(switch_status){
+//            case 1:
+//                switch_status = 0
+//                graphView.TURBINE2SPEED = []
+//                graphView.drawGraphPoints()
+//            case 0:
+//                switch_status = 1
+//                let data: DataRetreiver = DataRetreiver()
+//                data.fetchOverTimePeriod(TURBINE2SPEED, timePeriod: self.period!, callback: setupGraphDisplay)
+//            default:
+//                println("something bad happened.")
+//        }
     }
-
-
 }

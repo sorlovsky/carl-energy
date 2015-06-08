@@ -13,14 +13,5 @@ struct Building {
     var imageName : String
     var isSelected : Bool
     
-//    var x = 0.0, y = 0.0
-//    mutating func moveByX(deltaX: Double, y deltaY: Double) {
-//        x += deltaX
-//        y += deltaY
-//    }
-//    
-//    func select(val: Bool){
-//        isSelected = val
-//    }
 }
 

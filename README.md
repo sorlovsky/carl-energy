@@ -14,4 +14,6 @@ Open Energy.xcodeproj
 
 ##Future Developers
 Incomplete features:
+Search for building comparison mode
+Segmented Control implementation
 
