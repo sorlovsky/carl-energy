@@ -28,6 +28,7 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
     //Building Data
     var buildingArray = [String]()
     var buildingImageNames = [String]()
+    
 
     var isSearching:Bool!
     var searchingDataArray = [String]()
@@ -40,6 +41,9 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     override func viewDidLoad() {
+        //Trying to figure out how to make the selected buildings clear upon back button
+        selectedBuildings.removeAll()
+        println("hello")
         
         let buildingsDictionary = BuildingsDictionary()
         self.buildingArray = buildingsDictionary.getBuildingNames()
@@ -108,10 +112,23 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
                 selectedBuildings.removeAtIndex(index!)
             } else {
                 cell!.accessoryType = .Checkmark
-                selectedBuildings.append(buildingArray[indexPath.row])
+                if (isSearching == true){
+                    selectedBuildings.append(searchingDataArray[indexPath.row])
+                }
+                else{
+                    selectedBuildings.append(buildingArray[indexPath.row])
+
+                }
+                
+                
             }
         } else {
-            selectedBuildings.append(buildingArray[indexPath.row])
+            if (isSearching == true){
+                selectedBuildings.append(searchingDataArray[indexPath.row])
+            }
+            else{
+                selectedBuildings.append(buildingArray[indexPath.row])
+            }
         }
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
@@ -144,7 +161,11 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
             for var index = 0; index < buildingArray.count; index++
             {
                 var currentString = buildingArray[index]
-                if currentString.lowercaseString.rangeOfString(searchText.lowercaseString)  != nil {
+                
+//                if currentString.lowercaseString == searchText.lowercaseString{
+//                    searchingDataArray.append(currentString);
+//                }
+                if currentString.lowercaseString.hasPrefix(searchText.lowercaseString) == true {
                     searchingDataArray.append(currentString)
                     
                 }
@@ -186,6 +207,7 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     //Function so that when user selects academic buildings on seg control only academic buildings appear
+    //Will be implemented in the future
     @IBAction func segmentedControlAction(sender: AnyObject) {
         if(segmentedControl.selectedSegmentIndex == 0)
         {
@@ -204,7 +226,6 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBAction func reportButtonPressed(sender: AnyObject) {
         performSegueWithIdentifier("Detail", sender: tableView)
-//        NSLog(selectedBuildings[0] as! String)
 
     }
     
@@ -212,6 +233,7 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "Detail"
         {
+            println("Selected Buildings:"+selectedBuildings[0])
             if let destinationVC = segue.destinationViewController as? DetailConsumptionViewController{
                 // Transferring all selected buildings to the DetailComsumptionViewController so that it can 
                 // produce a report comparing buildings.

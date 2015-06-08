@@ -354,7 +354,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="5iV-78-z2Z">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="tsU-dk-GHi"/>
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="tsU-dk-GHi">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="tsU-dk-GHi" id="Ksx-X3-Zal"/>
@@ -896,6 +898,12 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PhD-jS-aIs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.29412001370000002" green="0.54118001459999998" blue="0.86274999379999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.29412001370000002" green="0.54118001459999998" blue="0.86274999379999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
