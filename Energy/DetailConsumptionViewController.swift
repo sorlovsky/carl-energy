@@ -13,8 +13,6 @@ class DetailConsumptionViewController: UIViewController {
     // Label outlets
     @IBOutlet weak var barGraphView: BarGraphView!
     @IBOutlet weak var energyTypeLabel: UILabel!
-    @IBOutlet weak var building1Label: UILabel!
-    @IBOutlet weak var building2Label: UILabel!
     @IBOutlet weak var energyUnitsLabel: UILabel!
     @IBOutlet weak var timePeriodLabel: UILabel!
     
@@ -55,8 +53,6 @@ class DetailConsumptionViewController: UIViewController {
         
         //Indicate that the graph needs to be redrawn and labels updated on the main queue
         dispatch_async(dispatch_get_main_queue()) {
-            self.building1Label.text = self.selectedBuildings[0]
-            self.building2Label.text = self.selectedBuildings[self.selectedBuildings.count-1]
             self.barGraphView.setNeedsDisplay()
         }
     }
@@ -105,7 +101,7 @@ class DetailConsumptionViewController: UIViewController {
     
     func updateGraphEnergyData() {
         getGraphData(self.energyTypeLabel.text!, resolution: "month")
-        switch self.energyTypeLabel.text!.lowercaseString {
+        switch self.energyTypeLabel.text! {
         case "Electricity":
             self.energyUnitsLabel.text = "total kWh"
         case "Water":

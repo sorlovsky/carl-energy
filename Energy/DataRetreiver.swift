@@ -16,7 +16,6 @@ import UIKit
 class DataRetreiver: NSObject {
     
     
-    
     // Fetches the data based on the URL created upon initialization
     func fetchCurrent(name: String, callback:([String: Double])->Void){
         var dataResults = [String: Double]()

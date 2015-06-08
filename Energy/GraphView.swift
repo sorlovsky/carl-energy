@@ -20,6 +20,8 @@ import UIKit
     @IBInspectable var startColor: UIColor = UIColor.redColor()
     @IBInspectable var endColor: UIColor = UIColor.greenColor()
     
+    @IBOutlet weak var testLabel: UILabel!
+    
     @IBOutlet weak var maxLabel: UILabel!
     @IBOutlet weak var maxSpeedLabel: UILabel!
     @IBOutlet weak var averageEnergyText: UILabel!
