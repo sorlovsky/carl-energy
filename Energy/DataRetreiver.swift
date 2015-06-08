@@ -129,6 +129,48 @@ class DataRetreiver: NSObject {
         }
     }
     
+    func fetchOverTimePeriod(name: String, timePeriod: String, meterType: String, callback: ([String:[Double]])->Void){
+        let bd = BuildingsDictionary()
+        let meterName = bd.getMetersFromNames([name], meterType: meterType)[0]
+        var dataResults = [String: [Double]]()
+        var url: NSURL = URLFormatterTimePeriod(meterName, timePeriod: timePeriod)
+        let session = NSURLSession.sharedSession()
+        
+        let task = session.dataTaskWithURL(url, completionHandler: {data, response, error -> Void in
+            if(error != nil){
+                // Prints error to the console
+                println(error.localizedDescription)
+            }
+            
+            var jsonError: NSError?
+            // Parses the JSON and casts it as an NSDictionary
+            let jsonResult: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &jsonError) as? NSDictionary
+            
+            if(jsonError != nil) {
+                // If there is an error parsing JSON, print it to the console
+                println("JSON Error \(jsonError!.localizedDescription)")
+                println(url)
+            } else {
+                // Only takes the results of the search and casts as an NSArray
+                if let results: NSArray = jsonResult!["results"] as? NSArray{
+                    var valueResults = [Double]()
+                    for time in results {
+                        if let hour = time[meterName] as? [String:Double]{
+                            if let value = hour["value"]{
+                                valueResults.append(value)
+                            }
+                        }
+                    }
+                    dataResults[name] = valueResults
+                    println(url)
+                    callback(dataResults)
+                }
+            }
+        })
+        task.resume()
+        
+    }
+    
     // This method returns an NSURL based on the requested start and end dates, building, and resolution.
     func URLFormatter(name : String, startDate: NSDate, endDate : NSDate, resolution : String) -> NSURL {
         
@@ -141,6 +183,11 @@ class DataRetreiver: NSObject {
         
         // Formats the URL correctly
         let urlString = "https://rest.buildingos.com/reports/timeseries/?start=\(startDateString)&end=\(endDateString)&resolution=\(resolution)&name=\(name)"
+        return NSURL(string: urlString)!
+    }
+    
+    func URLFormatterTimePeriod(meterName: String, timePeriod: String) -> NSURL {
+        let urlString = "https://rest.buildingos.com/reports/timeseries/?period=\(timePeriod)&name=\(meterName)"
         return NSURL(string: urlString)!
     }
     

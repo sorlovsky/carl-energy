@@ -318,7 +318,7 @@
 		<key>urlElement</key>
 		<string>chillerplant</string>
 		<key>displayName</key>
-		<string>Chiller Plant (CPUS)</string>
+		<string>Chiller Plant</string>
 		<key>image</key>
 		<string>chillerplant.png</string>
 		<key>area</key>
@@ -690,7 +690,7 @@
 				<key>systemName</key>
 				<string>carleton_goodhue_en_use</string>
 				<key>displayName</key>
-				<string>Goodhue - Electricity</string>
+				<string>Goodhue Hall - Electricity</string>
 			</dict>
 			<dict>
 				<key>systemName</key>
@@ -1928,7 +1928,7 @@
 		<key>urlElement</key>
 		<string>skinner</string>
 		<key>displayName</key>
-		<string>Skinner Memorial Chapel</string>
+		<string>Chapel</string>
 		<key>image</key>
 		<string>skinner.png</string>
 		<key>area</key>

@@ -50,8 +50,7 @@ class DetailConsumptionViewController: UIViewController {
     
         //Add building data to the graph
         self.barGraphView.loadData(results)
-        
-        //Indicate that the graph needs to be redrawn and labels updated on the main queue
+        //Indicate that the graph needs to be redrawn on the main queue
         dispatch_async(dispatch_get_main_queue()) {
             self.barGraphView.setNeedsDisplay()
         }

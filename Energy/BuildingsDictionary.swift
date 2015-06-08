@@ -45,7 +45,7 @@ class BuildingsDictionary {
                         var hasMeter = false
                         for meter in meterArray{
                             if let m = meter["displayName"] as? String {
-                                if m == displayName + " - " + meterType {
+                                if m == displayName + " - " + meterType.capitalizedString {
                                     meterNames.append(meter["systemName"] as! String)
                                     hasMeter = true
                                     break;
