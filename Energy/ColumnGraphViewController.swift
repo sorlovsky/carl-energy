@@ -9,27 +9,22 @@
 import UIKit
 
 class ColumnGraphViewController: UIViewController {
-
+    
+    var selectedBuilding:String = ""
+    @IBOutlet weak var columnGraphView: ColumnGraphView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // The default is total energy
+        getGraphData("month", energyType: "electricity")
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func getGraphData(timePeriod: String, energyType: String) {
+        let dataFetcher = DataRetreiver()
+        dataFetcher.description
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -882,6 +882,9 @@
                             <constraint firstItem="9Dh-JH-ahh" firstAttribute="top" secondItem="FAB-4y-cZV" secondAttribute="bottom" constant="16" id="ZV7-jY-22f"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="columnGraphView" destination="Wgn-nk-aJd" id="JhP-3h-l5p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="34f-yR-7Ax" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -242,12 +242,9 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
             }
         }
         if segue.identifier == "Single" {
-            if let destinationVC = segue.destinationViewController as? DetailConsumptionViewController{
-                // Transferring all selected buildings to the DetailComsumptionViewController so that it can
-                // produce a report comparing buildings.
-                for var index = 0; index < selectedBuildings.count; index++
-                {
-                    destinationVC.selectedBuildings.append(self.selectedBuildings[index])
+            if let destinationVC = segue.destinationViewController as? ColumnGraphViewController {
+                if let tappedCellIndex = sender?.indexPathForSelectedRow()?.row {
+                    destinationVC.selectedBuilding = buildingArray[tappedCellIndex]
                 }
             }
         }

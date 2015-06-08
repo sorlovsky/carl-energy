@@ -91,9 +91,9 @@
 			isa = PBXGroup;
 			children = (
 				80FD194E1B1298EC00C7FE1A /* BarGraphView.swift */,
+				943407B01B002C8200F71B71 /* DetailConsumptionViewController.swift */,
 				3CF6E58F1B1CC494006FF25B /* ColumnGraphView.swift */,
 				3CB41EFA1B255DB7007FAE4D /* ColumnGraphViewController.swift */,
-				943407B01B002C8200F71B71 /* DetailConsumptionViewController.swift */,
 				941948F81AFD0E1C00C972F6 /* ConsumptionViewController.swift */,
 			);
 			name = Consumption;

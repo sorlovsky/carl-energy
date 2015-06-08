@@ -11,7 +11,7 @@ import UIKit
 @IBDesignable class ColumnGraphView: UIView {
     
     //var dataPoints = [Double]()
-    var dataPoints = [3.0, 4.7, 6,9, 5.5, 1.1]
+    var dataPoints = [3.0, 4.7, 6.9, 5.5, 1.1]
     var resolution:String = ""
     
     override func drawRect(rect: CGRect) {
@@ -33,23 +33,39 @@ import UIKit
         boundaryPath.lineWidth = 2.0
         boundaryPath.stroke()
         
+        // Draw the grid lines
+        UIColor.grayColor().setFill()
+        UIColor.grayColor().setStroke()
+        var gridLinesPath = UIBezierPath()
+        gridLinesPath.moveToPoint(CGPoint(x:1, y:50))
+        //Add 5 lines
+        for i in 1...5 {
+            let nextPoint = CGPoint(x:graphWidth, y:Double(50*i))
+            gridLinesPath.addLineToPoint(nextPoint)
+            gridLinesPath.moveToPoint(CGPoint(x:1, y:Double(50*(i+1))))
+        }
+        gridLinesPath.stroke()
+        
+        maxUnit = maxElement(dataPoints)
+        
         // Set up the bars
         var numBars = 0
         var barHeight:Double = 0
         let barWidth = 25
+        let barSpacing = 10
         let rectanglePath = CGPathCreateMutable()
         
         // Draw the bars
         for energyValue in self.dataPoints {
             
             // Set up bar variables
-            let left = Double(barWidth+(barWidth*numBars))
-            let right = Double((barWidth*2)+(barWidth*numBars))
+            let left = Double((barSpacing*(numBars+1))+(barWidth*numBars))
+            let right = left+Double(barWidth)
             
             if maxUnit > 0 {
-                barHeight = (graphHeight/maxUnit * energyValue) * (5/6)
+                barHeight = graphHeight - ((graphHeight/maxUnit * energyValue) * (5/6))
             }
-            let points = [CGPoint(x:2, y:left), CGPoint(x:2, y:right), CGPoint(x:barHeight, y:right), CGPoint(x:barHeight, y:left)]
+            let points = [CGPoint(x:left, y:graphHeight), CGPoint(x:right, y:graphHeight), CGPoint(x:right, y:barHeight), CGPoint(x:left, y:barHeight)]
             
             // Draw the bar
             var startingPoint = points[0]
@@ -77,11 +93,11 @@ import UIKit
             
             if needNewLabel == true {
                 
-                var center = CGPoint(x: (left + Double(barWidth/2)), y: (barHeight - 25))
+                var center = CGPoint(x: left, y: (barHeight - 25))
                 
-                var valueLabel = UILabel(frame: CGRect(x: center.x, y: center.y, width: 50.0, height: 25.0))
+                var valueLabel = UILabel(frame: CGRect(x: center.x, y: center.y, width: CGFloat(barWidth), height: 25.0))
                 valueLabel.tag = valueTag
-                valueLabel.textAlignment = NSTextAlignment.Center
+                valueLabel.textAlignment = NSTextAlignment.Right
                 valueLabel.text =  "\(energyValue)"
                 valueLabel.textColor = UIColor(red: 0.235, green: 0.455, blue: 0.518, alpha: 1)
                 valueLabel.font = UIFont(name: "Avenir Next Condensed-Bold", size: 20)
@@ -89,11 +105,11 @@ import UIKit
                 self.addSubview(valueLabel)
             }
             
-            // Draw a white line to separate the bars
+            // Draw a vertical white line to separate the bars
             UIColor.whiteColor().setStroke()
             var boundaryPath = UIBezierPath()
-            boundaryPath.moveToPoint(CGPoint(x:2, y:right))
-            boundaryPath.addLineToPoint(CGPoint(x:barHeight, y:right))
+            boundaryPath.moveToPoint(CGPoint(x:left, y:graphHeight-2))
+            boundaryPath.addLineToPoint(CGPoint(x:left, y:barHeight))
             boundaryPath.lineWidth = 2.0
             boundaryPath.stroke()
             
