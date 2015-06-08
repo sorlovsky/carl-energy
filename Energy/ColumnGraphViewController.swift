@@ -12,6 +12,7 @@ class ColumnGraphViewController: UIViewController {
     
     var selectedBuilding:String = ""
     @IBOutlet weak var columnGraphView: ColumnGraphView!
+    @IBOutlet weak var buildingNameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +22,18 @@ class ColumnGraphViewController: UIViewController {
     }
 
     func getGraphData(timePeriod: String, energyType: String) {
+        self.buildingNameLabel.text = self.selectedBuilding
         let dataFetcher = DataRetreiver()
-        // dataFetcher.fetchSingle
+        dataFetcher.fetchOverTimePeriod(self.selectedBuilding, timePeriod: timePeriod, meterType: energyType, callback: loadGraphData)
     }
     
+    func loadGraphData(results: [String: [Double]]) {
+        columnGraphView.dataPoints = results[self.selectedBuilding]!
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            self.columnGraphView.setNeedsDisplay()
+        }
+    }
 
 
 }

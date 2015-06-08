@@ -30,6 +30,7 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
 //    var buildingImageNames = [String]()
     var buildings = [Building]()
     var searchBuildings = [Building]()
+    var singleBuildingSelection:String = ""
     
 
     var isSearching:Bool!
@@ -170,6 +171,10 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
             }
         }
         
+        if (comparisonMode == false){
+            self.singleBuildingSelection = self.buildings[tableView.indexPathForSelectedRow()!.row].name
+            performSegueWithIdentifier("Single", sender: self)
+        }
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
@@ -182,9 +187,7 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
 //        selectedBuildingIndex = indexPath.row
 //        selectedBuilding = buildings[indexPath.row]
         
-        if (comparisonMode == false){
-            performSegueWithIdentifier("Single", sender: tableView)
-        }
+        
         
         
         
@@ -280,7 +283,7 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
             }
         }
         else{
-            performSegueWithIdentifier("Detail", sender: tableView)
+            performSegueWithIdentifier("Detail", sender: self)
         }
         
 
@@ -301,9 +304,7 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
         }
         if segue.identifier == "Single" {
             if let destinationVC = segue.destinationViewController as? ColumnGraphViewController {
-                if let tappedCellIndex = sender?.indexPathForSelectedRow()?.row {
-                    destinationVC.selectedBuilding = buildings[tappedCellIndex].name
-                }
+                destinationVC.selectedBuilding = self.singleBuildingSelection
             }
         }
     }
