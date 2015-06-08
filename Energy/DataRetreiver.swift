@@ -16,7 +16,6 @@ import UIKit
 class DataRetreiver: NSObject {
     
     
-    
     // Fetches the data based on the URL created upon initialization
     func fetch(nameArray : [String], meterType: String, startDate: NSDate, endDate : NSDate, resolution : String, callback: ([String:[Double]])->Void){
         

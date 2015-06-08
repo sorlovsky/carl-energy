@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3C0346831B22EE9700181D56 /* BuildingsDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0346821B22EE9600181D56 /* BuildingsDictionary.swift */; };
+		3CB41EFB1B255DB7007FAE4D /* ColumnGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB41EFA1B255DB7007FAE4D /* ColumnGraphViewController.swift */; };
 		3CF6E5901B1CC494006FF25B /* ColumnGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF6E58F1B1CC494006FF25B /* ColumnGraphView.swift */; };
 		8000EB4D1B0AE84E00AF89B0 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8000EB4C1B0AE84E00AF89B0 /* GraphView.swift */; };
 		8000EB4F1B0AE89400AF89B0 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8000EB4E1B0AE89400AF89B0 /* GraphViewController.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		3C0346821B22EE9600181D56 /* BuildingsDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildingsDictionary.swift; sourceTree = "<group>"; };
+		3CB41EFA1B255DB7007FAE4D /* ColumnGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColumnGraphViewController.swift; sourceTree = "<group>"; };
 		3CF6E58F1B1CC494006FF25B /* ColumnGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColumnGraphView.swift; sourceTree = "<group>"; };
 		8000EB4C1B0AE84E00AF89B0 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		8000EB4E1B0AE89400AF89B0 /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			children = (
 				80FD194E1B1298EC00C7FE1A /* BarGraphView.swift */,
 				3CF6E58F1B1CC494006FF25B /* ColumnGraphView.swift */,
+				3CB41EFA1B255DB7007FAE4D /* ColumnGraphViewController.swift */,
 				943407B01B002C8200F71B71 /* DetailConsumptionViewController.swift */,
 				941948F81AFD0E1C00C972F6 /* ConsumptionViewController.swift */,
 			);
@@ -282,6 +285,7 @@
 				80FD194F1B1298EC00C7FE1A /* BarGraphView.swift in Sources */,
 				806FE9461B0D6F1F0040DE5F /* SWRevealViewController.m in Sources */,
 				3C0346831B22EE9700181D56 /* BuildingsDictionary.swift in Sources */,
+				3CB41EFB1B255DB7007FAE4D /* ColumnGraphViewController.swift in Sources */,
 				941948F91AFD0E1C00C972F6 /* ConsumptionViewController.swift in Sources */,
 				3CF6E5901B1CC494006FF25B /* ColumnGraphView.swift in Sources */,
 				94D584D91B0D815F000690FB /* ConsumptionTableViewCell.swift in Sources */,

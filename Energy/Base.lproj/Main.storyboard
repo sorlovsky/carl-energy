@@ -549,6 +549,7 @@
                                             <outlet property="image" destination="RGp-Ey-NDA" id="vgd-uE-xGW"/>
                                             <outlet property="subtitle" destination="Rhj-qA-25x" id="6MJ-vw-8C4"/>
                                             <outlet property="title" destination="Ljh-ay-j3b" id="fpq-hj-ucj"/>
+                                            <segue destination="YVG-y7-hVd" kind="show" identifier="Single" id="03D-E2-7Uc"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -842,6 +843,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xBc-6i-tZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2517" y="1199"/>
+        </scene>
+        <!--Column Graph View Controller-->
+        <scene sceneID="cvI-fY-lkT">
+            <objects>
+                <viewController id="YVG-y7-hVd" customClass="ColumnGraphViewController" customModule="Energy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FAB-4y-cZV"/>
+                        <viewControllerLayoutGuide type="bottom" id="MX0-LK-CB7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VFN-8s-EW8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="34f-yR-7Ax" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2517" y="1920"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SpI-U0-TAc">

@@ -143,7 +143,7 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
         selectedBuilding = buildingArray[indexPath.row]
         
         if (comparisonMode == false){
-            performSegueWithIdentifier("Detail", sender: tableView)
+            performSegueWithIdentifier("Single", sender: tableView)
         }
         
         
@@ -226,13 +226,11 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBAction func reportButtonPressed(sender: AnyObject) {
         performSegueWithIdentifier("Detail", sender: tableView)
-
     }
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "Detail"
-        {
+        if segue.identifier == "Detail" {
             println("Selected Buildings:"+selectedBuildings[0])
             if let destinationVC = segue.destinationViewController as? DetailConsumptionViewController{
                 // Transferring all selected buildings to the DetailComsumptionViewController so that it can 
@@ -242,7 +240,16 @@ class ConsumptionViewController: UIViewController, UITableViewDelegate, UITableV
                     destinationVC.selectedBuildings.append(self.selectedBuildings[index])
                 }
             }
-            
+        }
+        if segue.identifier == "Single" {
+            if let destinationVC = segue.destinationViewController as? DetailConsumptionViewController{
+                // Transferring all selected buildings to the DetailComsumptionViewController so that it can
+                // produce a report comparing buildings.
+                for var index = 0; index < selectedBuildings.count; index++
+                {
+                    destinationVC.selectedBuildings.append(self.selectedBuildings[index])
+                }
+            }
         }
     }
     
