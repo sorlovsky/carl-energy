@@ -39,12 +39,16 @@ import UIKit
         gridLinesPath.stroke()
         
         // Add the gridline labels
-        for i in 1...5{
+        for i in 1...5 {
             if let labelView = self.viewWithTag(i) as? UILabel {
                 if self.buildingNames.count != 0 {
-                    maxUnit = floor(self.buildingData[0]/50)*50
-                    var labelNum = Int(maxUnit / 5) * i
-                    labelView.text = "\(labelNum)"
+                    maxUnit = self.buildingData[0]
+                    if maxUnit > 0 {
+                        var labelNum = Int(maxUnit / 5) * i
+                        // floor(self.buildingData[0]/50)*50
+                        
+                        labelView.text = "\(labelNum)"
+                    }
                 }
             }
         }
@@ -73,7 +77,6 @@ import UIKit
             let top = Double(barWidth+(barWidth*numBars))
             let bot = Double((barWidth*2)+(barWidth*numBars))
             
-            //let maximumUnit = floor(self.buildingData[buildingIndex]/50)*60
             if maxUnit > 0 {
                 barLength = (graphWidth/maxUnit * self.buildingData[buildingIndex]) * (5/6)
             }
@@ -110,18 +113,26 @@ import UIKit
             }
             
             if needNewLabels == true {
+                let fontSize:CGFloat = 20
                 var nameLabel = UILabel(frame: CGRect(x: 5, y: top, width: 200.0, height: 25.0))
                 nameLabel.tag = nameTag
-                nameLabel.textAlignment = NSTextAlignment.Left
                 nameLabel.text = "\(self.buildingNames[buildingIndex])"
-                nameLabel.font = UIFont(name: "Avenir Next Condensed", size: 20)
+                nameLabel.font = UIFont(name: "Avenir Next Condensed", size: fontSize)
+                nameLabel.sizeToFit()
                 
-                var valueLabel = UILabel(frame: CGRect(x: barLength-205, y: top, width: 200.0, height: 25.0))
+                var xpos = barLength-205
+                var textAlign = NSTextAlignment.Right
+                if barLength < graphWidth * 2/3 {
+                    xpos = Double(nameLabel.frame.width+20)
+                    println(xpos)
+                    textAlign = NSTextAlignment.Left
+                }
+                var valueLabel = UILabel(frame: CGRect(x: xpos, y: top, width: 200.0, height: 25.0))
                 valueLabel.tag = valueTag
-                valueLabel.textAlignment = NSTextAlignment.Right
+                valueLabel.textAlignment = textAlign
                 valueLabel.text =  "\(self.buildingData[buildingIndex])"
                 valueLabel.textColor = UIColor(red: 0.235, green: 0.455, blue: 0.518, alpha: 1)
-                valueLabel.font = UIFont(name: "Avenir Next Condensed-Bold", size: 20)
+                valueLabel.font = UIFont(name: "Avenir Next Condensed-Bold", size: fontSize)
                 
                 self.addSubview(nameLabel)
                 self.addSubview(valueLabel)
